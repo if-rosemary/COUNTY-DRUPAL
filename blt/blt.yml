@@ -1,0 +1,34 @@
+project:
+  prefix: WCOR
+  machine_name: wcor
+git:
+  default_branch: develop
+  remotes:
+    - 'wcor@svn-23450.prod.hosting.acquia.com:wcor.git'
+deploy:
+  tag_source: true
+  exclude_file: ${repo.root}/blt/custom-exclude.txt
+drush:
+  aliases:
+    remote: '${drush.aliases.prod}'
+    local: self
+    ci: self
+  default_alias: '${drush.aliases.local}'
+cloud:
+  appId: 9cab3740-4631-4529-a4de-d6ef75472d78
+# In the future, once your Barrio Sass Starter Kit subtheme is added, uncomment
+# these lines in order to have blt/pipelines properly build and test the
+# front-end assets as part of the pipelines process.
+#
+# Be sure to change the dir key to properly reflect the path to your subtheme.
+#
+#command-hooks:
+#  frontend-reqs:
+#    dir: '${docroot}/themes/custom/wcor_barrio' # directory to your subtheme
+#    command: 'npm install'
+#  frontend-assets:
+#    dir: '${docroot}/themes/custom/wcor_barrio' # directory to your subtheme
+#    command: 'npm run build'
+#  frontend-tests:
+#    dir: '${docroot}/themes/custom/wcor_barrio' # directory to your subtheme
+#    command: 'npm test'
