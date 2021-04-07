@@ -1,0 +1,67 @@
+# Application 'wcor', environment 'dev'.
+dev:
+  root: /var/www/html/wcor.dev/docroot
+  ac-site: wcor
+  ac-env: dev
+  ac-realm: prod
+  uri: wcordev.prod.acquia-sites.com
+  dev.livedev:
+    parent: '@wcor.dev'
+    root: /mnt/gfs/wcor.dev/livedev/docroot
+  host: wcordev.ssh.prod.acquia-sites.com
+  user: wcor.dev
+  paths:
+    drush-script: drush9
+
+
+# Application 'wcor', environment 'prod'.
+prod:
+  root: /var/www/html/wcor.prod/docroot
+  ac-site: wcor
+  ac-env: prod
+  ac-realm: prod
+  uri: wcor.prod.acquia-sites.com
+  prod.livedev:
+    parent: '@wcor.prod'
+    root: /mnt/gfs/wcor.prod/livedev/docroot
+  host: wcor.ssh.prod.acquia-sites.com
+  user: wcor.prod
+  paths:
+    drush-script: drush9
+
+
+# Application 'wcor', environment 'ra'.
+ra:
+  root: /var/www/html/wcor.ra/docroot
+  ac-site: wcor
+  ac-env: ra
+  ac-realm: prod
+  uri: wcorra.prod.acquia-sites.com
+  ra.livedev:
+    parent: '@wcor.ra'
+    root: /mnt/gfs/wcor.ra/livedev/docroot
+  host: wcorra.ssh.prod.acquia-sites.com
+  user: wcor.ra
+  paths:
+    drush-script: drush9
+
+
+# Application 'wcor', environment 'test'.
+test:
+  root: /var/www/html/wcor.test/docroot
+  ac-site: wcor
+  ac-env: test
+  ac-realm: prod
+  uri: wcorstg.prod.acquia-sites.com
+  test.livedev:
+    parent: '@wcor.test'
+    root: /mnt/gfs/wcor.test/livedev/docroot
+  host: wcorstg.ssh.prod.acquia-sites.com
+  user: wcor.test
+  paths:
+    drush-script: drush9
+
+# Acquia Pipelines
+ci:
+  uri: 127.0.0.1
+  host: 127.0.0.1
