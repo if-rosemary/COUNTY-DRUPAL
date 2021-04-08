@@ -27,17 +27,6 @@ class FeatureContext extends RawDrupalContext {
   public function __construct() {
 
   }
-  /**
-   * @BeforeSuite
-   */
-  public static function beforeSuite() {
-    $or = new Condition('OR');
-    $or->condition('redirect_source__path', 'user/login')
-      ->condition('redirect_source__path', 'user');
-    $query = \Drupal::database()->delete('redirect');
-    $query->condition($or);
-    $query->execute();
-  }
 
   /**
    * Entity Functions.
