@@ -40,11 +40,10 @@ events:
           type: script
           script:
             - source ${BLT_DIR}/scripts/pipelines/setup_app
-      # Uncomment these lines when automated testing is in place and ready.
-      # - tests:
-      #     type: script
-      #     script:
-      #       - source ${BLT_DIR}/scripts/pipelines/tests
+      - tests:
+          type: script
+          script:
+            - source ${BLT_DIR}/scripts/pipelines/tests
       - build-artifact:
           type: script
           script:

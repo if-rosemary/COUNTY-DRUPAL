@@ -17,6 +17,7 @@
   },
   "require": {
     "acquia/blt": "^12.7",
+    "acquia/blt-behat": "^1.1",
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6",
     "drupal/admin_toolbar": "^3.0",
@@ -82,6 +83,9 @@
       "drupal/core": "-p2"
     },
     "patches": {}
+  },
+  "require-dev": {
+    "acquia/blt-phpcs": "^1.0",
+    "phpunit/phpunit": "^4.8.35 || ^6.5 || ^7"
   }
-
 }
