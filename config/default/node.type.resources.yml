@@ -1,0 +1,17 @@
+uuid: a5eac971-ddd9-4c95-99df-77f53c14d088
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Resources
+type: resources
+description: 'Resource content type to allow for indexing of non-Drupal content such as a separate third-party JS application.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
