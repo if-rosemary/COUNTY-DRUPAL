@@ -16,14 +16,14 @@
     }
   },
   "require": {
-    "acquia/blt": "^12.7",
+    "acquia/blt": "12.7",
     "acquia/blt-behat": "^1.1",
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6",
     "drupal/admin_toolbar": "^3.0",
     "drupal/config_split": "^1.7",
     "drupal/core-composer-scaffold": "^9",
-    "drupal/core-recommended": "^9",
+    "drupal/core-recommended": "9.1.7",
     "drupal/shield": "^1.4",
     "drupal/smtp": "^1.0",
     "drush/drush": "^10.3"
