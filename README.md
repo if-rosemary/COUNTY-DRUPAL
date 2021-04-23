@@ -1,12 +1,12 @@
-Washington County Homepage
+Washington County Site Redesign Project
 ====
 
 Drupal 9 site redesign project for Washington County, Oregon.
-Hosted on Acquia Cloud.
+Hosted on Acquia Cloud Platform.
+Developed on Acquia Cloud IDE.
 
-## Installation and usage
+## First-time setup
 
-After cloning the repository to your local environemnt: 
-```
-composer install
-```
+1. Create your Acquia Cloud IDE. This will be covered in a separate document (linked here soon).
+
+2. Fork the Washington-County / COUNTY-DRUPAL repository (repo) to your own GitHub account.  Login to your GitHub account, visit the primary repo GitHub page and click the Fork button. (This will later be referred to as the upstream repository.)
