@@ -1,0 +1,42 @@
+uuid: f8390ace-9e71-4a7f-b6f6-b4a67d0bce88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resource.field_resource_description
+    - field.field.node.resource.field_resource_url
+    - node.type.resource
+  module:
+    - link
+    - user
+id: node.resource.default
+targetEntityType: node
+bundle: resource
+mode: default
+content:
+  field_resource_description:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_resource_url:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

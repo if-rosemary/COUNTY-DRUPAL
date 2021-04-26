@@ -1,0 +1,14 @@
+uuid: 70f222b9-2d0b-432a-ae8e-19844a4d7e68
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.resource
+id: node_type_resource
+entity_type_id: node_type
+entity_id: resource
+action: page_redirect
+allow_override: 0
+redirect: '[node:field_resource_url:uri]'
+redirect_code: 301
+redirect_fallback_action: page_not_found

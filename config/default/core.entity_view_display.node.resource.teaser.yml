@@ -1,0 +1,25 @@
+uuid: fd95cda2-834c-4c98-9cd6-9f30fa02feb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resource.field_resource_description
+    - field.field.node.resource.field_resource_url
+    - node.type.resource
+  module:
+    - user
+id: node.resource.teaser
+targetEntityType: node
+bundle: resource
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_resource_description: true
+  field_resource_url: true
+  langcode: true
