@@ -1,4 +1,4 @@
-uuid: a5eac971-ddd9-4c95-99df-77f53c14d088
+uuid: 37cafdf3-9ff0-479f-880c-1b00bd180d18
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Resources
-type: resources
+name: Resource
+type: resource
 description: 'Resource content type to allow for indexing of non-Drupal content such as a separate third-party JS application.'
 help: ''
 new_revision: true
