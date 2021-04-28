@@ -1,4 +1,4 @@
-Washington County Site Redesign Project
+Washington County, OR - Site Redesign Project
 ====
 
 Drupal 9 site redesign project for Washington County, Oregon.
