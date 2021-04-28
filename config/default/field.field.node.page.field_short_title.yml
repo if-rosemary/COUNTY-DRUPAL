@@ -1,0 +1,19 @@
+uuid: d2e767ba-25a7-419f-a66d-97067b70954a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.page
+id: node.page.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: page
+label: 'Short title'
+description: 'Enter a shorter title for the purpose of more ergonomic display in certain lists or views.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

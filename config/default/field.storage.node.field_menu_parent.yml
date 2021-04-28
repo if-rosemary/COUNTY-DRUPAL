@@ -1,0 +1,20 @@
+uuid: 9f247904-e0b1-4369-83df-613cf4ddcf9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+id: node.field_menu_parent
+field_name: field_menu_parent
+entity_type: node
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

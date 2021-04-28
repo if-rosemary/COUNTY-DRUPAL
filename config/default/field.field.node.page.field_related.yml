@@ -1,0 +1,28 @@
+uuid: 53f31fa3-400f-497a-a8ab-f71b87e08130
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related
+    - node.type.page
+id: node.page.field_related
+field_name: field_related
+entity_type: node
+bundle: page
+label: Related
+description: 'Search for and add content items related to this page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: title
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
