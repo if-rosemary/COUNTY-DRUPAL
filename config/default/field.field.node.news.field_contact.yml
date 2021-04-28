@@ -1,0 +1,21 @@
+uuid: 7a8b9ea8-dfac-4b06-bc62-08a277d7ad3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.news
+id: node.news.field_contact
+field_name: field_contact
+entity_type: node
+bundle: news
+label: Contact
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference
