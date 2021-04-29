@@ -9,12 +9,12 @@ services:
   - mysql
   - php:
       version: 7.4
-
+cde-databases:
+  - wcor
 variables:
   global:
     COMPOSER_BIN: $SOURCE_DIR/vendor/bin
     BLT_DIR: $SOURCE_DIR/vendor/acquia/blt
-
 events:
   build:
     steps:
@@ -78,7 +78,5 @@ events:
       - deploy:
           script:
             - "echo 'Starting creation of WCOR CD Environment'"
-            - pipelines-deploy
-            - "echo 'WCOR CD Environment Created'"
-
-
+            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* ]]; then echo 'Creating CD environment for PR.' && pipelines-deploy; else echo 'Not a PR. Skipping CD environment creation.'; fi"
+            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* ]]; then echo 'Setting up Drupal environment for PR.' && pipelines-sync-dbs wcor && ./vendor/bin/drush deploy -y; fi"
