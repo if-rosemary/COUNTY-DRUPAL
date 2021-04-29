@@ -1,0 +1,8 @@
+uuid: fe9172bb-adcc-4bd4-9881-de24484f42c2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Group status'
+vid: group_status
+description: 'Status displays information for the public to see if a project or program is active or completed.'
+weight: 0

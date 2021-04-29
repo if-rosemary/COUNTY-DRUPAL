@@ -1,0 +1,29 @@
+uuid: 83c31266-6436-4ea0-8fcc-75b68acd0fa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.group
+    - taxonomy.vocabulary.group_type
+id: node.group.field_type
+field_name: field_type
+entity_type: node
+bundle: group
+label: 'Group type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      group_type: group_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

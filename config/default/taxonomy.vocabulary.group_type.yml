@@ -1,0 +1,8 @@
+uuid: 5e9617b8-c076-47f8-82ed-5dfc8953dbdb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Group type'
+vid: group_type
+description: 'Types of groups can include terms like department, division, program, project, etc.'
+weight: 0
