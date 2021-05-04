@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Resource
 type: resource
-description: 'Resource content type to allow for indexing of non-Drupal content such as a separate third-party JS application.'
+description: 'Types of resources, such as website, application, state resource, city resource, federal resource, etc.'
 help: ''
 new_revision: true
 preview_mode: 1

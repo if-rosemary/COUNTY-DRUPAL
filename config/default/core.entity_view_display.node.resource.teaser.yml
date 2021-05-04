@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.resource.field_menu_parent
     - field.field.node.resource.field_resource_description
     - field.field.node.resource.field_resource_url
+    - field.field.node.resource.field_short_title
+    - field.field.node.resource.field_show_in_menu
+    - field.field.node.resource.field_type
     - node.type.resource
   module:
     - user
@@ -20,6 +24,10 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_menu_parent: true
   field_resource_description: true
   field_resource_url: true
+  field_short_title: true
+  field_show_in_menu: true
+  field_type: true
   langcode: true

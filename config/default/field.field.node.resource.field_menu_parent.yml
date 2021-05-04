@@ -1,0 +1,23 @@
+uuid: d0516275-0c68-49ce-b327-e1c66ac733c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_parent
+    - node.type.resource
+id: node.resource.field_menu_parent
+field_name: field_menu_parent
+entity_type: node
+bundle: resource
+label: 'Menu parent'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

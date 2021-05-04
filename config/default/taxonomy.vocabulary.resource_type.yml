@@ -1,0 +1,8 @@
+uuid: 1ce02612-de9f-4a99-acfc-4fa1fcc864c5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Resource type'
+vid: resource_type
+description: 'Types of resources that are being referenced in the resource content type.'
+weight: 0
