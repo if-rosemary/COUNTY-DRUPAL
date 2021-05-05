@@ -6,8 +6,7 @@ id: dev
 label: Dev
 description: ''
 folder: ../config/envs/dev
-module:
-  shield: 0
+module: {  }
 theme: {  }
 blacklist:
   - shield.settings

@@ -782,7 +782,15 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 if (file_exists('/var/www/site-php')) {
   require '/var/www/site-php/wcor/wcor-settings.inc';
-}require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
+}
+
+if (isset($_ENV['SHPASS'])) {
+  // Enable Shield if ENV SHPASS exists.
+  $config['shield.settings']['credentials']['shield']['user'] = 'user';
+  $config['shield.settings']['credentials']['shield']['pass'] = $_ENV['SHPASS'];
+}
+
+require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
 /**
  * IMPORTANT.
  *

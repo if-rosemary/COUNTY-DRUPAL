@@ -113,6 +113,7 @@ tramp
 
 # User-specific stuff:
 .idea/
+.theia/
 
 #XHProf
 xhprof_*
