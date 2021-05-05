@@ -1,0 +1,8 @@
+uuid: 672e6310-9ab7-4836-b4d2-ab583970e260
+langcode: en
+status: true
+dependencies: {  }
+name: 'Page type'
+vid: page_type
+description: 'Types of pages.'
+weight: 0

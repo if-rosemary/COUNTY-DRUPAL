@@ -1,0 +1,8 @@
+uuid: 51367338-99bf-4288-915b-220f60ea7e14
+langcode: en
+status: true
+dependencies: {  }
+name: 'Project status'
+vid: project_status
+description: 'Project status indicates if a project is upcoming, active, or completed.'
+weight: 0
