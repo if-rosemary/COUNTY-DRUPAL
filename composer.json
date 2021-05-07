@@ -90,6 +90,11 @@
         }
     }
   },
+  "autoload": {
+    "psr-4": {
+      "Washco\\": "blt/src/"
+    }
+  },
   "require-dev": {
     "acquia/blt-phpcs": "^1.0",
     "phpunit/phpunit": "^4.8.35 || ^6.5 || ^7"
