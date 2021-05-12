@@ -222,9 +222,9 @@ key (/home/ide/.ssh/id_ed25519):* -- just **press Enter** to accept the default.
 
 	e. When you first push your branch to your origin (forked repo) develop branch:
 	```
-	git push --u origin [story-branch-name]
+	git push -u origin [story-branch-name]
 	```
-	(The --u option would allow you to simply use ```git push``` on your next push, without specifying that you're pushing your story branch to origin.)
+	(The -u option would allow you to simply use ```git push``` on your next push, without specifying that you're pushing your story branch to origin.)
 
 
 ## Completing and deploying your story item

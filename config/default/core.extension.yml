@@ -37,6 +37,7 @@ module:
   path_alias: 0
   rabbit_hole: 0
   rh_node: 0
+  scheduler: 0
   shield: 0
   syslog: 0
   system: 0
