@@ -38,4 +38,31 @@ class WashcoCommands extends BltTasks {
     shell_exec( "drush deploy" );
   }
 
+  /**
+   * Get one time user login for CD environments.
+   *
+   * @command custom:cd
+   * @description SSH and drush uli a CD ODE.
+   */
+  public function cd($cd)
+  {
+    $this->say("Grabbing user login from CD #$cd ...");
+    passthru(shell_exec('ssh wcor.ode' . $cd . '@wcorode' . $cd . '.ssh.prod.acquia-sites.com -y "drush @wcor.ode' . $cd . ' uli && exit"'));
+    $this->say("The URL has been generated above. Ensure that the colon at the end is removed when visiting the URL.");
+  }
+
+  /**
+   * Checkout a GitHub PR locally.
+   *
+   * @command custom:pr
+   * @description Fetch and create a PR branch locally to review.
+   */
+  public function pr($pr)
+  {
+    $this->say("Fetching PR #$pr from GitHub...");
+    shell_exec( 'git fetch upstream pull/' . $pr . '/head:PR' . $pr );
+    $this->say("Checking out PR branch...");
+    shell_exec('git checkout PR' . $pr);
+  }
+
 }
