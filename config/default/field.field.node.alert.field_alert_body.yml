@@ -1,0 +1,21 @@
+uuid: 5efd49d7-ea20-489f-a2f2-d453a94074de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_body
+    - node.type.alert
+  module:
+    - text
+id: node.alert.field_alert_body
+field_name: field_alert_body
+entity_type: node
+bundle: alert
+label: 'Alert body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

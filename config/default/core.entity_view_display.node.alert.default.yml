@@ -1,0 +1,38 @@
+uuid: 943fc929-1337-4af0-a8c7-3c8ddada8e3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.alert.field_alert_body
+    - field.field.node.alert.field_severity
+    - node.type.alert
+  module:
+    - options
+    - text
+    - user
+id: node.alert.default
+targetEntityType: node
+bundle: alert
+mode: default
+content:
+  field_alert_body:
+    weight: 101
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_severity:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

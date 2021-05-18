@@ -1,0 +1,19 @@
+uuid: 9d6e10f9-7d9d-4c4e-9d2d-a2ca13a38cb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_alert_body
+field_name: field_alert_body
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
