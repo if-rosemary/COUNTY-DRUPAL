@@ -12,11 +12,14 @@ dependencies:
     - field.field.node.news.field_summary
     - field.field.node.news.field_type
     - node.type.news
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - datetime
     - media_library
     - path
     - scheduler
+    - scheduler_content_moderation_integration
     - text
 id: node.news.default
 targetEntityType: node
@@ -101,6 +104,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 11
@@ -116,6 +125,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
     weight: 30
     region: content
     settings: {  }
@@ -159,6 +174,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
     weight: 30
     region: content
     settings: {  }
