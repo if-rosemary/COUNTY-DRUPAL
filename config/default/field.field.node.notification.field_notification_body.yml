@@ -1,0 +1,21 @@
+uuid: 11d34b46-1248-407e-8f6f-97b40a06c84a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notification_body
+    - node.type.notification
+  module:
+    - text
+id: node.notification.field_notification_body
+field_name: field_notification_body
+entity_type: node
+bundle: notification
+label: 'Notification body'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
