@@ -30,10 +30,10 @@ class WashcoCommands extends BltTasks {
     shell_exec( "git pull upstream develop" );
     $this->say( "Locking permissions..." );
     shell_exec( "chmod 444 docroot/sites/default/settings.php" );
-    $this->say( "Syncing database..." );
-    shell_exec( "acli pull:database wcor.dev" );
     $this->say( "Running composer..." );
     shell_exec( "composer install" );
+    $this->say( "Syncing database..." );
+    shell_exec( "acli pull:database wcor.dev" );
     $this->say( "Deploying site..." );
     shell_exec( "drush deploy" );
   }
