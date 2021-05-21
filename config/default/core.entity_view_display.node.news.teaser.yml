@@ -14,24 +14,44 @@ dependencies:
     - field.field.node.news.field_type
     - node.type.news
   module:
+    - datetime
     - user
 id: node.news.teaser
 targetEntityType: node
 bundle: news
 mode: teaser
 content:
-  links:
-    weight: 100
+  content_moderation_control:
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_release_date:
+    type: datetime_default
+    weight: 2
     region: content
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+  field_summary:
+    type: basic_string
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_body: true
   field_contact: true
   field_featured_image: true
   field_group: true
   field_related: true
-  field_release_date: true
-  field_summary: true
   field_type: true
   langcode: true
