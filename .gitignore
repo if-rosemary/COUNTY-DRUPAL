@@ -18,6 +18,7 @@ tests/behat/local.yml
 box/local.config.yml
 *.local
 local.blt.yml
+.acquia-cli.yml
 
 # Ignore development configuration files.
 blt.development.services.yml
