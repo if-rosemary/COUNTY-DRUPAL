@@ -23,7 +23,7 @@
     "drupal/admin_toolbar": "^3.0",
     "drupal/config_split": "^1.7",
     "drupal/core-composer-scaffold": "^9",
-    "drupal/core-recommended": "9.1.8",
+    "drupal/core-recommended": "9.1.9",
     "drupal/pathauto": "^1.8",
     "drupal/rabbit_hole": "^1.0@beta",
     "drupal/scheduler": "^1.3",
