@@ -1,0 +1,68 @@
+uuid: ce099b4a-edc6-4aab-8adb-28ef6ed8a06e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor
+format: basic_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: 'Text Formatting'
+          items:
+            - Format
+            - Bold
+            - Italic
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Media
+          items:
+            - DrupalImage
+        -
+          name: 'Misc Formatting'
+          items:
+            - Blockquote
+            - HorizontalRule
+        -
+          name: 'Copy and Paste'
+          items:
+            - Cut
+            - Copy
+            - Paste
+        -
+          name: 'Undo and Redo'
+          items:
+            - Undo
+            - Redo
+        -
+          name: Tools
+          items:
+            - Maximize
+            - Source
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
