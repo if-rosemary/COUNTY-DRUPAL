@@ -329,6 +329,8 @@ If there are already at least 3 **code-related** stories in *Testing*, **QA is s
 
 ### QA process
 
+![QA process diagram](https://user-images.githubusercontent.com/17837170/119543881-fffb8980-bd45-11eb-82a9-e38221e5d0f9.png)
+
 1. Drag the item you will be testing from the *Ready for testing* column to *Testing*.
 
 2. Assign yourself as a QA-specific ***Reviewer*** on the GitHub PR page.
