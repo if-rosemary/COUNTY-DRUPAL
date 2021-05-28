@@ -784,6 +784,12 @@ if (file_exists('/var/www/site-php')) {
   require '/var/www/site-php/wcor/wcor-settings.inc';
 }
 
+$secrets_file = sprintf('/mnt/files/%s.%s/secrets.settings.php', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
+
+if (file_exists($secrets_file)) {
+  require $secrets_file;
+}
+
 if (isset($_ENV['SHPASS'])) {
   // Enable Shield if ENV SHPASS exists.
   $config['shield.settings']['credentials']['shield']['user'] = 'user';

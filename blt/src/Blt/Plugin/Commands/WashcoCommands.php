@@ -22,20 +22,34 @@ class WashcoCommands extends BltTasks {
    * @description Syncs and builds from the latest develop branch and environment.
    */
   public function catchup() {
-    $this->say( "Checking out develop branch..." );
-    shell_exec( "git checkout develop" );
-    $this->say( "Unlocking permissions..." );
-    shell_exec( "chmod 644 docroot/sites/default/settings.php && chmod -R u+w docroot/sites/default" );
-    $this->say( "Pulling upstream repo..." );
-    shell_exec( "git pull upstream develop" );
-    $this->say( "Locking permissions..." );
-    shell_exec( "chmod 444 docroot/sites/default/settings.php" );
-    $this->say( "Running composer..." );
-    shell_exec( "composer install" );
-    $this->say( "Syncing database..." );
-    shell_exec( "acli pull:database wcor.dev" );
-    $this->say( "Deploying site..." );
-    shell_exec( "drush deploy" );
+    $this->say("Unlocking permissions...");
+    shell_exec("chmod 644 docroot/sites/default/settings.php && chmod -R u+w docroot/sites/default");
+    $this->say("Checking out develop branch...");
+    shell_exec("git checkout develop");
+    $this->say("Pulling upstream repo...");
+    shell_exec("git pull upstream develop");
+    $this->say("Locking permissions...");
+    shell_exec("chmod 444 docroot/sites/default/settings.php");
+    $this->say("Syncing Secrets...");
+    shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
+    $this->say("Running composer...");
+    shell_exec("composer install");
+    $this->say("Syncing database...");
+    shell_exec("acli pull:database wcor.dev");
+    $this->say("Deploying site...");
+    shell_exec("drush deploy");
+  }
+
+  /**
+   * Sync secret settings.
+   *
+   * @command custom:secrets
+   * @description Syncs secrets.settings.php from develop.
+   */
+  public function secrets()
+  {
+    $this->say("Syncing Secrets...");
+    shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
   }
 
   /**

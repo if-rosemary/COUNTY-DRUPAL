@@ -2,8 +2,6 @@ uuid: 99121e66-25ca-46c4-907d-36ba7d000379
 langcode: en
 status: true
 dependencies:
-  config:
-    - media.type.image
   module:
     - content_moderation
 id: media
@@ -41,7 +39,5 @@ type_settings:
         - unpublished
       to: unpublished
       weight: 2
-  entity_types:
-    media:
-      - image
+  entity_types: {  }
   default_moderation_state: published

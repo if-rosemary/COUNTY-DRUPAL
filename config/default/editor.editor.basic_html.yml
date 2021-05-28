@@ -54,13 +54,13 @@ settings:
             - Maximize
             - Source
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
 image_upload:
   status: true
-  scheme: public
+  scheme: s3
   directory: inline-images
   max_size: ''
   max_dimensions:
