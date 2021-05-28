@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Project status'
 vid: project_status
-description: 'Project status indicates if a project is upcoming, active, or completed.'
+description: ''
 weight: 0

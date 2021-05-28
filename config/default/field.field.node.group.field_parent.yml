@@ -9,7 +9,7 @@ id: node.group.field_parent
 field_name: field_parent
 entity_type: node
 bundle: group
-label: 'Parent Group'
+label: 'Parent group'
 description: ''
 required: false
 translatable: false

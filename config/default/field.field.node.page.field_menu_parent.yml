@@ -10,7 +10,7 @@ field_name: field_menu_parent
 entity_type: node
 bundle: page
 label: 'Menu parent'
-description: ''
+description: 'Choose a location within the navigation menu to link this item.'
 required: false
 translatable: false
 default_value: {  }

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Project type'
 vid: project_type
-description: 'Types of projects.'
+description: ''
 weight: 0

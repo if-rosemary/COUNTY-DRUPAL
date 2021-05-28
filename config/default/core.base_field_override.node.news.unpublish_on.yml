@@ -1,0 +1,18 @@
+uuid: 2c99b885-5453-4c86-9934-fd5a1a85deac
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.unpublish_on
+field_name: unpublish_on
+entity_type: node
+bundle: news
+label: 'Unpublish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

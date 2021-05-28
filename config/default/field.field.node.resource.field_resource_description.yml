@@ -9,10 +9,10 @@ id: node.resource.field_resource_description
 field_name: field_resource_description
 entity_type: node
 bundle: resource
-label: 'Resource description'
+label: Description
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

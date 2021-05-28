@@ -11,9 +11,9 @@ field_name: field_group
 entity_type: node
 bundle: page
 label: 'Displayed in'
-description: ''
+description: 'Choose a web group in which this content should appear.'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

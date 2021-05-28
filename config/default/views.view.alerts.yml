@@ -12,7 +12,7 @@ dependencies:
 id: alerts
 label: Alerts
 module: views
-description: 'List of alerts'
+description: 'List of sitewide alerts.'
 tag: ''
 base_table: node_field_data
 base_field: nid

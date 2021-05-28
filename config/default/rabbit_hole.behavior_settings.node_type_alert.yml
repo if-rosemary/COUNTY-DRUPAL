@@ -1,0 +1,14 @@
+uuid: 9626f1c8-a69c-43d1-b3f0-e70390f6f679
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.alert
+id: node_type_alert
+entity_type_id: node_type
+entity_id: alert
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

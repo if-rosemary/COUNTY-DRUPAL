@@ -9,10 +9,10 @@ id: node.group.field_group_path
 field_name: field_group_path
 entity_type: node
 bundle: group
-label: 'Group Path'
+label: 'Group path'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

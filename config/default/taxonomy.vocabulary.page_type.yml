@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Page type'
 vid: page_type
-description: 'Types of pages.'
+description: ''
 weight: 0

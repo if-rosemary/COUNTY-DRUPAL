@@ -16,7 +16,7 @@ mode: default
 content:
   field_notification_body:
     weight: 0
-    label: visually_hidden
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

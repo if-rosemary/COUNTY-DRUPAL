@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'News type'
 vid: type
-description: 'Types of articles'
+description: ''
 weight: 0

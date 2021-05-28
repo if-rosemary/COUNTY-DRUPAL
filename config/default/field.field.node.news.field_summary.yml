@@ -10,7 +10,7 @@ field_name: field_summary
 entity_type: node
 bundle: news
 label: Summary
-description: ''
+description: 'Enter 1-2 brief sentences that will help site visitors quickly understand how relevant the content is for them.'
 required: true
 translatable: true
 default_value: {  }

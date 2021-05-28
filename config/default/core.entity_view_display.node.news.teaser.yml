@@ -9,12 +9,10 @@ dependencies:
     - field.field.node.news.field_featured_image
     - field.field.node.news.field_group
     - field.field.node.news.field_related
-    - field.field.node.news.field_release_date
     - field.field.node.news.field_summary
     - field.field.node.news.field_type
     - node.type.news
   module:
-    - datetime
     - user
 id: node.news.teaser
 targetEntityType: node
@@ -25,15 +23,6 @@ content:
     weight: 0
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_release_date:
-    type: datetime_default
-    weight: 2
-    region: content
-    label: visually_hidden
-    settings:
-      timezone_override: ''
-      format_type: medium
     third_party_settings: {  }
   field_summary:
     type: basic_string

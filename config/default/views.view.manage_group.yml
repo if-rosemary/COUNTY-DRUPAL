@@ -10,7 +10,7 @@ dependencies:
 id: manage_group
 label: 'Manage Group'
 module: views
-description: ''
+description: 'Provides Manage Group block.'
 tag: ''
 base_table: node_field_data
 base_field: nid

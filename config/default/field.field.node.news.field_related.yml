@@ -5,13 +5,14 @@ dependencies:
   config:
     - field.storage.node.field_related
     - node.type.news
+    - node.type.page
     - node.type.resource
 id: node.news.field_related
 field_name: field_related
 entity_type: node
 bundle: news
 label: Related
-description: ''
+description: 'Select any number of items (page, news, etc.) that are directly related to the topic of this content item.'
 required: false
 translatable: false
 default_value: {  }
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       news: news
+      page: page
       resource: resource
     sort:
-      field: _none
+      field: title
       direction: ASC
     auto_create: false
     auto_create_bundle: news

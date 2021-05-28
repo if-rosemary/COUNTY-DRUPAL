@@ -12,7 +12,7 @@ field_name: field_body
 entity_type: node
 bundle: page
 label: Body
-description: 'Enter the page''s body content here.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

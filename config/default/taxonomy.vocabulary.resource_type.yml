@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Resource type'
 vid: resource_type
-description: 'Types of resources that are being referenced in the resource content type.'
+description: ''
 weight: 0

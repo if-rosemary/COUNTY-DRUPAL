@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: Notification
 type: notification
-description: 'Notifications display a message on all content belonging to a particular web group.'
+description: '<em>Notifications</em> display a message on all content belonging to a particular web group.'
 help: ''
 new_revision: false
 preview_mode: 1

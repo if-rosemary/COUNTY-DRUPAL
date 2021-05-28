@@ -1,0 +1,20 @@
+uuid: 717618e6-def8-48a0-b49d-e212d77f3644
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.notification
+  module:
+    - options
+id: node.notification.unpublish_state
+field_name: unpublish_state
+entity_type: node
+bundle: notification
+label: 'Unpublish state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

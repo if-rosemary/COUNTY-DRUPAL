@@ -1,0 +1,20 @@
+uuid: dfb68809-cebf-446e-861e-54e75a327ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.notification
+  module:
+    - options
+id: node.notification.publish_state
+field_name: publish_state
+entity_type: node
+bundle: notification
+label: 'Publish state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

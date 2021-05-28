@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_short_title
     - field.field.node.page.field_show_in_menu
     - field.field.node.page.field_summary
+    - field.field.node.page.field_type
     - node.type.page
   module:
     - user
@@ -19,6 +20,11 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_summary:
     type: basic_string
     weight: 1
@@ -38,4 +44,5 @@ hidden:
   field_related: true
   field_short_title: true
   field_show_in_menu: true
+  field_type: true
   langcode: true

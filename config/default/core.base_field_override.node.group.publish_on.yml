@@ -1,0 +1,18 @@
+uuid: 42561660-10e5-4bb3-a67c-9a45f800cdf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.group
+id: node.group.publish_on
+field_name: publish_on
+entity_type: node
+bundle: group
+label: 'Publish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

@@ -10,7 +10,7 @@ field_name: field_show_in_menu
 entity_type: node
 bundle: page
 label: 'Show in menu'
-description: 'Check this box if you want the page to appear in a navigation menu.'
+description: ''
 required: false
 translatable: false
 default_value:

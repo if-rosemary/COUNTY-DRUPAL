@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Group status'
 vid: group_status
-description: 'Status displays information for the public to see if a project or program is active or completed.'
+description: ''
 weight: 0

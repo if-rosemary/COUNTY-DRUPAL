@@ -10,9 +10,9 @@ field_name: field_short_title
 entity_type: node
 bundle: resource
 label: 'Short title'
-description: ''
+description: 'Enter a shorter title for the purpose of more ergonomic display in certain lists or views.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

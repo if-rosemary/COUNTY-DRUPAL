@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Group type'
 vid: group_type
-description: 'Types of groups can include terms like department, division, program, project, etc.'
+description: ''
 weight: 0
