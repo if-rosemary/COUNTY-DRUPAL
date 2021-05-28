@@ -38,7 +38,7 @@ content:
     type: text_textarea
     region: content
   field_group_path:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''
