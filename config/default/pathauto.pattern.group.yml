@@ -1,0 +1,22 @@
+uuid: 954cfb14-738d-4c26-afe2-2274e65cb3a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: group
+label: Group
+type: 'canonical_entities:node'
+pattern: '[node:field_parent:entity:field_group_path]/[node:field_group_path]'
+selection_criteria:
+  7986fa14-7e6b-4164-9dd7-f23779a2e479:
+    id: node_type
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7986fa14-7e6b-4164-9dd7-f23779a2e479
+selection_logic: and
+weight: -5
+relationships: {  }
