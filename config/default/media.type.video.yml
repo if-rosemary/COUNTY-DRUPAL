@@ -1,0 +1,20 @@
+uuid: 320440de-af12-407a-b86b-6354558f4275
+langcode: en
+status: true
+dependencies: {  }
+id: video
+label: Video/Audio
+description: 'Both video and audio can be hosted via YouTube with closed captioning enabled.'
+source: 'oembed:video'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  thumbnails_directory: 'public://oembed_thumbnails'
+  providers:
+    - YouTube
+  source_field: field_media_oembed_video
+field_map:
+  title: name
+  author_name: field_creator
+  provider_name: field_source
+  url: field_media_oembed_video

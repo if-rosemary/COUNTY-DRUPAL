@@ -1,0 +1,23 @@
+uuid: 0a3bdab2-1970-404d-9e02-571ffb773a98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_in_library
+    - media.type.video
+id: media.video.field_media_in_library
+field_name: field_media_in_library
+entity_type: media
+bundle: video
+label: 'Show in media library'
+description: 'Check this box if you wish to share this item with other County Site content editors to use in their content.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

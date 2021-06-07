@@ -1,0 +1,21 @@
+uuid: 01442e6a-a008-41c8-abe5-1f1d1c7ae732
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - media.type.video
+  module:
+    - text
+id: media.video.field_caption
+field_name: field_caption
+entity_type: media
+bundle: video
+label: Caption
+description: 'Enter a sentence that will appear next to the media in the page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

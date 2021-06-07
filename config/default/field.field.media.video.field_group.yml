@@ -1,0 +1,29 @@
+uuid: 6a7a63b2-6fc5-4d05-b643-795c4693151e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_group
+    - media.type.video
+    - node.type.group
+id: media.video.field_group
+field_name: field_group
+entity_type: media
+bundle: video
+label: 'Displayed in'
+description: 'Choose a web group in which this content should appear.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      group: group
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
