@@ -1,0 +1,19 @@
+uuid: 7744b6b1-63ac-455b-8ab8-905925759cd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_title
+    - node.type.contact
+id: node.contact.field_contact_title
+field_name: field_contact_title
+entity_type: node
+bundle: contact
+label: 'Contact title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: 2ab2caac-1b48-4386-9098-0608c7a9fc9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact
+id: node_type_contact
+entity_type_id: node_type
+entity_id: contact
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
