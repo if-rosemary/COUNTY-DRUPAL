@@ -32,6 +32,7 @@ settings:
           name: Media
           items:
             - DrupalImage
+            - DrupalMediaLibrary
         -
           name: 'Misc Formatting'
           items:

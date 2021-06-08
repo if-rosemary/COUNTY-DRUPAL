@@ -1,0 +1,14 @@
+uuid: 0a55e72d-c594-4f4e-a6ce-d86cdb1f91c5
+langcode: en
+status: true
+dependencies: {  }
+id: document
+label: Document
+description: 'A locally hosted document, such as a PDF.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map:
+  name: name
