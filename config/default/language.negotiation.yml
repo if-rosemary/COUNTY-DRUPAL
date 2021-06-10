@@ -1,0 +1,9 @@
+selected_langcode: site_default
+url:
+  source: path_prefix
+  prefixes:
+    en: ''
+    es: es
+  domains:
+    en: ''
+    es: ''
