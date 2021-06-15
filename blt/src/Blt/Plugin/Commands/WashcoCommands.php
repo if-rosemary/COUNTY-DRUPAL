@@ -23,19 +23,21 @@ class WashcoCommands extends BltTasks {
    */
   public function catchup() {
     $this->say("Unlocking permissions...");
-    shell_exec("chmod 644 docroot/sites/default/settings.php && chmod -R u+w docroot/sites/default");
+    shell_exec("chmod 644 ~/project/docroot/sites/default/settings.php && chmod -R u+w ~/project/docroot/sites/default");
     $this->say("Checking out develop branch...");
     shell_exec("git checkout develop");
     $this->say("Pulling upstream repo...");
     shell_exec("git pull upstream develop");
     $this->say("Locking permissions...");
-    shell_exec("chmod 444 docroot/sites/default/settings.php");
+    shell_exec("chmod 444 ~/project/docroot/sites/default/settings.php");
     $this->say("Syncing Secrets...");
     shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
     $this->say("Running composer...");
-    shell_exec("composer install");
+    shell_exec("composer install --working-dir ~/project");
     $this->say("Syncing database...");
     shell_exec("acli pull:database wcor.dev");
+    $this->say("Syncing files...");
+    shell_exec("acli pull:files wcor.dev");
     $this->say("Deploying site...");
     shell_exec("drush deploy");
   }
