@@ -43,6 +43,20 @@ class WashcoCommands extends BltTasks {
   }
 
   /**
+   * Precheck build status.
+   *
+   * @command custom:check
+   * @description Check build for errors.
+   */
+  public function check()
+  {
+    $this->say("Checking for config differences...");
+    shell_exec("drush cst");
+    $this->say("Checking for security updates...");
+    shell_exec("blt tests:security-drupal && blt tests:security-composer");
+  }
+
+  /**
    * Sync secret settings.
    *
    * @command custom:secrets
