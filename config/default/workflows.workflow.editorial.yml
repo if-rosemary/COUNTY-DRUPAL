@@ -31,7 +31,7 @@ type_settings:
       weight: -1
     unpublished:
       published: false
-      default_revision: false
+      default_revision: true
       label: Unpublished
       weight: 1
   transitions:
@@ -65,7 +65,6 @@ type_settings:
     unpublish:
       label: Unpublish
       from:
-        - draft
         - published
         - review
         - unpublished
