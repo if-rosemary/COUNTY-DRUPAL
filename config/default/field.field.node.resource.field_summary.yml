@@ -1,17 +1,17 @@
-uuid: ac1fc9f0-0b42-4f6d-b530-fd6e45db1e89
+uuid: 5f1d79a9-5506-40ac-89a2-e84f3d0c5f40
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_resource_description
+    - field.storage.node.field_summary
     - node.type.resource
-id: node.resource.field_resource_description
-field_name: field_resource_description
+id: node.resource.field_summary
+field_name: field_summary
 entity_type: node
 bundle: resource
-label: Description
+label: Summary
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

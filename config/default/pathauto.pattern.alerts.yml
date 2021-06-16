@@ -1,22 +1,22 @@
-uuid: 954cfb14-738d-4c26-afe2-2274e65cb3a5
+uuid: fe6cc5b1-b2c1-408a-a24c-2c78fdb33408
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: group
-label: Group
+id: alerts
+label: Alerts
 type: 'canonical_entities:node'
-pattern: '[node:field_parent:entity:field_group_path]/[node:field_group_path]'
+pattern: 'alerts/[node:title]'
 selection_criteria:
-  7986fa14-7e6b-4164-9dd7-f23779a2e479:
+  bb91ac23-b5fe-46fa-89f5-132aee447426:
     id: node_type
     bundles:
-      group: group
+      alert: alert
     negate: false
     context_mapping:
       node: node
-    uuid: 7986fa14-7e6b-4164-9dd7-f23779a2e479
+    uuid: bb91ac23-b5fe-46fa-89f5-132aee447426
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -1,0 +1,22 @@
+uuid: 97277bb7-6313-4639-9154-82880f6db5af
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: groups
+label: Groups
+type: 'canonical_entities:node'
+pattern: '[node:field_group_path]'
+selection_criteria:
+  6d156f8b-01d8-4fbc-ab9f-f6f9cfe1cd99:
+    id: node_type
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6d156f8b-01d8-4fbc-ab9f-f6f9cfe1cd99
+selection_logic: and
+weight: -5
+relationships: {  }

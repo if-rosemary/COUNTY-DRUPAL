@@ -1,25 +1,25 @@
-uuid: 592c5494-058c-445d-a962-b1462dbdc8ce
+uuid: 9c389a2f-43f4-4f91-8b86-eb84d22f2f96
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.manage_group
+    - views.view.group_page_menu
   module:
     - ctools
     - views
   theme:
     - olivero
-id: views_block__manage_group_block_manage_group
+id: views_block__group_page_menu_block_group_homepage_menu
 theme: olivero
 region: sidebar
-weight: -9
+weight: 0
 provider: null
-plugin: 'views_block:manage_group-block_manage_group'
+plugin: 'views_block:group_page_menu-block_group_homepage_menu'
 settings:
-  id: 'views_block:manage_group-block_manage_group'
+  id: 'views_block:group_page_menu-block_group_homepage_menu'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
   context_mapping: {  }

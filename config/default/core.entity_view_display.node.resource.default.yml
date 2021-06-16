@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.field_menu_parent
-    - field.field.node.resource.field_resource_description
     - field.field.node.resource.field_resource_url
     - field.field.node.resource.field_short_title
     - field.field.node.resource.field_show_in_menu
+    - field.field.node.resource.field_sort_weight
+    - field.field.node.resource.field_summary
     - field.field.node.resource.field_type
     - node.type.resource
   module:
@@ -18,21 +19,9 @@ targetEntityType: node
 bundle: resource
 mode: default
 content:
-  content_moderation_control:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_resource_description:
-    weight: 5
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
   field_resource_url:
-    weight: 4
-    label: above
+    weight: 1
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -42,28 +31,26 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_short_title:
+  field_summary:
     weight: 2
-    label: above
-    settings:
-      link_to_entity: false
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: basic_string
     region: content
   field_type:
-    weight: 3
-    label: above
+    weight: 0
+    label: visually_hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  content_moderation_control: true
   field_menu_parent: true
+  field_short_title: true
   field_show_in_menu: true
+  field_sort_weight: true
   langcode: true
+  links: true

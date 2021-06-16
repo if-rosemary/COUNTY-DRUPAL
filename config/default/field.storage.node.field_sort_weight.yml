@@ -1,15 +1,16 @@
-uuid: d4a019d3-7d41-460c-b62b-f410b3c308c4
+uuid: b1199a23-1046-497c-839c-67bebcf06682
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_resource_description
-field_name: field_resource_description
+id: node.field_sort_weight
+field_name: field_sort_weight
 entity_type: node
-type: string_long
+type: integer
 settings:
-  case_sensitive: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

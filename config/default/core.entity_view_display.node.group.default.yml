@@ -19,13 +19,8 @@ targetEntityType: node
 bundle: group
 mode: default
 content:
-  content_moderation_control:
-    weight: -20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_body:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -40,29 +35,30 @@ content:
     type: entity_reference_label
     region: content
   field_status:
-    weight: 3
+    weight: 1
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_summary:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_type:
-    weight: 5
-    label: inline
+    weight: 0
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
 hidden:
+  content_moderation_control: true
   field_group_path: true
   field_short_title: true
   langcode: true
