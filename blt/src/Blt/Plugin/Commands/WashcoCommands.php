@@ -50,6 +50,8 @@ class WashcoCommands extends BltTasks {
    */
   public function check()
   {
+    $this->say("Validate composer.json...");
+    shell_exec("composer validate --no-check-all --ansi --working-dir ~/project");
     $this->say("Checking for config differences...");
     shell_exec("drush cst");
     $this->say("Checking for security updates...");
