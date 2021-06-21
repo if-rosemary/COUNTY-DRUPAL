@@ -1,0 +1,30 @@
+uuid: 4bfb7327-077f-4853-94c4-da381c3a1459
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.building.field_address
+    - field.field.node.building.field_geolocation
+    - field.field.node.building.field_transit_info
+    - node.type.building
+  module:
+    - address
+    - user
+id: node.building.teaser
+targetEntityType: node
+bundle: building
+mode: teaser
+content:
+  field_address:
+    type: address_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_geolocation: true
+  field_transit_info: true
+  langcode: true
+  links: true

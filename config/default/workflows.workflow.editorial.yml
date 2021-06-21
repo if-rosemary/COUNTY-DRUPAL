@@ -72,8 +72,10 @@ type_settings:
       weight: 1
   entity_types:
     node:
+      - building
       - group
       - news
       - page
       - resource
+      - service_location
   default_moderation_state: draft

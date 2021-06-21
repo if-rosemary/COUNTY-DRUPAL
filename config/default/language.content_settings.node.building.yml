@@ -1,0 +1,16 @@
+uuid: 3b4cef1c-29df-45b4-a626-99f9c484c10a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.building
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.building
+target_entity_type_id: node
+target_bundle: building
+default_langcode: site_default
+language_alterable: false

@@ -1,25 +1,25 @@
-uuid: f1c8eea1-e6c1-4beb-8a27-cfba01eb3616
+uuid: 03124e92-63a0-4d4c-b0d6-f2eed7f63e30
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.group_page_menu
+    - views.view.building_service_locations
   module:
     - ctools
     - views
   theme:
     - olivero
-id: views_block__group_page_menu_block_menu_of_siblings
+id: views_block__building_service_locations_block_1
 theme: olivero
 region: sidebar
-weight: -6
+weight: 0
 provider: null
-plugin: 'views_block:group_page_menu-block_menu_of_siblings'
+plugin: 'views_block:building_service_locations-block_1'
 settings:
-  id: 'views_block:group_page_menu-block_menu_of_siblings'
+  id: 'views_block:building_service_locations-block_1'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
   context_mapping: {  }
@@ -27,8 +27,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      page: page
-      resource: resource
+      building: building
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

@@ -1,0 +1,37 @@
+uuid: c3a4ff07-a139-4ff9-825f-3859398c418a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.building.field_address
+    - field.field.node.building.field_geolocation
+    - field.field.node.building.field_transit_info
+    - node.type.building
+  module:
+    - address
+    - geofield
+    - user
+id: node.building.default
+targetEntityType: node
+bundle: building
+mode: default
+content:
+  field_address:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_geolocation:
+    weight: 1
+    label: above
+    settings:
+      output_format: decimal
+    third_party_settings: {  }
+    type: geofield_latlon
+    region: content
+hidden:
+  field_transit_info: true
+  langcode: true
+  links: true

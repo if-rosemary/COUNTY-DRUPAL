@@ -1,0 +1,31 @@
+uuid: c1450b92-de71-4c43-b5dc-be5a88e56b7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+name: Building
+type: building
+description: 'Washington County provides services from numerous <em>buildings</em> located around the County. A building is the parent of one ore more service locations.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

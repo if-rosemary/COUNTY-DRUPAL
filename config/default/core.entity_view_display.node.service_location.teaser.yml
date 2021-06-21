@@ -1,0 +1,70 @@
+uuid: 592e2d34-c090-4287-aeb6-7de747e37829
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.service_location.field_accessibility_notes
+    - field.field.node.service_location.field_building
+    - field.field.node.service_location.field_featured_image
+    - field.field.node.service_location.field_hours
+    - field.field.node.service_location.field_summary
+    - node.type.service_location
+  module:
+    - media
+    - office_hours
+    - user
+id: node.service_location.teaser
+targetEntityType: node
+bundle: service_location
+mode: teaser
+content:
+  field_building:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_featured_image:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_hours:
+    type: office_hours_status
+    weight: 2
+    region: content
+    label: above
+    settings:
+      day_format: long
+      time_format: G
+      compress: false
+      grouped: false
+      show_closed: all
+      closed_format: Closed
+      separator:
+        days: '<br />'
+        grouped_days: ' - '
+        day_hours: ': '
+        hours_hours: '-'
+        more_hours: ', '
+      current_status:
+        position: ''
+        open_text: 'Currently open!'
+        closed_text: 'Currently closed'
+      schema:
+        enabled: false
+      timezone_field: ''
+      office_hours_first_day: ''
+    third_party_settings: {  }
+hidden:
+  field_accessibility_notes: true
+  field_summary: true
+  langcode: true
+  links: true

@@ -1,0 +1,21 @@
+uuid: adf4624e-460f-42c5-9a4b-4a128f920d92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accessibility_notes
+    - node.type.service_location
+  module:
+    - text
+id: node.service_location.field_accessibility_notes
+field_name: field_accessibility_notes
+entity_type: node
+bundle: service_location
+label: 'Accessibility notes'
+description: 'Please note the location''s relevant accessibility accommodations here.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
