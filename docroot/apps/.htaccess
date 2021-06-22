@@ -1,0 +1,8 @@
+# Any paths beginning with the path /apps/ (not case sensitive)
+RewriteCond %{REQUEST_URI} ^/apps/ [NC]
+
+# Pass through the matching file under /apps/ and stop processing
+RewriteRule ^apps/(.*)$ /apps/$1 [PT,L]
+
+# Allow access to /apps/ paths
+RewriteCond %{REQUEST_URI} !^/apps/
