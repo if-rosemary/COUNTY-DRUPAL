@@ -22,11 +22,14 @@
     "cweagans/composer-patches": "^1.6",
     "drupal/address": "^1.9",
     "drupal/admin_toolbar": "^3.0",
+    "drupal/captcha": "^1.2",
     "drupal/config_split": "^1.7",
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-recommended": "9.2.0",
     "drupal/csv_importer": "^1.11",
     "drupal/field_states_ui": "^2.0",
+    "drupal/honeypot": "^2.0",
+    "drupal/jquery_ui_datepicker": "^1.1",
     "drupal/maxlength": "^1.0@RC",
     "drupal/geofield": "^1.31",
     "drupal/office_hours": "^1.4",
@@ -41,7 +44,8 @@
     "drupal/subpathauto": "^1.1",
     "drupal/views_data_export": "^1.0",
     "drupal/webform": "^6.0",
-    "drush/drush": "^10.3"
+    "drush/drush": "^10.3",
+    "wikimedia/composer-merge-plugin": "^2.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -49,6 +53,11 @@
     "sort-packages": true
   },
   "extra": {
+    "merge-plugin": {
+        "include": [
+            "docroot/modules/contrib/webform/composer.libraries.json"
+        ]
+    },
     "drupal-scaffold": {
       "locations": {
         "web-root": "docroot/"
