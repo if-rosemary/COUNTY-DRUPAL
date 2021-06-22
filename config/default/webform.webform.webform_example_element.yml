@@ -17,7 +17,14 @@ id: webform_example_element
 title: 'Example: Webform Element'
 description: 'An example of a custom Webform element.'
 category: Example
-elements: "webform_example_element:\n  '#type': webform_example_element\n  '#title': 'Webform Example Element'\nwebform_example_element_multiple:\n  '#type': webform_example_element\n  '#title': 'Webform Example Element Multiple'\n  '#multiple': true\n"
+elements: |
+  webform_example_element:
+    '#type': webform_example_element
+    '#title': 'Webform Example Element'
+  webform_example_element_multiple:
+    '#type': webform_example_element
+    '#title': 'Webform Example Element Multiple'
+    '#multiple': true
 css: ''
 javascript: ''
 settings:

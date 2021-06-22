@@ -17,7 +17,201 @@ id: example_accessibility_advanced
 title: 'Example: Accessibility Advanced'
 description: 'Advanced webform accessibility example.'
 category: 'Example: Accessibility'
-elements: "email_elements:\n  '#type': details\n  '#title': 'Email elements'\n  '#open': true\n  email:\n    '#type': email\n    '#title': Email\n  email_multiple:\n    '#type': webform_email_multiple\n    '#title': 'Email multiple'\n  email_confirm:\n    '#type': webform_email_confirm\n    '#title': Email\noption_elements:\n  '#type': details\n  '#title': 'Option elements'\n  '#open': true\n  select_select2:\n    '#type': select\n    '#title': Select2\n    '#options':\n      one: One\n      two: Two\n      three: Three\n    '#select2': true\n  select_select2_multiple:\n    '#type': select\n    '#title': 'Select2 multiple'\n    '#options':\n      one: One\n      two: Two\n      three: Three\n    '#select2': true\n    '#multiple': true\n  webform_buttons:\n    '#type': webform_buttons\n    '#title': Buttons\n    '#options':\n      one: One\n      two: Two\n      three: Three\n  webform_image_select:\n    '#type': webform_image_select\n    '#title': 'Image select'\n    '#show_label': true\n    '#images':\n      kitten_1:\n        text: 'Cute Kitten 1'\n        src: 'http://placekitten.com/220/200'\n      kitten_2:\n        text: 'Cute Kitten 2'\n        src: 'http://placekitten.com/180/200'\n      kitten_3:\n        text: 'Cute Kitten 3'\n        src: 'http://placekitten.com/130/200'\n  webform_likert:\n    '#type': webform_likert\n    '#title': Likert\n    '#questions':\n      q1: 'Please answer question 1?'\n      q2: 'How about now answering question 2?'\n      q3: 'Finally, here is question 3?'\n    '#answers':\n      1: 1\n      2: 2\n      3: 3\n      4: 4\n      5: 5\n  webform_autocomplete:\n    '#type': webform_autocomplete\n    '#title': Autocomplete\n    '#autocomplete_items': country_names\nother_elements:\n  '#type': details\n  '#title': 'Other elements'\n  '#open': true\n  webform_select_other:\n    '#type': webform_select_other\n    '#title': 'Select other'\n    '#options':\n      one: One\n      two: Two\n      three: Three\n  webform_radios_other:\n    '#type': webform_radios_other\n    '#title': 'Radios other'\n    '#options':\n      one: One\n      two: Two\n      three: Three\n  webform_checkboxes_other:\n    '#type': webform_checkboxes_other\n    '#title': 'Checkboxes other'\n    '#options':\n      one: One\n      two: Two\n      three: Three\n  webform_buttons_other:\n    '#type': webform_buttons_other\n    '#title': 'Buttons other'\n    '#options':\n      one: One\n      two: Two\n      three: Three\ninput_mask_elements:\n  '#type': details\n  '#title': 'Input mask elements'\n  '#open': true\n  phone:\n    '#type': textfield\n    '#title': Phone\n    '#input_mask': '(999) 999-9999'\ninput_hide_elements:\n  '#type': details\n  '#title': 'Input hiding elements'\n  '#open': true\n  textfield_input_hide:\n    '#type': textfield\n    '#title': 'Textfield with input hiding'\n    '#input_hide': true\n    '#default_value': '{value}'\n  email_input_hide:\n    '#type': email\n    '#title': 'Email with input hiding'\n    '#input_hide': true\n    '#default_value': example@example.com\nwidget_elements:\n  '#type': details\n  '#title': 'Widget elements'\n  '#open': true\n  tel_international:\n    '#type': tel\n    '#title': 'Telephone (International)'\n    '#international': true\n    '#telephone_validation_format': '0'\n  webform_rating:\n    '#type': webform_rating\n    '#title': Rating\n  webform_signature:\n    '#type': webform_signature\n    '#title': Signature\n  webform_terms_of_service:\n    '#type': webform_terms_of_service\n    '#terms_content': 'These are the terms of service.'\ntable_elements:\n  '#type': details\n  '#title': 'Table elements'\n  '#open': true\n  tableselect:\n    '#type': tableselect\n    '#title': Tableselect\n    '#options':\n      one: One\n      two: Two\n      three: Three\n  webform_table_sort:\n    '#type': webform_table_sort\n    '#title': 'Table sort'\n    '#options':\n      one: One\n      two: Two\n      three: Three\n  webform_tableselect_sort:\n    '#type': webform_tableselect_sort\n    '#title': 'Tableselect sort'\n    '#options':\n      one: One\n      two: Two\n      three: Three\ncomposite_elements:\n  '#type': details\n  '#title': 'Composite elements'\n  '#open': true\n  address:\n    '#title': Address\n    '#type': webform_address\nmultiple_elements:\n  '#type': details\n  '#title': 'Multiple elements'\n  '#open': true\n  textfield:\n    '#title': 'Text field'\n    '#type': textfield\n    '#multiple': true\n  webform_custom_composite:\n    '#type': webform_custom_composite\n    '#title': 'Custom composite'\n    '#element':\n      first_name:\n        '#type': textfield\n        '#title': 'First name'\n      last_name:\n        '#type': textfield\n        '#title': 'Last name'\n"
+elements: |
+  email_elements:
+    '#type': details
+    '#title': 'Email elements'
+    '#open': true
+    email:
+      '#type': email
+      '#title': Email
+    email_multiple:
+      '#type': webform_email_multiple
+      '#title': 'Email multiple'
+    email_confirm:
+      '#type': webform_email_confirm
+      '#title': Email
+  option_elements:
+    '#type': details
+    '#title': 'Option elements'
+    '#open': true
+    select_select2:
+      '#type': select
+      '#title': Select2
+      '#options':
+        one: One
+        two: Two
+        three: Three
+      '#select2': true
+    select_select2_multiple:
+      '#type': select
+      '#title': 'Select2 multiple'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+      '#select2': true
+      '#multiple': true
+    webform_buttons:
+      '#type': webform_buttons
+      '#title': Buttons
+      '#options':
+        one: One
+        two: Two
+        three: Three
+    webform_image_select:
+      '#type': webform_image_select
+      '#title': 'Image select'
+      '#show_label': true
+      '#images':
+        kitten_1:
+          text: 'Cute Kitten 1'
+          src: 'http://placekitten.com/220/200'
+        kitten_2:
+          text: 'Cute Kitten 2'
+          src: 'http://placekitten.com/180/200'
+        kitten_3:
+          text: 'Cute Kitten 3'
+          src: 'http://placekitten.com/130/200'
+    webform_likert:
+      '#type': webform_likert
+      '#title': Likert
+      '#questions':
+        q1: 'Please answer question 1?'
+        q2: 'How about now answering question 2?'
+        q3: 'Finally, here is question 3?'
+      '#answers':
+        1: 1
+        2: 2
+        3: 3
+        4: 4
+        5: 5
+    webform_autocomplete:
+      '#type': webform_autocomplete
+      '#title': Autocomplete
+      '#autocomplete_items': country_names
+  other_elements:
+    '#type': details
+    '#title': 'Other elements'
+    '#open': true
+    webform_select_other:
+      '#type': webform_select_other
+      '#title': 'Select other'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+    webform_radios_other:
+      '#type': webform_radios_other
+      '#title': 'Radios other'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+    webform_checkboxes_other:
+      '#type': webform_checkboxes_other
+      '#title': 'Checkboxes other'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+    webform_buttons_other:
+      '#type': webform_buttons_other
+      '#title': 'Buttons other'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+  input_mask_elements:
+    '#type': details
+    '#title': 'Input mask elements'
+    '#open': true
+    phone:
+      '#type': textfield
+      '#title': Phone
+      '#input_mask': '(999) 999-9999'
+  input_hide_elements:
+    '#type': details
+    '#title': 'Input hiding elements'
+    '#open': true
+    textfield_input_hide:
+      '#type': textfield
+      '#title': 'Textfield with input hiding'
+      '#input_hide': true
+      '#default_value': '{value}'
+    email_input_hide:
+      '#type': email
+      '#title': 'Email with input hiding'
+      '#input_hide': true
+      '#default_value': example@example.com
+  widget_elements:
+    '#type': details
+    '#title': 'Widget elements'
+    '#open': true
+    tel_international:
+      '#type': tel
+      '#title': 'Telephone (International)'
+      '#international': true
+      '#telephone_validation_format': '0'
+    webform_rating:
+      '#type': webform_rating
+      '#title': Rating
+    webform_signature:
+      '#type': webform_signature
+      '#title': Signature
+    webform_terms_of_service:
+      '#type': webform_terms_of_service
+      '#terms_content': 'These are the terms of service.'
+  table_elements:
+    '#type': details
+    '#title': 'Table elements'
+    '#open': true
+    tableselect:
+      '#type': tableselect
+      '#title': Tableselect
+      '#options':
+        one: One
+        two: Two
+        three: Three
+    webform_table_sort:
+      '#type': webform_table_sort
+      '#title': 'Table sort'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+    webform_tableselect_sort:
+      '#type': webform_tableselect_sort
+      '#title': 'Tableselect sort'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+  composite_elements:
+    '#type': details
+    '#title': 'Composite elements'
+    '#open': true
+    address:
+      '#title': Address
+      '#type': webform_address
+  multiple_elements:
+    '#type': details
+    '#title': 'Multiple elements'
+    '#open': true
+    textfield:
+      '#title': 'Text field'
+      '#type': textfield
+      '#multiple': true
+    webform_custom_composite:
+      '#type': webform_custom_composite
+      '#title': 'Custom composite'
+      '#element':
+        first_name:
+          '#type': textfield
+          '#title': 'First name'
+        last_name:
+          '#type': textfield
+          '#title': 'Last name'
 css: ''
 javascript: ''
 settings:

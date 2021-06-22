@@ -17,7 +17,47 @@ id: example_accessibility_wizard
 title: 'Example: Accessibility Wizard'
 description: 'Wizard webform accessibility example.'
 category: 'Example: Accessibility'
-elements: "'#attributes':\n  data-current-page: '[webform_submission:current-page]'\ninformation:\n  '#title': 'Your Information'\n  '#type': webform_wizard_page\n  '#open': true\n  first_name:\n    '#title': 'First Name'\n    '#type': textfield\n  last_name:\n    '#title': 'Last Name'\n    '#type': textfield\n  sex:\n    '#type': webform_radios_other\n    '#title': Sex\n    '#options': sex\ncontact:\n  '#title': 'Contact Information'\n  '#type': webform_wizard_page\n  '#open': true\n  email:\n    '#title': Email\n    '#type': email\n  phone:\n    '#title': Phone\n    '#type': tel\n  contact_via_phone:\n    '#type': radios\n    '#title': 'Can we contact you via phone?'\n    '#options': yes_no\nfeedback:\n  '#title': 'Your Feedback'\n  '#type': webform_wizard_page\n  '#open': true\n  comments:\n    '#type': textarea\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Apply\n"
+elements: |
+  '#attributes':
+    data-current-page: '[webform_submission:current-page]'
+  information:
+    '#title': 'Your Information'
+    '#type': webform_wizard_page
+    '#open': true
+    first_name:
+      '#title': 'First Name'
+      '#type': textfield
+    last_name:
+      '#title': 'Last Name'
+      '#type': textfield
+    sex:
+      '#type': webform_radios_other
+      '#title': Sex
+      '#options': sex
+  contact:
+    '#title': 'Contact Information'
+    '#type': webform_wizard_page
+    '#open': true
+    email:
+      '#title': Email
+      '#type': email
+    phone:
+      '#title': Phone
+      '#type': tel
+    contact_via_phone:
+      '#type': radios
+      '#title': 'Can we contact you via phone?'
+      '#options': yes_no
+  feedback:
+    '#title': 'Your Feedback'
+    '#type': webform_wizard_page
+    '#open': true
+    comments:
+      '#type': textarea
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Apply
 css: ''
 javascript: ''
 settings:

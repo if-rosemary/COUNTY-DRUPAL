@@ -17,7 +17,117 @@ id: example_accessibility_basic
 title: 'Example: Accessibility Basic'
 description: 'Basic webform accessibility example.'
 category: 'Example: Accessibility'
-elements: "text_elements:\n  '#type': details\n  '#title': 'Text elements'\n  '#open': true\n  textfield:\n    '#title': 'Text field'\n    '#type': textfield\n  textarea:\n    '#title': Textarea\n    '#type': textarea\noption_elements:\n  '#type': details\n  '#title': 'Option elements'\n  '#open': true\n  select:\n    '#title': 'Select one'\n    '#type': select\n    '#options':\n      option_1: 'Option 1'\n      option_2: 'Option 2'\n      option_3: 'Option 3'\n  select_multiple:\n    '#title': 'Select multiple'\n    '#type': select\n    '#multiple': true\n    '#options':\n      option_1: 'Option 1'\n      option_2: 'Option 2'\n      option_3: 'Option 3'\n  radios:\n    '#title': Radios\n    '#type': radios\n    '#options':\n      option_1: 'Option 1'\n      option_2: 'Option 2'\n      option_3: 'Option 3'\n  checkboxes:\n    '#title': Checkboxes\n    '#type': checkboxes\n    '#options':\n      option_1: 'Option 1'\n      option_2: 'Option 2'\n      option_3: 'Option 3'\n  checkbox:\n    '#type': checkbox\n    '#title': Checkbox\n    '#description': 'This is a description'\nfile_elements:\n  '#type': details\n  '#title': 'File elements'\n  '#open': true\n  managed_file:\n    '#type': managed_file\n    '#title': 'Managed single file'\n  managed_file_multiple:\n    '#type': managed_file\n    '#title': 'Managed multiple file'\n    '#multiple': true\ndate_elements:\n  '#type': details\n  '#title': 'Date elements'\n  '#open': true\n  date:\n    '#type': date\n    '#title': Date\n  datetime:\n    '#type': datetime\n    '#title': Date/time\n  datelist:\n    '#type': datelist\n    '#title': 'Date list'\n  date_datepicker:\n    '#type': date\n    '#title': 'Date picker'\n    '#datepicker': true\n    '#date_date_format': 'D, m/d/Y'\n  webform_time:\n    '#type': webform_time\n    '#title': Time\nadvanced_elements:\n  '#type': details\n  '#title': 'Advanced elements'\n  '#open': true\n  color:\n    '#type': color\n    '#title': Color\n  tel:\n    '#type': tel\n    '#title': Telephone\n  url:\n    '#type': url\n    '#title': URL\n  search:\n    '#type': search\n    '#title': Search\n  number:\n    '#type': number\n    '#title': Number\n    '#min': 0\n    '#max': 10\n    '#step': 1\n  range:\n    '#type': range\n    '#title': Range\n    '#min': 0\n    '#max': 100\n    '#step': 1\n    '#output': right\n    '#output__field_prefix': $\n    '#output__field_suffix': '.00'\n"
+elements: |
+  text_elements:
+    '#type': details
+    '#title': 'Text elements'
+    '#open': true
+    textfield:
+      '#title': 'Text field'
+      '#type': textfield
+    textarea:
+      '#title': Textarea
+      '#type': textarea
+  option_elements:
+    '#type': details
+    '#title': 'Option elements'
+    '#open': true
+    select:
+      '#title': 'Select one'
+      '#type': select
+      '#options':
+        option_1: 'Option 1'
+        option_2: 'Option 2'
+        option_3: 'Option 3'
+    select_multiple:
+      '#title': 'Select multiple'
+      '#type': select
+      '#multiple': true
+      '#options':
+        option_1: 'Option 1'
+        option_2: 'Option 2'
+        option_3: 'Option 3'
+    radios:
+      '#title': Radios
+      '#type': radios
+      '#options':
+        option_1: 'Option 1'
+        option_2: 'Option 2'
+        option_3: 'Option 3'
+    checkboxes:
+      '#title': Checkboxes
+      '#type': checkboxes
+      '#options':
+        option_1: 'Option 1'
+        option_2: 'Option 2'
+        option_3: 'Option 3'
+    checkbox:
+      '#type': checkbox
+      '#title': Checkbox
+      '#description': 'This is a description'
+  file_elements:
+    '#type': details
+    '#title': 'File elements'
+    '#open': true
+    managed_file:
+      '#type': managed_file
+      '#title': 'Managed single file'
+    managed_file_multiple:
+      '#type': managed_file
+      '#title': 'Managed multiple file'
+      '#multiple': true
+  date_elements:
+    '#type': details
+    '#title': 'Date elements'
+    '#open': true
+    date:
+      '#type': date
+      '#title': Date
+    datetime:
+      '#type': datetime
+      '#title': Date/time
+    datelist:
+      '#type': datelist
+      '#title': 'Date list'
+    date_datepicker:
+      '#type': date
+      '#title': 'Date picker'
+      '#datepicker': true
+      '#date_date_format': 'D, m/d/Y'
+    webform_time:
+      '#type': webform_time
+      '#title': Time
+  advanced_elements:
+    '#type': details
+    '#title': 'Advanced elements'
+    '#open': true
+    color:
+      '#type': color
+      '#title': Color
+    tel:
+      '#type': tel
+      '#title': Telephone
+    url:
+      '#type': url
+      '#title': URL
+    search:
+      '#type': search
+      '#title': Search
+    number:
+      '#type': number
+      '#title': Number
+      '#min': 0
+      '#max': 10
+      '#step': 1
+    range:
+      '#type': range
+      '#title': Range
+      '#min': 0
+      '#max': 100
+      '#step': 1
+      '#output': right
+      '#output__field_prefix': $
+      '#output__field_suffix': '.00'
 css: ''
 javascript: ''
 settings:

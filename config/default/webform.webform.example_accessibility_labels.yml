@@ -17,7 +17,172 @@ id: example_accessibility_labels
 title: 'Example: Accessibility Labels & Descriptions'
 description: 'Example of webform label and description accessibility.'
 category: 'Example: Accessibility'
-elements: "form_elements:\n  '#type': details\n  '#title': 'Form elements'\n  '#open': true\n  form_element:\n    '#type': textfield\n    '#title': 'Form element'\n    '#placeholder': 'This is a placeholder'\n    '#description': 'This is a description.'\n    '#help': 'This is help text.'\n    '#more': 'This is more text'\n    '#required': true\n    '#field_prefix': prefix\n    '#field_suffix': suffix\n  datelist_element:\n    '#type': datelist\n    '#title': Datelist\n    '#placeholder': 'This is a placeholder'\n    '#description': 'This is a description.'\n    '#help': 'This is help text.'\n    '#more': 'This is more text'\n    '#field_prefix': prefix\n    '#field_suffix': suffix\nelement_title:\n  '#type': details\n  '#title': 'Element title'\n  '#open': true\n  title_display_before:\n    '#type': textfield\n    '#title': 'Title displayed before'\n    '#title_display': before\n  title_display_after:\n    '#type': textfield\n    '#title': 'Title displayed after'\n    '#title_display': after\n  title_display_inline:\n    '#type': textfield\n    '#title': 'Title displayed inline'\n    '#title_display': inline\n    '#description': 'This is a description.'\n  title_display_inline_composite:\n    '#type': radios\n    '#title': 'Title displayed inline composite'\n    '#title_display': inline\n    '#description': 'This is a description.'\n    '#options':\n      one: One\n      two: Two\n      three: Three\nelement_description:\n  '#type': details\n  '#title': 'Element description'\n  '#open': true\n  description_display_after:\n    '#type': textfield\n    '#title': 'Description displayed after'\n    '#description': 'This is a description.'\n  description_display_before:\n    '#type': textfield\n    '#title': 'Description displayed before'\n    '#description': 'This is a description.'\n    '#description_display': before\n  description_display_tooltip:\n    '#type': textfield\n    '#title': 'Description displayed in tooltip'\n    '#description': 'This is a description.'\n    '#description_display': tooltip\nelement_help:\n  '#type': details\n  '#title': 'Element help'\n  '#open': true\n  help:\n    '#type': textfield\n    '#title': Help\n    '#help': 'This is help.'\nelement_more:\n  '#type': details\n  '#title': 'Element more'\n  '#open': true\n  more:\n    '#type': textfield\n    '#title': More\n    '#more': 'This is more text.'\nfieldset_elements:\n  '#type': details\n  '#title': 'Fieldset elements'\n  '#open': true\n  fieldset:\n    '#type': fieldset\n    '#title': Fieldset\n    '#description': 'This is a description.'\n    '#help': 'This is help text.'\n    '#more': 'This is more text'\n    '#required': true\n    '#field_prefix': prefix\n    '#field_suffix': suffix\n  fieldset_description:\n    '#type': fieldset\n    '#title': 'Fieldset description'\n    '#description': 'This is a description.'\n  fieldset_title_invisible:\n    '#type': fieldset\n    '#title': 'Fieldset description invisible'\n    '#description': 'This is a description.'\n    '#title_display': invisible\n  fieldset_help:\n    '#type': fieldset\n    '#title': 'Fieldset help'\n    '#help': 'This is help text.'\n  fieldset_more:\n    '#type': fieldset\n    '#title': 'Fieldset more'\n    '#more': 'This is more text'\ndetails_elements:\n  '#type': details\n  '#title': 'Details elements'\n  '#open': true\n  details:\n    '#type': details\n    '#title': details\n    '#description': 'This is a description.'\n    '#help': 'This is help text.'\n    '#more': 'This is more text'\n    '#required': true\n    '#open': true\n  details_description:\n    '#type': details\n    '#title': 'details description'\n    '#description': 'This is a description.'\n    '#open': true\n  details_description_before:\n    '#type': details\n    '#title': 'details description before'\n    '#description': 'This is a description.'\n    '#description_display': before\n    '#open': true\n    details_description_before_textfield:\n      '#type': textfield\n      '#title': 'Details description before textfield'\n  details_description_invisible:\n    '#type': details\n    '#title': 'details description invisible'\n    '#description': 'This is a description.'\n    '#description_display': invisible\n    '#open': true\n  details_help:\n    '#type': details\n    '#title': 'details help'\n    '#help': 'This is help text.'\n    '#open': true\n  details_more:\n    '#type': details\n    '#title': 'details more'\n    '#more': 'This is more text'\n    '#open': true\nsection_elements:\n  '#type': details\n  '#title': 'Section elements'\n  '#open': true\n  section:\n    '#type': webform_section\n    '#title': Section\n    '#help': 'This is help text'\n    '#required': true\n    '#description': 'This is a description'\n"
+elements: |
+  form_elements:
+    '#type': details
+    '#title': 'Form elements'
+    '#open': true
+    form_element:
+      '#type': textfield
+      '#title': 'Form element'
+      '#placeholder': 'This is a placeholder'
+      '#description': 'This is a description.'
+      '#help': 'This is help text.'
+      '#more': 'This is more text'
+      '#required': true
+      '#field_prefix': prefix
+      '#field_suffix': suffix
+    datelist_element:
+      '#type': datelist
+      '#title': Datelist
+      '#placeholder': 'This is a placeholder'
+      '#description': 'This is a description.'
+      '#help': 'This is help text.'
+      '#more': 'This is more text'
+      '#field_prefix': prefix
+      '#field_suffix': suffix
+  element_title:
+    '#type': details
+    '#title': 'Element title'
+    '#open': true
+    title_display_before:
+      '#type': textfield
+      '#title': 'Title displayed before'
+      '#title_display': before
+    title_display_after:
+      '#type': textfield
+      '#title': 'Title displayed after'
+      '#title_display': after
+    title_display_inline:
+      '#type': textfield
+      '#title': 'Title displayed inline'
+      '#title_display': inline
+      '#description': 'This is a description.'
+    title_display_inline_composite:
+      '#type': radios
+      '#title': 'Title displayed inline composite'
+      '#title_display': inline
+      '#description': 'This is a description.'
+      '#options':
+        one: One
+        two: Two
+        three: Three
+  element_description:
+    '#type': details
+    '#title': 'Element description'
+    '#open': true
+    description_display_after:
+      '#type': textfield
+      '#title': 'Description displayed after'
+      '#description': 'This is a description.'
+    description_display_before:
+      '#type': textfield
+      '#title': 'Description displayed before'
+      '#description': 'This is a description.'
+      '#description_display': before
+    description_display_tooltip:
+      '#type': textfield
+      '#title': 'Description displayed in tooltip'
+      '#description': 'This is a description.'
+      '#description_display': tooltip
+  element_help:
+    '#type': details
+    '#title': 'Element help'
+    '#open': true
+    help:
+      '#type': textfield
+      '#title': Help
+      '#help': 'This is help.'
+  element_more:
+    '#type': details
+    '#title': 'Element more'
+    '#open': true
+    more:
+      '#type': textfield
+      '#title': More
+      '#more': 'This is more text.'
+  fieldset_elements:
+    '#type': details
+    '#title': 'Fieldset elements'
+    '#open': true
+    fieldset:
+      '#type': fieldset
+      '#title': Fieldset
+      '#description': 'This is a description.'
+      '#help': 'This is help text.'
+      '#more': 'This is more text'
+      '#required': true
+      '#field_prefix': prefix
+      '#field_suffix': suffix
+    fieldset_description:
+      '#type': fieldset
+      '#title': 'Fieldset description'
+      '#description': 'This is a description.'
+    fieldset_title_invisible:
+      '#type': fieldset
+      '#title': 'Fieldset description invisible'
+      '#description': 'This is a description.'
+      '#title_display': invisible
+    fieldset_help:
+      '#type': fieldset
+      '#title': 'Fieldset help'
+      '#help': 'This is help text.'
+    fieldset_more:
+      '#type': fieldset
+      '#title': 'Fieldset more'
+      '#more': 'This is more text'
+  details_elements:
+    '#type': details
+    '#title': 'Details elements'
+    '#open': true
+    details:
+      '#type': details
+      '#title': details
+      '#description': 'This is a description.'
+      '#help': 'This is help text.'
+      '#more': 'This is more text'
+      '#required': true
+      '#open': true
+    details_description:
+      '#type': details
+      '#title': 'details description'
+      '#description': 'This is a description.'
+      '#open': true
+    details_description_before:
+      '#type': details
+      '#title': 'details description before'
+      '#description': 'This is a description.'
+      '#description_display': before
+      '#open': true
+      details_description_before_textfield:
+        '#type': textfield
+        '#title': 'Details description before textfield'
+    details_description_invisible:
+      '#type': details
+      '#title': 'details description invisible'
+      '#description': 'This is a description.'
+      '#description_display': invisible
+      '#open': true
+    details_help:
+      '#type': details
+      '#title': 'details help'
+      '#help': 'This is help text.'
+      '#open': true
+    details_more:
+      '#type': details
+      '#title': 'details more'
+      '#more': 'This is more text'
+      '#open': true
+  section_elements:
+    '#type': details
+    '#title': 'Section elements'
+    '#open': true
+    section:
+      '#type': webform_section
+      '#title': Section
+      '#help': 'This is help text'
+      '#required': true
+      '#description': 'This is a description'
 css: ''
 javascript: ''
 settings:

@@ -27,6 +27,7 @@
     "drupal/core-recommended": "9.2.0",
     "drupal/csv_importer": "^1.11",
     "drupal/field_states_ui": "^2.0",
+    "drupal/maxlength": "^1.0@RC",
     "drupal/geofield": "^1.31",
     "drupal/office_hours": "^1.4",
     "drupal/pathauto": "^1.8",

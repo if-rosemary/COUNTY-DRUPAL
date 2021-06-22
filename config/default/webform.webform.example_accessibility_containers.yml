@@ -17,7 +17,42 @@ id: example_accessibility_containers
 title: 'Example: Accessibility Containers'
 description: 'Container webform accessibility example.'
 category: 'Example: Accessibility'
-elements: "form_element:\n  '#type': textfield\n  '#title': 'Form element'\n  '#placeholder': 'This is a placeholder'\n  '#description': 'This is a description.'\n  '#help': 'This is help text.'\n  '#more': 'This is more text'\n  '#required': true\n  '#field_prefix': prefix\n  '#field_suffix': suffix\nfieldset:\n  '#type': fieldset\n  '#title': Fieldset\n  '#placeholder': 'This is a placeholder'\n  '#description': 'This is a description.'\n  '#help': 'This is help text.'\n  '#more': 'This is more text'\n  '#required': true\n  '#field_prefix': prefix\n  '#field_suffix': suffix\ndetails:\n  '#type': details\n  '#title': details\n  '#placeholder': 'This is a placeholder'\n  '#description': 'This is a description.'\n  '#help': 'This is help text.'\n  '#more': 'This is more text'\n  '#required': true\n  '#open': true\nsection:\n  '#type': webform_section\n  '#title': Section\n  '#help': 'This is help text'\n  '#required': true\n  '#description': 'This is a description'\n"
+elements: |
+  form_element:
+    '#type': textfield
+    '#title': 'Form element'
+    '#placeholder': 'This is a placeholder'
+    '#description': 'This is a description.'
+    '#help': 'This is help text.'
+    '#more': 'This is more text'
+    '#required': true
+    '#field_prefix': prefix
+    '#field_suffix': suffix
+  fieldset:
+    '#type': fieldset
+    '#title': Fieldset
+    '#placeholder': 'This is a placeholder'
+    '#description': 'This is a description.'
+    '#help': 'This is help text.'
+    '#more': 'This is more text'
+    '#required': true
+    '#field_prefix': prefix
+    '#field_suffix': suffix
+  details:
+    '#type': details
+    '#title': details
+    '#placeholder': 'This is a placeholder'
+    '#description': 'This is a description.'
+    '#help': 'This is help text.'
+    '#more': 'This is more text'
+    '#required': true
+    '#open': true
+  section:
+    '#type': webform_section
+    '#title': Section
+    '#help': 'This is help text'
+    '#required': true
+    '#description': 'This is a description'
 css: ''
 javascript: ''
 settings:
