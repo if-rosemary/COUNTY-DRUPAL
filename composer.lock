@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "546852cb1fbfd473dd251a491e2a4e75",
+    "content-hash": "747568b48a95e1e56d1256b50c871860",
     "packages": [
         {
             "name": "acquia/blt",
-            "version": "12.7.0",
+            "version": "12.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "ce857cf07a25f7e638b9cde5bf7adc42085eb40b"
+                "reference": "6a57068e0a2368ed4f6dcd3602c3469f668f85a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/ce857cf07a25f7e638b9cde5bf7adc42085eb40b",
-                "reference": "ce857cf07a25f7e638b9cde5bf7adc42085eb40b",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/6a57068e0a2368ed4f6dcd3602c3469f668f85a3",
+                "reference": "6a57068e0a2368ed4f6dcd3602c3469f668f85a3",
                 "shasum": ""
             },
             "require": {
-                "acquia/drupal-environment-detector": "^1.2.1",
-                "composer-plugin-api": "^1.1.0 || ^2.0",
+                "acquia/drupal-environment-detector": "^1.3.0",
+                "composer-plugin-api": "^2.0",
+                "composer-runtime-api": "^2.0",
                 "consolidation/comments": "^1.0",
                 "consolidation/config": "^1.0.0",
                 "consolidation/robo": "^1.4.12 || ^2",
@@ -100,9 +101,9 @@
             "support": {
                 "docs": "https://docs.acquia.com/blt/",
                 "issues": "https://github.com/acquia/blt/issues",
-                "source": "https://github.com/acquia/blt/tree/12.7.0"
+                "source": "https://github.com/acquia/blt/tree/12.8.2"
             },
-            "time": "2021-01-30T01:31:53+00:00"
+            "time": "2021-03-10T18:30:08+00:00"
         },
         {
             "name": "acquia/blt-behat",
