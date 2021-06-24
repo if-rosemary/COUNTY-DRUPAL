@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: dev
 label: Dev
-description: ''
+description: 'Acquia Dev environment.'
 folder: ../config/envs/dev
 module: {  }
 theme: {  }

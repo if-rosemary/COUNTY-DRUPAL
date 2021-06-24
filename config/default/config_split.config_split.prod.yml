@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: prod
 label: Prod
-description: ''
+description: 'Acquia Prod environment.'
 folder: ../config/envs/prod
 module: {  }
 theme: {  }

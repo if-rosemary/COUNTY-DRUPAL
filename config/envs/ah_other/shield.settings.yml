@@ -1,7 +1,7 @@
 allow_cli: true
 shield_enable: true
 whitelist: ''
-print: 'Env: Stage'
+print: 'Env: Other'
 credential_provider: shield
 credentials:
   shield:

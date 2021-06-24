@@ -1,0 +1,17 @@
+uuid: 19e8b1b5-0ed1-48cc-a3fa-ae68ac7f9535
+langcode: en
+status: true
+dependencies: {  }
+id: other
+label: Other
+description: 'Any Acquia environment not listed here (Cloud IDE and ODE).'
+folder: ../config/envs/ah_other
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - shield.settings
+  - system.performance
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

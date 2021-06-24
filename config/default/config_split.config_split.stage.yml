@@ -4,10 +4,9 @@ status: true
 dependencies: {  }
 id: stage
 label: Stage
-description: ''
+description: 'Acquia Staging environment.'
 folder: ../config/envs/stage
-module:
-  shield: 0
+module: {  }
 theme: {  }
 blacklist:
   - shield.settings

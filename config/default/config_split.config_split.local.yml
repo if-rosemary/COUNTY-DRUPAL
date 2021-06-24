@@ -4,7 +4,7 @@ status: false
 dependencies: {  }
 id: local
 label: Local
-description: ''
+description: 'Any non-Acquia, non-Travis environment.'
 folder: ../config/envs/local
 module: {  }
 theme: {  }
