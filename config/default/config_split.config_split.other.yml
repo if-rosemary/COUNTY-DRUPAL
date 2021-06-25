@@ -10,6 +10,7 @@ module: {  }
 theme: {  }
 blacklist: {  }
 graylist:
+  - search_api.index.acquia_search_index
   - shield.settings
   - system.performance
 graylist_dependents: true
