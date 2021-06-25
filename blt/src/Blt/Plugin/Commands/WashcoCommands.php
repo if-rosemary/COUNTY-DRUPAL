@@ -39,6 +39,7 @@ class WashcoCommands extends BltTasks {
     $this->say("Syncing files...");
     shell_exec("acli pull:files wcor.dev");
     $this->say("Deploying site...");
+    shell_exec("blt drupal:config:import");
     shell_exec("drush deploy");
   }
 
@@ -71,16 +72,38 @@ class WashcoCommands extends BltTasks {
   }
 
   /**
-   * Get one time user login for CD environments.
+   * Export display configurations for entities.
    *
-   * @command custom:cd
-   * @description SSH and drush uli a CD ODE.
+   * @command custom:dex
+   * @description Export form and view display configurations for entities.
    */
-  public function cd($cd)
+  public function dex()
   {
-    $this->say("Grabbing user login from CD #$cd ...");
-    passthru(shell_exec('ssh wcor.ode' . $cd . '@wcorode' . $cd . '.ssh.prod.acquia-sites.com -y "drush @wcor.ode' . $cd . ' uli && exit"'));
-    $this->say("The URL has been generated above. Ensure that the colon at the end is removed when visiting the URL.");
+    $this->say("Dropping local database...");
+    shell_exec('blt internal:drupal:install -n');
+    $this->say("Importing existing local configurations. Might take a minute...");
+    shell_exec('blt drupal:config:import');
+    $this->say("Exporting corrected display configs...");
+    shell_exec('drush cex -y');
+    $this->say("Importing develop database backup...");
+    shell_exec('acli pull:database @wcor.dev');
+    $this->say("Importing corrected configuration exports...");
+    shell_exec('blt drupal:config:import');
+  }
+
+  /**
+   * Get one time user login for Acquia ODEs.
+   *
+   * @command custom:ode
+   * @description SSH and drush uli a ODE.
+   */
+  public function ode($cd)
+  {
+    $this->say("Grabbing user login from ODE #$cd ...");
+    $url = shell_exec('acli remote:dr @wcor.ode' . $cd . ' uli && exit');
+    $url = explode('/default', $url);
+    print_r('https://wcorode' . $cd . '.prod.acquia-sites.com' . $url[1]);
+    $this->say("The one time login URL has been generated above.");
   }
 
   /**
