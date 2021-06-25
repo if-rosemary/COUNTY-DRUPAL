@@ -796,6 +796,10 @@ if (isset($_ENV['SHPASS'])) {
   $config['shield.settings']['credentials']['shield']['pass'] = $_ENV['SHPASS'];
 }
 
+// Override the ID of the Search core to use.
+// For acquia_search-8.x-3.x
+$config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.prod.wcor';
+
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
 /**
  * IMPORTANT.

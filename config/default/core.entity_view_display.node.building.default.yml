@@ -16,6 +16,11 @@ targetEntityType: node
 bundle: building
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_address:
     weight: 0
     label: hidden
@@ -35,3 +40,4 @@ hidden:
   field_transit_info: true
   langcode: true
   links: true
+  search_api_excerpt: true

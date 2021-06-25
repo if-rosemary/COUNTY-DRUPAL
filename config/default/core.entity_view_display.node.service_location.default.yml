@@ -18,6 +18,11 @@ targetEntityType: node
 bundle: service_location
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_accessibility_notes:
     weight: 4
     label: above
@@ -79,3 +84,4 @@ content:
 hidden:
   langcode: true
   links: true
+  search_api_excerpt: true
