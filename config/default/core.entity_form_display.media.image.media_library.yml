@@ -49,6 +49,7 @@ hidden:
   created: true
   field_caption: true
   field_media_in_library: true
+  field_redirects: true
   langcode: true
   path: true
   status: true

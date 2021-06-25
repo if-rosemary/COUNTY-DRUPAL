@@ -71,6 +71,8 @@ module:
   user: 0
   views_data_export: 0
   views_ui: 0
+  wcor: 0
+  wcor_legacy_redirects: 0
   webform: 0
   webform_example_element: 0
   webform_examples_accessibility: 0

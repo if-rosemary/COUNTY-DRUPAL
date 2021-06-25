@@ -78,6 +78,14 @@ content:
               submit: 'Add Cancel'
     type: entity_reference_autocomplete
     region: content
+  field_redirects:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_related:
     weight: 8
     settings:

@@ -1,0 +1,9 @@
+name: WCOR Legacy Redirects module
+description: Creates custom redirects for migrated content from the legacy site.
+package: Custom
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - 'drupal:wcor'

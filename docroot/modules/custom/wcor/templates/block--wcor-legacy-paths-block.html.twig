@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * WCOR legacy paths custom block.
+ */
+#}
+{% if legacy_paths %}
+	{%
+    set classes = [
+      'legacy-path-block',
+      'message'
+    ]
+  %}
+	<div {{attributes.addClass(classes)}}>
+		<p>
+			<span class="fas fa-lg fa-info-circle fa-fw"></span>
+			<span class="message__heading">Legacy paths from www.co.washington.or.us</span>
+		</p>
+		<p class="message__description">{{ help_text }}</p>
+		<div class="legacy-paths">
+			{% for path in legacy_paths %}
+				<div class="legacy-path">
+					<a href="{{ pog_base_url }}{{ path }}" target="_blank">{{ path }}</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

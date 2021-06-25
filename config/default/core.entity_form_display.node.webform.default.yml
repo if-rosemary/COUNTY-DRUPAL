@@ -127,4 +127,5 @@ content:
     third_party_settings: {  }
     type: webform_entity_reference_select
     region: content
-hidden: {  }
+hidden:
+  field_redirects: true

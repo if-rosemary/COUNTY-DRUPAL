@@ -52,6 +52,14 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_redirects:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 5

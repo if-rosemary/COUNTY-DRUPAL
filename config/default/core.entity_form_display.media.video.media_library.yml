@@ -37,6 +37,7 @@ hidden:
   field_group: true
   field_media_in_library: true
   field_media_oembed_video: true
+  field_redirects: true
   field_source: true
   field_transcript: true
   langcode: true

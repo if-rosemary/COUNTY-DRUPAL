@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\redirect\Entity\Redirect;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function wcor_legacy_redirects_entity_base_field_info($entity_type)
+{
+  $entity_id = $entity_type->id();
+  if ($entity_id === 'node' || $entity_id === 'group' || $entity_id === 'media') {
+    $fields = [];
+
+    // add a field that allows the page's redirects (labeled as Legacy Paths) to be modified
+    // outside the redirects UI.
+    // TODO: this adds the field to EVERY node, even ones we don't want the Legacy Path for.
+    //       it's not harmful except that it adds extra processing. it basically runs through
+    //       the validation routines but does nothing if not valid on a form where the field
+    //       is disabled/hidden. the only way I can think of to prevent this is to create and
+    //       maintain a list of content types that it applies to; or maybe there's a way to
+    //       determine whether the field is enabled in form view?
+    $fields['field_redirects'] = BaseFieldDefinition::create('string')
+      ->setName('field_redirects')
+      ->setLabel(t('Legacy path'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\wcor_legacy_redirects\Field\RedirectList')
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'text_textfield',
+        'weight' => 50,
+        'region' => 'hidden',
+      ])
+      ->setDescription(t('Enter the complete relative path, beginning with a slash (/), of one or more items from the <strong>prior primary County Site only</strong> that should lead visitors to this item. (<em>Example: /HHS/AnimalServices/AnimalShelter/Adoption/index.cfm</em>)'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->addConstraint('relative_path', []);;
+
+    return $fields;
+  }
+}

@@ -188,3 +188,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_contact: true
+  field_redirects: true

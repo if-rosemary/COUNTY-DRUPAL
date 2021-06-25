@@ -46,7 +46,7 @@ content:
     type: string_textfield
     region: content
   field_parent:
-    weight: 7
+    weight: 6
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -55,6 +55,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
     region: content
+  field_redirects:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_short_title:
     weight: 1
     settings:
@@ -181,7 +189,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }

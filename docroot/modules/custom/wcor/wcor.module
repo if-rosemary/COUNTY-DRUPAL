@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function wcor_theme($existing, $type, $theme, $path)
+{
+  return [
+    'wcor_legacy_paths_block' => [
+      'variables' => [
+        'pog_base_url' => null,
+        'legacy_paths' => null,
+        'help_text' => null,
+      ],
+      'template' => 'block--wcor-legacy-paths-block',
+    ],
+
+  ];
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function wcor_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  if ($view->id() == 'admin_content_with_legacy_path' ||
+    ( ($view->id() == 'group_nodes' || $view->id() == 'admin_group_content_revision') && (strpos($view->current_display, 'redirects') !== false) ) ) {
+    // Have to call redirect.repository service to find which row has redirects
+    foreach ($view->result as $key => $value) {
+      $entity = $value->_entity;
+      $nid = $entity->Id();
+      $type = $entity->getEntityTypeId();
+      if ($nid && $type) {
+          $redirects = \Drupal::service('redirect.repository')->findByDestinationUri(["internal:/$type/$nid", "entity:$type/$nid"]);
+          if (empty($redirects)) {
+            unset ($view->result[$key]); // Remove rows without legacy path
+          }
+      }
+    }
+  }
+}

@@ -13,7 +13,8 @@ use Zumba\Amplitude\Amplitude;
 /**
  * Defines commands in the "custom" namespace.
  */
-class WashcoCommands extends BltTasks {
+class WashcoCommands extends BltTasks
+{
 
   /**
    * Get latest version of develop build.
@@ -21,7 +22,8 @@ class WashcoCommands extends BltTasks {
    * @command custom:catchup
    * @description Syncs and builds from the latest develop branch and environment.
    */
-  public function catchup() {
+  public function catchup()
+  {
     $this->say("Unlocking permissions...");
     shell_exec("chmod 644 ~/project/docroot/sites/default/settings.php && chmod -R u+w ~/project/docroot/sites/default");
     $this->say("Checking out develop branch...");
@@ -115,9 +117,8 @@ class WashcoCommands extends BltTasks {
   public function pr($pr)
   {
     $this->say("Fetching PR #$pr from GitHub...");
-    shell_exec( 'git fetch upstream pull/' . $pr . '/head:PR' . $pr );
+    shell_exec('git fetch upstream pull/' . $pr . '/head:PR' . $pr);
     $this->say("Checking out PR branch...");
     shell_exec('git checkout PR' . $pr);
   }
-
 }
