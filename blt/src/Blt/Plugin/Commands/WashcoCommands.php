@@ -64,13 +64,18 @@ class WashcoCommands extends BltTasks
   /**
    * Sync secret settings.
    *
-   * @command custom:secrets
+   * @command custom:secret
    * @description Syncs secrets.settings.php from develop.
    */
-  public function secrets()
+  public function secret($cd = null)
   {
-    $this->say("Syncing Secrets...");
+    $this->say("Downloading secrets from wcor.dev...");
     shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
+
+    if ($cd) {
+      $this->say("Uploading secrets to wcor.ode" . $cd . "...");
+      shell_exec("scp /mnt/files/wcor.ide/secrets.settings.php wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/files/wcor.ode" . $cd);
+    }
   }
 
   /**
@@ -96,16 +101,18 @@ class WashcoCommands extends BltTasks
   /**
    * Get one time user login for Acquia ODEs.
    *
-   * @command custom:ode
+   * @command custom:ode:uli
    * @description SSH and drush uli a ODE.
    */
-  public function ode($cd)
+  public function ode_uli($cd)
   {
-    $this->say("Grabbing user login from ODE #$cd ...");
+    $this->say("Grabbing user login from wcor.ode" . $cd . "...");
     $url = shell_exec('acli remote:dr @wcor.ode' . $cd . ' uli && exit');
     $url = explode('/default', $url);
-    print_r('https://wcorode' . $cd . '.prod.acquia-sites.com' . $url[1]);
-    $this->say("The one time login URL has been generated above.");
+    if ($url[1]) {
+      print_r('https://wcorode' . $cd . '.prod.acquia-sites.com' . $url[1]);
+      $this->say("The one time login URL has been generated above.");
+    }
   }
 
   /**
@@ -116,7 +123,7 @@ class WashcoCommands extends BltTasks
    */
   public function pr($pr)
   {
-    $this->say("Fetching PR #$pr from GitHub...");
+    $this->say("Fetching PR #" . $pr . " from GitHub...");
     shell_exec('git fetch upstream pull/' . $pr . '/head:PR' . $pr);
     $this->say("Checking out PR branch...");
     shell_exec('git checkout PR' . $pr);
