@@ -1,6 +1,6 @@
 uuid: 6b83d92a-dfcf-45d4-ac5f-04bccd12fc3a
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: dev
 label: Dev
@@ -8,9 +8,10 @@ description: 'Acquia Dev environment.'
 folder: ../config/envs/dev
 module: {  }
 theme: {  }
-blacklist:
+blacklist: {  }
+graylist:
+  - search_api.index.acquia_search_index
   - shield.settings
-graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

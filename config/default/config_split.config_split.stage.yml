@@ -1,6 +1,6 @@
 uuid: 0554a8f3-7767-48d1-a8f9-4dfc57ea395d
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: stage
 label: Stage
@@ -8,9 +8,9 @@ description: 'Acquia Staging environment.'
 folder: ../config/envs/stage
 module: {  }
 theme: {  }
-blacklist:
+blacklist: {  }
+graylist:
   - shield.settings
-graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
