@@ -809,3 +809,12 @@ require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
  *
  * @link https://docs.acquia.com/blt/
  */
+
+//  Disable other in ACP if dev, stage, or prod is set to active.
+if (isset($split_filename_prefix)) {
+  if ($config["$split_filename_prefix.dev"]['status'] || $config["$split_filename_prefix.stage"]['status'] || $config["$split_filename_prefix.prod"]['status']) {
+    $config["$split_filename_prefix.ah_other"]['status'] = FALSE;
+  }
+}
+
+
