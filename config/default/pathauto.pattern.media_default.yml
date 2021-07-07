@@ -3,12 +3,21 @@ langcode: en
 status: true
 dependencies:
   module:
+    - ctools
     - media
 id: media_default
 label: 'Media Default (pluralizes machine name)'
 type: 'canonical_entities:media'
 pattern: '[media:field_group:entity:field_group_path]/[media:bundle]s/[media:name]'
-selection_criteria: {  }
+selection_criteria:
+  3b78d265-1212-4cb9-b3e2-a7e92484ad88:
+    id: 'entity_bundle:media'
+    bundles:
+      document: document
+    negate: false
+    context_mapping:
+      media: media
+    uuid: 3b78d265-1212-4cb9-b3e2-a7e92484ad88
 selection_logic: and
 weight: 0
 relationships: {  }

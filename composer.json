@@ -34,6 +34,7 @@
     "drupal/honeypot": "^2.0",
     "drupal/jquery_ui_datepicker": "^1.1",
     "drupal/maxlength": "^1.0@RC",
+    "drupal/media_entity_download": "^2.0",
     "drupal/office_hours": "^1.4",
     "drupal/pathauto": "^1.8",
     "drupal/rabbit_hole": "^1.0@beta",
@@ -115,6 +116,12 @@
         },
         "drupal/scheduler_content_moderation_integration": {
             "3077147 - Scheduler content moderation integration error fix - feature/STRY0020225": "https://www.drupal.org/files/issues/2020-06-30/3077147-28.patch"
+        },
+        "drupal/media_entity_download": {
+            "3008834 - Enable inline download for media files - feature/WCOR-1116": "https://www.drupal.org/files/issues/2020-09-01/content-disposition-3008834-35.patch"
+        },
+        "drupal/csv_importer": {
+            "3000137 - Enable multi value imports - feature/WCOR-1116": "https://www.drupal.org/files/issues/2020-11-16/3000137-multiple-values-16.patch"
         }
     }
   },

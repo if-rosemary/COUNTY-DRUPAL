@@ -1,0 +1,14 @@
+uuid: bdc458f1-1459-4606-a0fa-10a617938d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+id: media_type_document
+entity_type_id: media_type
+entity_id: document
+action: page_redirect
+allow_override: 0
+redirect: '[current-page:url]/download?inline'
+redirect_code: 301
+redirect_fallback_action: page_not_found

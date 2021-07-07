@@ -1,0 +1,14 @@
+uuid: 73ebc8c6-e716-4857-890a-2e3620673039
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: media_type_image
+entity_type_id: media_type
+entity_id: image
+action: page_redirect
+allow_override: 0
+redirect: '[media:field_media_file:entity:url]'
+redirect_code: 301
+redirect_fallback_action: page_not_found

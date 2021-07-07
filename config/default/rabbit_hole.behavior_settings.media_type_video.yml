@@ -1,0 +1,14 @@
+uuid: dadd4985-a2f2-46f3-9ce8-8ef1482e0103
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.video
+id: media_type_video
+entity_type_id: media_type
+entity_id: video
+action: page_redirect
+allow_override: 0
+redirect: '[media:field_media_oembed_video:value]'
+redirect_code: 301
+redirect_fallback_action: page_not_found
