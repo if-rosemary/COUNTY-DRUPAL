@@ -35,7 +35,7 @@ class WashcoCommands extends BltTasks
     $this->say("Syncing Secrets...");
     shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
     $this->say("Running composer...");
-    shell_exec("composer install --working-dir ~/project");
+    shell_exec("composer install --working-dir ~/project && composer update --lock  --working-dir ~/project");
     $this->say("Syncing database...");
     shell_exec("acli pull:database wcor.dev");
     $this->say("Syncing files...");
