@@ -7,16 +7,16 @@ dependencies:
 id: pages
 label: Pages
 type: 'canonical_entities:node'
-pattern: '[node:field_group:0:entity:field_group_path]/[node:field_menu_parent:entity:field_short_title]/[node:field_short_title]'
+pattern: '[node:field_group:0:entity:field_group_path]/[node:field_menu_parent:entity:field_short_title]/[node:source:field_short_title]'
 selection_criteria:
-  7bf02aad-7c4c-4a69-ad4f-fc7402336f05:
+  c7e70369-fbf9-4d75-8406-6da84f11a3c7:
     id: node_type
     bundles:
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: 7bf02aad-7c4c-4a69-ad4f-fc7402336f05
+    uuid: c7e70369-fbf9-4d75-8406-6da84f11a3c7
 selection_logic: and
 weight: -5
 relationships: {  }
