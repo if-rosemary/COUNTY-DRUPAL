@@ -28,6 +28,11 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  get_directions_link_eva_get_directions_link:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_geolocation: true
   field_transit_info: true

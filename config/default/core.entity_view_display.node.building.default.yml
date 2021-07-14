@@ -17,24 +17,30 @@ bundle: building
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_address:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_geolocation:
-    weight: 1
+    type: geofield_default
+    weight: 2
+    region: content
     label: above
     settings:
-      output_format: decimal
+      output_format: wkt
+      output_escape: true
     third_party_settings: {  }
-    type: geofield_latlon
+  get_directions_link_eva_get_directions_link:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
     region: content
 hidden:
   field_transit_info: true
