@@ -42,6 +42,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  get_directions_link_eva_transit_link:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_transit_info: true
   langcode: true
