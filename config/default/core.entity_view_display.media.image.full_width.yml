@@ -1,18 +1,19 @@
-uuid: 0196b6db-1e8a-488a-85f3-8947ae433782
+uuid: 1de9ef49-67a6-4ead-a5c4-ccf6e906fee9
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.full_width
     - field.field.media.image.field_media_image
     - field.field.media.image.field_media_in_library
-    - image.style.large
     - media.type.image
+    - responsive_image.styles.full_width
   module:
-    - image
-id: media.image.default
+    - responsive_image
+id: media.image.full_width
 targetEntityType: media
 bundle: image
-mode: default
+mode: full_width
 content:
   content_moderation_control:
     weight: 0
@@ -23,23 +24,14 @@ content:
     label: hidden
     weight: 0
     settings:
-      image_style: large
+      responsive_image_style: full_width
       image_link: ''
     third_party_settings: {  }
-    type: image
-    region: content
-  field_media_in_library:
-    weight: 2
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
+    type: responsive_image
     region: content
 hidden:
   created: true
+  field_media_in_library: true
   langcode: true
   name: true
   search_api_excerpt: true

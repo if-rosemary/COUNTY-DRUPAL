@@ -31,7 +31,6 @@ settings:
         -
           name: Media
           items:
-            - DrupalImage
             - DrupalMediaLibrary
         -
           name: 'Misc Formatting'
@@ -55,10 +54,10 @@ settings:
             - Maximize
             - Source
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: s3

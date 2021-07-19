@@ -4,14 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
-    - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - field.field.media.image.field_media_in_library
     - image.style.thumbnail
     - media.type.image
-    - workflows.workflow.media
   module:
-    - content_moderation
     - image
 id: media.image.media_library
 targetEntityType: media
@@ -47,7 +44,6 @@ content:
     region: content
 hidden:
   created: true
-  field_caption: true
   field_media_in_library: true
   field_redirects: true
   langcode: true
