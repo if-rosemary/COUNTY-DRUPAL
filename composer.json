@@ -27,7 +27,7 @@
     "drupal/captcha": "^1.2",
     "drupal/config_split": "^1.7",
     "drupal/core-composer-scaffold": "^9",
-    "drupal/core-recommended": "9.2.0",
+    "drupal/core-recommended": "9.2.2",
     "drupal/csv_importer": "^1.11",
     "drupal/devel": "^4.1",
     "drupal/eva": "^2.1",
