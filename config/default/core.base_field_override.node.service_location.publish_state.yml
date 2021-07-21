@@ -1,0 +1,20 @@
+uuid: 4cd83552-9cf2-43ee-af47-28fd8d398caf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.service_location
+  module:
+    - options
+id: node.service_location.publish_state
+field_name: publish_state
+entity_type: node
+bundle: service_location
+label: 'Publish state'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

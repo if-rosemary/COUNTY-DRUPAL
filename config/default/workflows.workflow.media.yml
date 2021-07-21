@@ -14,6 +14,11 @@ type_settings:
       published: false
       default_revision: false
       weight: 0
+    marked_for_deletion:
+      published: false
+      default_revision: true
+      label: 'Marked for deletion'
+      weight: 3
     published:
       label: Published
       published: true
@@ -25,16 +30,25 @@ type_settings:
       label: Unpublished
       weight: 2
   transitions:
+    mark_for_deletion:
+      label: 'Mark for deletion'
+      from:
+        - published
+        - unpublished
+      to: marked_for_deletion
+      weight: 3
     publish:
       label: Publish
       to: published
       weight: 1
       from:
+        - marked_for_deletion
         - published
         - unpublished
     unpublish:
       label: Unpublish
       from:
+        - marked_for_deletion
         - published
         - unpublished
       to: unpublished

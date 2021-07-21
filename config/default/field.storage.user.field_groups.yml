@@ -1,0 +1,24 @@
+uuid: 53980fd3-55ca-4190-b52d-0af8a49d0e77
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: user.field_groups
+field_name: field_groups
+entity_type: user
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

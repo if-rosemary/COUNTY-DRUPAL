@@ -16,11 +16,6 @@ targetEntityType: node
 bundle: building
 mode: teaser
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_address:
     type: address_default
     weight: 0
@@ -29,16 +24,17 @@ content:
     settings: {  }
     third_party_settings: {  }
   get_directions_link_eva_get_directions_link:
-    weight: 10
+    weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   get_directions_link_eva_transit_link:
-    weight: 10
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
+  content_moderation_control: true
   field_geolocation: true
   field_transit_info: true
   langcode: true

@@ -31,7 +31,12 @@ content:
     region: content
 hidden:
   created: true
+  field_file_size: true
+  field_group: true
+  field_image_height: true
+  field_image_width: true
   field_media_in_library: true
+  field_mime_type: true
   langcode: true
   name: true
   search_api_excerpt: true

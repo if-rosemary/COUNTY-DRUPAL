@@ -26,6 +26,7 @@ module:
   eva: 0
   field: 0
   field_group: 0
+  field_permissions: 0
   field_states_ui: 0
   field_ui: 0
   file: 0
@@ -39,6 +40,9 @@ module:
   jquery_ui_datepicker: 0
   language: 0
   link: 0
+  masquerade: 0
+  masquerade_field: 0
+  masquerade_log: 0
   maxlength: 0
   media: 0
   media_entity_download: 0
@@ -74,6 +78,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  toolbar_menu: 0
   update: 0
   user: 0
   views_data_export: 0

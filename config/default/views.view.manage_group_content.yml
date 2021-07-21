@@ -2,6 +2,10 @@ uuid: 456dbd4d-503d-4346-9c27-4f2b04757399
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.administrator
+    - user.role.editor
+    - user.role.publisher
   module:
     - node
     - user
@@ -20,9 +24,12 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'view all revisions'
+          role:
+            editor: editor
+            publisher: publisher
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -599,7 +606,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   page_manage_group_content:
     display_plugin: page
@@ -633,5 +640,5 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }

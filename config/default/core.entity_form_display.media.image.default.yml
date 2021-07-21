@@ -3,8 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_file_size
+    - field.field.media.image.field_group
+    - field.field.media.image.field_image_height
+    - field.field.media.image.field_image_width
     - field.field.media.image.field_media_image
     - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_mime_type
     - image.style.thumbnail
     - media.type.image
   module:
@@ -17,10 +22,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_group:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_media_image:
     weight: 1
     settings:
@@ -43,7 +58,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 5
+    weight: 6
     region: content
     settings:
       include_locked: true
@@ -64,7 +79,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -76,13 +91,13 @@ content:
     region: content
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
@@ -91,4 +106,8 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
+  field_file_size: true
+  field_image_height: true
+  field_image_width: true
+  field_mime_type: true
   field_redirects: true

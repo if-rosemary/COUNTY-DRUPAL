@@ -19,11 +19,6 @@ targetEntityType: node
 bundle: service_location
 mode: teaser
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_building:
     type: entity_reference_label
     weight: 1
@@ -69,6 +64,7 @@ content:
       office_hours_first_day: ''
     third_party_settings: {  }
 hidden:
+  content_moderation_control: true
   field_accessibility_notes: true
   field_summary: true
   langcode: true

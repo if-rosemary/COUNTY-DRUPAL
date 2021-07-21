@@ -1,0 +1,18 @@
+uuid: ebd1ea7b-3164-4d22-97f0-d099e3802c09
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.service_location
+id: node.service_location.changed
+field_name: changed
+entity_type: node
+bundle: service_location
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

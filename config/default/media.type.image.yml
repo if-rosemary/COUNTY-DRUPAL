@@ -10,4 +10,9 @@ queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
   source_field: field_media_image
-field_map: {  }
+field_map:
+  name: name
+  mimetype: field_mime_type
+  filesize: field_file_size
+  width: field_image_width
+  height: field_image_height

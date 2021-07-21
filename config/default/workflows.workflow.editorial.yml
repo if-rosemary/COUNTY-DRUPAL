@@ -3,10 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.alert
+    - node.type.building
+    - node.type.contact
     - node.type.group
     - node.type.news
+    - node.type.notification
     - node.type.page
     - node.type.resource
+    - node.type.service_location
+    - node.type.webform
   module:
     - content_moderation
 id: editorial
@@ -19,6 +25,11 @@ type_settings:
       published: false
       default_revision: false
       weight: -2
+    marked_for_deletion:
+      published: false
+      default_revision: true
+      label: 'Marked for deletion'
+      weight: 2
     published:
       label: Published
       published: true
@@ -39,17 +50,28 @@ type_settings:
       label: 'Create new draft'
       from:
         - draft
+        - marked_for_deletion
         - published
         - review
         - unpublished
       to: draft
       weight: -2
+    mark_for_deletion:
+      label: 'Mark for deletion'
+      from:
+        - draft
+        - published
+        - review
+        - unpublished
+      to: marked_for_deletion
+      weight: 2
     publish:
       label: Publish
       to: published
       weight: 0
       from:
         - draft
+        - marked_for_deletion
         - published
         - review
         - unpublished
@@ -57,6 +79,7 @@ type_settings:
       label: 'Submit for review'
       from:
         - draft
+        - marked_for_deletion
         - published
         - review
         - unpublished
@@ -65,6 +88,7 @@ type_settings:
     unpublish:
       label: Unpublish
       from:
+        - marked_for_deletion
         - published
         - review
         - unpublished
@@ -72,10 +96,14 @@ type_settings:
       weight: 1
   entity_types:
     node:
+      - alert
       - building
+      - contact
       - group
       - news
+      - notification
       - page
       - resource
       - service_location
+      - webform
   default_moderation_state: draft

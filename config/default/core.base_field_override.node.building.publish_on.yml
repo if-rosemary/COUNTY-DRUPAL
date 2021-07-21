@@ -1,0 +1,18 @@
+uuid: ec6888f0-4052-49a1-acc6-f226c676e97a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.building
+id: node.building.publish_on
+field_name: publish_on
+entity_type: node
+bundle: building
+label: 'Publish on'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

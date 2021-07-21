@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.service_location.field_hours
     - field.field.node.service_location.field_summary
     - node.type.service_location
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - media_library

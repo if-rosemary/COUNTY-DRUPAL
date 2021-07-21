@@ -1,0 +1,20 @@
+uuid: 549a4034-c15c-4817-a1e2-92700601b606
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact
+  module:
+    - options
+id: node.contact.unpublish_state
+field_name: unpublish_state
+entity_type: node
+bundle: contact
+label: 'Unpublish state'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

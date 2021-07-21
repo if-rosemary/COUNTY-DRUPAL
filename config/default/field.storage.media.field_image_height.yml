@@ -1,0 +1,24 @@
+uuid: 560d41a7-28ae-4102-a44a-45c07052dcd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - media
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: media.field_image_height
+field_name: field_image_height
+entity_type: media
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

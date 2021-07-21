@@ -1,0 +1,9 @@
+uuid: dadc7b0e-b942-41bb-9a5f-d5fccc8acc23
+langcode: en
+status: true
+dependencies: {  }
+id: e
+label: Editor
+weight: null
+menu: editor
+rewrite_label: false

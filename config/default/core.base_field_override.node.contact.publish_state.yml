@@ -1,0 +1,20 @@
+uuid: 0f229829-9f61-4e5e-81d7-0dc2f7dbcbc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact
+  module:
+    - options
+id: node.contact.publish_state
+field_name: publish_state
+entity_type: node
+bundle: contact
+label: 'Publish state'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -6,10 +6,16 @@ _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access content'
   - 'download media'
   - 'use text format basic_html'
+  - 'view e in toolbar'
+  - 'view field_group_path'
+  - 'view field_groups'
   - 'view media'
+  - 'view own field_group_path'
+  - 'view own field_groups'
+  - 'view the administration theme'

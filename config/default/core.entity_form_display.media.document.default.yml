@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.media.document.field_document_type
+    - field.field.media.document.field_file_size
     - field.field.media.document.field_group
     - field.field.media.document.field_media_file
     - field.field.media.document.field_media_in_library
+    - field.field.media.document.field_mime_type
     - media.type.document
   module:
     - file
@@ -103,4 +105,6 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_file_size: true
+  field_mime_type: true

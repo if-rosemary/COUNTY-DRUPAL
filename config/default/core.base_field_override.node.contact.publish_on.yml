@@ -1,0 +1,18 @@
+uuid: 6475126b-ce3d-420d-a74f-f254fa2d526b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact
+id: node.contact.publish_on
+field_name: publish_on
+entity_type: node
+bundle: contact
+label: 'Publish on'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

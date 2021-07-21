@@ -1,0 +1,8 @@
+uuid: 971c869d-d989-4ea7-bd85-0535b1d4cc94
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+description: 'Links for accessing user dashboard, my groups, and my content views.'
+locked: false
