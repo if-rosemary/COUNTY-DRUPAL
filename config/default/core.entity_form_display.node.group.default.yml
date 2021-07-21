@@ -4,16 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.group.field_body
+    - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
+    - field.field.node.group.field_linkedin
     - field.field.node.group.field_parent
     - field.field.node.group.field_short_title
     - field.field.node.group.field_status
     - field.field.node.group.field_summary
+    - field.field.node.group.field_twitter
     - field.field.node.group.field_type
+    - field.field.node.group.field_youtube
     - node.type.group
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - link
     - path
     - scheduler
     - scheduler_content_moderation_integration
@@ -37,6 +42,22 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_facebook:
+    weight: 22
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: link_default
+    region: content
   field_group_path:
     weight: 7
     settings:
@@ -44,6 +65,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_linkedin:
+    weight: 25
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_parent:
     weight: 6
@@ -57,7 +86,7 @@ content:
     region: content
   field_redirects:
     type: string_textfield
-    weight: 22
+    weight: 26
     region: content
     settings:
       size: 60
@@ -95,11 +124,27 @@ content:
         maxlength_js_truncate_html: false
     type: string_textarea
     region: content
+  field_twitter:
+    weight: 23
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_type:
     weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_youtube:
+    weight: 24
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   langcode:
     type: language_select

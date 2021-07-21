@@ -5,12 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.group.field_body
+    - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
+    - field.field.node.group.field_linkedin
     - field.field.node.group.field_parent
     - field.field.node.group.field_short_title
     - field.field.node.group.field_status
     - field.field.node.group.field_summary
+    - field.field.node.group.field_twitter
     - field.field.node.group.field_type
+    - field.field.node.group.field_youtube
     - node.type.group
   module:
     - user
@@ -29,11 +33,15 @@ content:
 hidden:
   content_moderation_control: true
   field_body: true
+  field_facebook: true
   field_group_path: true
+  field_linkedin: true
   field_parent: true
   field_short_title: true
   field_status: true
+  field_twitter: true
   field_type: true
+  field_youtube: true
   langcode: true
   links: true
   search_api_excerpt: true
