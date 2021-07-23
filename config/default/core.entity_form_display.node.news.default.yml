@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.news.feeds_item
     - field.field.node.news.field_body
     - field.field.node.news.field_contact
     - field.field.node.news.field_featured_image
     - field.field.node.news.field_group
+    - field.field.node.news.field_pdf_news
     - field.field.node.news.field_related
     - field.field.node.news.field_summary
     - field.field.node.news.field_type
@@ -14,6 +16,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - file
     - media_library
     - path
     - scheduler
@@ -54,6 +57,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_pdf_news:
+    weight: 51
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
     region: content
   field_related:
     weight: 6
@@ -187,5 +197,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  feeds_item: true
   field_contact: true
   field_redirects: true

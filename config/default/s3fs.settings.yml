@@ -1,6 +1,3 @@
-access_key: ''
-secret_key: ''
-use_instance_profile: false
 credentials_file: ''
 bucket: ''
 region: us-west-2
@@ -24,3 +21,12 @@ use_cssjs_host: false
 cssjs_host: ''
 _core:
   default_config_hash: cgKAYNNfiRLK7JmjmyWUVlMGvWcSkPlL-k9a_gMFM_g
+use_credentials_cache: false
+credentials_cache_dir: ''
+disable_cert_verify: false
+domain_root: none
+disable_version_sync: false
+read_only: false
+keymodule:
+  access_key_name: ''
+  secret_key_name: ''
