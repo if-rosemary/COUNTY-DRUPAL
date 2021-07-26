@@ -24,6 +24,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   eva: 0
+  externalauth: 0
   feeds: 0
   field: 0
   field_group: 0
@@ -70,6 +71,7 @@ module:
   search_api_solr: 0
   serialization: 0
   shield: 0
+  simplesamlphp_auth: 0
   smtp: 0
   subpathauto: 0
   syslog: 0

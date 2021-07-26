@@ -1,0 +1,9 @@
+# Any paths beginning with the path /simplesaml/ (not case sensitive)
+RewriteCond %{REQUEST_URI} ^/simplesaml/ [NC]
+
+# Pass through the matching file under /simplesaml/ and stop processing
+RewriteRule ^simplesaml/(.*)$ /simplesaml/$1 [PT,L]
+
+# Allow access to /simplesaml/ paths
+RewriteCond %{REQUEST_URI} !^/simplesaml/
+
