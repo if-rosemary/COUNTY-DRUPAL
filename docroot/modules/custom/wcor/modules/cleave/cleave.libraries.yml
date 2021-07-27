@@ -1,0 +1,13 @@
+cleave:
+  js:
+    js/cleave.min.js: { weight: -1 }
+
+telephone:
+  js:
+    js/cleave-phone.us.js: { weight: -1 }
+    js/cleave.telephone.js: { weight: 0 }
+  dependencies:
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - cleave/cleave
