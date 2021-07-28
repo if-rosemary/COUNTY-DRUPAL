@@ -12,6 +12,7 @@ theme: {  }
 blacklist: {  }
 graylist:
   - shield.settings
+  - simplesamlphp_auth.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: -1
