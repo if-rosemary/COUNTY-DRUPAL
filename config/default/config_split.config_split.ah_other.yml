@@ -11,6 +11,7 @@ module:
 theme: {  }
 blacklist: {  }
 graylist:
+  - seckit.settings
   - shield.settings
   - simplesamlphp_auth.settings
 graylist_dependents: true
