@@ -11,7 +11,7 @@ entity_type: node
 bundle: group
 label: Summary
 description: 'Enter 1-2 brief sentences that will help site visitors quickly understand how relevant the content is for them.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

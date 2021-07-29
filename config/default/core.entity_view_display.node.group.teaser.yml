@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.group.feeds_item
     - field.field.node.group.field_body
     - field.field.node.group.field_email
     - field.field.node.group.field_facebook
@@ -34,6 +35,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  feeds_item: true
   field_body: true
   field_email: true
   field_facebook: true

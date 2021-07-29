@@ -1,0 +1,147 @@
+uuid: 497dbc10-45c9-4da8-a8b6-d72903d1900f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.group.title
+    - field.field.node.group.field_email
+    - field.field.node.group.field_group_path
+    - field.field.node.group.field_parent
+    - field.field.node.group.field_phone
+    - field.field.node.group.field_short_title
+    - field.field.node.group.field_status
+    - field.field.node.group.field_type
+    - node.type.group
+  module:
+    - node
+id: central_system_groups
+label: 'Central System Groups'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: group
+custom_sources:
+  nid:
+    label: nid
+    value: nid
+    machine_name: nid
+  title:
+    label: title
+    value: title
+    machine_name: title
+  field_short_title:
+    label: field_short_title
+    value: field_short_title
+    machine_name: field_short_title
+  field_group_path:
+    label: field_group_path
+    value: field_group_path
+    machine_name: field_group_path
+  field_parent:
+    label: field_parent
+    value: field_parent
+    machine_name: field_parent
+  field_type:
+    label: field_type
+    value: field_type
+    machine_name: field_type
+  field_status:
+    label: field_status
+    value: field_status
+    machine_name: field_status
+  field_phone:
+    label: field_phone
+    value: field_phone
+    machine_name: field_phone
+  field_email:
+    label: field_email
+    value: field_email
+    machine_name: field_email
+mappings:
+  -
+    target: nid
+    map:
+      value: nid
+    unique:
+      value: '1'
+    settings: {  }
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_short_title
+    map:
+      value: field_short_title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_group_path
+    map:
+      value: field_group_path
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_parent
+    map:
+      target_id: field_parent
+    settings:
+      language: ''
+      reference_by: nid
+      feeds_item: guid
+      autocreate: 0
+  -
+    target: field_type
+    map:
+      target_id: field_type
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+  -
+    target: field_status
+    map:
+      target_id: field_status
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+  -
+    target: field_phone
+    map:
+      value: field_phone
+    settings:
+      language: null
+  -
+    target: field_email
+    map:
+      value: field_email
+    unique: {  }
+    settings:
+      language: null
+      defuse: false

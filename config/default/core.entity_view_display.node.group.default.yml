@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.group.feeds_item
     - field.field.node.group.field_body
     - field.field.node.group.field_email
     - field.field.node.group.field_facebook
@@ -130,6 +131,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  feeds_item: true
   field_group_path: true
   field_short_title: true
   group_telephone_number_formatter_eva_phone_link: true
