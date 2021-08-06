@@ -11,7 +11,6 @@ module:
 theme: {  }
 blacklist: {  }
 graylist:
-  - search_api.index.acquia_search_index
   - shield.settings
 graylist_dependents: true
 graylist_skip_equal: true

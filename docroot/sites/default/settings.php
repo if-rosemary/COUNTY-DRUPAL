@@ -806,7 +806,13 @@ if (isset($_ENV['SHPASS'])) {
 
 // Override the ID of the Search core to use.
 // For acquia_search-8.x-3.x
-$config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.prod.wcor';
+if ($_ENV['AH_SITE_ENVIRONMENT'] == 'prod' || $_ENV['AH_SITE_ENVIRONMENT'] == 'test'){
+  $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.' . $_ENV['AH_SITE_ENVIRONMENT'] . '.wcor';
+}
+else {
+  $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.dev.wcor';
+}
+
 
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
 /**
