@@ -1,0 +1,22 @@
+uuid: 3b8d6229-715a-472d-ac2b-4b33ef90c6c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - washco
+_core:
+  default_config_hash: 5kL_iZM_xia3Z8bgsyiZgQphxMGhI8gt2HYo8r5Z7OE
+id: washco_powered
+theme: washco
+region: footer
+weight: -10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

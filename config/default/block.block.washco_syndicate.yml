@@ -1,0 +1,23 @@
+uuid: b321d095-8b5e-48ac-9a5e-b56e6763652c
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+  theme:
+    - washco
+_core:
+  default_config_hash: jGkBUnwRXYacHWTR8hjjwn_a_PRM-Xj_xSHoB0WIfEo
+id: washco_syndicate
+theme: washco
+region: header
+weight: -6
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  provider: node
+  label_display: '0'
+  block_count: 10
+visibility: {  }

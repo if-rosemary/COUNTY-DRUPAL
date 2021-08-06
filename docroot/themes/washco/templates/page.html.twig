@@ -1,0 +1,23 @@
+<div class="container" id="content-section">
+  <div class="row">
+    {% set has_sidebar_first = page.sidebar|render|striptags|trim is not empty %}
+    {% if has_sidebar_first %}
+    <div class="main-col content-col order-2 order-md-1 col-12 col-md-10 margin-y">
+      {% if label %}
+      <h1>{{ label }}</h1>
+      {% endif %}
+      {{ page.content }}
+    </div>
+    <div class="side-col order-1 order-md-2 col-12 col-md-2 margin-y">
+      {{ page.sidebar }}
+    </div>
+    {% else %}
+    <div class="col-12 main-col content-col margin-y">
+      {% if label %}
+      <h1>{{ label }}</h1>
+      {% endif %}
+      {{ page.content }}
+    </div>
+    {% endif %}
+  </div>
+</div>

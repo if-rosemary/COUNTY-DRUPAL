@@ -1,0 +1,25 @@
+uuid: f446e259-0d6d-4b2b-986c-95c943e18e6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - washco
+_core:
+  default_config_hash: sYjScJ6uW1UvGZ-G3AtTcZmPoOiQJtndHqamm8FAFgU
+id: washco_site_branding
+theme: washco
+region: header
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

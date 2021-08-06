@@ -1,0 +1,22 @@
+uuid: bd8d0ab1-0433-454f-83ff-5b846a58f252
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - washco
+_core:
+  default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
+id: washco_breadcrumbs
+theme: washco
+region: content
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
