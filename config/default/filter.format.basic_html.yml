@@ -19,7 +19,7 @@ filters:
     status: true
     weight: -45
     settings:
-      default_view_mode: default
+      default_view_mode: full_width
       allowed_media_types:
         document: document
         image: image

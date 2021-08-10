@@ -17,6 +17,27 @@ targetEntityType: media
 bundle: video
 mode: media_library
 content:
+  field_group:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_in_library:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_oembed_video:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     settings:
@@ -25,22 +46,15 @@ content:
     weight: 0
     third_party_settings: {  }
     region: content
-  translation:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
   created: true
   field_caption: true
   field_creator: true
-  field_group: true
-  field_media_in_library: true
-  field_media_oembed_video: true
   field_redirects: true
   field_source: true
   field_transcript: true
   langcode: true
   path: true
   status: true
+  translation: true
   uid: true
