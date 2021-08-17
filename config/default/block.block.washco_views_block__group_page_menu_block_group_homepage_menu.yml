@@ -12,7 +12,7 @@ dependencies:
 id: washco_views_block__group_page_menu_block_group_homepage_menu
 theme: washco
 region: sidebar
-weight: -8
+weight: -7
 provider: null
 plugin: 'views_block:group_page_menu-block_group_homepage_menu'
 settings:

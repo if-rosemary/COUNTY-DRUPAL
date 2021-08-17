@@ -1,0 +1,25 @@
+uuid: 628a725c-018e-4d3d-b898-0ea6f0cd0415
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_service_location
+    - node.type.group
+id: node.group.field_primary_service_location
+field_name: field_primary_service_location
+entity_type: node
+bundle: group
+label: 'Primary service location'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: service_location_reference
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
