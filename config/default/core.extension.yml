@@ -88,6 +88,8 @@ module:
   toolbar_menu: 0
   update: 0
   user: 0
+  views_bulk_edit: 0
+  views_bulk_operations: 0
   views_data_export: 0
   views_ui: 0
   wcor: 0

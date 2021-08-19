@@ -59,6 +59,8 @@
     "drupal/smtp": "^1.0",
     "drupal/subpathauto": "^1.1",
     "drupal/toolbar_menu": "^2.2",
+    "drupal/views_bulk_edit": "^2.6",
+    "drupal/views_bulk_operations": "^4.0",
     "drupal/views_data_export": "^1.0",
     "drupal/webform": "^6.0",
     "drush/drush": "^10.3",
@@ -126,6 +128,7 @@
     "patches": {
         "drupal/core": {
             "2719797 - New option for Views page displays to use the admin theme - feature/STRY0020001": "https://www.drupal.org/files/issues/2020-10-07/2719797-109.patch",
+            "2797583 - Dynamically provide action plugins for every moderation state change": "https://www.drupal.org/files/issues/2020-12-19/2797583-181.patch",
             "3129874 - The 'moderation_state' base field overrides cause install from existing config to fail": "https://www.drupal.org/files/issues/2021-02-08/fix_moderation_state_bfo_dependencies_approach6-3129874-24.patch"
         },
         "drupal/scheduler_content_moderation_integration": {
