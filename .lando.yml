@@ -1,0 +1,17 @@
+name: county-drupal
+recipe: acquia
+config:
+  acli_version: latest
+  ah_application_uuid: 9cab3740-4631-4529-a4de-d6ef75472d78
+  ah_site_group: wcor
+  build:
+    run_scripts: true
+  cache: true
+  composer_version: '2'
+  inbox: false
+  php: '7.4'
+  xdebug: false
+tooling:
+  blt:
+    service: appserver
+    cmd: /app/vendor/bin/blt
