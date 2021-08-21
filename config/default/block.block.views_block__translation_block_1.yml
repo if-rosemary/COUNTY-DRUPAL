@@ -1,0 +1,43 @@
+uuid: 56337e84-2c15-4735-bdf0-e041cbd9f1b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.translation
+  module:
+    - ctools
+    - node
+    - views
+  theme:
+    - washco
+id: views_block__translation_block_1
+theme: washco
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:translation-block_1'
+settings:
+  id: 'views_block:translation-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '1'
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      news: news
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
