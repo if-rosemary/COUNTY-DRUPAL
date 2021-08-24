@@ -70,11 +70,11 @@ class WashcoCommands extends BltTasks
   public function secret($cd = null)
   {
     $this->say("Downloading secrets from wcor.dev...");
-    shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
+    shell_exec("scp -pr wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/gfs/wcor.dev/nobackup /mnt/gfs/wcor.ide");
 
     if ($cd) {
       $this->say("Uploading secrets to wcor.ode" . $cd . "...");
-      shell_exec("scp /mnt/files/wcor.ide/secrets.settings.php wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/files/wcor.ode" . $cd);
+      shell_exec("scp -pr /mnt/gfs/wcor.ide/nobackup wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/gfs/wcor.ode" . $cd);
     }
   }
 
@@ -106,6 +106,7 @@ class WashcoCommands extends BltTasks
    */
   public function ode_uli($cd)
   {
+    $this->secret($cd);
     $this->say("Grabbing user login from wcor.ode" . $cd . "...");
     $url = shell_exec('acli remote:dr @wcor.ode' . $cd . ' uli && exit');
     $url = explode('/default', $url);
