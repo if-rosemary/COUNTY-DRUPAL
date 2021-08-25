@@ -5,20 +5,20 @@ seckit_xss:
       x: true
       webkit: false
     report-only: true
-    default-src: '''self'''
-    script-src: ''
+    default-src: '''self'' *.washcoor.us *.ahdev.cloud *.acquia-sites.com'
+    script-src: '''self'' *.pagespeed-mod.com *.google-analytics.com'
     object-src: ''
-    img-src: ''
+    img-src: '''self'' *.google-analytics.com data:'
     media-src: ''
     frame-src: ''
     frame-ancestors: ''
     child-src: ''
-    font-src: ''
+    font-src: '''unsafe-inline''  fonts.gstatic.com'
     connect-src: ''
     report-uri: /report-csp-violation
     upgrade-req: true
     policy-uri: ''
-    style-src: ''
+    style-src: '''unsafe-inline'' *.googleapis.com *.washcoor.us *.ahdev.cloud *.acquia-sites.com'
   x_xss:
     seckit_x_xss_option_disable: Disabled
     seckit_x_xss_option_0: '0'
