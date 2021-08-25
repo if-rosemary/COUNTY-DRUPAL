@@ -70,11 +70,11 @@ class WashcoCommands extends BltTasks
   public function secret($cd = null)
   {
     $this->say("Downloading secrets from wcor.dev...");
-    shell_exec("scp -pr wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/gfs/wcor.dev/nobackup /mnt/gfs/wcor.ide");
+    shell_exec("scp -o 'StrictHostKeyChecking=no' -pr wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/gfs/wcor.dev/nobackup /mnt/gfs/wcor.ide");
 
     if ($cd) {
       $this->say("Uploading secrets to wcor.ode" . $cd . "...");
-      shell_exec("scp -pr /mnt/gfs/wcor.ide/nobackup wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/gfs/wcor.ode" . $cd);
+      shell_exec("scp -o 'StrictHostKeyChecking=no' -pr /mnt/gfs/wcor.ide/nobackup wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/gfs/wcor.ode" . $cd);
     }
   }
 
