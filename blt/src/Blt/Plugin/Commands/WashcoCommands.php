@@ -16,6 +16,17 @@ use Zumba\Amplitude\Amplitude;
 class WashcoCommands extends BltTasks
 {
 
+  // Determines appropriate environment and sets values.
+  public function envsetup(){
+    // Default directory for Drupal in ACP is ~/project
+    $envdir = '~/project';
+    // If environment is Lando:
+    if ($_ENV['AH_SITE_ENVIRONMENT'] == "LANDO"){
+      $envdir = '/app';
+    }
+    return $envdir;
+  }
+
   /**
    * Get latest version of develop build.
    *
@@ -24,18 +35,21 @@ class WashcoCommands extends BltTasks
    */
   public function catchup()
   {
+
+    $envdir = $this->envsetup();
+
     $this->say("Unlocking permissions...");
-    shell_exec("chmod 644 ~/project/docroot/sites/default/settings.php && chmod -R u+w ~/project/docroot/sites/default");
+    shell_exec("chmod 644 " . $envdir . "/docroot/sites/default/settings.php && chmod -R u+w " . $envdir . "/docroot/sites/default");
     $this->say("Checking out develop branch...");
     shell_exec("git checkout develop");
     $this->say("Pulling upstream repo...");
     shell_exec("git pull upstream develop");
     $this->say("Locking permissions...");
-    shell_exec("chmod 444 ~/project/docroot/sites/default/settings.php");
+    shell_exec("chmod 444 " . $envdir . "/docroot/sites/default/settings.php");
     $this->say("Syncing Secrets...");
-    shell_exec("scp wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/files/wcor.dev/secrets.settings.php /mnt/files/wcor.ide");
+    $this->secret();
     $this->say("Running composer...");
-    shell_exec("composer install --working-dir ~/project && composer update --lock  --working-dir ~/project");
+    shell_exec("composer install --working-dir " . $envdir . " && composer update --lock  --working-dir " . $envdir . "");
     $this->say("Syncing database...");
     shell_exec("acli pull:database wcor.dev");
     $this->say("Syncing files...");
@@ -53,8 +67,10 @@ class WashcoCommands extends BltTasks
    */
   public function check()
   {
+    $envdir = $this->envsetup();
+
     $this->say("Validate composer.json...");
-    shell_exec("composer validate --no-check-all --ansi --working-dir ~/project");
+    shell_exec("composer validate --no-check-all --ansi --working-dir " . $envdir);
     $this->say("Checking for config differences...");
     shell_exec("drush cst");
     $this->say("Checking for security updates...");
@@ -65,16 +81,23 @@ class WashcoCommands extends BltTasks
    * Sync secret settings.
    *
    * @command custom:secret
-   * @description Syncs secrets.settings.php from develop.
+   * @description Syncs secrets.settings.php from wcor.dev.
    */
   public function secret($cd = null)
   {
+    $envid = 'local';
+    if ($_ENV['AH_SITE_ENVIRONMENT'] && $_ENV['AH_SITE_GROUP']){
+      $envid = $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'];
+    }
+
+
+    $envdir = '/mnt/gfs/' . $envid;
     $this->say("Downloading secrets from wcor.dev...");
-    shell_exec("scp -o 'StrictHostKeyChecking=no' -pr wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/gfs/wcor.dev/nobackup /mnt/gfs/wcor.ide");
+    shell_exec("scp -o 'StrictHostKeyChecking=no' -pr wcor.dev@wcordev.ssh.prod.acquia-sites.com:/mnt/gfs/wcor.dev/nobackup " . $envdir);
 
     if ($cd) {
       $this->say("Uploading secrets to wcor.ode" . $cd . "...");
-      shell_exec("scp -o 'StrictHostKeyChecking=no' -pr /mnt/gfs/wcor.ide/nobackup wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/gfs/wcor.ode" . $cd);
+      shell_exec("scp -o 'StrictHostKeyChecking=no' -pr " . $envdir . "/nobackup wcor.ode" . $cd . "@wcorode" . $cd . ".ssh.prod.acquia-sites.com:/mnt/gfs/wcor.ode" . $cd);
     }
   }
 

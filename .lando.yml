@@ -7,7 +7,7 @@ config:
   build:
     run_scripts: true
   cache: true
-  composer_version: '2'
+  composer_version: '2.1.5'
   inbox: false
   php: '7.4'
   xdebug: false
@@ -15,3 +15,16 @@ tooling:
   blt:
     service: appserver
     cmd: /app/vendor/bin/blt
+services:
+  appserver:
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "https://county-drupal.lndo.site"
+    type: php:7.4
+    build_as_root:
+      - mkdir -p /mnt/gfs/wcor.LANDO/nobackup
+      - mkdir -p /mnt/files/wcor.LANDO/sites/default/files-private
+      - chown -R www-data:www-data /mnt/gfs
+      - chown -R www-data:www-data /mnt/files/wcor.LANDO/sites/default
+      - chmod -R g+rw /mnt/gfs
+      - chmod -R g+rw /mnt/files/wcor.LANDO/sites/default
