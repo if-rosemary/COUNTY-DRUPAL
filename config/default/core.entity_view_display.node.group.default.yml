@@ -37,8 +37,8 @@ content:
     type: text_default
     region: content
   field_email:
-    weight: 6
-    label: above
+    weight: 7
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: email_mailto
@@ -77,19 +77,20 @@ content:
     region: content
   field_phone:
     type: telephone_link
-    weight: 7
+    weight: 6
     region: content
-    label: above
+    label: inline
     settings:
       title: ''
     third_party_settings: {  }
   field_primary_service_location:
     weight: 5
-    label: above
+    label: inline
     settings:
-      link: true
+      view_mode: embedded
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_status:
     weight: 1
@@ -144,6 +145,7 @@ hidden:
   field_group_path: true
   field_short_title: true
   group_telephone_number_formatter_eva_phone_link: true
+  groups_entity_view_child_groups: true
   langcode: true
   links: true
   search_api_excerpt: true

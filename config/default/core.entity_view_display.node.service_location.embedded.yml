@@ -1,9 +1,9 @@
-uuid: 592e2d34-c090-4287-aeb6-7de747e37829
+uuid: c5d91e06-1b0f-4957-bcbe-54860f785388
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.embedded
     - field.field.node.service_location.field_accessibility_notes
     - field.field.node.service_location.field_building
     - field.field.node.service_location.field_featured_image
@@ -11,43 +11,30 @@ dependencies:
     - field.field.node.service_location.field_summary
     - node.type.service_location
   module:
-    - media
     - office_hours
     - user
-id: node.service_location.teaser
+id: node.service_location.embedded
 targetEntityType: node
 bundle: service_location
-mode: teaser
+mode: embedded
 content:
   field_building:
-    type: entity_reference_entity_view
-    weight: 1
-    region: content
+    weight: 0
     label: hidden
     settings:
       view_mode: embedded
       link: false
     third_party_settings: {  }
-  field_featured_image:
-    type: media_thumbnail
-    weight: 0
+    type: entity_reference_entity_view
     region: content
+  field_hours:
+    weight: 1
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-  field_hours:
-    type: office_hours_status
-    weight: 2
-    region: content
-    label: visually_hidden
-    settings:
-      day_format: long
-      time_format: G
-      compress: false
-      grouped: false
       show_closed: all
+      office_hours_first_day: ''
+      day_format: long
+      time_format: g
       closed_format: Closed
       separator:
         days: '<br />'
@@ -56,17 +43,21 @@ content:
         hours_hours: '-'
         more_hours: ', '
       current_status:
-        position: ''
-        open_text: 'Currently open!'
-        closed_text: 'Currently closed'
+        position: before
+        open_text: Open
+        closed_text: Closed
+      compress: false
+      grouped: false
       schema:
         enabled: false
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
+    type: office_hours_table
+    region: content
 hidden:
   content_moderation_control: true
   field_accessibility_notes: true
+  field_featured_image: true
   field_summary: true
   langcode: true
   links: true

@@ -1,0 +1,33 @@
+uuid: 531b9247-7924-4091-9114-79ac785792c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.groups
+  module:
+    - ctools
+    - views
+  theme:
+    - washco
+id: views_block__groups_block_divisions
+theme: washco
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:groups-block_divisions'
+settings:
+  id: 'views_block:groups-block_divisions'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

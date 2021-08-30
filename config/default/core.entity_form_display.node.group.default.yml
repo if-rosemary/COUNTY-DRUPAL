@@ -23,12 +23,63 @@ dependencies:
   module:
     - cleave
     - content_moderation
+    - field_group
     - field_states_ui
     - link
     - path
-    - scheduler
-    - scheduler_content_moderation_integration
     - text
+third_party_settings:
+  field_group:
+    group_administrative_fields:
+      children:
+        - field_type
+        - field_parent
+        - field_group_path
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Administrative fields (required)'
+    group_social_media:
+      children:
+        - field_facebook
+        - field_linkedin
+        - field_twitter
+        - field_youtube
+      parent_name: ''
+      weight: 16
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+        weight: 0
+      label: 'Social media'
+    group_contact_information:
+      children:
+        - field_email
+        - field_phone
+      parent_name: ''
+      weight: 15
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+        weight: 0
+      label: 'Contact information'
 id: node.group.default
 targetEntityType: node
 bundle: group
@@ -36,12 +87,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_body:
-    weight: 3
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -49,7 +100,7 @@ content:
     type: text_textarea
     region: content
   field_email:
-    weight: 5
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -57,7 +108,7 @@ content:
     type: email_default
     region: content
   field_facebook:
-    weight: 23
+    weight: 15
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -73,7 +124,7 @@ content:
     type: link_default
     region: content
   field_group_path:
-    weight: 10
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -81,7 +132,7 @@ content:
     type: string_textfield
     region: content
   field_linkedin:
-    weight: 28
+    weight: 16
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -89,7 +140,7 @@ content:
     type: link_default
     region: content
   field_parent:
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -99,7 +150,7 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_phone:
-    weight: 6
+    weight: 7
     settings:
       placeholder: 503-xxx-xxxx
       country: US
@@ -111,7 +162,7 @@ content:
     type: telephone_cleave
     region: content
   field_primary_service_location:
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -127,14 +178,14 @@ content:
     region: content
   field_redirects:
     type: string_textfield
-    weight: 29
+    weight: 13
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_short_title:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -142,13 +193,13 @@ content:
     type: string_textfield
     region: content
   field_status:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_summary:
-    weight: 2
+    weight: 3
     settings:
       rows: 2
       placeholder: ''
@@ -166,7 +217,7 @@ content:
     type: string_textarea
     region: content
   field_twitter:
-    weight: 25
+    weight: 17
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -174,70 +225,30 @@ content:
     type: link_default
     region: content
   field_type:
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_youtube:
-    weight: 27
+    weight: 18
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
     region: content
-  langcode:
-    type: language_select
-    weight: 12
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 18
+    weight: 12
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 17
+    weight: 11
     region: content
     settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 15
-    region: content
-    third_party_settings: {  }
-  publish_on:
-    type: datetime_timestamp_no_default
-    weight: 21
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  publish_state:
-    type: scheduler_moderation
-    weight: 20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 19
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
-    region: content
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -247,14 +258,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -262,22 +268,19 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 24
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  unpublish_state:
-    type: scheduler_moderation
-    weight: 22
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
-    weight: 26
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   feeds_item: true
+  langcode: true
+  promote: true
+  publish_on: true
+  publish_state: true
+  status: true
+  sticky: true
+  translation: true
+  unpublish_on: true
+  unpublish_state: true

@@ -1,0 +1,10 @@
+uuid: 2c2141fd-cafb-4c2b-99fb-4558244af1cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.embedded
+label: Embedded
+targetEntityType: node
+cache: true
