@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.field_body
+    - field.field.node.page.field_faqs
     - field.field.node.page.field_group
     - field.field.node.page.field_menu_parent
     - field.field.node.page.field_related
@@ -31,6 +32,7 @@ content:
 hidden:
   content_moderation_control: true
   field_body: true
+  field_faqs: true
   field_group: true
   field_menu_parent: true
   field_related: true

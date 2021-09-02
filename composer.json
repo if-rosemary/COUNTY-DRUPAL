@@ -38,6 +38,7 @@
     "drupal/field_states_ui": "^2.0",
     "drupal/geofield": "^1.31",
     "drupal/honeypot": "^2.0",
+    "drupal/inline_entity_form": "^1.0@RC",
     "drupal/jquery_ui_datepicker": "^1.1",
     "drupal/linkit": "^6",
     "drupal/masquerade": "^2.0@beta",

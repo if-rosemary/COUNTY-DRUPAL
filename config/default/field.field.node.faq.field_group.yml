@@ -1,0 +1,29 @@
+uuid: 365eaadc-2ddf-4df1-88ca-4b62921dd41c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_group
+    - node.type.faq
+    - node.type.group
+id: node.faq.field_group
+field_name: field_group
+entity_type: node
+bundle: faq
+label: 'Displayed in'
+description: 'Choose a web group in which this content should appear.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      group: group
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 7e919d32-8a12-458a-9040-e39a5239ea46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords
+    - node.type.faq
+id: node.faq.field_keywords
+field_name: field_keywords
+entity_type: node
+bundle: faq
+label: Keywords
+description: 'An administrator only field for boosting search keywords.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

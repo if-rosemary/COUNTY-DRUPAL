@@ -1,0 +1,31 @@
+uuid: 3c266fdc-a7f4-487a-9e04-07814b4850c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: true
+name: FAQ
+type: faq
+description: 'A <em>FAQ</em> (Frequently Asked Question) should be used for question answer pairs that may be displayed on pages and news. FAQs are also a search result that links back to their parent page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

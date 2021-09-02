@@ -6,6 +6,7 @@ dependencies:
     - node.type.alert
     - node.type.building
     - node.type.contact
+    - node.type.faq
     - node.type.group
     - node.type.news
     - node.type.notification
@@ -99,6 +100,7 @@ type_settings:
       - alert
       - building
       - contact
+      - faq
       - group
       - news
       - notification

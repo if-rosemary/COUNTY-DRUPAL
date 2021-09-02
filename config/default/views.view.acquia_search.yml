@@ -40,7 +40,7 @@ display:
           skip_access: false
           parse_mode: terms
       exposed_form:
-        type: basic
+        type: input_required
         options:
           submit_button: Search
           reset_button: true
@@ -49,6 +49,8 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: ''
+          text_input_required_format: basic_html
       pager:
         type: full
         options:
@@ -71,21 +73,27 @@ display:
             last: 'Last »'
           quantity: 9
       style:
-        type: html_list
+        type: default
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
+          uses_fields: false
       row:
-        type: fields
+        type: search_api
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          view_modes:
+            'entity:node':
+              alert: teaser
+              building: teaser
+              contact: teaser
+              faq: search_index
+              group: teaser
+              news: teaser
+              notification: teaser
+              page: teaser
+              resource: teaser
+              service_location: teaser
+              webform: teaser
       fields:
         title:
           id: title
@@ -411,7 +419,17 @@ display:
             label: ''
           plugin_id: search_api
       title: Search
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Displaying @start - @end of @total'
+          plugin_id: result
       footer: {  }
       empty:
         area:
