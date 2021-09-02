@@ -37,6 +37,7 @@
     "drupal/field_permissions": "^1.1",
     "drupal/field_states_ui": "^2.0",
     "drupal/geofield": "^1.31",
+    "drupal/google_tag": "^1.4",
     "drupal/honeypot": "^2.0",
     "drupal/inline_entity_form": "^1.0@RC",
     "drupal/jquery_ui_datepicker": "^1.1",
