@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_parent
+    - field.storage.node.field_group_path
     - node.type.group
   module:
     - node
@@ -127,10 +127,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_parent:
-          id: field_parent
-          table: node__field_parent
-          field: field_parent
+        field_group_path:
+          id: field_group_path
+          table: node__field_group_path
+          field: field_group_path
           relationship: none
           group_type: group
           admin_label: ''
@@ -138,7 +138,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: ' ({{ field_parent }})'
+            text: ' ({{ field_group_path__value }})'
             make_link: false
             path: ''
             absolute: false
@@ -172,14 +172,14 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: true
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -246,7 +246,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_parent'
+        - 'config:field.storage.node.field_group_path'
   entity_reference_1:
     display_plugin: entity_reference
     id: entity_reference_1
@@ -259,7 +259,7 @@ display:
         options:
           search_fields:
             title: title
-            field_parent: '0'
+            field_group_path: field_group_path
       row:
         type: entity_reference
         options:
@@ -275,4 +275,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_parent'
+        - 'config:field.storage.node.field_group_path'
