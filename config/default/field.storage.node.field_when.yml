@@ -1,23 +1,22 @@
-uuid: 4106f6a1-9702-43fd-ba69-fff5549e9fbe
+uuid: 6a5c515f-63eb-4c3f-b642-0fa1ad5b4093
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - node
-    - taxonomy
+    - smart_date
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_type
-field_name: field_type
+id: node.field_when
+field_name: field_when
 entity_type: node
-type: entity_reference
-settings:
-  target_type: taxonomy_term
-module: core
+type: smartdate
+settings: {  }
+module: smart_date
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

@@ -18,8 +18,13 @@ targetEntityType: node
 bundle: service_location
 mode: default
 content:
+  closure_entity_view_1:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_accessibility_notes:
-    weight: 4
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -44,7 +49,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_hours:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       show_closed: all
@@ -59,7 +64,7 @@ content:
         hours_hours: '-'
         more_hours: ', '
       current_status:
-        position: before
+        position: ''
         open_text: Open
         closed_text: Closed
       compress: false
@@ -71,7 +76,7 @@ content:
     type: office_hours_table
     region: content
   field_summary:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }

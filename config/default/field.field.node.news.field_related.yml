@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_related
+    - node.type.event
     - node.type.news
     - node.type.page
     - node.type.resource
@@ -21,6 +22,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      event: event
       news: news
       page: page
       resource: resource

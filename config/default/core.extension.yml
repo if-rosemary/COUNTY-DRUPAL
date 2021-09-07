@@ -77,6 +77,7 @@ module:
   serialization: 0
   shield: 0
   simplesamlphp_auth: 0
+  smart_date: 0
   smtp: 0
   subpathauto: 0
   syslog: 0

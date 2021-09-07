@@ -1,0 +1,40 @@
+uuid: 529351b7-3834-4a27-a29c-0dca2c6d3749
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_body
+    - field.field.node.event.field_location
+    - field.field.node.event.field_type
+    - field.field.node.event.field_when
+    - node.type.event
+  module:
+    - smart_date
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  field_when:
+    type: smartdate_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_body: true
+  field_location: true
+  field_type: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

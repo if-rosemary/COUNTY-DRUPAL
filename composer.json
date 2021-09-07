@@ -57,6 +57,7 @@
     "drupal/seckit": "^2.0",
     "drupal/shield": "^1.4",
     "drupal/simplesamlphp_auth": "^3.2",
+    "drupal/smart_date": "^3.4",
     "drupal/smtp": "^1.0",
     "drupal/subpathauto": "^1.1",
     "drupal/toolbar_menu": "^2.2",

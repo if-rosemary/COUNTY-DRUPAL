@@ -16,8 +16,13 @@ targetEntityType: node
 bundle: building
 mode: default
 content:
-  field_address:
+  closure_entity_view_1:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -25,7 +30,7 @@ content:
     region: content
   field_geolocation:
     type: geofield_default
-    weight: 1
+    weight: 2
     region: content
     label: above
     settings:
@@ -33,12 +38,12 @@ content:
       output_escape: true
     third_party_settings: {  }
   get_directions_link_eva_get_directions_link:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   get_directions_link_eva_transit_link:
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

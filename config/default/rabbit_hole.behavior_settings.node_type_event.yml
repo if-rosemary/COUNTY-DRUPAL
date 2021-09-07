@@ -1,0 +1,14 @@
+uuid: f1918e9a-5248-4496-b7e6-8775adb8420d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event
+id: node_type_event
+entity_type_id: node_type
+entity_id: event
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
