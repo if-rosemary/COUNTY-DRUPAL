@@ -63,22 +63,20 @@ events:
     steps:
       - deploy:
           script:
-            - "echo 'Starting removal of WCOR CD Environment'"
-            - pipelines-deploy
-            - "echo 'WCOR CD Environment Deleted'"
+            - "echo 'Starting removal of CDE...'"
+            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* && ${PIPELINE_VCS_PATH} == develop ]]; then pipelines-deploy; else echo 'Skipping CDE deletion.'; fi"
   # When a GitHub pull request is closed, this deletes the coresponding CD.
   pr-closed:
     steps:
       - deploy:
           script:
-            - "echo 'Starting removal of WCOR CD Environment'"
-            - pipelines-deploy
-            - "echo 'WCOR CD Environment Deleted'"
+            - "echo 'Starting removal of CDE...'"
+            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* && ${PIPELINE_VCS_PATH} == develop ]]; then pipelines-deploy; else echo 'Skipping CDE deletion.'; fi"
   post-deploy:
     steps:
-      # Deploy the build artifact to a Cloud on-demand environment.
+      # Deploy the build artifact to a CDE. Targeting develop branch and pull requests.
       - deploy:
           script:
-            - "echo 'Starting creation of WCOR CD Environment'"
-            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* ]]; then echo 'Creating CD environment for PR.' && pipelines-deploy; else echo 'Not a PR. Skipping CD environment creation.'; fi"
-            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* ]]; then echo 'Setting up Drupal environment for PR.' && pipelines-sync-dbs wcor && ./vendor/bin/drush deploy -y; fi"
+            - "echo 'Starting creation of WCOR CD Environment...'"
+            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* && ${PIPELINE_VCS_PATH} == develop ]]; then echo 'Creating CD environment for PR.' && pipelines-deploy; else echo 'Not a PR. Skipping CD environment creation.'; fi"
+            - "if [[ ${PIPELINE_DEPLOY_VCS_PATH} == pipelines-build-pr* && ${PIPELINE_VCS_PATH} == develop ]]; then echo 'Setting up Drupal environment for PR.' && pipelines-sync-dbs wcor && ./vendor/bin/drush deploy -y; fi"
