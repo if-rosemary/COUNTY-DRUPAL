@@ -8,9 +8,10 @@ description: 'Acquia Prod environment.'
 folder: ../config/envs/prod
 module: {  }
 theme: {  }
-blacklist: {  }
-graylist:
+blacklist:
+  - google_tag.container.www.washingtoncountyor.gov
   - system.performance
+graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
