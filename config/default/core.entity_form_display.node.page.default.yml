@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.field_body
     - field.field.node.page.field_faqs
     - field.field.node.page.field_group
+    - field.field.node.page.field_location
     - field.field.node.page.field_menu_parent
     - field.field.node.page.field_related
     - field.field.node.page.field_short_title
@@ -30,7 +31,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -43,7 +44,7 @@ content:
     type: text_textarea
     region: content
   field_faqs:
-    weight: 9
+    weight: 10
     settings:
       form_mode: default
       revision: true
@@ -65,7 +66,17 @@ content:
     type: inline_entity_form_complex
     region: content
   field_group:
-    weight: 12
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_location:
+    weight: 9
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -104,7 +115,7 @@ content:
     region: content
   field_redirects:
     type: string_textfield
-    weight: 21
+    weight: 22
     region: content
     settings:
       size: 60
@@ -186,30 +197,30 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 20
+    weight: 21
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -223,7 +234,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
@@ -233,18 +244,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
