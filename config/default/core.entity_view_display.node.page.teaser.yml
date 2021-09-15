@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.page.field_group
     - field.field.node.page.field_location
     - field.field.node.page.field_menu_parent
+    - field.field.node.page.field_migration_status
     - field.field.node.page.field_related
     - field.field.node.page.field_short_title
     - field.field.node.page.field_show_in_menu
@@ -37,6 +38,7 @@ hidden:
   field_group: true
   field_location: true
   field_menu_parent: true
+  field_migration_status: true
   field_related: true
   field_short_title: true
   field_show_in_menu: true

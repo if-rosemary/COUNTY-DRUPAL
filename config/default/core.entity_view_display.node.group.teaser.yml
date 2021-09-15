@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
     - field.field.node.group.field_linkedin
+    - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
     - field.field.node.group.field_primary_service_location
@@ -47,6 +48,7 @@ hidden:
   field_facebook: true
   field_group_path: true
   field_linkedin: true
+  field_migration_status: true
   field_parent: true
   field_phone: true
   field_primary_service_location: true

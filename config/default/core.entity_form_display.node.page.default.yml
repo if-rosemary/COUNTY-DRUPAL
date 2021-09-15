@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_group
     - field.field.node.page.field_location
     - field.field.node.page.field_menu_parent
+    - field.field.node.page.field_migration_status
     - field.field.node.page.field_related
     - field.field.node.page.field_short_title
     - field.field.node.page.field_show_in_menu
@@ -112,6 +113,12 @@ content:
               value: ''
               submit: 'Add Cancel'
     type: entity_reference_autocomplete
+    region: content
+  field_migration_status:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_redirects:
     type: string_textfield
