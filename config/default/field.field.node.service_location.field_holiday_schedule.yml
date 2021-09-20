@@ -1,0 +1,21 @@
+uuid: 30d08812-f25f-4399-9e98-2caec3757f30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_holiday_schedule
+    - node.type.service_location
+id: node.service_location.field_holiday_schedule
+field_name: field_holiday_schedule
+entity_type: node
+bundle: service_location
+label: 'Holiday schedule'
+description: 'Enter the County-observed holidays on which this service location is closed or operates on modified hours.'
+required: false
+translatable: true
+default_value:
+  -
+    value: "Closed on the following holidays:\r\n\r\nNew Year's Day (January 1)\r\nMartin Luther King, Jr. Day (third Monday in January)\r\nPresidents Day (third Monday in February)\r\nMemorial Day (last Monday in May)\r\nIndependence Day (July 4)\r\nLabor Day (first Monday in September)\r\nVeterans Day (November 11)\r\nThanksgiving Day (fourth Thursday in November)\r\nChristmas Day (December 25)\r\n\r\nWhen a holiday falls on a Saturday, we're closed the Friday before. When a holiday falls on a Sunday, we're closed the following Monday."
+default_value_callback: ''
+settings: {  }
+field_type: string_long

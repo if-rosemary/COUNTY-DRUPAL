@@ -82,6 +82,7 @@ permissions:
   - 'view contact revisions'
   - 'view e in toolbar'
   - 'view faq revisions'
+  - 'view field_migration_status'
   - 'view group revisions'
   - 'view latest version'
   - 'view news revisions'

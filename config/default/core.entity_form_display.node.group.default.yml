@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
     - field.field.node.group.field_linkedin
+    - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
     - field.field.node.group.field_primary_service_location
@@ -138,6 +139,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_migration_status:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_parent:
     weight: 10
