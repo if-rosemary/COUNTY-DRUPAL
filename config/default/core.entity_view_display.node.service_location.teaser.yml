@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.service_location.field_accessibility_notes
     - field.field.node.service_location.field_building
     - field.field.node.service_location.field_featured_image
+    - field.field.node.service_location.field_holiday_schedule
     - field.field.node.service_location.field_hours
     - field.field.node.service_location.field_summary
     - node.type.service_location
@@ -19,6 +20,11 @@ targetEntityType: node
 bundle: service_location
 mode: teaser
 content:
+  closure_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_building:
     type: entity_reference_entity_view
     weight: 1
@@ -67,6 +73,7 @@ content:
 hidden:
   content_moderation_control: true
   field_accessibility_notes: true
+  field_holiday_schedule: true
   field_summary: true
   langcode: true
   links: true
