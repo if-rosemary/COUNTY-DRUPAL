@@ -8,9 +8,12 @@ dependencies:
     - node
     - search_api
   config:
-    - field.storage.node.body
+    - field.storage.node.field_body
     - field.storage.node.field_group
     - field.storage.node.field_keywords
+    - field.storage.node.field_short_title
+    - field.storage.node.field_summary
+    - field.storage.node.field_type
     - search_api.server.acquia_search_server
 third_party_settings:
   acquia_search:
@@ -62,14 +65,14 @@ name: 'Acquia Search Solr Index'
 description: ''
 read_only: false
 field_settings:
-  body:
+  field_body:
     label: Body
     datasource_id: 'entity:node'
-    property_path: body
+    property_path: field_body
     type: text
     dependencies:
       config:
-        - field.storage.node.body
+        - field.storage.node.field_body
   field_group:
     label: 'Displayed in'
     datasource_id: 'entity:node'
@@ -83,10 +86,34 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: field_keywords
     type: text
-    boost: !!float 2
     dependencies:
       config:
         - field.storage.node.field_keywords
+  field_short_title:
+    label: 'Short title'
+    datasource_id: 'entity:node'
+    property_path: field_short_title
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_short_title
+  field_summary:
+    label: Summary
+    datasource_id: 'entity:node'
+    property_path: field_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_summary
+  field_type:
+    label: Type
+    datasource_id: 'entity:node'
+    property_path: field_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_type
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -109,7 +136,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: !!float 2
+    boost: !!float 5
     dependencies:
       module:
         - node
@@ -117,7 +144,7 @@ field_settings:
     label: 'Content type'
     datasource_id: 'entity:node'
     property_path: type
-    type: string
+    type: integer
     dependencies:
       module:
         - node
@@ -135,7 +162,13 @@ datasource_settings:
   'entity:node':
     bundles:
       default: true
-      selected: {  }
+      selected:
+        - alert
+        - building
+        - contact
+        - notification
+        - service_location
+        - webform
     languages:
       default: true
       selected: {  }
@@ -146,12 +179,19 @@ processor_settings:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  hierarchy:
+    fields:
+      field_group: node-field_group
+    weights:
+      preprocess_index: -45
   highlight:
     highlight: server
-    highlight_partial: false
+    highlight_partial: true
     excerpt: true
     excerpt_length: 400
     exclude_fields:
+      - field_keywords
+      - field_short_title
       - title
     prefix: '<strong>'
     suffix: '</strong>'
@@ -160,20 +200,16 @@ processor_settings:
   html_filter:
     all_fields: true
     fields:
-      - body
+      - field_body
       - field_keywords
+      - field_short_title
+      - field_summary
       - title
-      - type
     title: true
     alt: true
     tags:
       b: 2
-      em: 1
-      h1: 5
-      h2: 3
-      h3: 2
       strong: 2
-      u: 1
     weights:
       preprocess_index: -15
       preprocess_query: -15
@@ -186,6 +222,13 @@ processor_settings:
     boosts:
       'entity:node':
         datasource_boost: !!float 1
+        bundle_boosts:
+          event: 0.2
+          faq: !!float 1
+          group: !!float 1
+          news: 0.2
+          page: !!float 1
+          resource: 0.5
     weights:
       preprocess_index: 0
 tracker_settings:
