@@ -40,7 +40,7 @@
     "drupal/honeypot": "^2.0",
     "drupal/inline_entity_form": "^1.0@RC",
     "drupal/jquery_ui_datepicker": "^1.1",
-    "drupal/linkit": "^6",
+    "drupal/linkit": "^6.0",
     "drupal/masquerade": "^2.0@beta",
     "drupal/masquerade_field": "^1.0@alpha",
     "drupal/masquerade_log": "^1.0",
