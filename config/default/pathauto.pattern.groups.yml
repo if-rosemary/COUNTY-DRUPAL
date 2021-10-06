@@ -7,16 +7,16 @@ dependencies:
 id: groups
 label: Groups
 type: 'canonical_entities:node'
-pattern: '[node:field_group_path]'
+pattern: '[node:field_group:0:entity:field_group_path]'
 selection_criteria:
-  6d156f8b-01d8-4fbc-ab9f-f6f9cfe1cd99:
+  a3734f2c-cc77-47db-b064-4687bcdb1f10:
     id: node_type
     bundles:
       group: group
     negate: false
     context_mapping:
       node: node
-    uuid: 6d156f8b-01d8-4fbc-ab9f-f6f9cfe1cd99
+    uuid: a3734f2c-cc77-47db-b064-4687bcdb1f10
 selection_logic: and
 weight: -5
 relationships: {  }

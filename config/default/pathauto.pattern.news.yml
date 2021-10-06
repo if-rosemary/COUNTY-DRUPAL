@@ -7,16 +7,16 @@ dependencies:
 id: news
 label: News
 type: 'canonical_entities:node'
-pattern: '[node:field_group:0:entity:field_group_path]/news/[node:scheduler-publish:html_month]/[node:source:title]'
+pattern: '[node:field_group:0:entity:field_group_path]/news/[node:scheduler-publish:html_month]/[node:title]'
 selection_criteria:
-  ea7edd68-19c1-488a-acdc-de43ded29143:
+  a29ce27f-5fa2-48d3-9098-4db80a84615d:
     id: node_type
     bundles:
       news: news
     negate: false
     context_mapping:
       node: node
-    uuid: ea7edd68-19c1-488a-acdc-de43ded29143
+    uuid: a29ce27f-5fa2-48d3-9098-4db80a84615d
 selection_logic: and
 weight: -9
 relationships: {  }
