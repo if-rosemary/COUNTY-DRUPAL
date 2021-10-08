@@ -14,7 +14,7 @@ $config['technicalcontact_email'] = "webteam@co.washington.or.us";
 $config['admin.protectindexpage'] = TRUE;
 
 $samlfiles = __DIR__ . '/../';
-$acpdir = sprintf('/mnt/files/%s.%s/', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
+$acpdir = sprintf('/mnt/gfs/%s.%s/nobackup/', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
 
 $config['metadatadir'] = $samlfiles . 'metadata/';
 $config['certdir']     = $acpdir . 'cert/';

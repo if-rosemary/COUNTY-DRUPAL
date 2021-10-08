@@ -58,14 +58,22 @@
  * implementations with custom ones.
  */
 
-// Redirect http to https.
 if (isset($_ENV['AH_SITE_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+  // Redirect http to https.
   if (!isset($_SERVER['HTTP_X_FORWARDED_PROTO']) || $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https' ) {
     header('HTTP/1.0 301 Moved Permanently');
     header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     exit();
   }
+  // Redirect non-www to www.
+  if ($_SERVER['HTTP_HOST'] == 'washingtoncountyor.gov') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://www.'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+  }
 }
+
+
 /**
  * Database settings:
  *
