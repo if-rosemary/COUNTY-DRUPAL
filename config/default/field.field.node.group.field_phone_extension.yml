@@ -1,21 +1,19 @@
-uuid: c42fa7d0-0298-4b92-a668-1b7983de3384
+uuid: 0d3f6bdc-04ff-4403-a578-49c4483a3992
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_phone
+    - field.storage.node.field_phone_extension
     - node.type.group
-  module:
-    - telephone
-id: node.group.field_phone
-field_name: field_phone
+id: node.group.field_phone_extension
+field_name: field_phone_extension
 entity_type: node
 bundle: group
-label: 'Phone number'
+label: 'Phone extension'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: telephone
+field_type: string

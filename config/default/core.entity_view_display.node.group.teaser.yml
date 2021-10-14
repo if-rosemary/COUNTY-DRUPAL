@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
+    - field.field.node.group.field_phone_extension
     - field.field.node.group.field_primary_service_location
     - field.field.node.group.field_short_title
     - field.field.node.group.field_status
@@ -40,6 +41,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  phone_number_formatter_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   content_moderation_control: true
   feeds_item: true
@@ -51,6 +57,7 @@ hidden:
   field_migration_status: true
   field_parent: true
   field_phone: true
+  field_phone_extension: true
   field_primary_service_location: true
   field_short_title: true
   field_status: true

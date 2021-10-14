@@ -1,20 +1,22 @@
-uuid: 0086ad9e-0f9b-441c-b450-d030309a8fd0
+uuid: 834d4e2c-c34e-4f75-b180-79648949aa07
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - node
-    - telephone
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_phone
-field_name: field_phone
+id: node.field_phone_extension
+field_name: field_phone_extension
 entity_type: node
-type: telephone
-settings: {  }
-module: telephone
+type: string
+settings:
+  max_length: 6
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

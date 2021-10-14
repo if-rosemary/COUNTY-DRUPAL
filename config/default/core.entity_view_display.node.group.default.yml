@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
+    - field.field.node.group.field_phone_extension
     - field.field.node.group.field_primary_service_location
     - field.field.node.group.field_short_title
     - field.field.node.group.field_status
@@ -22,7 +23,6 @@ dependencies:
     - node.type.group
   module:
     - link
-    - telephone
     - text
     - user
 id: node.group.default
@@ -84,14 +84,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_phone:
-    type: telephone_link
-    weight: 6
-    region: content
-    label: inline
-    settings:
-      title: ''
-    third_party_settings: {  }
   field_primary_service_location:
     weight: 5
     label: inline
@@ -148,10 +140,17 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  phone_number_formatter_entity_view_1:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   feeds_item: true
   field_group_path: true
+  field_phone: true
+  field_phone_extension: true
   field_short_title: true
   group_telephone_number_formatter_eva_phone_link: true
   groups_entity_view_child_groups: true
