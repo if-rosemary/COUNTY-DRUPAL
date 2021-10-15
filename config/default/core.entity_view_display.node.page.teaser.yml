@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_menu_parent
     - field.field.node.page.field_migration_status
     - field.field.node.page.field_related
+    - field.field.node.page.field_service_type
     - field.field.node.page.field_short_title
     - field.field.node.page.field_show_in_menu
     - field.field.node.page.field_sort_weight
@@ -40,6 +41,7 @@ hidden:
   field_menu_parent: true
   field_migration_status: true
   field_related: true
+  field_service_type: true
   field_short_title: true
   field_show_in_menu: true
   field_sort_weight: true
