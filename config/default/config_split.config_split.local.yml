@@ -6,10 +6,13 @@ id: local
 label: Local
 description: 'Any non-Acquia, non-Travis environment.'
 folder: ../config/envs/local
-module: {  }
+module:
+  devel: 0
 theme: {  }
 blacklist: {  }
-graylist: {  }
+graylist:
+  - seckit.settings
+  - simplesamlphp_auth.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

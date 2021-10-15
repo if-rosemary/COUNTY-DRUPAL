@@ -792,33 +792,39 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php') && $_ENV['AH_SITE_ENVIRONMENT'] == 'ide') {
+if ($_ENV['AH_SITE_ENVIRONMENT'] == 'ide') {
+  include $app_root . '/' . $site_path . '/settings.ide.php';
+}
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
+
 
 if (file_exists('/var/www/site-php')) {
   require '/var/www/site-php/wcor/wcor-settings.inc';
 }
 
-$secrets_file = sprintf('/mnt/gfs/%s.%s/nobackup/secrets.settings.php', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
+if (isset($_ENV['AH_SITE_GROUP'])) {
+  $secrets_file = sprintf('/mnt/gfs/%s.%s/nobackup/secrets.settings.php', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
+  if (file_exists($secrets_file)) {
+    require $secrets_file;
+  }
 
-if (file_exists($secrets_file)) {
-  require $secrets_file;
+  // Override the ID of the Search core to use.
+  // For acquia_search-8.x-3.x
+  if (($_ENV['AH_SITE_ENVIRONMENT'] == 'prod') || ($_ENV['AH_SITE_ENVIRONMENT'] == 'test')){
+    $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.' . $_ENV['AH_SITE_ENVIRONMENT'] . '.wcor';
+  }
+  else {
+    $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.dev.wcor';
+  }
+
 }
 
 if (isset($_ENV['SHPASS'])) {
   // Enable Shield if ENV SHPASS exists.
   $config['shield.settings']['credentials']['shield']['user'] = 'user';
   $config['shield.settings']['credentials']['shield']['pass'] = $_ENV['SHPASS'];
-}
-
-// Override the ID of the Search core to use.
-// For acquia_search-8.x-3.x
-if ($_ENV['AH_SITE_ENVIRONMENT'] == 'prod' || $_ENV['AH_SITE_ENVIRONMENT'] == 'test'){
-  $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.' . $_ENV['AH_SITE_ENVIRONMENT'] . '.wcor';
-}
-else {
-  $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.dev.wcor';
 }
 
 
