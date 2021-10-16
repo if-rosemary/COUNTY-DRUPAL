@@ -77,7 +77,6 @@ module:
   seckit: 0
   serialization: 0
   shield: 0
-  shortcut: 0
   simplesamlphp_auth: 0
   smart_date: 0
   smtp: 0
