@@ -140,6 +140,9 @@
         },
         "drupal/csv_importer": {
             "3000137 - Enable multi value imports - feature/WCOR-1116": "https://www.drupal.org/files/issues/2020-11-16/3000137-multiple-values-16.patch"
+        },
+        "drupal/media_entity_download": {
+            "3059830 - Make link title editable / add token support / more options - feature/WCOR-1199": "https://www.drupal.org/files/issues/2021-07-16/3059830-make-link-title-11.patch"
         }
     }
   },
