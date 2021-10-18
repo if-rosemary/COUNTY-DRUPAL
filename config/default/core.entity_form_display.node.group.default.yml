@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.group.field_email
     - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
-    - field.field.node.group.field_linkedin
     - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
@@ -27,7 +26,6 @@ dependencies:
     - content_moderation
     - field_group
     - field_states_ui
-    - link
     - path
     - text
 third_party_settings:
@@ -124,20 +122,12 @@ content:
     type: email_default
     region: content
   field_facebook:
-    weight: 15
+    weight: 26
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings:
-      field_states_ui:
-        form:
-          type: ''
-          list: ''
-          add: Add
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: link_default
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_group_path:
     weight: 11
@@ -146,14 +136,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_linkedin:
-    weight: 16
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
     region: content
   field_migration_status:
     weight: 16
@@ -255,12 +237,12 @@ content:
     type: string_textarea
     region: content
   field_twitter:
-    weight: 17
+    weight: 27
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: link_default
+    type: string_textfield
     region: content
   field_type:
     weight: 9
@@ -269,12 +251,12 @@ content:
     type: options_select
     region: content
   field_youtube:
-    weight: 18
+    weight: 28
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: link_default
+    type: string_textfield
     region: content
   moderation_state:
     type: moderation_state_default

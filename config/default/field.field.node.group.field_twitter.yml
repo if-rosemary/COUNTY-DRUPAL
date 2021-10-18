@@ -1,23 +1,19 @@
-uuid: c6d061b4-4942-42a2-817d-e88f9b9612f4
+uuid: 88a3e203-310d-4b65-9efe-23b66f62a341
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_twitter
     - node.type.group
-  module:
-    - link
 id: node.group.field_twitter
 field_name: field_twitter
 entity_type: node
 bundle: group
 label: Twitter
-description: ''
+description: 'Enter the portion of the Twitter URL following the slash after the base segment https://twitter.com/ -- for example, if your Twitter URL is https://twitter.com/mytwitter, enter "mytwitter" in this field.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  link_type: 16
-  title: 0
-field_type: link
+settings: {  }
+field_type: string
