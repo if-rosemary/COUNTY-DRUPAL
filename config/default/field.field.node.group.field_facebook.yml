@@ -1,23 +1,19 @@
-uuid: 2ca84991-a5fe-405a-918e-f379e0b227cc
+uuid: f44435cc-a1f5-4785-845c-1e98ff4b6fb5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_facebook
     - node.type.group
-  module:
-    - link
 id: node.group.field_facebook
 field_name: field_facebook
 entity_type: node
 bundle: group
 label: Facebook
-description: ''
+description: 'Enter the portion of the Facebook URL following the slash after the base segment https://www.facebook.com/ -- for example, if your Facebook URL is https://www.facebook.com/myfbpage, enter "myfbpage" in this field.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  link_type: 16
-  title: 0
-field_type: link
+settings: {  }
+field_type: string

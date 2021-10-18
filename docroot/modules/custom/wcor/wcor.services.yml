@@ -1,0 +1,5 @@
+services:
+  wcor.FileSizeExtension:
+    class: Drupal\wcor\FileSizeExtension
+    tags:
+      - { name: twig.extension }

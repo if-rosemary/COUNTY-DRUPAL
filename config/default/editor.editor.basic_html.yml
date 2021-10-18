@@ -54,11 +54,11 @@ settings:
             - Maximize
             - Source
   plugins:
-    language:
-      language_list: un
     drupallink:
       linkit_enabled: true
       linkit_profile: default
+    language:
+      language_list: un
     stylescombo:
       styles: ''
 image_upload:

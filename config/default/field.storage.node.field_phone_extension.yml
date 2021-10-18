@@ -1,4 +1,4 @@
-uuid: 97a00bd4-33a5-49fb-a6c7-e505ae00d81d
+uuid: 834d4e2c-c34e-4f75-b180-79648949aa07
 langcode: en
 status: true
 dependencies:
@@ -8,12 +8,12 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_twitter
-field_name: field_twitter
+id: node.field_phone_extension
+field_name: field_phone_extension
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 6
   is_ascii: false
   case_sensitive: false
 module: core

@@ -58,14 +58,22 @@
  * implementations with custom ones.
  */
 
-// Redirect http to https.
 if (isset($_ENV['AH_SITE_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+  // Redirect http to https.
   if (!isset($_SERVER['HTTP_X_FORWARDED_PROTO']) || $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https' ) {
     header('HTTP/1.0 301 Moved Permanently');
     header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     exit();
   }
+  // Redirect non-www to www.
+  if ($_SERVER['HTTP_HOST'] == 'washingtoncountyor.gov') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://www.'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+  }
 }
+
+
 /**
  * Database settings:
  *
@@ -784,33 +792,39 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php') && $_ENV['AH_SITE_ENVIRONMENT'] == 'ide') {
+if ($_ENV['AH_SITE_ENVIRONMENT'] == 'ide') {
+  include $app_root . '/' . $site_path . '/settings.ide.php';
+}
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
+
 
 if (file_exists('/var/www/site-php')) {
   require '/var/www/site-php/wcor/wcor-settings.inc';
 }
 
-$secrets_file = sprintf('/mnt/gfs/%s.%s/nobackup/secrets.settings.php', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
+if (isset($_ENV['AH_SITE_GROUP'])) {
+  $secrets_file = sprintf('/mnt/gfs/%s.%s/nobackup/secrets.settings.php', $_ENV['AH_SITE_GROUP'], $_ENV['AH_SITE_ENVIRONMENT']);
+  if (file_exists($secrets_file)) {
+    require $secrets_file;
+  }
 
-if (file_exists($secrets_file)) {
-  require $secrets_file;
+  // Override the ID of the Search core to use.
+  // For acquia_search-8.x-3.x
+  if (($_ENV['AH_SITE_ENVIRONMENT'] == 'prod') || ($_ENV['AH_SITE_ENVIRONMENT'] == 'test')){
+    $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.' . $_ENV['AH_SITE_ENVIRONMENT'] . '.wcor';
+  }
+  else {
+    $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.dev.wcor';
+  }
+
 }
 
 if (isset($_ENV['SHPASS'])) {
   // Enable Shield if ENV SHPASS exists.
   $config['shield.settings']['credentials']['shield']['user'] = 'user';
   $config['shield.settings']['credentials']['shield']['pass'] = $_ENV['SHPASS'];
-}
-
-// Override the ID of the Search core to use.
-// For acquia_search-8.x-3.x
-if ($_ENV['AH_SITE_ENVIRONMENT'] == 'prod' || $_ENV['AH_SITE_ENVIRONMENT'] == 'test'){
-  $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.' . $_ENV['AH_SITE_ENVIRONMENT'] . '.wcor';
-}
-else {
-  $config['acquia_search.settings']['override_search_core'] = 'JLQZ-203972.dev.wcor';
 }
 
 
