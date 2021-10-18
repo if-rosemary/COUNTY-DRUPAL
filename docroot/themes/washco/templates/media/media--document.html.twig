@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'media',
+    'media--type-' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--view-mode-' ~ view_mode.id()|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+
+
+
+  {% if content %}
+
+    {% set media_url = content.field_media_file.0|raw %}
+    {% set media_title = name %}
+
+    {# If data-title exists, over name value #}
+    {% if attributes['data-title'] is not empty %}
+      {% set media_title = attributes['data-title'] %}
+    {% endif %}
+
+    <a href="{{ media_url }}">{{ media_title }}</a>&nbsp;<span>({{ content.field_mime_type.0 }})</span>
+    {{ fileSizeString(content.field_file_size.0|raw) }}
+  {#   {{ content }} #}
+  {% endif %}
+</article>

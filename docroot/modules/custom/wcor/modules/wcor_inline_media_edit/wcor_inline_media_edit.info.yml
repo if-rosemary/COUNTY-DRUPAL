@@ -1,0 +1,9 @@
+name: WCOR Inline Media Edit module
+description: Allows direct modification to the editor media dialog form within CKEditor.
+package: Custom
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - 'drupal:wcor'

@@ -7,18 +7,23 @@ dependencies:
     - field.field.node.contact.field_email
     - field.field.node.contact.field_group
     - field.field.node.contact.field_phone
+    - field.field.node.contact.field_phone_extension
     - field.field.node.contact.field_phone_help_text
     - node.type.contact
   module:
-    - telephone
     - user
 id: node.contact.default
 targetEntityType: node
 bundle: contact
 mode: default
 content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_contact_title:
-    weight: 1
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -40,14 +45,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_phone:
-    weight: 4
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    type: telephone_link
-    region: content
   field_phone_help_text:
     weight: 5
     label: above
@@ -57,10 +54,17 @@ content:
     type: string
     region: content
   links:
-    weight: 0
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  phone_number_formatter_entity_view_1:
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_phone: true
+  field_phone_extension: true
   langcode: true
   search_api_excerpt: true

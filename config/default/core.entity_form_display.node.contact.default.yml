@@ -7,14 +7,34 @@ dependencies:
     - field.field.node.contact.field_email
     - field.field.node.contact.field_group
     - field.field.node.contact.field_phone
+    - field.field.node.contact.field_phone_extension
     - field.field.node.contact.field_phone_help_text
     - node.type.contact
+    - workflows.workflow.editorial
   module:
+    - cleave
     - content_moderation
+    - field_group
     - path
     - scheduler
     - scheduler_content_moderation_integration
-    - telephone
+third_party_settings:
+  field_group:
+    group_phone:
+      children:
+        - field_phone
+        - field_phone_extension
+        - field_phone_help_text
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Phone
 id: node.contact.default
 targetEntityType: node
 bundle: contact
@@ -35,7 +55,7 @@ content:
     type: string_textfield
     region: content
   field_email:
-    weight: 16
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -56,11 +76,28 @@ content:
     weight: 17
     settings:
       placeholder: ''
+      country: US
     third_party_settings: {  }
-    type: telephone_default
+    type: telephone_cleave
+    region: content
+  field_phone_extension:
+    weight: 18
+    settings:
+      size: 10
+      placeholder: ''
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
     region: content
   field_phone_help_text:
-    weight: 18
+    weight: 19
     settings:
       size: 60
       placeholder: ''
@@ -155,7 +192,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

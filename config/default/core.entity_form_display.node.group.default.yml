@@ -8,10 +8,10 @@ dependencies:
     - field.field.node.group.field_email
     - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
-    - field.field.node.group.field_linkedin
     - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
+    - field.field.node.group.field_phone_extension
     - field.field.node.group.field_primary_service_location
     - field.field.node.group.field_short_title
     - field.field.node.group.field_status
@@ -26,7 +26,6 @@ dependencies:
     - content_moderation
     - field_group
     - field_states_ui
-    - link
     - path
     - text
 third_party_settings:
@@ -54,7 +53,7 @@ third_party_settings:
         - field_twitter
         - field_youtube
       parent_name: ''
-      weight: 16
+      weight: 15
       format_type: details_sidebar
       region: content
       format_settings:
@@ -68,9 +67,9 @@ third_party_settings:
     group_contact_information:
       children:
         - field_email
-        - field_phone
+        - group_phone
       parent_name: ''
-      weight: 15
+      weight: 14
       format_type: details_sidebar
       region: content
       format_settings:
@@ -81,6 +80,20 @@ third_party_settings:
         required_fields: false
         weight: 0
       label: 'Contact information'
+    group_phone:
+      children:
+        - field_phone
+        - field_phone_extension
+      parent_name: group_contact_information
+      weight: 7
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Phone
 id: node.group.default
 targetEntityType: node
 bundle: group
@@ -88,7 +101,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -109,20 +122,12 @@ content:
     type: email_default
     region: content
   field_facebook:
-    weight: 15
+    weight: 26
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings:
-      field_states_ui:
-        form:
-          type: ''
-          list: ''
-          add: Add
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: link_default
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_group_path:
     weight: 11
@@ -132,16 +137,8 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_linkedin:
-    weight: 16
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   field_migration_status:
-    weight: 26
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -157,7 +154,7 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_phone:
-    weight: 7
+    weight: 8
     settings:
       placeholder: 503-xxx-xxxx
       country: US
@@ -167,6 +164,22 @@ content:
           type: ''
           list: ''
     type: telephone_cleave
+    region: content
+  field_phone_extension:
+    weight: 9
+    settings:
+      size: 10
+      placeholder: ''
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
     region: content
   field_primary_service_location:
     weight: 5
@@ -185,7 +198,7 @@ content:
     region: content
   field_redirects:
     type: string_textfield
-    weight: 13
+    weight: 11
     region: content
     settings:
       size: 60
@@ -200,7 +213,7 @@ content:
     type: string_textfield
     region: content
   field_status:
-    weight: 8
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -224,12 +237,12 @@ content:
     type: string_textarea
     region: content
   field_twitter:
-    weight: 17
+    weight: 27
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: link_default
+    type: string_textfield
     region: content
   field_type:
     weight: 9
@@ -238,22 +251,22 @@ content:
     type: options_select
     region: content
   field_youtube:
-    weight: 18
+    weight: 28
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: link_default
+    type: string_textfield
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 12
+    weight: 10
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -267,7 +280,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
@@ -276,7 +289,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

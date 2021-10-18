@@ -11,7 +11,7 @@ id: node.contact.field_phone
 field_name: field_phone
 entity_type: node
 bundle: contact
-label: Phone
+label: 'Phone number'
 description: ''
 required: false
 translatable: false
