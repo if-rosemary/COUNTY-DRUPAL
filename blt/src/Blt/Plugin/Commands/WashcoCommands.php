@@ -57,6 +57,24 @@ class WashcoCommands extends BltTasks
     $this->say("Deploying site...");
     shell_exec("blt drupal:config:import");
     shell_exec("drush deploy");
+    $this->say("Building theme assets...");
+    $this->theme_build();
+  }
+
+  /**
+   * Build subtheme assets.
+   *
+   * @command custom:theme:build
+   * @description Installs and builds radix subtheme via npm.
+   */
+  public function theme_build()
+  {
+    $envdir = $this->envsetup();
+
+    $this->say("Installing package dependencies...");
+    shell_exec("npm install --prefix " . $envdir . "/docroot/themes/custom/westy/");
+    $this->say("Building assets...");
+    shell_exec("npm run production --prefix " . $envdir . "/docroot/themes/custom/westy/");
   }
 
   /**

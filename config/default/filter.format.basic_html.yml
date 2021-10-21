@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.embedded
+    - core.entity_view_mode.media.embedded_with_description
     - core.entity_view_mode.media.full_width
     - core.entity_view_mode.media.half_width
   module:
@@ -25,6 +27,8 @@ filters:
         image: image
         video: video
       allowed_view_modes:
+        embedded: embedded
+        embedded_with_description: embedded_with_description
         full_width: full_width
         half_width: half_width
   editor_file_reference:

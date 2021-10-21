@@ -16,19 +16,46 @@ drush:
   default_alias: '${drush.aliases.local}'
 cloud:
   appId: 9cab3740-4631-4529-a4de-d6ef75472d78
-# In the future, once your Barrio Sass Starter Kit subtheme is added, uncomment
-# these lines in order to have blt/pipelines properly build and test the
-# front-end assets as part of the pipelines process.
-#
-# Be sure to change the dir key to properly reflect the path to your subtheme.
-#
-#command-hooks:
-#  frontend-reqs:
-#    dir: '${docroot}/themes/custom/wcor_barrio' # directory to your subtheme
-#    command: 'npm install'
-#  frontend-assets:
-#    dir: '${docroot}/themes/custom/wcor_barrio' # directory to your subtheme
-#    command: 'npm run build'
+validate:
+  twig:
+    filters:
+      - token_replace
+      - preg_replace
+      - image_style
+      - transliterate
+      - check_markup
+      - format_size
+      - truncate
+      - view
+      - with
+      - children
+      - file_uri
+      - file_url
+      - translation
+      - cache_metadata
+    functions:
+      - drupal_block
+      - drupal_field
+      - drupal_view
+      - drupal_region
+      - drupal_entity
+      - drupal_menu
+      - drupal_form
+      - drupal_image
+      - drupal_token
+      - drupal_config
+      - drupal_title
+      - drupal_url
+      - drupal_link
+      - drupal_messages
+      - drupal_breadcrumb
+command-hooks:
+  frontend-reqs:
+    dir: '${docroot}/themes/custom/westy' # directory to your subtheme
+    command: 'npm install'
+  frontend-assets:
+    dir: '${docroot}/themes/custom/westy' # directory to your subtheme
+    command: 'npm run production'
 #  frontend-tests:
-#    dir: '${docroot}/themes/custom/wcor_barrio' # directory to your subtheme
+#    dir: '${docroot}/themes/custom/westy' # directory to your subtheme
 #    command: 'npm test'

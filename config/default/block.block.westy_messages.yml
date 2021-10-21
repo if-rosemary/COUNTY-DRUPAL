@@ -1,0 +1,22 @@
+uuid: 241ffc24-f137-49d6-8d15-cd0954da7396
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - westy
+_core:
+  default_config_hash: KfyaTPRJEcAyy2e5AxEfWQnuHcn4WrfvcWek7lSmHZQ
+id: westy_messages
+theme: westy
+region: header
+weight: -12
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -64,11 +64,11 @@ display:
               field: title
               rendered: true
               rendered_strip: false
-          row_class: 'menu__item menu__item--link menu__item--level-1 menu__item--active-trail'
+          row_class: nav-item
           default_row_class: false
           type: ul
           wrapper_class: ''
-          class: 'menu menu--level-1'
+          class: 'nav flex-column'
       row:
         type: fields
       fields:
@@ -395,7 +395,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="{% if field_resource_url %}{{ field_resource_url }}{% else %}{{ view_node }}{% endif %}" class="menu__link menu__link--link menu__link--level-1 {% if nid == raw_arguments.nid %} is-active{% endif %}">{{ field_short_title }}</a>'
+            text: '<a href="{% if field_resource_url %}{{ field_resource_url }}{% else %}{{ view_node }}{% endif %}" class="nav-link{% if nid == raw_arguments.nid %} active{% endif %}">{{ field_short_title }}</a>'
             make_link: false
             path: ''
             absolute: false
@@ -943,6 +943,47 @@ display:
       block_category: 'Menu Views'
       allow:
         items_per_page: false
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: field_group
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 1
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+      defaults:
+        arguments: false
     cache_metadata:
       max-age: -1
       contexts:

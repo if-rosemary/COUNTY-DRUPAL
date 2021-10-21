@@ -1,0 +1,33 @@
+uuid: 4b130eac-548b-42dc-9574-fc535a5f6781
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.building_service_locations
+  module:
+    - ctools
+    - views
+  theme:
+    - westy
+id: westy_views_block__building_service_locations_block_1
+theme: westy
+region: side
+weight: -12
+provider: null
+plugin: 'views_block:building_service_locations-block_1'
+settings:
+  id: 'views_block:building_service_locations-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      building: building
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

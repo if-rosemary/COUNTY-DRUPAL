@@ -1,0 +1,10 @@
+uuid: 7eb658b3-ac30-4716-8d7d-7129ea5b709e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.embedded_with_description
+label: 'Embedded with description'
+targetEntityType: media
+cache: true

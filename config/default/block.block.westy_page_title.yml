@@ -1,0 +1,20 @@
+uuid: 1be66fb3-13ab-4747-a455-236a895710ea
+langcode: en
+status: true
+dependencies:
+  theme:
+    - westy
+_core:
+  default_config_hash: WImvmaBdDpwIqobqbDWebBnyxssRvrNEnZSQbOsvOe4
+id: westy_page_title
+theme: westy
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

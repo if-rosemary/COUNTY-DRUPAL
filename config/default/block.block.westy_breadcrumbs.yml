@@ -1,0 +1,22 @@
+uuid: f3dc5e80-55b3-4338-8cce-39464c7ab796
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - westy
+_core:
+  default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
+id: westy_breadcrumbs
+theme: westy
+region: content
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
