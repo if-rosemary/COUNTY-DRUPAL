@@ -12,7 +12,6 @@ theme: {  }
 blacklist: {  }
 graylist:
   - seckit.settings
-  - simplesamlphp_auth.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
