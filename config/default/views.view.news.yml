@@ -306,6 +306,7 @@ display:
         use_more_text: false
         link_display: false
         link_url: false
+        empty: false
       arguments:
         nid:
           id: nid
@@ -355,6 +356,7 @@ display:
       link_display: page_group_news
       link_url: ''
       block_hide_empty: true
+      empty: {  }
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set mime_map = {
+  'application/pdf': 'PDF',
+  'application/msword': 'DOC',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'DOCX',
+  'application/vnd.ms-excel': 'XLS',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'XLSX',
+  'application/vnd.ms-powerpoint': 'PPT',
+  'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'PPTX',
+} %}
+
+{% set mime_type = mime_map[content.field_mime_type.0['#context']['value']] ?? 'File' %}
+
+{%
+  set classes = [
+    'embed-document'
+  ]
+%}
+
+
+
+{% if content %}
+
+  {% set media_url = content.field_media_file.0|raw %}
+  {% set media_title = name %}
+
+  {# If data-title exists, over name value #}
+  {% if attributes['data-title'] is not empty %}
+    {% set media_title = attributes['data-title'] %}
+  {% endif %}
+
+  <div{{ attributes.addClass(classes) }}>
+      <a href="{{ media_url }}">{{ media_title }}</a> ({{ mime_type }} {{ content.field_file_size.0|render|striptags|format_size }})
+      {% if (content.field_description) and (attributes['data-description'] == "1")  %}
+        <div id="{{ name|clean_class }}" class="description">{{ content.field_description.0 }}</div>
+      {% endif %}
+  </div>
+
+{% endif %}

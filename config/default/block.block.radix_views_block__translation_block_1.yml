@@ -1,0 +1,43 @@
+uuid: aa481305-6b56-46f5-bff4-396bd3572a36
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.translation
+  module:
+    - ctools
+    - node
+    - views
+  theme:
+    - radix
+id: radix_views_block__translation_block_1
+theme: radix
+region: navbar_branding
+weight: 0
+provider: null
+plugin: 'views_block:translation-block_1'
+settings:
+  id: 'views_block:translation-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '1'
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      news: news
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

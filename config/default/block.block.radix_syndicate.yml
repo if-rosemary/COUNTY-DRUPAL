@@ -1,0 +1,23 @@
+uuid: f70fe9da-5e0c-4f13-b642-7edc5d1bcbd0
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+  theme:
+    - radix
+_core:
+  default_config_hash: jGkBUnwRXYacHWTR8hjjwn_a_PRM-Xj_xSHoB0WIfEo
+id: radix_syndicate
+theme: radix
+region: header
+weight: -6
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  provider: node
+  label_display: '0'
+  block_count: 10
+visibility: {  }

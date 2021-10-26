@@ -1,0 +1,33 @@
+uuid: 7a9bb9ad-7b0b-4469-a194-c1fd00e3dbcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.manage_group
+  module:
+    - ctools
+    - views
+  theme:
+    - westy
+id: westy_views_block__manage_group_block_manage_group
+theme: westy
+region: menu
+weight: -12
+provider: null
+plugin: 'views_block:manage_group-block_manage_group'
+settings:
+  id: 'views_block:manage_group-block_manage_group'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

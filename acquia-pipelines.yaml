@@ -23,12 +23,12 @@ events:
       - setup-env:
           type: script
           script:
+            - nvm install 12
+            - nvm use 12
             - composer validate --no-check-all --ansi
             - composer install --ansi
             - source ${BLT_DIR}/scripts/pipelines/setup_env
-            # Uncomment these lines if front-end theming requires it.
-            # - nvm install v6.9.1
-            # - npm install --global yarn
+            #- npm install --global yarn
       - validate:
           type: script
           script:

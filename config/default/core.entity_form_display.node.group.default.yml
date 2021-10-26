@@ -49,7 +49,6 @@ third_party_settings:
     group_social_media:
       children:
         - field_facebook
-        - field_linkedin
         - field_twitter
         - field_youtube
       parent_name: ''

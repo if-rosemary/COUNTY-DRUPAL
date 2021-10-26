@@ -1,0 +1,75 @@
+uuid: cffcd02e-4aa3-4be5-a949-903beaa5c862
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.media.embedded_with_description
+    - field.field.media.document.field_description
+    - field.field.media.document.field_document_type
+    - field.field.media.document.field_file_size
+    - field.field.media.document.field_group
+    - field.field.media.document.field_media_file
+    - field.field.media.document.field_media_in_library
+    - field.field.media.document.field_mime_type
+    - media.type.document
+  module:
+    - media_entity_download
+id: media.document.embedded_with_description
+targetEntityType: media
+bundle: document
+mode: embedded_with_description
+content:
+  field_description:
+    type: basic_string
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_document_type:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_file_size:
+    weight: 2
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_media_file:
+    label: visually_hidden
+    weight: 0
+    settings:
+      trim_length: 80
+      disposition: inline
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: media_entity_download_download_link
+    region: content
+  field_mime_type:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_group: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

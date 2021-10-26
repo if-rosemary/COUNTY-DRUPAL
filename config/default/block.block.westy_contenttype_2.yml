@@ -1,0 +1,23 @@
+uuid: c3e0c8d2-da82-4ef8-8bf8-5529b07b7620
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.content_type
+  module:
+    - facets
+  theme:
+    - westy
+id: westy_contenttype_2
+theme: westy
+region: side
+weight: -11
+provider: null
+plugin: 'facet_block:content_type'
+settings:
+  id: 'facet_block:content_type'
+  label: 'Content type'
+  provider: facets
+  label_display: visible
+  block_id: contenttype_2
+visibility: {  }

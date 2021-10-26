@@ -36,15 +36,15 @@ content:
     type: basic_string
     region: content
   groups_entity_view_child_groups:
-    weight: 10
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   phone_number_formatter_entity_view_1:
-    weight: 10
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   content_moderation_control: true
   feeds_item: true
@@ -64,4 +64,8 @@ hidden:
   field_youtube: true
   langcode: true
   links: true
+  phone_number_formatter_entity_view_1: true
   search_api_excerpt: true
+  social_media_formatter_entity_view_1: true
+  social_media_formatter_entity_view_2: true
+  social_media_formatter_entity_view_3: true
