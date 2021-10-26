@@ -1,0 +1,33 @@
+uuid: 4ef3aa21-5056-4ee4-8338-4454af7ec1c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_page_menu
+  module:
+    - ctools
+    - views
+  theme:
+    - radix
+id: radix_views_block__group_page_menu_block_group_homepage_menu
+theme: radix
+region: navbar_branding
+weight: -7
+provider: null
+plugin: 'views_block:group_page_menu-block_group_homepage_menu'
+settings:
+  id: 'views_block:group_page_menu-block_group_homepage_menu'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

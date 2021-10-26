@@ -1,0 +1,33 @@
+uuid: dc29bc5f-8678-43bd-9bd7-86d52d466f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.manage_group
+  module:
+    - ctools
+    - views
+  theme:
+    - radix
+id: radix_views_block__manage_group_block_manage_group
+theme: radix
+region: navbar_branding
+weight: -8
+provider: null
+plugin: 'views_block:manage_group-block_manage_group'
+settings:
+  id: 'views_block:manage_group-block_manage_group'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

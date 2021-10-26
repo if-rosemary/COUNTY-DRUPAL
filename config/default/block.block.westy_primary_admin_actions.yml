@@ -1,0 +1,20 @@
+uuid: 68b9fa9a-2e35-41e6-9e4f-559ef4a3d51d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - westy
+_core:
+  default_config_hash: sBMSSrWtP58IZaz1i3-MJ9yq_y32w1nc7N5DZJmt-4M
+id: westy_primary_admin_actions
+theme: westy
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

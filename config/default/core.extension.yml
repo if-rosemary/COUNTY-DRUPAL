@@ -11,6 +11,7 @@ module:
   captcha: 0
   ckeditor: 0
   cleave: 0
+  components: 0
   config: 0
   config_filter: 0
   config_split: 0
@@ -89,6 +90,7 @@ module:
   token: 0
   toolbar: 0
   toolbar_menu: 0
+  twig_tweak: 0
   update: 0
   user: 0
   views_bulk_edit: 0
@@ -113,8 +115,8 @@ module:
 theme:
   stark: 0
   claro: 0
-  olivero: 0
-  washco: 0
+  radix: 0
+  westy: 0
 profile: minimal
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

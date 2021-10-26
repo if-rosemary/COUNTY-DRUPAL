@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_email
     - field.storage.node.field_phone
     - field.storage.node.field_primary_service_location
+    - field.storage.node.field_short_title
     - node.type.group
     - system.menu.main
     - taxonomy.vocabulary.group_type
@@ -256,15 +257,21 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:core.entity_view_display.node.group.default'
+        - 'config:core.entity_view_display.node.group.teaser'
+        - 'config:core.entity_view_display.node.news.default'
+        - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.alert.default'
         - 'config:core.entity_view_display.node.building.default'
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
-        - 'config:core.entity_view_display.node.group.default'
-        - 'config:core.entity_view_display.node.group.teaser'
-        - 'config:core.entity_view_display.node.news.default'
-        - 'config:core.entity_view_display.node.news.teaser'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.faq.default'
+        - 'config:core.entity_view_display.node.faq.embedded'
+        - 'config:core.entity_view_display.node.faq.search_index'
+        - 'config:core.entity_view_display.node.faq.teaser'
         - 'config:core.entity_view_display.node.notification.default'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
@@ -528,15 +535,15 @@ display:
           entity_type: node
           plugin_id: entity_reverse
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
           relationship: reverse__node__field_parent
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -571,7 +578,60 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: view
+          output_url_as_text: true
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+        field_short_title:
+          id: field_short_title
+          table: node__field_short_title
+          field: field_short_title
+          relationship: reverse__node__field_parent
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -579,7 +639,70 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: reverse__node__field_parent
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<a href="{{ view_node }}" class="nav-link">{{ field_short_title }}</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -616,11 +739,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: nav-item
           default_row_class: false
           type: ul
-          wrapper_class: item-list
-          class: ''
+          wrapper_class: ''
+          class: 'nav flex-column'
       row:
         type: fields
         options:
@@ -644,7 +767,8 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_short_title'
   block_programs:
     display_plugin: block
     id: block_programs
@@ -899,15 +1023,15 @@ display:
           entity_type: node
           plugin_id: entity_reverse
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
           relationship: reverse__node__field_parent
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -942,7 +1066,60 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: view
+          output_url_as_text: true
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+        field_short_title:
+          id: field_short_title
+          table: node__field_short_title
+          field: field_short_title
+          relationship: reverse__node__field_parent
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -950,7 +1127,70 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: reverse__node__field_parent
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<a href="{{ view_node }}" class="nav-link">{{ field_short_title }}</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -987,11 +1227,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: nav-item
           default_row_class: false
           type: ul
-          wrapper_class: item-list
-          class: ''
+          wrapper_class: ''
+          class: 'nav flex-column'
       row:
         type: fields
         options:
@@ -1015,7 +1255,8 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_short_title'
   entity_view_child_groups:
     display_plugin: entity_view
     id: entity_view_child_groups
@@ -1221,15 +1462,15 @@ display:
           entity_type: node
           plugin_id: entity_reverse
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_short_title:
+          id: field_short_title
+          table: node__field_short_title
+          field: field_short_title
           relationship: reverse__node__field_parent
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1264,7 +1505,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1272,7 +1513,123 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: reverse__node__field_parent
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: view
+          output_url_as_text: true
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: reverse__node__field_parent
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<a href="{{ view_node }}" class="nav-link">{{ title }}</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1312,11 +1669,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: nav-item
           default_row_class: false
           type: ul
-          wrapper_class: item-list
-          class: ''
+          wrapper_class: ''
+          class: 'nav flex-column'
       row:
         type: fields
         options:
@@ -1335,7 +1692,8 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_short_title'
   page_contact:
     display_plugin: page
     id: page_contact
@@ -1716,6 +2074,9 @@ display:
         filter_groups: false
         title: false
         fields: false
+        style: false
+        row: false
+        header: false
       title: Departments
       menu:
         type: normal
@@ -1854,6 +2215,25 @@ display:
           view_mode: teaser
           entity_type: node
           plugin_id: rendered_entity
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Displaying @total departments and their organizations.'
+          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:
@@ -1868,6 +2248,12 @@ display:
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.faq.default'
+        - 'config:core.entity_view_display.node.faq.embedded'
+        - 'config:core.entity_view_display.node.faq.search_index'
+        - 'config:core.entity_view_display.node.faq.teaser'
         - 'config:core.entity_view_display.node.group.default'
         - 'config:core.entity_view_display.node.group.teaser'
         - 'config:core.entity_view_display.node.news.default'
@@ -2208,6 +2594,12 @@ display:
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.faq.default'
+        - 'config:core.entity_view_display.node.faq.embedded'
+        - 'config:core.entity_view_display.node.faq.search_index'
+        - 'config:core.entity_view_display.node.faq.teaser'
         - 'config:core.entity_view_display.node.group.default'
         - 'config:core.entity_view_display.node.group.teaser'
         - 'config:core.entity_view_display.node.news.default'
@@ -2557,6 +2949,12 @@ display:
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.faq.default'
+        - 'config:core.entity_view_display.node.faq.embedded'
+        - 'config:core.entity_view_display.node.faq.search_index'
+        - 'config:core.entity_view_display.node.faq.teaser'
         - 'config:core.entity_view_display.node.group.default'
         - 'config:core.entity_view_display.node.group.teaser'
         - 'config:core.entity_view_display.node.news.default'

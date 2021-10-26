@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.document.field_description
     - field.field.media.document.field_document_type
     - field.field.media.document.field_file_size
     - field.field.media.document.field_group
@@ -54,6 +55,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_description: true
   field_file_size: true
   field_mime_type: true
   field_redirects: true

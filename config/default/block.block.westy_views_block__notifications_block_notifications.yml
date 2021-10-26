@@ -1,0 +1,24 @@
+uuid: 2ea7d198-3ebc-46ee-8124-4897280ed951
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.notifications
+  module:
+    - views
+  theme:
+    - westy
+id: westy_views_block__notifications_block_notifications
+theme: westy
+region: header
+weight: -11
+provider: null
+plugin: 'views_block:notifications-block_notifications'
+settings:
+  id: 'views_block:notifications-block_notifications'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

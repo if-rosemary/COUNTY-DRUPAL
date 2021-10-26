@@ -11,7 +11,8 @@ theme: {  }
 blacklist:
   - google_tag.container.www.washingtoncountyor.gov
   - system.performance
-graylist: {  }
+graylist:
+  - simplesamlphp_auth.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

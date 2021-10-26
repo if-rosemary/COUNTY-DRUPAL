@@ -1,0 +1,24 @@
+uuid: eb196388-53c0-47d8-9e12-2d65657eba5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.notifications
+  module:
+    - views
+  theme:
+    - radix
+id: radix_views_block__notifications_block_notifications
+theme: radix
+region: header
+weight: -10
+provider: null
+plugin: 'views_block:notifications-block_notifications'
+settings:
+  id: 'views_block:notifications-block_notifications'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

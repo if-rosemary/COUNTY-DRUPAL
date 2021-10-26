@@ -19,13 +19,21 @@ function wcor_inline_media_edit_form_editor_media_dialog_alter(array &$form, For
   $bundle= $file->bundle();
   // $editor_object['label']
 
+  // Modify document embeds
   if ($bundle == 'document'){
     $form['data-title'] = [
-      '#title' => t('Override title'),
+      '#title' => t('Override title:'),
       '#type' => 'textfield',
       '#step' => '1',
       '#default_value' => empty($media_embed_element['data-title']) ? '' : $media_embed_element['data-title'],
       '#parents' => ['attributes', 'data-title'],
+    ];
+    $form['data-description'] = [
+      '#title' => t('Display description?'),
+      '#type' => 'checkbox',
+      '#step' => '2',
+      '#default_value' => empty($media_embed_element['data-description']) ? false : true,
+      '#parents' => ['attributes', 'data-description'],
     ];
   }
 

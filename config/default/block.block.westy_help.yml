@@ -1,0 +1,22 @@
+uuid: 1e9178c4-9548-482c-9181-b9060c638db5
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - westy
+_core:
+  default_config_hash: VV9kqYMqLSoPSMw-XVpo0auKK0RfnbQTkqYPVQxqaV0
+id: westy_help
+theme: westy
+region: footer
+weight: -10
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

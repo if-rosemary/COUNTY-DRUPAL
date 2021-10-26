@@ -1,0 +1,23 @@
+uuid: 03d4a4c5-64a9-44aa-a009-9aed345cbd00
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.content_type
+  module:
+    - facets
+  theme:
+    - radix
+id: radix_contenttype_2
+theme: radix
+region: navbar_branding
+weight: 0
+provider: null
+plugin: 'facet_block:content_type'
+settings:
+  id: 'facet_block:content_type'
+  label: 'Content type'
+  provider: facets
+  label_display: visible
+  block_id: contenttype_2
+visibility: {  }
