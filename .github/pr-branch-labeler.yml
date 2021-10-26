@@ -1,0 +1,14 @@
+# Apply enhancement
+enhancement:
+  head: "feature/*"
+# Apply bugfix
+bugfix:
+  head: "bugfix/*"
+# Apply hotfix
+hotfix:
+  head: "hotfix/*"
+# Apply review labels
+Needs QA:
+  head: ["feature/*", "bugfix/*", "hotfix/*"]
+Needs Code Review:
+  head: ["feature/*", "bugfix/*", "hotfix/*"]
