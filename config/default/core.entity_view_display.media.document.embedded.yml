@@ -1,6 +1,6 @@
 uuid: 4ac8a41c-704e-4bab-b370-ba1d0752081a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.embedded
