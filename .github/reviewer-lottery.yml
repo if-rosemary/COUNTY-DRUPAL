@@ -1,0 +1,11 @@
+groups:
+  - name: devs
+    reviewers: 2
+    internal_reviewers: 1
+    usernames:
+      - lgbridges
+      - jlwcor
+      - jmilden-git
+      - sharstine
+      - joshuami
+      - mitziklambert
