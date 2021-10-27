@@ -2,9 +2,6 @@ name: "Reviewer lottery"
 on:
   pull_request_target:
     types: [opened, ready_for_review, reopened]
-permissions:
-  PullRequests: write
-  Actions: write
 jobs:
   assign_reviewers:
     runs-on: ubuntu-latest
