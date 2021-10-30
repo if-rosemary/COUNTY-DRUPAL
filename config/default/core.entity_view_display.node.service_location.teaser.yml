@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.service_location.field_featured_image
     - field.field.node.service_location.field_holiday_schedule
     - field.field.node.service_location.field_hours
+    - field.field.node.service_location.field_sublocation
     - field.field.node.service_location.field_summary
     - node.type.service_location
   module:
@@ -21,18 +22,9 @@ bundle: service_location
 mode: teaser
 content:
   closure_entity_view_1:
-    weight: 10
+    weight: 5
+    region: content
     settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_building:
-    type: entity_reference_entity_view
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      view_mode: embedded
-      link: false
     third_party_settings: {  }
   field_featured_image:
     type: media_thumbnail
@@ -45,7 +37,7 @@ content:
     third_party_settings: {  }
   field_hours:
     type: office_hours_status
-    weight: 2
+    weight: 4
     region: content
     label: visually_hidden
     settings:
@@ -70,10 +62,27 @@ content:
       timezone_field: ''
       office_hours_first_day: ''
     third_party_settings: {  }
+  get_directions_link_eva_map_link_sl:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  get_directions_link_eva_transit_link_sl:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  service_location_display_eva_servloc_display:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   field_accessibility_notes: true
+  field_building: true
   field_holiday_schedule: true
+  field_sublocation: true
   field_summary: true
   langcode: true
   links: true
