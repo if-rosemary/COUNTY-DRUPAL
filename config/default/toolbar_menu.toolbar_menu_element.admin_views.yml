@@ -1,0 +1,9 @@
+uuid: ff5b7e35-2b65-4b48-9fc1-db90399c0685
+langcode: en
+status: true
+dependencies: {  }
+id: admin_views
+label: 'Admin Views'
+weight: null
+menu: admin-views
+rewrite_label: false
