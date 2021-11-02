@@ -1,20 +1,22 @@
-uuid: 25fcd6ce-7798-493e-9db1-15872e118a4d
+uuid: d9b1e2f5-06cb-4e2c-b946-1983a8c68b49
 langcode: en
 status: true
 dependencies:
   module:
-    - address
     - field_permissions
     - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_address
-field_name: field_address
+id: node.field_sublocation
+field_name: field_sublocation
 entity_type: node
-type: address
-settings: {  }
-module: address
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

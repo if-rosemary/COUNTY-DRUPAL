@@ -1,0 +1,8 @@
+uuid: 323fac99-ce07-43fd-97ae-15e734209f7a
+langcode: en
+status: true
+dependencies: {  }
+id: admin-views
+label: 'Admin Views'
+description: 'Views that help with administrative tasks.'
+locked: false

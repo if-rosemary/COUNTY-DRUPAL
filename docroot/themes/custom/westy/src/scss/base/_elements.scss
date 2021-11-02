@@ -35,7 +35,28 @@ h6 {
 ol,
 ul,
 dl {
-
+  padding: 0;
+  margin-left: 1em;
+}
+ol {
+  list-style: upper-roman;
+}
+ol ol, ol ol ol ol ol {
+  list-style: lower-alpha;
+  margin-left: .8em;
+}
+ol ol ol, ol ol ol ol ol ol {
+  list-style: lower-roman;
+  margin-left: .8em;
+}
+ol ol ol ol {
+  list-style: decimal;
+}
+li {
+  padding-left: .5em;
+}
+li * li {
+  margin-left: .8em;
 }
 
 // Image
@@ -55,7 +76,13 @@ figcaption {
 // Other
 // -----------------------------------------------------------------------------
 blockquote {
-
+  position: relative;
+  margin: 1.75rem auto;
+  width: 480px;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 1rem 0 1rem 1.5rem;
+  border-left: 1px dotted #000;
 }
 
 strong {
