@@ -52,7 +52,7 @@ validate:
 command-hooks:
   frontend-reqs:
     dir: '${docroot}/themes/custom/westy' # directory to your subtheme
-    command: 'npm install'
+    command: 'npm ci'
   frontend-assets:
     dir: '${docroot}/themes/custom/westy' # directory to your subtheme
     command: 'npm run production'
