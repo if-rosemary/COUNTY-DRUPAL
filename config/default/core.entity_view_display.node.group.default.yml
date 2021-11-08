@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.group.field_youtube
     - node.type.group
   module:
-    - taxonomy
     - text
     - user
 id: node.group.default
@@ -42,13 +41,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: email_mailto
-    region: content
-  field_migration_status:
-    weight: 11
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_rss_category
     region: content
   field_parent:
     weight: 4
@@ -115,6 +107,7 @@ hidden:
   feeds_item: true
   field_facebook: true
   field_group_path: true
+  field_migration_status: true
   field_phone: true
   field_phone_extension: true
   field_short_title: true

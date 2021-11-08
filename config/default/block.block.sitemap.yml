@@ -1,0 +1,31 @@
+uuid: 5af3ea8f-f980-4df5-9872-83b60cbc27f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.site-map
+  module:
+    - menu_block
+  theme:
+    - westy
+id: sitemap
+theme: westy
+region: menu
+weight: -9
+provider: null
+plugin: 'menu_block:site-map'
+settings:
+  id: 'menu_block:site-map'
+  label: 'Site map'
+  provider: menu_block
+  label_display: '0'
+  follow: true
+  follow_parent: active
+  level: 2
+  depth: 3
+  expand_all_items: false
+  parent: 'site-map:'
+  suggestion: site_map
+  label_type: block
+  label_link: false
+visibility: {  }

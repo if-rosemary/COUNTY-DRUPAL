@@ -6,6 +6,7 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
+  bigmenu: 0
   block: 0
   breakpoint: 0
   captcha: 0
@@ -17,6 +18,7 @@ module:
   config_split: 0
   content_moderation: 0
   contextual: 0
+  cshs: 0
   csv_serialization: 0
   ctools: 0
   datetime: 0
@@ -55,6 +57,8 @@ module:
   media: 0
   media_entity_download: 0
   media_library: 0
+  menu_block: 0
+  menu_breadcrumb: 0
   menu_link_content: 0
   menu_ui: 0
   node: 0
@@ -109,6 +113,7 @@ module:
   webform_ui: 0
   workflows: 0
   pathauto: 1
+  cshs_menu_link: 5
   content_translation: 10
   views: 10
   minimal: 1000

@@ -12,7 +12,7 @@ dependencies:
 id: westy_views_block__manage_group_block_manage_group
 theme: westy
 region: menu
-weight: -12
+weight: -8
 provider: null
 plugin: 'views_block:manage_group-block_manage_group'
 settings:
