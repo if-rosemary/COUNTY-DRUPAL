@@ -1,4 +1,4 @@
-uuid: aa483b01-98b0-4a30-a527-ea8c96eb5b01
+uuid: 935e494a-742e-4019-a7e0-20aab1a22039
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - facets
     - system
   theme:
-    - radix
-id: radix_group_2
-theme: radix
-region: navbar_branding
-weight: 0
+    - westy
+id: group_2
+theme: westy
+region: side
+weight: -10
 provider: null
 plugin: 'facet_block:group'
 settings:
@@ -24,5 +24,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/search*'
+    pages: /search
     negate: false

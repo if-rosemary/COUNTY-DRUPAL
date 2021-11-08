@@ -1,4 +1,4 @@
-uuid: c3e0c8d2-da82-4ef8-8bf8-5529b07b7620
+uuid: 6cb09f31-cf65-48a9-9ced-5b15d715e5d9
 langcode: en
 status: true
 dependencies:
@@ -6,9 +6,10 @@ dependencies:
     - facets.facet.content_type
   module:
     - facets
+    - system
   theme:
     - westy
-id: westy_contenttype_2
+id: contenttype
 theme: westy
 region: side
 weight: -11
@@ -19,5 +20,9 @@ settings:
   label: 'Content type'
   provider: facets
   label_display: visible
-  block_id: contenttype_2
-visibility: {  }
+  block_id: contenttype
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false

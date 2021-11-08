@@ -51,7 +51,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 20
+          items_per_page: 8
           offset: 0
           id: 0
           total_pages: null
@@ -440,12 +440,13 @@ display:
   page_sitewide_news:
     display_plugin: page
     id: page_sitewide_news
-    display_title: 'Sitewide News'
+    display_title: 'Sitewide News Page'
     position: 1
     display_options:
       display_extenders: {  }
       path: news
       display_description: ''
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

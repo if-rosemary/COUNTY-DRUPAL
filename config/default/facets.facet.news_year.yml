@@ -1,4 +1,4 @@
-uuid: b46f9122-0c0d-4775-ae2e-74dd531bbc9b
+uuid: 179ec8e0-c2a7-4473-81c1-2ab3043bedb5
 langcode: en
 status: true
 dependencies:
@@ -7,26 +7,26 @@ dependencies:
     - views.view.acquia_search
   module:
     - search_api
-id: group
-name: Group
-url_alias: group
-weight: 0
+id: news_year
+name: Year
+url_alias: news_year
+weight: -2
 min_count: 1
 show_only_one_result: false
-field_identifier: field_group
-facet_source_id: 'search_api:views_page__acquia_search__page_search'
+field_identifier: created
+facet_source_id: 'search_api:views_page__acquia_search__page_search_news'
 widget:
   type: checkbox
   config:
-    show_numbers: false
-    soft_limit: 10
+    show_numbers: true
+    soft_limit: 3
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
     show_reset_link: false
     reset_text: 'Show all'
     hide_reset_when_no_selection: true
-query_operator: or
+query_operator: and
 use_hierarchy: false
 keep_hierarchy_parents_active: false
 expand_hierarchy: false
@@ -35,24 +35,14 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
+  date_item:
+    processor_id: date_item
     weights:
-      sort: 20
+      build: 35
     settings:
-      sort: DESC
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: 30
-    settings:
-      sort: DESC
-  display_value_widget_order:
-    processor_id: display_value_widget_order
-    weights:
-      sort: 40
-    settings:
-      sort: ASC
+      date_display: actual_date
+      granularity: 6
+      date_format: ''
   hide_1_result_facet:
     processor_id: hide_1_result_facet
     weights:
@@ -63,11 +53,12 @@ processor_configs:
     weights:
       build: 40
     settings: {  }
-  translate_entity:
-    processor_id: translate_entity
+  raw_value_widget_order:
+    processor_id: raw_value_widget_order
     weights:
-      build: 5
-    settings: {  }
+      sort: 50
+    settings:
+      sort: DESC
   url_processor_handler:
     processor_id: url_processor_handler
     weights:

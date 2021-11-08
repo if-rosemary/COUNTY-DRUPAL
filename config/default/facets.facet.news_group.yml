@@ -1,4 +1,4 @@
-uuid: b46f9122-0c0d-4775-ae2e-74dd531bbc9b
+uuid: a5f96c8f-363f-4002-a160-4f195359da35
 langcode: en
 status: true
 dependencies:
@@ -7,18 +7,18 @@ dependencies:
     - views.view.acquia_search
   module:
     - search_api
-id: group
+id: news_group
 name: Group
-url_alias: group
+url_alias: news_group
 weight: 0
 min_count: 1
 show_only_one_result: false
 field_identifier: field_group
-facet_source_id: 'search_api:views_page__acquia_search__page_search'
+facet_source_id: 'search_api:views_page__acquia_search__page_search_news'
 widget:
   type: checkbox
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 10
     soft_limit_settings:
       show_less_label: 'Show less'
@@ -26,7 +26,7 @@ widget:
     show_reset_link: false
     reset_text: 'Show all'
     hide_reset_when_no_selection: true
-query_operator: or
+query_operator: and
 use_hierarchy: false
 keep_hierarchy_parents_active: false
 expand_hierarchy: false
@@ -35,24 +35,12 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
-    weights:
-      sort: 20
-    settings:
-      sort: DESC
   count_widget_order:
     processor_id: count_widget_order
     weights:
       sort: 30
     settings:
       sort: DESC
-  display_value_widget_order:
-    processor_id: display_value_widget_order
-    weights:
-      sort: 40
-    settings:
-      sort: ASC
   hide_1_result_facet:
     processor_id: hide_1_result_facet
     weights:
