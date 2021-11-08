@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_body
+    - field.field.node.page.field_contact
     - field.field.node.page.field_faqs
     - field.field.node.page.field_group
     - field.field.node.page.field_location
@@ -41,6 +42,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_contact:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_faqs:
     weight: 11

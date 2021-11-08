@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.field_body
+    - field.field.node.page.field_contact
     - field.field.node.page.field_faqs
     - field.field.node.page.field_group
     - field.field.node.page.field_location
@@ -32,6 +33,7 @@ content:
 hidden:
   content_moderation_control: true
   field_body: true
+  field_contact: true
   field_faqs: true
   field_group: true
   field_location: true

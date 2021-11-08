@@ -110,3 +110,33 @@ strong {
 small {
 
 }
+
+table.table-card tr td{
+  vertical-align: middle;   
+}
+
+.table-key {
+  display: none;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+  .table-key {
+    display: inline-block;
+  }
+
+  table.table-card th{
+    display: none;
+  }
+
+  table.table-card tr{
+    padding: 20px;
+    display: block;
+  }
+
+  table.table-card tr td{
+    padding: 2px 0;
+    vertical-align: top;
+    display: block;
+  }
+}
