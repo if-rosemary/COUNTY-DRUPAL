@@ -1,0 +1,22 @@
+uuid: a1b3ceb6-14cf-464d-9fc1-628fc038e046
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: service_locations
+label: 'Service locations'
+type: 'canonical_entities:node'
+pattern: '[node:field_building:entity:title]/[node:field_short_title]'
+selection_criteria:
+  4bb72ea2-6843-412c-a866-558f60695358:
+    id: node_type
+    bundles:
+      service_location: service_location
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 4bb72ea2-6843-412c-a866-558f60695358
+selection_logic: and
+weight: -5
+relationships: {  }

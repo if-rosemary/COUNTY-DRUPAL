@@ -11,9 +11,9 @@ field_name: field_type
 entity_type: node
 bundle: resource
 label: Type
-description: 'What type of resource is this?'
+description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

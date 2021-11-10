@@ -10,7 +10,7 @@ field_name: field_group
 entity_type: node
 bundle: contact
 label: 'Displayed in'
-description: ''
+description: 'Choose a web group in which this content should appear.'
 required: true
 translatable: false
 default_value: {  }

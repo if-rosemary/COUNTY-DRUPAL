@@ -13,7 +13,7 @@ dependencies:
     - node
     - user
 id: group_page_menu
-label: 'Group Page Menu'
+label: 'Group page menu'
 module: views
 description: 'Block and page views for displaying and managing group page menus that contain pages and resources in a hierarchy.'
 tag: ''

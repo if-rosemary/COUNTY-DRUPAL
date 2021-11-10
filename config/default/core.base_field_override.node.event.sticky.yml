@@ -1,15 +1,14 @@
-uuid: 04d80974-9da8-43db-9ada-bbfc27dbc0a7
+uuid: 3bcca3cf-e007-4585-97c1-0b454fccd6ae
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_show_in_menu
-    - node.type.resource
-id: node.resource.field_show_in_menu
-field_name: field_show_in_menu
+    - node.type.event
+id: node.event.sticky
+field_name: sticky
 entity_type: node
-bundle: resource
-label: 'Show in menu'
+bundle: event
+label: 'Sticky at top of lists'
 description: ''
 required: false
 translatable: false

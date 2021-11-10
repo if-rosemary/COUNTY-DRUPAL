@@ -182,8 +182,8 @@ datasource_settings:
         - alert
         - building
         - contact
+        - event
         - notification
-        - service_location
         - webform
     languages:
       default: true

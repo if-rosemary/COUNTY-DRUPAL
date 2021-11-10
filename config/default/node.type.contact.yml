@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: Contact
 type: contact
-description: 'Use <em>contacts</em> to create resuable contact information that can be related to other content.'
+description: 'Use <em>contacts</em> to create reusable contact information that can be pulled in and displayed by other content.'
 help: ''
 new_revision: true
 preview_mode: 1

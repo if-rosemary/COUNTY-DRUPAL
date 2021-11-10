@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: site-map
 label: 'Site map'
-description: 'Sitewide hierchal menu for content'
+description: 'Sitewide hierarchical menu for content'
 locked: false

@@ -11,7 +11,7 @@ field_name: field_faqs
 entity_type: node
 bundle: page
 label: FAQs
-description: '(Optional) Add FAQs (Frequently Asked Questions) to your page to show them in an accordion list under your content. FAQs will also appear in search with a link back to their associated pages.'
+description: 'You may add FAQs (Frequently Asked Questions) to your page to show them in an accordion list under your content. FAQs will also appear independently in search with a link to their associated pages.'
 required: false
 translatable: false
 default_value: {  }

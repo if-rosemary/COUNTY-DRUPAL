@@ -12,7 +12,7 @@ field_name: field_address
 entity_type: node
 bundle: building
 label: 'Address or entrance'
-description: 'If Building does not have a formal/legacy name, place Address Line 1 in Title instead, leaving Address Line 1 blank.'
+description: 'If Building does not have a formal/legacy name, place Address Line 1 in Title instead.'
 required: true
 translatable: false
 default_value:

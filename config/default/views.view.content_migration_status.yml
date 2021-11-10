@@ -17,7 +17,7 @@ dependencies:
 id: content_migration_status
 label: 'Content migration status'
 module: views
-description: ''
+description: 'Admin only view to review status of page migrations in progress.'
 tag: ''
 base_table: node_field_data
 base_field: nid

@@ -1,0 +1,18 @@
+uuid: 32d0cc1a-f224-442c-b777-24620a66337f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.migration_status
+id: taxonomy_term.migration_status.name
+field_name: name
+entity_type: taxonomy_term
+bundle: migration_status
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
