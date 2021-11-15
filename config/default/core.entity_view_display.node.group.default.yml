@@ -36,7 +36,7 @@ content:
     type: text_default
     region: content
   field_email:
-    weight: 7
+    weight: 6
     label: inline
     settings: {  }
     third_party_settings: {  }
@@ -50,6 +50,22 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_phone:
+    type: string
+    weight: 10
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_phone_extension:
+    type: string
+    weight: 11
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_primary_service_location:
     weight: 5
     label: inline
@@ -82,23 +98,18 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  phone_number_formatter_entity_view_1:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   social_media_formatter_entity_view_1:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   social_media_formatter_entity_view_2:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   social_media_formatter_entity_view_3:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -108,8 +119,6 @@ hidden:
   field_facebook: true
   field_group_path: true
   field_migration_status: true
-  field_phone: true
-  field_phone_extension: true
   field_short_title: true
   field_twitter: true
   field_youtube: true
@@ -117,4 +126,5 @@ hidden:
   groups_entity_view_child_groups: true
   langcode: true
   links: true
+  phone_number_formatter_entity_view_1: true
   search_api_excerpt: true

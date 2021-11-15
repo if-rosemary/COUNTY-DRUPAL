@@ -34,6 +34,7 @@ validate:
       - translation
       - cache_metadata
     functions:
+      - phoneString
       - drupal_block
       - drupal_field
       - drupal_view

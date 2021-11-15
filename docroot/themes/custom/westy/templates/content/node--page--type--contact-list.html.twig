@@ -44,7 +44,7 @@
   		  <td>
   		  	<div>
   		  		{% if phone %}
-  		  			<span class="table-key">Phone: </span> <a href="tel:{{ phone }}{{ not phone_ext ? "" : ",," ~ phone_ext }}">{{ phone }} {{ not phone_ext ? "" : "x" ~ phone_ext }} {{ phone_help }}</a>
+  		  			<span class="table-key">Phone: </span> {{ phoneString(phone, phone_ext) }} {{ phone_help }}
   		  		{% endif %}
   		  	</div>
   		  </td>
