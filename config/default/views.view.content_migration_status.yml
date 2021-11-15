@@ -8,8 +8,6 @@ dependencies:
     - node.type.page
     - taxonomy.vocabulary.migration_status
     - user.role.administrator
-  content:
-    - 'taxonomy_term:migration_status:11ec38eb-7b22-49c6-a42e-f1f3cf3d5d80'
   module:
     - node
     - taxonomy
@@ -614,8 +612,7 @@ display:
           group_type: group
           admin_label: ''
           operator: or
-          value:
-            211: 211
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -625,9 +622,11 @@ display:
             use_operator: false
             operator: field_migration_status_target_id_op
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list:
+              or: or
+              not: not
             identifier: field_migration_status_target_id
-            required: true
+            required: false
             remember: true
             multiple: true
             remember_roles:
