@@ -12,7 +12,7 @@ _core:
 id: feeds_feed
 label: Feeds
 module: views
-description: ''
+description: 'List of feeds through which data is imported and updated from external sources into local nodes.'
 tag: ''
 base_table: feeds_feed
 base_field: fid

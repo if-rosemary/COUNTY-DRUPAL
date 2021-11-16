@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: Building
 type: building
-description: 'Washington County provides services from numerous <em>buildings</em> located around the County. A building is the parent of one ore more service locations.'
+description: 'Washington County provides services from numerous <em>buildings</em> located around the County. A building is the parent of one or more service locations.'
 help: ''
 new_revision: true
 preview_mode: 1

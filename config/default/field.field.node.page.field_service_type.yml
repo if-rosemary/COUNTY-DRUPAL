@@ -13,7 +13,7 @@ bundle: page
 label: 'Service type'
 description: 'Choose one or more service types for the service represented on this page. <strong>Page Type must be set to <em>Service</em> to ensure Service Type applies.</strong>'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

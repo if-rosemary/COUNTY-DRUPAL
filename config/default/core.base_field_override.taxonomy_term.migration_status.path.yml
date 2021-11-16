@@ -1,0 +1,20 @@
+uuid: 8fb105b0-b610-4bd1-8fbd-0d61ec8db974
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.migration_status
+  module:
+    - path
+id: taxonomy_term.migration_status.path
+field_name: path
+entity_type: taxonomy_term
+bundle: migration_status
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

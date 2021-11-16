@@ -160,7 +160,7 @@ display:
           exposed: false
           expose:
             label: ''
-      title: 'Building Service Locations'
+      title: 'Building service locations'
       header: {  }
       footer: {  }
       empty: {  }

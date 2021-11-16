@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: admin-views
-label: 'Admin Views'
+label: 'Admin views'
 description: 'Views that help with administrative tasks.'
 locked: false

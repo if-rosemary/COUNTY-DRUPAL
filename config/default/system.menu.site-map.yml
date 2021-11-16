@@ -1,0 +1,8 @@
+uuid: aa0fddf6-f0c2-45cb-a241-5d6707958dc0
+langcode: en
+status: true
+dependencies: {  }
+id: site-map
+label: 'Site map'
+description: 'Sitewide hierarchical menu for content'
+locked: false

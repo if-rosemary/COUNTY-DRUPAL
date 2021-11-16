@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: Event
 type: event
-description: 'Use <em>events</em> to create content that occurs within a date and time (when), such as closures, meetings, community events, volunteer events, etc.'
+description: 'Use <em>events</em> to create content that occurs within a given date and time. Currently, this is limited to closures of County facilities.'
 help: ''
 new_revision: true
 preview_mode: 1

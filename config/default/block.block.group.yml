@@ -1,0 +1,28 @@
+uuid: 988133b8-6fc0-4631-b36b-fb09a5432795
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_group
+  module:
+    - facets
+    - system
+  theme:
+    - westy
+id: group
+theme: westy
+region: side
+weight: -7
+provider: null
+plugin: 'facet_block:news_group'
+settings:
+  id: 'facet_block:news_group'
+  label: 'Filter by source'
+  provider: facets
+  label_display: visible
+  block_id: group
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false

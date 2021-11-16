@@ -1,0 +1,18 @@
+uuid: a95e5e1e-fc38-49ca-87f2-7dfae2058f12
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.migration_status
+id: taxonomy_term.migration_status.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: migration_status
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

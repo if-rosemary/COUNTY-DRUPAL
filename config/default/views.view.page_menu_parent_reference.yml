@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 id: page_menu_parent_reference
-label: 'Page Menu Parent Reference'
+label: 'Page menu parent reference'
 module: views
 description: 'View to allow selection of only those pages and resources that do not already have a parent.'
 tag: ''

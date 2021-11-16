@@ -5,16 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.field_body
+    - field.field.node.page.field_contact
     - field.field.node.page.field_faqs
     - field.field.node.page.field_group
     - field.field.node.page.field_location
-    - field.field.node.page.field_menu_parent
     - field.field.node.page.field_migration_status
     - field.field.node.page.field_related
     - field.field.node.page.field_service_type
     - field.field.node.page.field_short_title
-    - field.field.node.page.field_show_in_menu
-    - field.field.node.page.field_sort_weight
     - field.field.node.page.field_summary
     - field.field.node.page.field_type
     - node.type.page
@@ -35,16 +33,14 @@ content:
 hidden:
   content_moderation_control: true
   field_body: true
+  field_contact: true
   field_faqs: true
   field_group: true
   field_location: true
-  field_menu_parent: true
   field_migration_status: true
   field_related: true
   field_service_type: true
   field_short_title: true
-  field_show_in_menu: true
-  field_sort_weight: true
   field_type: true
   langcode: true
   links: true

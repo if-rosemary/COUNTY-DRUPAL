@@ -322,7 +322,6 @@ display:
       entity_type: node
       bundles:
         - contact
-        - group
     cache_metadata:
       max-age: -1
       contexts:

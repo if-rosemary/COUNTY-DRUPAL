@@ -1,0 +1,20 @@
+uuid: 8b1ed0a0-acd5-4f78-a5bd-8d38841a6ff0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.faq
+id: node.faq.uid
+field_name: uid
+entity_type: node
+bundle: faq
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

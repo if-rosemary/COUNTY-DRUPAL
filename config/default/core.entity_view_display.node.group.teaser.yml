@@ -40,11 +40,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  phone_number_formatter_entity_view_1:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   feeds_item: true
