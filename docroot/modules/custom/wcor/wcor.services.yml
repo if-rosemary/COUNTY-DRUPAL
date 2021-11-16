@@ -3,3 +3,7 @@ services:
     class: Drupal\wcor\FileSizeExtension
     tags:
       - { name: twig.extension }
+  wcor.PhoneExtension:
+    class: Drupal\wcor\PhoneExtension
+    tags:
+      - { name: twig.extension }

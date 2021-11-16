@@ -1,4 +1,4 @@
-uuid: aac60ea5-912d-4f11-87e9-5338a340f25c
+uuid: c25fb039-6908-4a74-8314-64120e7739e1
 langcode: en
 status: true
 dependencies:
@@ -14,16 +14,16 @@ weight: 0
 min_count: 1
 show_only_one_result: false
 field_identifier: type
-facet_source_id: 'search_api:views_page__acquia_search__page'
+facet_source_id: 'search_api:views_page__acquia_search__page_search'
 widget:
   type: checkbox
   config:
-    show_numbers: true
-    soft_limit: 5
+    show_numbers: false
+    soft_limit: 10
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
-    show_reset_link: true
+    show_reset_link: false
     reset_text: 'Show all'
     hide_reset_when_no_selection: true
 query_operator: or
@@ -40,7 +40,7 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: ASC
+      sort: DESC
   count_widget_order:
     processor_id: count_widget_order
     weights:
@@ -53,6 +53,11 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  hide_1_result_facet:
+    processor_id: hide_1_result_facet
+    weights:
+      build: 50
+    settings: {  }
   hide_non_narrowing_result_processor:
     processor_id: hide_non_narrowing_result_processor
     weights:

@@ -10,9 +10,9 @@ field_name: field_description
 entity_type: media
 bundle: document
 label: Description
-description: 'Optional description that can be used with the embedded with description display mode.'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -137,7 +137,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="/node/{{ nid }}/content">Manage Content</a>'
+            text: "<ul class=\"nav flex-column\">\r\n  <li class=\"nav-item\"><a href=\"/node/{{ nid }}/content\" class=\"nav-link\">Manage content</a></li>\r\n  <li class=\"nav-item\"><a href=\"/node/{{ nid }}/media\" class=\"nav-link\">Manage media</a></li>\r\n</ul>"
             make_link: false
             path: ''
             absolute: false

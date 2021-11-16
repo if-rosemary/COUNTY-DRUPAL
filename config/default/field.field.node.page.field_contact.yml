@@ -1,0 +1,25 @@
+uuid: 5a49ab23-e2b7-4c64-a37e-dd6a800af527
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.page
+id: node.page.field_contact
+field_name: field_contact
+entity_type: node
+bundle: page
+label: Contacts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: contacts_reference
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

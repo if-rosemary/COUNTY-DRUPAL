@@ -4,16 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_body
+    - field.field.node.page.field_contact
     - field.field.node.page.field_faqs
     - field.field.node.page.field_group
     - field.field.node.page.field_location
-    - field.field.node.page.field_menu_parent
     - field.field.node.page.field_migration_status
     - field.field.node.page.field_related
     - field.field.node.page.field_service_type
     - field.field.node.page.field_short_title
-    - field.field.node.page.field_show_in_menu
-    - field.field.node.page.field_sort_weight
     - field.field.node.page.field_summary
     - field.field.node.page.field_type
     - node.type.page
@@ -44,6 +42,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_contact:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_faqs:
     weight: 11
@@ -87,34 +95,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_menu_parent:
-    weight: 4
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings:
-      field_states_ui:
-        form:
-          type: ''
-          list:
-            8a7408d0-0307-4db9-8574-b878e6255c48:
-              operations:
-                edit: Edit
-                delete: Delete
-          add: Add
-        field_states:
-          8a7408d0-0307-4db9-8574-b878e6255c48:
-            uuid: 8a7408d0-0307-4db9-8574-b878e6255c48
-            id: visible
-            data:
-              target: field_show_in_menu
-              comparison: checked
-              value: ''
-              submit: 'Add Cancel'
-    type: entity_reference_autocomplete
-    region: content
   field_migration_status:
     weight: 24
     settings: {  }
@@ -150,40 +130,16 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_show_in_menu:
-    weight: 2
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_sort_weight:
-    weight: 3
-    settings:
-      placeholder: ''
     third_party_settings:
       field_states_ui:
         form:
           type: ''
-          list:
-            05d6f863-a478-4240-bf5f-c864a936fbe5:
-              operations:
-                edit: Edit
-                delete: Delete
+          list: ''
           add: Add
-        field_states:
-          05d6f863-a478-4240-bf5f-c864a936fbe5:
-            uuid: 05d6f863-a478-4240-bf5f-c864a936fbe5
-            id: visible
-            data:
-              target: field_show_in_menu
-              comparison: checked
-              value: ''
-              submit: 'Add Cancel'
-    type: number
+      maxlength:
+        maxlength_js: 78
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
     region: content
   field_summary:
     weight: 7

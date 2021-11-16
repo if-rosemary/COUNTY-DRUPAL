@@ -7,7 +7,12 @@
  | for your application. See https://github.com/JeffreyWay/laravel-mix.
  |
  */
-const proxy = require('./config/proxy.js');
+var proxy = require('./config/proxy.example.js');
+ try {
+    proxy = require('./config/proxy.js');
+ } catch (ex) {
+
+ }
 const mix = require('laravel-mix');
 
 /*

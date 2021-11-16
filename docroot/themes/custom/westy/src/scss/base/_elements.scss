@@ -36,10 +36,10 @@ ol,
 ul,
 dl {
   padding: 0;
-  margin-left: 1em;
+  margin-left: 3em;
 }
 ol {
-  list-style: upper-roman;
+  list-style: decimal;
 }
 ol ol, ol ol ol ol ol {
   list-style: lower-alpha;
@@ -78,11 +78,29 @@ figcaption {
 blockquote {
   position: relative;
   margin: 1.75rem auto;
-  width: 480px;
+  max-width: 80%;
   font-size: 1.2rem;
   font-style: italic;
   padding: 1rem 0 1rem 1.5rem;
   border-left: 1px dotted #000;
+}
+@media only screen and (min-width: 640px) {
+  blockquote {
+    max-width: 60%;
+    margin: 4vh 9vw;
+  }
+}
+@media only screen and (min-width: 768px) {
+  blockquote {
+    max-width: 67%;
+    margin: 3.5vh 7.5vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  blockquote {
+    max-width: 73%;
+    margin: 3vh 6vw;
+  }
 }
 
 strong {
@@ -91,4 +109,34 @@ strong {
 
 small {
 
+}
+
+table.table-card tr td{
+  vertical-align: middle;   
+}
+
+.table-key {
+  display: none;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+  .table-key {
+    display: inline-block;
+  }
+
+  table.table-card th{
+    display: none;
+  }
+
+  table.table-card tr{
+    padding: 20px;
+    display: block;
+  }
+
+  table.table-card tr td{
+    padding: 2px 0;
+    vertical-align: top;
+    display: block;
+  }
 }

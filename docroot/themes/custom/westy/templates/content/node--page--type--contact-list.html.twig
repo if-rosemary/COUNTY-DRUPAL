@@ -1,0 +1,54 @@
+{{ content.field_summary }}
+
+{# Refresh render cache for contacts #}
+{% set contact = content.field_contact|render %}
+
+{# Start contacts table #}
+<table class="table table-striped table-card">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Title</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for item in node.field_contact %}
+  		{% set name = item.entity.title.value|render %}
+  		{% set contact_title = item.entity.field_contact_title.value|render %}
+  		{% set email = item.entity.field_email.value|render %}
+  		{% set phone = item.entity.field_phone.value|render %}
+  		{% set phone_ext = item.entity.field_phone_extension.value|render %}
+  		{% set phone_help = item.entity.field_phone_help_text.value|render %}
+  		<tr>
+  		  <td>
+  		  	<div>
+  		  		<span class="table-key">Name: </span> {{ name }}
+  		  	</div>
+  		  </td>
+  		  <td>
+  		  	<div>
+  		  		{% if contact_title %}
+  		  			<span class="table-key">Title: </span> {{ contact_title }}
+  		  		{% endif %}
+  		  	</div>
+  		  </td>
+  		  <td>
+  		  	<div>
+  		  		{% if email %}
+  		  			<span class="table-key">Email: </span> <a href="mailto:{{ email }}">{{ email }}</a>
+  		  		{% endif %}
+  		  	</div>
+  		  </td>
+  		  <td>
+  		  	<div>
+  		  		{% if phone %}
+  		  			<span class="table-key">Phone: </span> {{ phoneString(phone, phone_ext) }} {{ phone_help }}
+  		  		{% endif %}
+  		  	</div>
+  		  </td>
+  		</tr>
+  	{% endfor %}
+  </tbody>
+</table>

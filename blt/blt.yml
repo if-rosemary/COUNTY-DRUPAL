@@ -34,6 +34,7 @@ validate:
       - translation
       - cache_metadata
     functions:
+      - phoneString
       - drupal_block
       - drupal_field
       - drupal_view
@@ -52,7 +53,7 @@ validate:
 command-hooks:
   frontend-reqs:
     dir: '${docroot}/themes/custom/westy' # directory to your subtheme
-    command: 'npm install'
+    command: 'npm ci'
   frontend-assets:
     dir: '${docroot}/themes/custom/westy' # directory to your subtheme
     command: 'npm run production'

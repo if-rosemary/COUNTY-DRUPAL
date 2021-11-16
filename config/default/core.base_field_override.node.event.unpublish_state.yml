@@ -1,0 +1,20 @@
+uuid: a5a320f2-8cf8-4208-813f-5dcf286fa839
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event
+  module:
+    - options
+id: node.event.unpublish_state
+field_name: unpublish_state
+entity_type: node
+bundle: event
+label: 'Unpublish state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

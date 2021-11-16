@@ -65,6 +65,22 @@ name: 'Acquia Search Solr Index'
 description: ''
 read_only: false
 field_settings:
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
   field_body:
     label: Body
     datasource_id: 'entity:node'
@@ -144,7 +160,7 @@ field_settings:
     label: 'Content type'
     datasource_id: 'entity:node'
     property_path: type
-    type: integer
+    type: string
     dependencies:
       module:
         - node
@@ -166,8 +182,8 @@ datasource_settings:
         - alert
         - building
         - contact
+        - event
         - notification
-        - service_location
         - webform
     languages:
       default: true
@@ -205,6 +221,7 @@ processor_settings:
       - field_short_title
       - field_summary
       - title
+      - type
     title: true
     alt: true
     tags:

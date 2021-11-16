@@ -1,0 +1,28 @@
+uuid: f662b330-a545-4309-b257-f0c7e6421f4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_year
+  module:
+    - facets
+    - system
+  theme:
+    - westy
+id: year
+theme: westy
+region: side
+weight: -9
+provider: null
+plugin: 'facet_block:news_year'
+settings:
+  id: 'facet_block:news_year'
+  label: 'Filter by year'
+  provider: facets
+  label_display: visible
+  block_id: year
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
