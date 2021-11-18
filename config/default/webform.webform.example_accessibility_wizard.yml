@@ -17,9 +17,7 @@ id: example_accessibility_wizard
 title: 'Example: Accessibility Wizard'
 description: 'Wizard webform accessibility example.'
 category: 'Example: Accessibility'
-elements: |
-  '#attributes':
-    data-current-page: '[webform_submission:current-page]'
+elements: |-
   information:
     '#title': 'Your Information'
     '#type': webform_wizard_page
@@ -99,6 +97,10 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes:
+    data-current-page: '[webform_submission:current-page]'
   share: false
   share_node: false
   share_theme_name: ''
