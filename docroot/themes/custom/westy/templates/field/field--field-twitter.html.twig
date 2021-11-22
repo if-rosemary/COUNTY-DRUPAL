@@ -1,0 +1,15 @@
+{% embed 'field.html.twig' %}
+{% block content %}
+{% if multiple %}
+<div class="field__items">
+  {% endif %}
+  {%- for item in items if item.content|render|striptags|trim is not empty -%}
+  {% set username = item.content["#context"].value %}
+  <div{{ item.attributes.addClass(item_classes) }}><a
+      href="http://twitter.com/{{ username }}" target="_blank">Twitter</a></div>
+{%- endfor -%}
+{% if multiple %}
+</div>
+{% endif %}
+{% endblock %}
+{% endembed %}
