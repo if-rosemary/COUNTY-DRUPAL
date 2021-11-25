@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.group.field_youtube
     - node.type.group
   module:
+    - taxonomy
     - text
     - user
 id: node.group.default
@@ -51,7 +52,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_migration_status:
-    weight: 11
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -67,7 +68,7 @@ content:
     region: content
   field_phone:
     type: string
-    weight: 10
+    weight: 7
     region: content
     label: hidden
     settings:
@@ -133,7 +134,6 @@ hidden:
   content_moderation_control: true
   feeds_item: true
   field_group_path: true
-  field_migration_status: true
   field_short_title: true
   group_telephone_number_formatter_eva_phone_link: true
   groups_entity_view_child_groups: true
