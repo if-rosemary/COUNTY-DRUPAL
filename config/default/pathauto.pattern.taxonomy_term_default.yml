@@ -1,6 +1,6 @@
 uuid: 559bb326-3025-4cfc-a1d7-8f2981460229
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - taxonomy

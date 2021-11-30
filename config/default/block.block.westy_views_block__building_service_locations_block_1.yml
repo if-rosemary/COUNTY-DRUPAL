@@ -12,7 +12,7 @@ dependencies:
 id: westy_views_block__building_service_locations_block_1
 theme: westy
 region: side
-weight: -13
+weight: -12
 provider: null
 plugin: 'views_block:building_service_locations-block_1'
 settings:

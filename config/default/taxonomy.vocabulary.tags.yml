@@ -1,0 +1,8 @@
+uuid: 14ebbd92-cd17-4919-ae73-d7e74c869a66
+langcode: en
+status: true
+dependencies: {  }
+name: Tags
+vid: tags
+description: 'Controlled vocabulary for subject tags applied to documents and other content types.'
+weight: 0

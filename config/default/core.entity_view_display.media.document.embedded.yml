@@ -7,10 +7,12 @@ dependencies:
     - field.field.media.document.field_description
     - field.field.media.document.field_document_type
     - field.field.media.document.field_file_size
+    - field.field.media.document.field_fiscal_year
     - field.field.media.document.field_group
     - field.field.media.document.field_media_file
     - field.field.media.document.field_media_in_library
     - field.field.media.document.field_mime_type
+    - field.field.media.document.field_tags
     - media.type.document
   module:
     - media_entity_download
@@ -60,8 +62,10 @@ content:
 hidden:
   created: true
   field_description: true
+  field_fiscal_year: true
   field_group: true
   field_media_in_library: true
+  field_tags: true
   langcode: true
   name: true
   search_api_excerpt: true
