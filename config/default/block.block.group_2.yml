@@ -12,7 +12,7 @@ dependencies:
 id: group_2
 theme: westy
 region: side
-weight: -10
+weight: -9
 provider: null
 plugin: 'facet_block:group'
 settings:

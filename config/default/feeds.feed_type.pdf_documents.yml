@@ -1,0 +1,108 @@
+uuid: d421a119-7083-414f-9c28-97888f6e07da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_description
+    - field.field.media.document.field_group
+    - field.field.media.document.field_media_file
+    - field.field.media.document.field_media_in_library
+    - media.type.document
+  module:
+    - media
+id: pdf_documents
+label: 'PDF Documents'
+description: 'Bulk upload of Commonspot PDFs.'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:media'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    bundle: document
+custom_sources:
+  field_description:
+    label: field_description
+    value: field_description
+    machine_name: field_description
+  name:
+    label: name
+    value: name
+    machine_name: name
+  field_media_in_library:
+    label: field_media_in_library
+    value: field_media_in_library
+    machine_name: field_media_in_library
+  field_group:
+    label: field_group
+    value: field_group
+    machine_name: field_group
+  field_redirects:
+    label: field_redirects
+    value: field_redirects
+    machine_name: field_redirects
+  field_media_file:
+    label: field_media_file
+    value: field_media_file
+    machine_name: field_media_file
+mappings:
+  -
+    target: field_description
+    map:
+      value: field_description
+    settings:
+      language: null
+  -
+    target: name
+    map:
+      value: name
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_media_in_library
+    map:
+      value: field_media_in_library
+    settings:
+      language: null
+  -
+    target: field_group
+    map:
+      target_id: field_group
+    settings:
+      language: ''
+      reference_by: nid
+      feeds_item: guid
+      autocreate: 0
+  -
+    target: field_redirects
+    map:
+      value: field_redirects
+    unique: {  }
+    settings: {  }
+  -
+    target: field_media_file
+    map:
+      target_id: field_media_file
+      description: ''
+    settings:
+      language: ''
+      reference_by: fid
+      existing: '2'
+      autocreate: 0

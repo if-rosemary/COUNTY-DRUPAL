@@ -1,3 +1,20 @@
 .view-header {
-    margin-bottom: $spacer * 2;
+  margin-bottom: $spacer * 2;
+}
+
+// Specific view styling
+
+// Documents (Solr)
+.view-documents-solr {
+  .cshs-term-group {
+    display: none;
+  }
+  table caption {
+    caption-side: initial;
+    color: #000;
+    font-weight: bold;
+  }
+  .views-field-field-fiscal-year {
+    max-width: 2rem;
+  }
 }

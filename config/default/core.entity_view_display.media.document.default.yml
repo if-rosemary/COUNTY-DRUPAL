@@ -3,13 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.document.feeds_item
     - field.field.media.document.field_description
     - field.field.media.document.field_document_type
     - field.field.media.document.field_file_size
+    - field.field.media.document.field_fiscal_year
     - field.field.media.document.field_group
     - field.field.media.document.field_media_file
     - field.field.media.document.field_media_in_library
     - field.field.media.document.field_mime_type
+    - field.field.media.document.field_tags
     - media.type.document
   module:
     - media_entity_download
@@ -19,7 +22,7 @@ bundle: document
 mode: default
 content:
   field_description:
-    weight: 6
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -35,6 +38,15 @@ content:
     region: content
   field_file_size:
     weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_fiscal_year:
+    weight: 6
     label: above
     settings:
       thousand_separator: ''
@@ -81,8 +93,17 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_tags:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
 hidden:
   created: true
+  feeds_item: true
   langcode: true
   name: true
   search_api_excerpt: true

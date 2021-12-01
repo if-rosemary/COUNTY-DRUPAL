@@ -30,3 +30,4 @@ read_only: false
 keymodule:
   access_key_name: ''
   secret_key_name: ''
+disable_shared_config_files: true

@@ -10,7 +10,7 @@ field_name: field_youtube
 entity_type: node
 bundle: group
 label: YouTube
-description: 'Enter the portion of the YouTube channel URL following the slash after the base segment https://www.youtube.com/ -- for example, if your YouTube channel URL is https://www.youtube.com/user/washcodept, enter "/user/washcodept" in this field.'
+description: 'Enter the portion of the YouTube channel URL following the slash after the base segment https://www.youtube.com/ -- for example, if your YouTube channel URL is https://www.youtube.com/user/washcodept, enter "user/washcodept" in this field.'
 required: false
 translatable: false
 default_value: {  }

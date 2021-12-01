@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.group.field_youtube
     - node.type.group
   module:
+    - taxonomy
     - text
     - user
 id: node.group.default
@@ -42,6 +43,21 @@ content:
     third_party_settings: {  }
     type: email_mailto
     region: content
+  field_facebook:
+    type: string
+    weight: 8
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_migration_status:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_rss_category
+    region: content
   field_parent:
     weight: 4
     label: inline
@@ -52,7 +68,7 @@ content:
     region: content
   field_phone:
     type: string
-    weight: 10
+    weight: 7
     region: content
     label: hidden
     settings:
@@ -90,6 +106,14 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_twitter:
+    type: string
+    weight: 10
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_type:
     weight: 0
     label: hidden
@@ -98,33 +122,24 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  social_media_formatter_entity_view_1:
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  social_media_formatter_entity_view_2:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  social_media_formatter_entity_view_3:
+  field_youtube:
+    type: string
     weight: 9
     region: content
-    settings: {  }
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
   feeds_item: true
-  field_facebook: true
   field_group_path: true
-  field_migration_status: true
   field_short_title: true
-  field_twitter: true
-  field_youtube: true
   group_telephone_number_formatter_eva_phone_link: true
   groups_entity_view_child_groups: true
   langcode: true
   links: true
-  phone_number_formatter_entity_view_1: true
   search_api_excerpt: true
+  social_media_formatter_entity_view_1: true
+  social_media_formatter_entity_view_2: true
+  social_media_formatter_entity_view_3: true
