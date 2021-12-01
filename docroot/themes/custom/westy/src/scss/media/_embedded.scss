@@ -1,7 +1,9 @@
-.embed-document {
+// Document embed style for body
+.field--name-field-body .embed-document {
   margin-bottom: $spacer;
-  border: 1px solid #ccc;
-  padding: 10px 20px;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  padding: 1rem 1.333rem;
 }
 
 .embed-document .caption {

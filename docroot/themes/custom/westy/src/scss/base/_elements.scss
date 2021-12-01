@@ -35,28 +35,6 @@ h6 {
 ol,
 ul,
 dl {
-  padding: 0;
-  margin-left: 3em;
-}
-ol {
-  list-style: decimal;
-}
-ol ol, ol ol ol ol ol {
-  list-style: lower-alpha;
-  margin-left: .8em;
-}
-ol ol ol, ol ol ol ol ol ol {
-  list-style: lower-roman;
-  margin-left: .8em;
-}
-ol ol ol ol {
-  list-style: decimal;
-}
-li {
-  padding-left: .5em;
-}
-li * li {
-  margin-left: .8em;
 }
 
 // Image
@@ -112,7 +90,7 @@ small {
 }
 
 table.table-card tr td{
-  vertical-align: middle;   
+  vertical-align: middle;
 }
 
 .table-key {
