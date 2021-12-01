@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.media.embedded_with_description
+    - field.field.media.document.feeds_item
     - field.field.media.document.field_description
     - field.field.media.document.field_document_type
     - field.field.media.document.field_file_size
@@ -68,6 +69,7 @@ content:
     region: content
 hidden:
   created: true
+  feeds_item: true
   field_fiscal_year: true
   field_group: true
   field_media_in_library: true

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.document.feeds_item
     - field.field.media.document.field_description
     - field.field.media.document.field_document_type
     - field.field.media.document.field_file_size
@@ -102,6 +103,7 @@ content:
     region: content
 hidden:
   created: true
+  feeds_item: true
   langcode: true
   name: true
   search_api_excerpt: true

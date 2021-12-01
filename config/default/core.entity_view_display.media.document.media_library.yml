@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.document.feeds_item
     - field.field.media.document.field_description
     - field.field.media.document.field_document_type
     - field.field.media.document.field_file_size
@@ -33,6 +34,7 @@ content:
     region: content
 hidden:
   created: true
+  feeds_item: true
   field_description: true
   field_document_type: true
   field_file_size: true
