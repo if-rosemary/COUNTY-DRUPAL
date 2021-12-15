@@ -22,23 +22,21 @@ bundle: service_location
 mode: teaser
 content:
   closure_entity_view_1:
-    weight: 5
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 5
+    region: content
   field_featured_image:
     type: media_thumbnail
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_hours:
     type: office_hours_status
-    weight: 4
-    region: content
     label: visually_hidden
     settings:
       day_format: long
@@ -62,21 +60,23 @@ content:
       timezone_field: ''
       office_hours_first_day: ''
     third_party_settings: {  }
+    weight: 4
+    region: content
   get_directions_link_eva_map_link_sl:
+    settings: {  }
+    third_party_settings: {  }
     weight: 2
     region: content
+  get_directions_link_eva_transit_link_sl:
     settings: {  }
     third_party_settings: {  }
-  get_directions_link_eva_transit_link_sl:
     weight: 3
     region: content
+  service_location_display_eva_servloc_display:
     settings: {  }
     third_party_settings: {  }
-  service_location_display_eva_servloc_display:
     weight: 1
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   field_accessibility_notes: true

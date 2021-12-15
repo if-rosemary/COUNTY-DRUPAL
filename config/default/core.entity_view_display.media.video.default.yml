@@ -21,27 +21,27 @@ mode: default
 content:
   field_caption:
     type: text_default
-    weight: 1
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_media_oembed_video:
     type: oembed
     label: visually_hidden
-    weight: 0
     settings:
       max_width: 0
       max_height: 0
     third_party_settings: {  }
+    weight: 0
     region: content
   field_transcript:
     type: text_default
-    weight: 2
-    region: content
     label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   created: true
   field_creator: true

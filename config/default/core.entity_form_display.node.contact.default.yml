@@ -25,16 +25,16 @@ third_party_settings:
         - field_phone
         - field_phone_extension
         - field_phone_help_text
+      label: Phone
+      region: content
       parent_name: ''
       weight: 3
       format_type: fieldset
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: true
-      label: Phone
 id: node.contact.default
 targetEntityType: node
 bundle: contact
@@ -47,41 +47,43 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_contact_title:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     type: string_textfield
+    weight: 1
     region: content
-  field_email:
-    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_email:
     type: email_default
+    weight: 2
     region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
   field_group:
+    type: entity_reference_autocomplete
     weight: 4
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_phone:
+    type: telephone_cleave
     weight: 17
+    region: content
     settings:
       placeholder: ''
       country: US
     third_party_settings: {  }
-    type: telephone_cleave
-    region: content
   field_phone_extension:
+    type: string_textfield
     weight: 18
+    region: content
     settings:
       size: 10
       placeholder: ''
@@ -94,16 +96,14 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: string_textfield
-    region: content
   field_phone_help_text:
+    type: string_textfield
     weight: 19
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   langcode:
     type: language_select
     weight: 6
@@ -114,8 +114,8 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 16
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -125,10 +125,10 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 9
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
@@ -144,17 +144,17 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 17
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -172,12 +172,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 7
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

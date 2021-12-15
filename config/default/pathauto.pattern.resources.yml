@@ -11,12 +11,12 @@ pattern: '[node:field_group:0:entity:field_group_path]/resources/[node:field_sho
 selection_criteria:
   0277b244-3333-4abe-9e0e-60825dff5574:
     id: node_type
-    bundles:
-      resource: resource
     negate: false
+    uuid: 0277b244-3333-4abe-9e0e-60825dff5574
     context_mapping:
       node: node
-    uuid: 0277b244-3333-4abe-9e0e-60825dff5574
+    bundles:
+      resource: resource
 selection_logic: and
 weight: -5
 relationships: {  }

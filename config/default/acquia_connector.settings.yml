@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: 6phbBhcYjncqxncwDHAImFHb0MAKamGB_HQy53AfN9s
 subscription_name: 'County Site'
 debug: false
 cron_interval: 30
@@ -32,11 +34,11 @@ spi:
     variables: {  }
     time: 0
   cron_interval: 28800
-  env_detection_enabled: true
   site_uuid: f411157c-35c3-419a-b8a8-1a3adade7145
-  blocked: true
+  env_detection_enabled: true
   environment_changes:
     blocked: 'Your site has been unblocked.'
+  blocked: true
 mapping:
   acquia_spi_send_node_user:
     - acquia_connector.settings
@@ -164,5 +166,3 @@ mapping:
   http_response_debug_cacheability_headers:
     - container_parameter
     - http.response.debug_cacheability_headers
-_core:
-  default_config_hash: 6phbBhcYjncqxncwDHAImFHb0MAKamGB_HQy53AfN9s

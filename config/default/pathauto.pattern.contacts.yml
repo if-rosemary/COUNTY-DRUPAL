@@ -11,12 +11,12 @@ pattern: '[node:field_group:0:entity:field_group_path]/contacts/[node:title]'
 selection_criteria:
   eb1e8c6b-a3a5-45c7-a135-21f0a2271052:
     id: node_type
-    bundles:
-      contact: contact
     negate: false
+    uuid: eb1e8c6b-a3a5-45c7-a135-21f0a2271052
     context_mapping:
       node: node
-    uuid: eb1e8c6b-a3a5-45c7-a135-21f0a2271052
+    bundles:
+      contact: contact
 selection_logic: and
 weight: -5
 relationships: {  }

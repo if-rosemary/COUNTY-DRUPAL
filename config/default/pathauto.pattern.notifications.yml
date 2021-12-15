@@ -11,12 +11,12 @@ pattern: '[node:field_group:0:entity:field_group_path]/notifications/[node:title
 selection_criteria:
   872a76cb-9e8d-4db4-874a-a74fc473518b:
     id: node_type
-    bundles:
-      notification: notification
     negate: false
+    uuid: 872a76cb-9e8d-4db4-874a-a74fc473518b
     context_mapping:
       node: node
-    uuid: 872a76cb-9e8d-4db4-874a-a74fc473518b
+    bundles:
+      notification: notification
 selection_logic: and
 weight: -5
 relationships: {  }

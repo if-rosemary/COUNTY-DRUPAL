@@ -11,12 +11,12 @@ pattern: 'buildings/[node:title]'
 selection_criteria:
   0e2be430-4e7a-41d8-9599-e575763d35bc:
     id: node_type
-    bundles:
-      building: building
     negate: false
+    uuid: 0e2be430-4e7a-41d8-9599-e575763d35bc
     context_mapping:
       node: node
-    uuid: 0e2be430-4e7a-41d8-9599-e575763d35bc
+    bundles:
+      building: building
 selection_logic: and
 weight: -5
 relationships: {  }

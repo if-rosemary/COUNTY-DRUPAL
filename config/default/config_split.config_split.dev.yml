@@ -5,13 +5,12 @@ dependencies: {  }
 id: dev
 label: Dev
 description: 'Acquia Dev environment.'
+weight: 0
 folder: ../config/envs/dev
 module:
   devel: 0
 theme: {  }
 blacklist: {  }
-graylist:
-  - shield.settings
+graylist: {  }
 graylist_dependents: true
-graylist_skip_equal: true
-weight: 0
+graylist_skip_equal: false

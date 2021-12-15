@@ -43,9 +43,9 @@ field_type:
           words: stopwords_fa.txt
         -
           class: solr.SynonymGraphFilterFactory
+          ignoreCase: true
           synonyms: synonyms_fa.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.PersianNormalizationFilterFactory
         -
@@ -81,9 +81,9 @@ unstemmed_field_type:
           words: stopwords_fa.txt
         -
           class: solr.SynonymGraphFilterFactory
+          ignoreCase: true
           synonyms: synonyms_fa.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.PersianNormalizationFilterFactory
 spellcheck_field_type: null
@@ -479,8 +479,8 @@ text_files:
     جلوي
     عنوان
     بود
+  protwords: ''
+  accents: ''
   synonyms: |
     drupal, durpal
   nouns: ''
-  protwords: ''
-  accents: ''

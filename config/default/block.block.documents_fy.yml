@@ -17,7 +17,7 @@ plugin: 'facet_block:documents_fy'
 settings:
   id: 'facet_block:documents_fy'
   label: 'Filter by fiscal year'
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: documents_fy
 visibility: {  }

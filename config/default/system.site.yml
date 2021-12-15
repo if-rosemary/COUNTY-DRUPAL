@@ -1,5 +1,8 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
 uuid: c7654b16-5054-4528-b9a4-635175cbb390
-name: 'Washington County, Oregon'
+name: 'Washington County, OR'
 mail: noreply@washcotech.net
 slogan: ''
 page:
@@ -8,8 +11,5 @@ page:
   front: /node
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
-_core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
 mail_notification: ''

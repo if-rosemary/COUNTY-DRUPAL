@@ -5,6 +5,7 @@ dependencies: {  }
 id: ah_other
 label: Other
 description: 'Any Acquia environment not listed here (Cloud IDE and ODE).'
+weight: -1
 folder: ../config/envs/ah_other
 module:
   devel: 0
@@ -14,5 +15,4 @@ graylist:
   - seckit.settings
   - shield.settings
 graylist_dependents: true
-graylist_skip_equal: true
-weight: -1
+graylist_skip_equal: false

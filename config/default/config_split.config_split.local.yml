@@ -5,6 +5,7 @@ dependencies: {  }
 id: local
 label: Local
 description: 'Any non-Acquia, non-Travis environment.'
+weight: 0
 folder: ../config/envs/local
 module:
   devel: 0
@@ -12,6 +13,6 @@ theme: {  }
 blacklist: {  }
 graylist:
   - seckit.settings
+  - shield.settings
 graylist_dependents: true
-graylist_skip_equal: true
-weight: 0
+graylist_skip_equal: false

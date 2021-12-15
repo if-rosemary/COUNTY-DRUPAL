@@ -1,9 +1,16 @@
-allow_cli: true
-shield_enable: true
-whitelist: ''
-print: 'Env: Other'
+shield_enable: false
 credential_provider: shield
 credentials:
   shield:
     user: ''
     pass: ''
+allow_cli: true
+debug_header: false
+unset_basic_auth_headers: true
+print: 'Env: Other'
+method: 0
+paths: ''
+allowlist: ''
+http_method_allowlist: {  }
+domains: ''
+path: ''
