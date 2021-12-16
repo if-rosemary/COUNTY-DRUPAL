@@ -13,6 +13,7 @@ module:
   breakpoint: 0
   captcha: 0
   ckeditor: 0
+  ckeditor_accordion: 0
   ckeditor_bootstrap_grid: 0
   cleave: 0
   components: 0

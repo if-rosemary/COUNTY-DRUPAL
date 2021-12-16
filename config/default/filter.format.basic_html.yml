@@ -43,7 +43,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href hreflang !href accesskey id rel target title data-entity-substitution data-entity-type data-entity-uuid> <abbr title> <blockquote cite> <br> <caption class=""> <figcaption> <cite> <code> <dd> <div class=""> <dl> <drupal-media data-title data-description data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <dt> <em> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <hr> <li> <ol type start class=""> <p class=""> <pre> <s> <span> <strong> <sub> <sup> <table summary class=""> <tbody class=""> <td scope colspan rowspan class=""> <tfoot class=""> <th scope colspan rowspan> <thead class=""> <tr scope class=""> <ul type>'
+      allowed_html: '<a href hreflang !href accesskey id rel target title data-entity-substitution data-entity-type data-entity-uuid> <abbr title> <blockquote cite> <br> <caption class=""> <figcaption> <cite> <code> <dd> <div id aria-labelledby data-bs-parent class=""> <dl> <drupal-media data-title data-description data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <dt> <em> <h2 id class=""> <h3 id> <h4 id> <h5 id> <h6 id> <hr> <li> <ol type start class=""> <p class=""> <pre> <s> <span> <strong> <sub> <sup> <table summary class=""> <tbody class=""> <td scope colspan rowspan class=""> <tfoot class=""> <th scope colspan rowspan> <thead class=""> <tr scope class=""> <ul type> <img> <button type data-bs-toggle data-bs-target aria-expanded aria-controls class="">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_url:

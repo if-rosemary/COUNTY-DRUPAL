@@ -1,0 +1,8 @@
+name: CKEditor Accordion
+type: module
+description: Adds accordion component to CKEditor
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom CKEditor
+dependencies:
+  - drupal:ckeditor
