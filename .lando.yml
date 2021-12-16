@@ -1,5 +1,6 @@
 name: county-drupal
 recipe: acquia
+
 config:
   acli_version: latest
   ah_application_uuid: 9cab3740-4631-4529-a4de-d6ef75472d78
@@ -11,10 +12,41 @@ config:
   inbox: false
   php: '7.4'
   xdebug: false
+
 tooling:
   blt:
     service: appserver
     cmd: /app/vendor/bin/blt
+  npm:
+    description: Run npm commands
+    service: node
+    cmd: npm -C /app/docroot/themes/custom/westy
+  node:
+    description: Run node commands
+    service: node
+  drush:
+    description: Run drush commands
+    service: appserver
+    cmd: drush --root=/app/docroot
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    user: root
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Enabling xdebug"
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    user: root
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Disabling xdebug"
+  build-theme:
+    description: Build the production theme; this should match the Acquia BLT build command.
+    service: node
+    cmd: npm -C /app/docroot/themes/custom/westy run production
+  watch-theme:
+    description: Build the production theme; this should match the Acquia BLT build command.
+    service: node
+    cmd: npm -C /app/docroot/themes/custom/westy run watch
+
 services:
   appserver:
     overrides:
@@ -28,3 +60,6 @@ services:
       - chown -R www-data:www-data /mnt/files/wcor.LANDO/sites/default
       - chmod -R g+rw /mnt/gfs
       - chmod -R g+rw /mnt/files/wcor.LANDO/sites/default
+  node:
+    type: node:14
+

@@ -852,3 +852,24 @@ $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
 }
+
+/**
+ * @file
+ * Enable development configurations if in a local, developer environment.
+ *
+ * Here we can disable caching, show twig template suggestions,
+ * disable JavaScript/CSS compression, or re-route outgoing emails,
+ * etc, to help site building.
+ *
+ * Keep this block at the bottom of `settings.php` to override other variables.
+ * @see _developer_drupal_debug_configurations/settings.append.txt
+ */
+$file = __DIR__ . '/settings.local.php';
+if (file_exists($file)
+    && (
+      preg_match('/\.lndo\.site$/', $_SERVER['HTTP_HOST']) === 1 ||
+      preg_match('/\.lndo\.site:4443$/', $_SERVER['HTTP_HOST']) === 1
+    )
+  ) {
+  include_once $file;
+}
