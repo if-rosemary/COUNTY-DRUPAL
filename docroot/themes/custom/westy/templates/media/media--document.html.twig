@@ -43,7 +43,7 @@
   {% endif %}
 
   <div{{ attributes.addClass(classes) }}>
-      <a href="{{ media_url }}">{{ media_title }}</a>&nbsp;<span class="media-properties">({{ mime_type }} {{ content.field_file_size.0|render|striptags|format_size }})</span>
+      <a href="{{ media_url }}"><i class="gg-file-{{ mime_type|lower }}"></i>{{ media_title }}</a>&nbsp;<span class="media-properties">({{ mime_type }} {{ content.field_file_size.0|render|striptags|format_size }})</span>
       {% if (content.field_description) and (attributes['data-description'] == "1")  %}
         <div id="{{ name|clean_class }}" class="description">{{ content.field_description.0 }}</div>
       {% endif %}

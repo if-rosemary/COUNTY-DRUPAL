@@ -1,9 +1,12 @@
 // Document embed style for body
-.field--name-field-body .embed-document {
-  margin-bottom: $spacer;
-  border-top: 1px solid #dee2e6;
-  border-left: 1px solid #dee2e6;
-  padding: 1rem 1.333rem;
+.field--name-field-body {
+  .embed-document {
+    margin-bottom: $spacer;
+  }
+
+  li .embed-document {
+    margin-bottom: 0;
+  }
 }
 
 .embed-document .caption {
