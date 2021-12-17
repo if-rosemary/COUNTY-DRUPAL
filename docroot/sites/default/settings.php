@@ -672,11 +672,6 @@ $settings['update_free_access'] = FALSE;
 # $config['system.performance']['fast_404']['html'] = '<!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
 
 /**
- * Load services definition file.
- */
-$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
-
-/**
  * Override the default service container class.
  *
  * This is useful for example to trace the service container for performance

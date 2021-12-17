@@ -18,17 +18,17 @@ plugin: 'views_block:alerts-alert_page_block'
 settings:
   id: 'views_block:alerts-alert_page_block'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
   items_per_page: none
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
     bundles:
       news: news
       page: page
       resource: resource
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'

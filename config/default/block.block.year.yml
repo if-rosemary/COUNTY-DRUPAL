@@ -18,11 +18,11 @@ plugin: 'facet_block:news_year'
 settings:
   id: 'facet_block:news_year'
   label: 'Filter by year'
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: year
 visibility:
   request_path:
     id: request_path
-    pages: /news
     negate: false
+    pages: /news

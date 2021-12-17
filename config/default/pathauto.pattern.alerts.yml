@@ -11,12 +11,12 @@ pattern: 'alerts/[node:title]'
 selection_criteria:
   bb91ac23-b5fe-46fa-89f5-132aee447426:
     id: node_type
-    bundles:
-      alert: alert
     negate: false
+    uuid: bb91ac23-b5fe-46fa-89f5-132aee447426
     context_mapping:
       node: node
-    uuid: bb91ac23-b5fe-46fa-89f5-132aee447426
+    bundles:
+      alert: alert
 selection_logic: and
 weight: -5
 relationships: {  }

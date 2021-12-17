@@ -11,12 +11,12 @@ pattern: '[node:field_group:0:entity:field_group_path]/news/[node:scheduler-publ
 selection_criteria:
   a29ce27f-5fa2-48d3-9098-4db80a84615d:
     id: node_type
-    bundles:
-      news: news
     negate: false
+    uuid: a29ce27f-5fa2-48d3-9098-4db80a84615d
     context_mapping:
       node: node
-    uuid: a29ce27f-5fa2-48d3-9098-4db80a84615d
+    bundles:
+      news: news
 selection_logic: and
 weight: -9
 relationships: {  }

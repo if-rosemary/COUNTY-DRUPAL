@@ -19,26 +19,35 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Default
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
+      fields:
+        field_facebook:
+          id: field_facebook
+          table: node__field_facebook
+          field: field_facebook
+          plugin_id: field
+      pager:
+        type: mini
         options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
+          offset: 0
+          items_per_page: 1
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -49,50 +58,15 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-      pager:
-        type: mini
+      access:
+        type: perm
         options:
-          items_per_page: 1
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: fields
-        options:
-          inline: {  }
-          separator: ''
-          hide_empty: false
-          default_field_elements: true
-      fields:
-        field_facebook:
-          id: field_facebook
-          table: node__field_facebook
-          field: field_facebook
-          plugin_id: field
-      filters: {  }
-      sorts: {  }
-      header: {  }
-      footer: {  }
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
       empty: {  }
-      relationships: {  }
+      sorts: {  }
       arguments:
         nid:
           id: nid
@@ -101,6 +75,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
           default_action: default
           exception:
             value: all
@@ -114,8 +91,8 @@ display:
           summary_options:
             base_path: ''
             count: true
-            items_per_page: 25
             override: false
+            items_per_page: 25
           summary:
             sort_order: asc
             number_of_records: 0
@@ -127,9 +104,32 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          entity_type: node
-          entity_field: nid
-          plugin_id: node_nid
+      filters: {  }
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -143,16 +143,11 @@ display:
       tags:
         - 'config:field.storage.node.field_facebook'
   entity_view_1:
-    display_plugin: entity_view
     id: entity_view_1
     display_title: 'Facebook EVA'
+    display_plugin: entity_view
     position: 1
     display_options:
-      display_extenders: {  }
-      entity_type: node
-      bundles:
-        - group
-      display_description: ''
       fields:
         field_facebook:
           id: field_facebook
@@ -161,6 +156,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -216,7 +212,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -224,6 +219,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -265,9 +261,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
       defaults:
         fields: false
+      display_description: ''
+      display_extenders: {  }
+      entity_type: node
+      bundles:
+        - group
     cache_metadata:
       max-age: -1
       contexts:
@@ -280,16 +280,11 @@ display:
       tags:
         - 'config:field.storage.node.field_facebook'
   entity_view_2:
-    display_plugin: entity_view
     id: entity_view_2
     display_title: 'Twitter EVA'
+    display_plugin: entity_view
     position: 1
     display_options:
-      display_extenders: {  }
-      entity_type: node
-      bundles:
-        - group
-      display_description: ''
       fields:
         field_twitter:
           id: field_twitter
@@ -298,6 +293,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -353,7 +349,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -361,6 +356,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -402,9 +398,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
       defaults:
         fields: false
+      display_description: ''
+      display_extenders: {  }
+      entity_type: node
+      bundles:
+        - group
     cache_metadata:
       max-age: -1
       contexts:
@@ -417,16 +417,11 @@ display:
       tags:
         - 'config:field.storage.node.field_twitter'
   entity_view_3:
-    display_plugin: entity_view
     id: entity_view_3
     display_title: 'YouTube EVA'
+    display_plugin: entity_view
     position: 1
     display_options:
-      display_extenders: {  }
-      entity_type: node
-      bundles:
-        - group
-      display_description: ''
       fields:
         field_youtube:
           id: field_youtube
@@ -435,6 +430,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -490,7 +486,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -498,6 +493,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -539,9 +535,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
       defaults:
         fields: false
+      display_description: ''
+      display_extenders: {  }
+      entity_type: node
+      bundles:
+        - group
     cache_metadata:
       max-age: -1
       contexts:

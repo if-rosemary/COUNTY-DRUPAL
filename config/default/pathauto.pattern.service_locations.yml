@@ -11,12 +11,12 @@ pattern: '[node:field_building:entity:title]/[node:field_short_title]'
 selection_criteria:
   4bb72ea2-6843-412c-a866-558f60695358:
     id: node_type
-    bundles:
-      service_location: service_location
     negate: false
+    uuid: 4bb72ea2-6843-412c-a866-558f60695358
     context_mapping:
       node: node
-    uuid: 4bb72ea2-6843-412c-a866-558f60695358
+    bundles:
+      service_location: service_location
 selection_logic: and
 weight: -5
 relationships: {  }

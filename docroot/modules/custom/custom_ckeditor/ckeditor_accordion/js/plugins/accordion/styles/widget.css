@@ -1,0 +1,8 @@
+.accordion-item {
+  border: 3px solid #ccc;
+}
+
+.collapse:not(.show) {
+  display: block;
+  background-color: #e7e7e7;
+}

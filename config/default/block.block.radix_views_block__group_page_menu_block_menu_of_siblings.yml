@@ -18,17 +18,17 @@ plugin: 'views_block:group_page_menu-block_menu_of_siblings'
 settings:
   id: 'views_block:group_page_menu-block_menu_of_siblings'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
-  context_mapping: {  }
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      page: page
-      resource: resource
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      page: page
+      resource: resource
