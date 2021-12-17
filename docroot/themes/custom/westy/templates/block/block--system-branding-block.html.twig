@@ -1,21 +1,34 @@
 {#
 /**
- * @file
- * Template for the branding block.
- */
+  * @file
+  * Template for the branding block.
+  *
+  * @see themes/contrib/radix/templates/block/block--system-branding-block.html.twig
+  */
 #}
 {% embed '@radix/block/block.twig' with {
   html_tag: 'div',
 } %}
 
-{% block content %}
-  {% include '@radix/navbar/navbar-brand.twig' with {
-    text: site_name,
-    image: site_logo,
-    width: 'auto',
-    height: 26,
-    path: path('<front>'),
-  } %}
-{% endblock %}
+  {% block content %}
+
+    <div class="d-inline-flex justify-content-center align-items-baseline">
+
+      <div class="badge align-self-baseline me-auto">
+        <a href="/" aria-label="Washington County, Oregon">
+          <img src="{{ base_path ~ directory }}/assets/images/wcor-logo-temp.png" alt="Washington County, Oregon"/>
+        </a>
+      </div>
+
+      <h1 class="badge">
+        <a href="/" aria-label="Washington County, Oregon" tabindex="-1">
+          {{ 'Washington County'| t }}
+          <span>{{ 'Oregon'| t }}</span>
+        </a>
+      </h1>
+
+    </div>
+
+  {% endblock %}
 
 {% endembed %}

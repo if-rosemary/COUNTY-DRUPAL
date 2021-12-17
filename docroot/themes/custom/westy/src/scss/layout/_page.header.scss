@@ -1,5 +1,56 @@
-// Page: Header
+/**
+ * @file Styles for site navigation and headers.
+ */
+// Page: Header; with site branding, navigation and a search modal.
 // -----------------------------------------------------------------------------
-.page__header {
+header.page__main_header {
+  @extend .border-bottom, .border-dark;
 
+  // The logo & branding section.
+  .block--westy-site-branding {
+    h1.badge a {
+      font-size: $h1-mobile-font-size;
+      text-align: left;
+      @include media-breakpoint-up(md) {
+        font-size: $h1-font-size;
+       }
+       span {
+         @extend .link-dark-gray;
+         display: block;
+
+       }
+    }
+  }
+
+
+  // Main site navigation.
+  .navbar-collapse {
+    @extend .justify-content-end;
+    .me-auto {
+      margin-right: initial !important;
+    }
+
+    a.nav-link.show {
+      background-color: gray;
+    }
+
+    // Sub-menu flyouts.
+    .dropdown-menu {
+      @extend .border-0, .rounded-0, .p-3, .mb-2, .bg-dark, .text-white;
+      a {
+        color: white;
+        background-color: transparent;
+        &:hover,
+        &:focus {
+          color: white;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+// Main: Header; with site Drupal alerts and messages.
+// -----------------------------------------------------------------------------
+main .page__header {
 }

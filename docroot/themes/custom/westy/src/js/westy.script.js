@@ -1,4 +1,10 @@
+/**
+ * @file Global helper JS for the theme.
+ */
+
+// Import site-wide libraries.
 import './_bootstrap.js';
+import './_header.js';
 
 (function ($, Drupal) {
 
