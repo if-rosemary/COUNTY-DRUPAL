@@ -1,7 +1,33 @@
 uuid: 38d421e1-0005-4f1e-9dab-1f55e02072d3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.video
+    - node.type.alert
+    - node.type.contact
+    - node.type.faq
+    - node.type.group
+    - node.type.news
+    - node.type.notification
+    - node.type.page
+    - node.type.resource
+    - workflows.workflow.editorial
+    - workflows.workflow.media
+  module:
+    - admin_toolbar_search
+    - content_moderation
+    - content_translation
+    - field_permissions
+    - media
+    - node
+    - path
+    - redirect
+    - system
+    - toolbar
+    - toolbar_menu
 id: publisher
 label: Publisher
 weight: -7

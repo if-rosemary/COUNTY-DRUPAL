@@ -1,9 +1,15 @@
-allow_cli: true
 shield_enable: true
-whitelist: ''
-print: ''
 credential_provider: shield
 credentials:
   shield:
     user: ''
     pass: ''
+allow_cli: true
+debug_header: false
+print: ''
+method: 0
+paths: ''
+allowlist: ''
+http_method_allowlist: {  }
+domains: ''
+whitelist: ''

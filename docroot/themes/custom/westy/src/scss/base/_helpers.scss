@@ -1,20 +1,22 @@
 /* put a little padding in styled CKEditor body */
 .cke_editable {
-    margin: 10px;
+  margin: 10px;
+
+  .embed-document {
+    margin: 0;
   }
-  
+
   // External links
-  
   span.ext {
     &:after {
       padding-left: ($spacer * 0.5);
     }
   }
-  
+
   span.mailto::before {
     background: none;
   }
-  
+
   /* Hide the extra spans when printing. */
   @media print {
     span.ext,
@@ -23,4 +25,4 @@
       padding: 0;
     }
   }
-  
+}

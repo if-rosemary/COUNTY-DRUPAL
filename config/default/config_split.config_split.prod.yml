@@ -5,6 +5,7 @@ dependencies: {  }
 id: prod
 label: Prod
 description: 'Acquia Prod environment.'
+weight: 0
 folder: ../config/envs/prod
 module: {  }
 theme: {  }
@@ -14,5 +15,4 @@ blacklist:
 graylist:
   - simplesamlphp_auth.settings
 graylist_dependents: true
-graylist_skip_equal: true
-weight: 0
+graylist_skip_equal: false

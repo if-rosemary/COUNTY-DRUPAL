@@ -14,8 +14,8 @@ dependencies:
     - node.type.group
   module:
     - node
-id: central_system_groups
 label: 'Central System Groups'
+id: central_system_groups
 description: ''
 help: ''
 import_period: -1
@@ -30,82 +30,83 @@ parser_configuration:
   line_limit: 100
 processor: 'entity:node'
 processor_configuration:
+  values:
+    type: group
   langcode: en
+  insert_new: 1
   update_existing: 2
   update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
   expire: -1
   owner_feed_author: false
   owner_id: 1
-  authorize: true
-  skip_hash_check: false
-  values:
-    type: group
 custom_sources:
   nid:
-    label: nid
     value: nid
+    label: nid
     machine_name: nid
   title:
-    label: title
     value: title
+    label: title
     machine_name: title
   field_short_title:
-    label: field_short_title
     value: field_short_title
+    label: field_short_title
     machine_name: field_short_title
   field_group_path:
-    label: field_group_path
     value: field_group_path
+    label: field_group_path
     machine_name: field_group_path
   field_parent:
-    label: field_parent
     value: field_parent
+    label: field_parent
     machine_name: field_parent
   field_type:
-    label: field_type
     value: field_type
+    label: field_type
     machine_name: field_type
   field_status:
-    label: field_status
     value: field_status
+    label: field_status
     machine_name: field_status
   field_phone:
-    label: field_phone
     value: field_phone
+    label: field_phone
     machine_name: field_phone
   field_email:
-    label: field_email
     value: field_email
+    label: field_email
     machine_name: field_email
 mappings:
   -
     target: nid
     map:
       value: nid
+    settings: {  }
     unique:
       value: '1'
-    settings: {  }
   -
     target: title
     map:
       value: title
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_short_title
     map:
       value: field_short_title
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_group_path
     map:
       value: field_group_path
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_parent
     map:
@@ -141,7 +142,7 @@ mappings:
     target: field_email
     map:
       value: field_email
-    unique: {  }
     settings:
       language: null
       defuse: false
+    unique: {  }

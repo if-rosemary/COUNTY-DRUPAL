@@ -5,11 +5,12 @@ dependencies: {  }
 id: ci
 label: CI
 description: 'Cloud Platform pipelines feature or Travis CI.'
+weight: 0
 folder: ../config/envs/ci
 module: {  }
 theme: {  }
 blacklist: {  }
-graylist: {  }
+graylist:
+  - shield.settings
 graylist_dependents: true
-graylist_skip_equal: true
-weight: 0
+graylist_skip_equal: false

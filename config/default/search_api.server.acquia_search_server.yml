@@ -36,6 +36,12 @@ name: 'Acquia Search API Solr server'
 description: ''
 backend: search_api_solr
 backend_config:
+  retrieve_data: true
+  highlight_data: true
+  site_hash: false
+  server_prefix: ''
+  domain: generic
+  environment: default
   connector: solr_acquia_connector
   connector_config:
     identifier: JLQZ-203972
@@ -43,6 +49,8 @@ backend_config:
     uuid: 9cab3740-4631-4529-a4de-d6ef75472d78
     api_host: 'https://api.sr-prod02.acquia.com'
     skip_schema_check: true
+  optimize: false
+  fallback_multiple: false
   disabled_field_types: {  }
   disabled_caches: {  }
   disabled_request_handlers:
@@ -53,11 +61,3 @@ backend_config:
     - request_dispatcher_httpcaching_default_7_0_0
   rows: 10
   index_single_documents_fallback_count: 10
-  retrieve_data: true
-  highlight_data: true
-  fallback_multiple: false
-  server_prefix: ''
-  domain: generic
-  environment: default
-  optimize: false
-  site_hash: false

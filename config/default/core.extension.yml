@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   acquia_connector: 0
   acquia_search: 0
@@ -11,6 +13,7 @@ module:
   breakpoint: 0
   captcha: 0
   ckeditor: 0
+  ckeditor_accordion: 0
   ckeditor_bootstrap_grid: 0
   cleave: 0
   components: 0
@@ -124,5 +127,3 @@ theme:
   radix: 0
   westy: 0
 profile: minimal
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

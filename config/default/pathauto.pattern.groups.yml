@@ -11,12 +11,12 @@ pattern: '[node:field_group_path]'
 selection_criteria:
   a1668130-6895-4a85-93f6-427b0d154c0c:
     id: node_type
-    bundles:
-      group: group
     negate: false
+    uuid: a1668130-6895-4a85-93f6-427b0d154c0c
     context_mapping:
       node: node
-    uuid: a1668130-6895-4a85-93f6-427b0d154c0c
+    bundles:
+      group: group
 selection_logic: and
 weight: -5
 relationships: {  }

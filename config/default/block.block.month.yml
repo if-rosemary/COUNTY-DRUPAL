@@ -18,11 +18,11 @@ plugin: 'facet_block:news_month'
 settings:
   id: 'facet_block:news_month'
   label: 'Filter by month'
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: month
 visibility:
   request_path:
     id: request_path
-    pages: /news
     negate: false
+    pages: /news

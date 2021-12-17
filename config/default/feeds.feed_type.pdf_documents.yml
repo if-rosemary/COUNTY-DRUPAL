@@ -10,8 +10,8 @@ dependencies:
     - media.type.document
   module:
     - media
-id: pdf_documents
 label: 'PDF Documents'
+id: pdf_documents
 description: 'Bulk upload of Commonspot PDFs.'
 help: ''
 import_period: -1
@@ -26,40 +26,41 @@ parser_configuration:
   line_limit: 100
 processor: 'entity:media'
 processor_configuration:
+  values:
+    bundle: document
   langcode: en
+  insert_new: 1
   update_existing: 0
   update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
   expire: -1
   owner_feed_author: false
   owner_id: 1
-  authorize: true
-  skip_hash_check: false
-  values:
-    bundle: document
 custom_sources:
   field_description:
-    label: field_description
     value: field_description
+    label: field_description
     machine_name: field_description
   name:
-    label: name
     value: name
+    label: name
     machine_name: name
   field_media_in_library:
-    label: field_media_in_library
     value: field_media_in_library
+    label: field_media_in_library
     machine_name: field_media_in_library
   field_group:
-    label: field_group
     value: field_group
+    label: field_group
     machine_name: field_group
   field_redirects:
-    label: field_redirects
     value: field_redirects
+    label: field_redirects
     machine_name: field_redirects
   field_media_file:
-    label: field_media_file
     value: field_media_file
+    label: field_media_file
     machine_name: field_media_file
 mappings:
   -
@@ -72,9 +73,9 @@ mappings:
     target: name
     map:
       value: name
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_media_in_library
     map:
@@ -94,8 +95,8 @@ mappings:
     target: field_redirects
     map:
       value: field_redirects
-    unique: {  }
     settings: {  }
+    unique: {  }
   -
     target: field_media_file
     map:

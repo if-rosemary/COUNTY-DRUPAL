@@ -1,7 +1,33 @@
 uuid: eafdc993-9ebb-4a9d-b1f1-6778b27734eb
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.video
+    - node.type.alert
+    - node.type.contact
+    - node.type.event
+    - node.type.group
+    - node.type.news
+    - node.type.notification
+    - node.type.page
+    - node.type.resource
+    - taxonomy.vocabulary.tags
+    - workflows.workflow.editorial
+    - workflows.workflow.media
+  module:
+    - admin_toolbar_search
+    - content_moderation
+    - content_translation
+    - field_permissions
+    - media
+    - node
+    - path
+    - redirect
+    - taxonomy
+    - toolbar
 id: content_admin
 label: 'Content administrator'
 weight: -6

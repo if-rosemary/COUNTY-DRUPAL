@@ -5,12 +5,11 @@ dependencies: {  }
 id: stage
 label: Stage
 description: 'Acquia Staging environment.'
+weight: 0
 folder: ../config/envs/stage
 module: {  }
 theme: {  }
 blacklist: {  }
-graylist:
-  - shield.settings
+graylist: {  }
 graylist_dependents: true
-graylist_skip_equal: true
-weight: 0
+graylist_skip_equal: false

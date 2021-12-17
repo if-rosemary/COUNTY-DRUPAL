@@ -1,7 +1,12 @@
 uuid: 0265fe2c-52b8-4fed-aac0-bf775e0deb88
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - field_permissions
+    - media
+    - media_entity_download
+    - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous

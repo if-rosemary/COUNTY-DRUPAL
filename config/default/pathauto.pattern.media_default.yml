@@ -12,12 +12,12 @@ pattern: '[media:field_group:entity:field_group_path]/[media:bundle]s/[media:nam
 selection_criteria:
   3b78d265-1212-4cb9-b3e2-a7e92484ad88:
     id: 'entity_bundle:media'
-    bundles:
-      document: document
     negate: false
+    uuid: 3b78d265-1212-4cb9-b3e2-a7e92484ad88
     context_mapping:
       media: media
-    uuid: 3b78d265-1212-4cb9-b3e2-a7e92484ad88
+    bundles:
+      document: document
 selection_logic: and
 weight: 0
 relationships: {  }
