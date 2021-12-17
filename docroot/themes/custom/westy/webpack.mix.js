@@ -14,6 +14,7 @@ var proxy = require('./config/proxy.example.js');
 
  }
 const mix = require('laravel-mix');
+const isDev = !mix.inProduction();
 
 /*
  |--------------------------------------------------------------------------
@@ -26,12 +27,13 @@ mix
 		externals: {
 			jquery: 'jQuery',
 		},
+		devtool: isDev ? 'source-map' : false
 	})
 	.setPublicPath('assets')
 	.disableNotifications()
 	.options({
 		processCssUrls: false,
-	});
+	}).sourceMaps(isDev);
 
 /*
  |--------------------------------------------------------------------------
