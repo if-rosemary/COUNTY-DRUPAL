@@ -17,9 +17,59 @@ $navbar-padding-x:            1rem;
 $font-size-base:              1rem; // Assumes the browser default, typically `16px`
 
 
-$h1-font-size:                $font-size-base * 2;
-$h2-font-size:                $font-size-base * 1.75;
-$h3-font-size:                $font-size-base * 1.5;
-$h4-font-size:                $font-size-base * 1.25;
-$h5-font-size:                $font-size-base * 1;
+$h1-font-size:                2.813rem; // 45px
+$h1-mobile-font-size:         2.25rem; // 36px
+$h2-font-size:                1.875rem; // 30px
+$h3-font-size:                1.563rem; // 25px
+$h4-font-size:                1.25rem; // 20px
+$h5-font-size:                1.25rem; // 20px
 $h6-font-size:                $font-size-base;
+
+
+// Theme colors
+// -----------------------------------------------------------------------------
+$theme-colors: (
+  // Maintain Bootstrap's defaults.
+  // primary: $primary,
+  primary: #0073A4,
+  // secondary: $secondary,
+  secondary: #DEE2E6,
+  // success: $success,
+  // info: $info,
+  // warning: $warning,
+  // danger: $danger,
+  // light: $light,
+  // dark: $dark,
+  dark: #6C757D,
+);
+
+$custom-colors: (
+  // Additional colors for our theme.
+  // PRIMARY PALETTE.
+  blue: #0073A4,
+  gold: #AF8F6F,
+  light-green: #B7C6BC,
+  light-blue: #A1D6F8,
+  deep-purple: #34153A,
+  dark-red: #851618,
+  dark-gray: #152E3A,
+
+  // BACKGROUND PALETTE.
+  faded-blue: #D0EAFB,
+  faded-gold: #F3EEE9,
+  faded-green: #E9EEEB,
+  faded-light-blue: #ECF7FE,
+  faded-purple: #EFEDF0,
+  faded-red: #F3E7E7,
+  faded-gray: #EEF0F1,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+// $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+// $utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+// $utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+// $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
+$link-color:                 #0073A4; //red
+$link-hover-color:           #000000; //green
