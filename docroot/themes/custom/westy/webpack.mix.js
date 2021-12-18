@@ -51,7 +51,11 @@ mix.browserSync({
  | SASS
  |--------------------------------------------------------------------------
  */
-mix.sass('src/scss/westy.style.scss', 'css');
+mix.sass('src/scss/westy.style.scss', 'css', {
+  sassOptions: {
+    quietDeps: true,
+  },
+});
 
 /*
  |--------------------------------------------------------------------------
