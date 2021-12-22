@@ -1,18 +1,18 @@
-uuid: 2d6d081c-2430-4587-827d-d59eab6d54f5
+uuid: 317a134a-07d3-42ac-9b9b-7337a927682c
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.acquia_search_index
-    - views.view.documents_solr
+    - search_api.index.acquia_search_index_media
+    - views.view.media_catalog
   module:
     - search_api
-id: documents_tags
+id: media_tags
 name: Tags
 weight: 0
 min_count: 1
 url_alias: tags
-facet_source_id: 'search_api:views_page__documents_solr__page_documents'
+facet_source_id: 'search_api:views_page__media_catalog__page_media'
 field_identifier: field_tags
 query_operator: and
 hard_limit: 0

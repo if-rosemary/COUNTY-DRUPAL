@@ -12,7 +12,7 @@ dependencies:
 _core:
   default_config_hash: UZP23LgBdE1XbvscbLCdd9uTk5t4qqA1Z56koqbvYP0
 id: media
-label: Media
+label: 'Media (Admin)'
 module: views
 description: 'Find and manage media.'
 tag: ''

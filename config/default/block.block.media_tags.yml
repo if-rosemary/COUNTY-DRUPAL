@@ -1,0 +1,23 @@
+uuid: 0e168285-a8cd-4d28-80a2-e617fa137a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.media_tags
+  module:
+    - facets
+  theme:
+    - westy
+id: media_tags
+theme: westy
+region: side
+weight: -5
+provider: null
+plugin: 'facet_block:media_tags'
+settings:
+  id: 'facet_block:media_tags'
+  label: 'Filter by tags'
+  label_display: visible
+  provider: facets
+  block_id: media_tags
+visibility: {  }

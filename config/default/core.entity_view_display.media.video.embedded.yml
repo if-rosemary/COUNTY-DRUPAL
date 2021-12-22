@@ -1,8 +1,9 @@
-uuid: 98c7a437-6e59-4fae-99cf-4253bb870866
+uuid: ee55eacd-dfc4-49b6-a0d9-ea502ed92718
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.embedded
     - field.field.media.video.field_caption
     - field.field.media.video.field_creator
     - field.field.media.video.field_fy
@@ -13,59 +14,29 @@ dependencies:
     - field.field.media.video.field_tags
     - field.field.media.video.field_transcript
     - media.type.video
-  module:
-    - media
-    - text
-id: media.video.default
+id: media.video.embedded
 targetEntityType: media
 bundle: video
-mode: default
+mode: embedded
 content:
-  field_caption:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_fy:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_media_oembed_video:
-    type: oembed
+    type: string
     label: visually_hidden
     settings:
-      max_width: 0
-      max_height: 0
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_transcript:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   created: true
+  field_caption: true
   field_creator: true
+  field_fy: true
   field_group: true
   field_media_in_library: true
   field_source: true
+  field_tags: true
+  field_transcript: true
   langcode: true
   name: true
   search_api_excerpt: true

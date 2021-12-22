@@ -678,7 +678,7 @@ display:
     display_options:
       display_description: ''
       display_extenders: {  }
-      path: node/%/content
+      path: node/%/content/manage
       menu:
         type: none
         title: Content

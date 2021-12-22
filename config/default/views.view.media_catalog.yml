@@ -1,21 +1,21 @@
-uuid: 2eb97a12-4a42-4b92-b7bf-826810f89eea
+uuid: dff00059-f22c-4008-8362-9646423a0249
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_fiscal_year
+    - field.storage.media.field_fy
     - field.storage.media.field_group
     - field.storage.media.field_tags
-    - search_api.index.acquia_search_index
+    - search_api.index.acquia_search_index_media
   module:
-    - cshs
     - search_api
-id: documents_solr
-label: 'Documents (Solr)'
+    - taxonomy
+id: media_catalog
+label: 'Media catalog'
 module: views
-description: 'Display documents by group in a functional way, including sorts, grouping, faceted filtering, and search.'
+description: 'Provide comprehensive and filtered lists of documents and other media for public viewing on a per-group basis.'
 tag: ''
-base_table: search_api_index_acquia_search_index
+base_table: search_api_index_acquia_search_index_media
 base_field: search_api_id
 display:
   default:
@@ -28,7 +28,7 @@ display:
       fields:
         field_group:
           id: field_group
-          table: search_api_datasource_acquia_search_index_entity_media
+          table: search_api_datasource_acquia_search_index_media_entity_media
           field: field_group
           relationship: none
           group_type: group
@@ -134,103 +134,20 @@ display:
               webform:
                 display_method: label
                 view_mode: default
-        mid:
-          id: mid
-          table: search_api_datasource_acquia_search_index_entity_media
-          field: mid
-          relationship: none
+        parent:
+          id: parent
+          table: search_api_entity_taxonomy_term
+          field: parent
+          relationship: field_tags
           group_type: group
           admin_label: ''
-          entity_type: media
+          entity_type: taxonomy_term
           plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
-        field_tags_1:
-          id: field_tags_1
-          table: search_api_datasource_acquia_search_index_entity_media
-          field: field_tags
-          relationship: none
-          group_type: group
-          admin_label: 'Parent tag'
-          entity_type: media
-          plugin_id: search_api_field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<h2>{{ parent }}</h2>'
             make_link: false
             path: ''
             absolute: false
@@ -268,12 +185,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: cshs_group_by_root
+          type: entity_reference_label
           settings:
-            linked: 0
-            reverse: 0
-            sort: none
-            depth: '1'
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -295,6 +209,8 @@ display:
               document_type:
                 display_method: label
               event_type:
+                display_method: label
+              fy:
                 display_method: label
               group_status:
                 display_method: label
@@ -317,20 +233,18 @@ display:
                 view_mode: default
               type:
                 display_method: label
-        field_tags:
-          id: field_tags
-          table: search_api_datasource_acquia_search_index_entity_media
+        field_tags_1:
+          id: field_tags_1
+          table: search_api_datasource_acquia_search_index_media_entity_media
           field: field_tags
           relationship: none
           group_type: group
-          admin_label: 'Child tag'
-          entity_type: media
-          plugin_id: search_api_field
+          admin_label: Tags
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: '<span class="child-tag">{{ field_tags }}</span>'
+            alter_text: true
+            text: "{% if parent %}\r\n<h3>{{ field_tags_1 }}</h3>\r\n{% else %}\r\n<h2>{{ field_tags_1 }}</h2>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -368,11 +282,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: cshs_full_hierarchy
+          type: entity_reference_label
           settings:
-            linked: 0
-            reverse: 0
-            separator: ' » '
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -394,6 +306,8 @@ display:
               document_type:
                 display_method: label
               event_type:
+                display_method: label
+              fy:
                 display_method: label
               group_status:
                 display_method: label
@@ -418,7 +332,7 @@ display:
                 display_method: label
         search_api_rendered_item:
           id: search_api_rendered_item
-          table: search_api_index_acquia_search_index
+          table: search_api_index_acquia_search_index_media
           field: search_api_rendered_item
           relationship: none
           group_type: group
@@ -468,17 +382,11 @@ display:
           view_modes:
             'entity:media':
               document: embedded
-            'entity:node':
-              faq: default
-              group: default
-              news: default
-              page: default
-              resource: default
-              service_location: default
-        field_fiscal_year:
-          id: field_fiscal_year
-          table: search_api_datasource_acquia_search_index_entity_media
-          field: field_fiscal_year
+              video: embedded
+        field_fy:
+          id: field_fy
+          table: search_api_datasource_acquia_search_index_media_entity_media
+          field: field_fy
           relationship: none
           group_type: group
           admin_label: ''
@@ -525,10 +433,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: number_unformatted
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -538,29 +447,46 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api_numeric
+          field_rendering: true
+          fallback_handler: search_api_entity
           fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ''
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: FY
-            suffix: ''
             link_to_item: false
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
+            display_methods:
+              document_type:
+                display_method: label
+              event_type:
+                display_method: label
+              fy:
+                display_method: label
+              group_status:
+                display_method: label
+              group_type:
+                display_method: label
+              migration_status:
+                display_method: label
+              page_type:
+                display_method: label
+              project_status:
+                display_method: label
+              project_type:
+                display_method: label
+              resource_type:
+                display_method: label
+              service_type:
+                display_method: label
+              tags:
+                display_method: label
+                view_mode: default
+              type:
+                display_method: label
       pager:
         type: mini
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 20
           total_pages: null
           id: 0
           tags:
@@ -594,9 +520,22 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        field_tags:
+          id: field_tags
+          table: search_api_index_acquia_search_index_media
+          field: field_tags
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         name:
           id: name
-          table: search_api_index_acquia_search_index
+          table: search_api_index_acquia_search_index_media
           field: name
           relationship: none
           group_type: group
@@ -607,10 +546,10 @@ display:
             label: ''
             field_identifier: name
           exposed: false
-        field_fiscal_year:
-          id: field_fiscal_year
-          table: search_api_index_acquia_search_index
-          field: field_fiscal_year
+        field_fy:
+          id: field_fy
+          table: search_api_index_acquia_search_index_media
+          field: field_fy
           relationship: none
           group_type: group
           admin_label: ''
@@ -618,13 +557,13 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: field_fiscal_year
+            field_identifier: field_fy
           exposed: false
       arguments:
-        field_group_1:
-          id: field_group_1
-          table: search_api_index_acquia_search_index
-          field: field_group_1
+        field_group:
+          id: field_group
+          table: search_api_index_acquia_search_index_media
+          field: field_group
           relationship: none
           group_type: group
           admin_label: ''
@@ -654,7 +593,7 @@ display:
       filters:
         search_api_datasource:
           id: search_api_datasource
-          table: search_api_index_acquia_search_index
+          table: search_api_index_acquia_search_index_media
           field: search_api_datasource
           relationship: none
           group_type: group
@@ -693,34 +632,75 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+        bundle:
+          id: bundle
+          table: search_api_index_acquia_search_index_media
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: not
+          value:
+            image: image
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
       style:
         type: table
         options:
           grouping:
             -
-              field: field_tags_1
+              field: parent
               rendered: true
               rendered_strip: false
             -
-              field: field_tags
+              field: field_tags_1
               rendered: true
               rendered_strip: false
           row_class: ''
           default_row_class: true
           columns:
-            mid: mid
-            field_fiscal_year: field_fiscal_year
+            field_group: field_group
+            parent: parent
             field_tags_1: field_tags_1
-            field_tags: field_tags
             search_api_rendered_item: search_api_rendered_item
+            field_fy: field_fy
           default: '-1'
           info:
-            mid:
+            field_group:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_fiscal_year:
+            parent:
               align: ''
               separator: ''
               empty_column: false
@@ -730,12 +710,12 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_tags:
+            search_api_rendered_item:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            search_api_rendered_item:
+            field_fy:
               align: ''
               separator: ''
               empty_column: false
@@ -754,8 +734,148 @@ display:
           bypass_access: false
           skip_access: false
           preserve_facet_query_args: false
-      relationships: {  }
-      css_class: ''
+      relationships:
+        field_tags:
+          id: field_tags
+          table: search_api_datasource_acquia_search_index_media_entity_media
+          field: field_tags
+          relationship: none
+          group_type: group
+          admin_label: 'Tags: Taxonomy term'
+          entity_type: media
+          plugin_id: search_api
+          required: false
+          skip_access: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2>{{ field_group }} Media</h2>'
+            format: basic_html
+          tokenize: true
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags:
+        - 'config:field.storage.media.field_fy'
+        - 'config:field.storage.media.field_group'
+        - 'config:field.storage.media.field_tags'
+        - 'config:search_api.index.acquia_search_index_media'
+  page_docs:
+    id: page_docs
+    display_title: Documents
+    display_plugin: page
+    position: 1
+    display_options:
+      cache:
+        type: none
+      filters:
+        search_api_datasource:
+          id: search_api_datasource
+          table: search_api_index_acquia_search_index_media
+          field: search_api_datasource
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_datasource
+          operator: or
+          value:
+            'entity:media': 'entity:media'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        bundle:
+          id: bundle
+          table: search_api_index_acquia_search_index_media
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value:
+            document: document
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        cache: false
+        title: true
+        filters: false
+        filter_groups: false
+        header: false
+      display_description: ''
       header:
         area:
           id: area
@@ -770,31 +890,6 @@ display:
             value: '<h2>{{ field_group }} Documents</h2>'
             format: basic_html
           tokenize: true
-      footer: {  }
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'user.node_grants:view'
-      tags:
-        - 'config:field.storage.media.field_fiscal_year'
-        - 'config:field.storage.media.field_group'
-        - 'config:field.storage.media.field_tags'
-        - 'config:search_api.index.acquia_search_index'
-  page_documents:
-    id: page_documents
-    display_title: Page
-    display_plugin: page
-    position: 1
-    display_options:
-      cache:
-        type: none
-      defaults:
-        cache: false
       display_extenders: {  }
       path: node/%/documents
     cache_metadata:
@@ -804,9 +899,33 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'user.node_grants:view'
       tags:
-        - 'config:field.storage.media.field_fiscal_year'
+        - 'config:field.storage.media.field_fy'
         - 'config:field.storage.media.field_group'
         - 'config:field.storage.media.field_tags'
-        - 'config:search_api.index.acquia_search_index'
+        - 'config:search_api.index.acquia_search_index_media'
+  page_media:
+    id: page_media
+    display_title: Media
+    display_plugin: page
+    position: 1
+    display_options:
+      cache:
+        type: none
+      defaults:
+        cache: false
+      display_description: ''
+      display_extenders: {  }
+      path: node/%/media
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags:
+        - 'config:field.storage.media.field_fy'
+        - 'config:field.storage.media.field_group'
+        - 'config:field.storage.media.field_tags'
+        - 'config:search_api.index.acquia_search_index_media'

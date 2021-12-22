@@ -3,11 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_description
-    - field.storage.media.field_group
-    - field.storage.media.field_document_type
-    - field.storage.media.field_fiscal_year
-    - field.storage.media.field_tags
     - field.storage.node.field_body
     - field.storage.node.field_group
     - field.storage.node.field_keywords
@@ -67,7 +62,7 @@ third_party_settings:
 _core:
   default_config_hash: m3BA7ry9oerhED2EXWWHra57A4vZj7Eobsr5-29dq4M
 id: acquia_search_index
-name: 'Acquia Search Solr Index'
+name: 'Acquia Search Solr Index (Content)'
 description: ''
 read_only: false
 field_settings:
@@ -79,14 +74,6 @@ field_settings:
     dependencies:
       module:
         - node
-  changed_1:
-    label: Changed
-    datasource_id: 'entity:media'
-    property_path: changed
-    type: date
-    dependencies:
-      module:
-        - media
   created:
     label: 'Authored on'
     datasource_id: 'entity:node'
@@ -103,30 +90,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
-  field_description:
-    label: Description
-    datasource_id: 'entity:media'
-    property_path: field_description
-    type: text
-    dependencies:
-      config:
-        - field.storage.media.field_description
-  field_document_type:
-    label: 'Document type'
-    datasource_id: 'entity:media'
-    property_path: field_document_type
-    type: integer
-    dependencies:
-      config:
-        - field.storage.media.field_document_type
-  field_fiscal_year:
-    label: 'Fiscal year'
-    datasource_id: 'entity:media'
-    property_path: field_fiscal_year
-    type: string
-    dependencies:
-      config:
-        - field.storage.media.field_fiscal_year
   field_group:
     label: 'Displayed in'
     datasource_id: 'entity:node'
@@ -135,14 +98,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_group
-  field_group_1:
-    label: 'Displayed in'
-    datasource_id: 'entity:media'
-    property_path: field_group
-    type: integer
-    dependencies:
-      config:
-        - field.storage.media.field_group
   field_keywords:
     label: Keywords
     datasource_id: 'entity:node'
@@ -168,14 +123,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_summary
-  field_tags:
-    label: Tags
-    datasource_id: 'entity:media'
-    property_path: field_tags
-    type: integer
-    dependencies:
-      config:
-        - field.storage.media.field_tags
   field_type:
     label: Type
     datasource_id: 'entity:node'
@@ -184,14 +131,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_type
-  name:
-    label: Name
-    datasource_id: 'entity:media'
-    property_path: name
-    type: string
-    dependencies:
-      module:
-        - media
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -237,14 +176,6 @@ field_settings:
       module:
         - node
 datasource_settings:
-  'entity:media':
-    bundles:
-      default: false
-      selected:
-        - document
-    languages:
-      default: true
-      selected: {  }
   'entity:node':
     bundles:
       default: true
@@ -290,12 +221,9 @@ processor_settings:
     all_fields: true
     fields:
       - field_body
-      - field_description
-      - field_fiscal_year
       - field_keywords
       - field_short_title
       - field_summary
-      - name
       - title
       - type
     title: true
