@@ -9,7 +9,7 @@ config:
   cache: true
   composer_version: '2.1.5'
   inbox: false
-  php: '7.4'
+  php: '8.0'
   xdebug: false
 tooling:
   blt:
@@ -20,7 +20,7 @@ services:
     overrides:
       environment:
         DRUSH_OPTIONS_URI: "https://county-drupal.lndo.site"
-    type: php:7.4
+    type: php:8.0
     build_as_root:
       - mkdir -p /mnt/gfs/wcor.LANDO/nobackup
       - mkdir -p /mnt/files/wcor.LANDO/sites/default/files-private
