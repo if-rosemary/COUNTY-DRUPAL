@@ -1,9 +1,9 @@
-uuid: 592e2d34-c090-4287-aeb6-7de747e37829
+uuid: bc05759b-54be-4163-9c9a-7098b7c4e461
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_index
     - field.field.node.service_location.field_accessibility_notes
     - field.field.node.service_location.field_building
     - field.field.node.service_location.field_featured_image
@@ -16,15 +16,15 @@ dependencies:
     - media
     - office_hours
     - user
-id: node.service_location.teaser
+id: node.service_location.search_index
 targetEntityType: node
 bundle: service_location
-mode: teaser
+mode: search_index
 content:
   closure_entity_view_1:
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_featured_image:
     type: media_thumbnail
@@ -36,11 +36,11 @@ content:
     weight: 0
     region: content
   field_hours:
-    type: office_hours_status
-    label: visually_hidden
+    type: office_hours_table
+    label: hidden
     settings:
       day_format: long
-      time_format: G
+      time_format: g
       compress: false
       grouped: false
       show_closed: all
@@ -53,21 +53,28 @@ content:
         more_hours: ', '
       current_status:
         position: ''
-        open_text: 'Currently open!'
-        closed_text: 'Currently closed'
-      schema:
-        enabled: false
+        open_text: Open
+        closed_text: Closed
       timezone_field: ''
       office_hours_first_day: ''
+      schema:
+        enabled: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
-  get_directions_link_eva_map_link_sl:
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  get_directions_link_entity_view_1:
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  get_directions_link_eva_transit_link_sl:
+  get_directions_link_entity_view_2:
     settings: {  }
     third_party_settings: {  }
     weight: 3
@@ -75,7 +82,7 @@ content:
   service_location_display_eva_servloc_display:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   content_moderation_control: true
@@ -83,7 +90,8 @@ hidden:
   field_building: true
   field_holiday_schedule: true
   field_sublocation: true
-  field_summary: true
+  get_directions_link_eva_map_link_sl: true
+  get_directions_link_eva_transit_link_sl: true
   langcode: true
   links: true
   search_api_excerpt: true

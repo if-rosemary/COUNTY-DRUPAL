@@ -1,9 +1,9 @@
-uuid: fd95cda2-834c-4c98-9cd6-9f30fa02feb1
+uuid: 9804fb57-988d-4362-8705-a2ba909fc7b0
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.related
     - field.field.node.resource.field_group
     - field.field.node.resource.field_menu_parent
     - field.field.node.resource.field_resource_url
@@ -13,24 +13,36 @@ dependencies:
     - field.field.node.resource.field_type
     - node.type.resource
   module:
+    - link
     - user
-id: node.resource.teaser
+id: node.resource.related
 targetEntityType: node
 bundle: resource
-mode: teaser
+mode: related
 content:
+  field_resource_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true
   field_group: true
   field_menu_parent: true
-  field_resource_url: true
   field_short_title: true
   field_sort_weight: true
   field_type: true

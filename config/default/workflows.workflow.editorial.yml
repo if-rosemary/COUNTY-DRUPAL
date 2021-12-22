@@ -6,15 +6,14 @@ dependencies:
     - node.type.alert
     - node.type.building
     - node.type.contact
-    - node.type.faq
     - node.type.event
+    - node.type.faq
     - node.type.group
     - node.type.news
     - node.type.notification
     - node.type.page
     - node.type.resource
     - node.type.service_location
-    - node.type.webform
   module:
     - content_moderation
 id: editorial
@@ -109,5 +108,4 @@ type_settings:
       - page
       - resource
       - service_location
-      - webform
   default_moderation_state: draft
