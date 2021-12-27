@@ -13,10 +13,11 @@ foreach (glob($includes_path) as $filename) {
 
 // Implements hook_preprocess_field().
 function westy_preprocess_field(array &$variables, $hook) {
+
   if ($node = \Drupal::request()->attributes->get('node')) {
-    $variables['nid'] = $node->id();
     // Grab nid of referenced entity items.
-    $variables['fid'] =  $variables['element']['#object']->id();
+    $variables['nid'] = $node->id();
   }
+  $variables['fid'] =  $variables['element']['#object']->id();
 
 }
