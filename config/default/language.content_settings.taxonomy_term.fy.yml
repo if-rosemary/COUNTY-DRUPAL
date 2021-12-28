@@ -1,0 +1,11 @@
+uuid: a89b1811-86a2-4cc2-a23f-b445060985fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fy
+id: taxonomy_term.fy
+target_entity_type_id: taxonomy_term
+target_bundle: fy
+default_langcode: site_default
+language_alterable: false

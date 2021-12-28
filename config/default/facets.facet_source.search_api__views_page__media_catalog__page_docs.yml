@@ -1,0 +1,9 @@
+uuid: c5e00b81-200a-4df4-8893-c73ce4405442
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__media_catalog__page_docs
+name: 'search_api:views_page__media_catalog__page_docs'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }

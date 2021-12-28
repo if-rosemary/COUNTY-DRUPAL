@@ -1,9 +1,9 @@
-uuid: 4af82920-97bb-4d88-8284-906d1465b1be
+uuid: 2f8f6175-7000-4cfa-96f7-f24dbaede705
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.featured
     - field.field.node.news.feeds_item
     - field.field.node.news.field_body
     - field.field.node.news.field_contact
@@ -17,10 +17,10 @@ dependencies:
   module:
     - media
     - user
-id: node.news.teaser
+id: node.news.featured
 targetEntityType: node
 bundle: news
-mode: teaser
+mode: featured
 content:
   field_featured_image:
     type: media_thumbnail
