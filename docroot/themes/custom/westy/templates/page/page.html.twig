@@ -11,14 +11,14 @@
     {% endif %}
   {% endblock %}
 
-  <header class="page__main_header">
+  <header class="page__header">
     {% include '@westy/page/masthead.html.twig' %}
   </header>
 
   <main class="container">
 
     {% if page.header %}
-      <header class="page__header mb-3">
+      <header class="page__sub_header mb-3">
           {{ page.header }}
       </header>
     {% endif %}

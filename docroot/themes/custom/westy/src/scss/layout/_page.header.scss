@@ -3,7 +3,7 @@
  */
 // Page: Header; with site branding, navigation and a search modal.
 // -----------------------------------------------------------------------------
-header.page__main_header {
+header.page__header {
   @extend .border-bottom, .border-dark, .border-4;
   border-bottom-color: map_get($theme-colors, "dark-gray");
 
