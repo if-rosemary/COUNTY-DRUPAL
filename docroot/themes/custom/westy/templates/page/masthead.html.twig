@@ -1,30 +1,39 @@
-<header class="page__header mb-3">
-      {{ page.header }}
-      {% if page.navbar_branding %}
-        page.navbar_branding
-        {{ page.navbar_branding }}
-      {% endif %}
+{% embed '@radix/navbar/navbar.twig' with {
+  placement: 'sticky-top',
+  container: 'fluid',
+  color: 'light',
+  utility_classes: [''],
+} %}
 
-      {% block left %}
-        {% if page.navbar_left %}
-          <div class="me-auto">
-            {{ page.navbar_left }}
-          </div>
-        {% endif %}
-      {% endblock %}
+  {% block branding %}
+    {% if page.navbar_branding %}
+      {{ page.navbar_branding }}
+    {% endif %}
+  {% endblock %}
 
-      {% block right %}
-        {% if page.navbar_right %}
-          {{ page.navbar_right }}
-          <form accept-charset="UTF-8" action="/search" class="form-inline" id="search-block-form" method="get">
-            <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label form-group">
-              <input class="form-search form-control" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="search" placeholder="Search" size="20" title="Enter the terms you wish to search for." type="search" value=""/>
-            </div>
-            <div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions">
-              <input class="button js-form-submit form-submit btn btn-primary" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value="Search"/>
-            </div>
-          </form>
-        {% endif %}
-      {% endblock %}
+  {% block left %}
+    {% if page.navbar_left %}
+      <div class="me-auto">
+        {{ page.navbar_left }}
+      </div>
+    {% endif %}
+  {% endblock %}
 
-    </header>
+  {% block right %}
+    {% if page.navbar_right %}
+      {{ page.navbar_right }}
+    {% endif %}
+    <div class="dropdown-menu dropdown-menu-end hidden" id="search-block-form">
+      <form accept-charset="UTF-8" action="/search" class="form-inline d-flex" method="get">
+        <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label form-group flex-fill">
+          <input class="form-search form-control" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="search" placeholder="{{ 'Search by service or keyword'| t }}" size="20" title="{{ 'Enter the terms you wish to search for.'| t }}" type="search" value=""/>
+        </div>
+        <div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions">
+          <input class="button js-form-submit form-submit btn btn-primary" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value="{{ 'Search'| t }}"/>
+          <i class="fas fa-search"></i>
+        </div>
+      </form>
+    </div>
+  {% endblock %}
+
+{% endembed %}

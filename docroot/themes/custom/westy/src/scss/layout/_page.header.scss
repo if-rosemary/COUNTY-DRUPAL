@@ -4,24 +4,28 @@
 // Page: Header; with site branding, navigation and a search modal.
 // -----------------------------------------------------------------------------
 header.page__main_header {
-  @extend .border-bottom, .border-dark;
+  @extend .border-bottom, .border-dark, .border-4;
+  border-bottom-color: map_get($theme-colors, "dark-gray");
 
   // The logo & branding section.
   .block--westy-site-branding {
     h1.badge a {
-      font-size: $h1-mobile-font-size;
+      font-size: $h2-font-size;
       text-align: left;
-      @include media-breakpoint-up(md) {
-        font-size: $h1-font-size;
-       }
-       span {
-         @extend .link-dark-gray;
-         display: block;
-
-       }
+      text-decoration: none;
+      // @include media-breakpoint-up(md) {
+      //   font-size: $h1-font-size;
+      // }
+      &:hover,
+      &:active {
+        color: $link-color;
+      }
+      span {
+        @extend .link-dark-gray;
+        display: block;
+      }
     }
   }
-
 
   // Main site navigation.
   .navbar-collapse {
@@ -30,13 +34,35 @@ header.page__main_header {
       margin-right: initial !important;
     }
 
-    a.nav-link.show {
-      background-color: gray;
+    // Top-level menu links.
+    a.nav-link {
+      font-size: $h4-font-size;
+      font-weight: 600;
+      color: map_get($theme-colors, "dark-gray");
+      margin-left: 1rem;
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &.show {
+        background-color: map_get($theme-colors, "faded-gray");
+      }
+      &[href="/search"]:after {
+        content: "\f002";
+        font-family: "Font Awesome 5 Free";
+        margin-left: 1rem;
+      }
     }
 
-    // Sub-menu flyouts.
+    // Menu flyouts.
     .dropdown-menu {
-      @extend .border-0, .rounded-0, .p-3, .mb-2, .bg-dark, .text-white;
+      @extend .border-0, .rounded-0, .p-3, .mb-2, .bg-dark-gray, .text-white;
+      min-width: 400px;
+      background-color: map_get($theme-colors, "dark-gray") !important;
+
       a {
         color: white;
         background-color: transparent;
@@ -45,6 +71,22 @@ header.page__main_header {
           color: white;
           background-color: transparent;
         }
+      }
+    }
+
+    // Search menu flyout.
+    .form-wrapper {
+      margin: 0;
+    }
+    .form-search {
+      font-style: italic;
+    }
+    .form-actions {
+      display: inline-block;
+      margin-left: 0.5rem;
+      .form-submit {
+        color: map_get($theme-colors, "dark-gray");
+        background-color: map_get($theme-colors, "faded-light-blue");
       }
     }
   }
