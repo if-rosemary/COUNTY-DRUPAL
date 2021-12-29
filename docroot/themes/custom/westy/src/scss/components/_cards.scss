@@ -1,0 +1,14 @@
+// Article: Cards
+// -----------------------------------------------------------------------------
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+
+  p:last-child {
+    margin: 0;
+  }
+}
