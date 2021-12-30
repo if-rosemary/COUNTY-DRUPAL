@@ -16,6 +16,7 @@ settings:
           name: 'Text Formatting'
           items:
             - Format
+            - Styles
             - Bold
             - Italic
         -
@@ -72,7 +73,7 @@ settings:
       linkit_enabled: true
       linkit_profile: default
     stylescombo:
-      styles: ''
+      styles: "a.btn.btn-primary|Normal\r\na.btn.btn-primary.btn-lg|Large\r\na.btn.btn-primary.btn-sm|Small\r\na.btn.btn-primary.btn-lg.btn-block|Block"
 image_upload:
   status: true
   scheme: s3
