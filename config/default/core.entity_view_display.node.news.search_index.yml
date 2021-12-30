@@ -1,0 +1,41 @@
+uuid: bb170b39-314c-42ab-81cb-2c8dd5251c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.news.feeds_item
+    - field.field.node.news.field_body
+    - field.field.node.news.field_contact
+    - field.field.node.news.field_featured_image
+    - field.field.node.news.field_group
+    - field.field.node.news.field_pdf_news
+    - field.field.node.news.field_related
+    - field.field.node.news.field_summary
+    - field.field.node.news.field_type
+    - node.type.news
+  module:
+    - user
+id: node.news.search_index
+targetEntityType: node
+bundle: news
+mode: search_index
+content:
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  feeds_item: true
+  field_body: true
+  field_contact: true
+  field_featured_image: true
+  field_group: true
+  field_pdf_news: true
+  field_related: true
+  field_summary: true
+  field_type: true
+  langcode: true
+  links: true

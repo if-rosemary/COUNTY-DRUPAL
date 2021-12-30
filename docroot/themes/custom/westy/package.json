@@ -10,14 +10,14 @@
 		"production": "mix --production"
 	},
 	"devDependencies": {
-		"@popperjs/core": "^2.9.2",
+		"@popperjs/core": "^2.11.0",
 		"bootstrap": "^5.0.0-beta3",
-		"browser-sync": "^2.26.14",
+		"browser-sync": "^2.27.7",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cross-env": "^7.0.3",
-		"laravel-mix": "^6.0.18",
+		"laravel-mix": "^6.0.39",
 		"node-sass": "^6.0.0",
-		"sass": "^1.32.11",
+		"sass": "^1.45.1",
 		"sass-loader": "^11.0.1"
 	}
 }

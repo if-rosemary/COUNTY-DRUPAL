@@ -26,7 +26,7 @@
                 label: "Title: ",
                 setup: function (widget) {
                   //grab title and set in dialog.
-                  var element = widget.element.getHtml();
+                  var element = $('<div>').append(widget.element.getHtml());
                   var title = $(element).find('button.accordion-button').text();
 
                   var dialog = CKEDITOR.dialog.getCurrent();
@@ -40,7 +40,7 @@
                 'default': 'checked',
                 setup: function (widget) {
                   //grab title and set in dialog.
-                  var element = widget.element.getHtml();
+                  var element = $('<div>').append(widget.element.getHtml());
                   var collapsed = $(element).find('div.accordion-collapse').hasClass('show');
                   var show = collapsed ? false : true;
 

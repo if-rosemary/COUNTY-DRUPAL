@@ -1,0 +1,23 @@
+uuid: 13c011ab-f8fc-4f27-9a10-5400975c5e96
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.docs_tags
+  module:
+    - facets
+  theme:
+    - westy
+id: docs_tags
+theme: westy
+region: side
+weight: -3
+provider: null
+plugin: 'facet_block:docs_tags'
+settings:
+  id: 'facet_block:docs_tags'
+  label: 'Filter by tags'
+  label_display: visible
+  provider: facets
+  block_id: docs_tags
+visibility: {  }

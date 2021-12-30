@@ -94,8 +94,8 @@
 
   <div{{ content_attributes }}>
 
-    {% if content.field_type.0|render == 'Contacts'%}
-      {% include '@westy/content/node--page--type--contact-list.html.twig' %} 
+    {% if node.field_type.0.value.target_id == '281' %}
+      {% include '@westy/content/node--page--type--contact-list.html.twig' %}
     {% else %}
       {{ content }}
     {% endif %}

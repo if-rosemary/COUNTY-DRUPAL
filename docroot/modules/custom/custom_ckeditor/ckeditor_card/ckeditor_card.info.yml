@@ -1,0 +1,8 @@
+name: CKEditor Card
+type: module
+description: Adds card component to CKEditor
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom CKEditor
+dependencies:
+  - drupal:ckeditor

@@ -1,0 +1,29 @@
+uuid: f50c9ed6-1606-40f2-b792-43c0bee480dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_fy
+    - media.type.document
+    - taxonomy.vocabulary.fy
+id: media.document.field_fy
+field_name: field_fy
+entity_type: media
+bundle: document
+label: 'Fiscal year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      fy: fy
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 7217dd76-0106-48ef-a534-91a19549a310
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.docs_fy
+  module:
+    - facets
+  theme:
+    - westy
+id: docs_fy
+theme: westy
+region: side
+weight: 0
+provider: null
+plugin: 'facet_block:docs_fy'
+settings:
+  id: 'facet_block:docs_fy'
+  label: 'Filter by fiscal year'
+  label_display: visible
+  provider: facets
+  block_id: docs_fy
+visibility: {  }

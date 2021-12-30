@@ -4,8 +4,11 @@
 
 // Specific view styling
 
-// Documents (Solr)
-.view-documents-solr {
+// Media catalog
+.view-media-catalog {
+  table {
+    box-sizing: none !important;
+  }
   .cshs-term-group {
     display: none;
   }
@@ -14,7 +17,7 @@
     color: #000;
     font-weight: bold;
   }
-  .views-field-field-fiscal-year {
-    max-width: 2rem;
+  .views-field-field-fy {
+    width: 12%;
   }
 }

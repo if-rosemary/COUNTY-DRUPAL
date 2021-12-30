@@ -15,6 +15,7 @@ module:
   ckeditor: 0
   ckeditor_accordion: 0
   ckeditor_bootstrap_grid: 0
+  ckeditor_card: 0
   cleave: 0
   components: 0
   config: 0
