@@ -1,0 +1,47 @@
+uuid: cc3ec0d6-fe86-4a06-923d-941cc206c14f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.related
+    - field.field.node.page.field_body
+    - field.field.node.page.field_contact
+    - field.field.node.page.field_faqs
+    - field.field.node.page.field_group
+    - field.field.node.page.field_location
+    - field.field.node.page.field_migration_status
+    - field.field.node.page.field_related
+    - field.field.node.page.field_service_type
+    - field.field.node.page.field_short_title
+    - field.field.node.page.field_summary
+    - field.field.node.page.field_type
+    - node.type.page
+  module:
+    - user
+id: node.page.related
+targetEntityType: node
+bundle: page
+mode: related
+content:
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_body: true
+  field_contact: true
+  field_faqs: true
+  field_group: true
+  field_location: true
+  field_migration_status: true
+  field_related: true
+  field_service_type: true
+  field_short_title: true
+  field_type: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

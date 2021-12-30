@@ -15,25 +15,34 @@ dependencies:
     - field.field.node.news.field_type
     - node.type.news
   module:
+    - media
     - user
 id: node.news.teaser
 targetEntityType: node
 bundle: news
 mode: teaser
 content:
+  field_featured_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true
   feeds_item: true
   field_body: true
   field_contact: true
-  field_featured_image: true
   field_group: true
   field_pdf_news: true
   field_related: true

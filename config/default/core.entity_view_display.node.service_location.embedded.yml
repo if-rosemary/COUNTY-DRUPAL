@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.service_location.field_summary
     - node.type.service_location
   module:
+    - media
     - office_hours
     - user
 id: node.service_location.embedded
@@ -23,7 +24,16 @@ content:
   closure_entity_view_1:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
+    region: content
+  field_featured_image:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_hours:
     type: office_hours_table
@@ -50,31 +60,22 @@ content:
       schema:
         enabled: false
     third_party_settings: {  }
-    weight: 3
-    region: content
-  get_directions_link_eva_map_link_sl:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  get_directions_link_eva_transit_link_sl:
-    settings: {  }
-    third_party_settings: {  }
     weight: 2
     region: content
   service_location_display_eva_servloc_display:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true
   field_accessibility_notes: true
   field_building: true
-  field_featured_image: true
   field_holiday_schedule: true
   field_sublocation: true
   field_summary: true
+  get_directions_link_eva_map_link_sl: true
+  get_directions_link_eva_transit_link_sl: true
   langcode: true
   links: true
   search_api_excerpt: true

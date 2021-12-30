@@ -1,0 +1,59 @@
+uuid: e1ba25e8-a03c-4204-a408-7874d49b1824
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.embedded
+    - field.field.node.contact.field_contact_title
+    - field.field.node.contact.field_email
+    - field.field.node.contact.field_group
+    - field.field.node.contact.field_phone
+    - field.field.node.contact.field_phone_extension
+    - field.field.node.contact.field_phone_help_text
+    - node.type.contact
+  module:
+    - user
+id: node.contact.embedded
+targetEntityType: node
+bundle: contact
+mode: embedded
+content:
+  field_contact_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_phone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_phone_extension:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  content_moderation_control: true
+  field_group: true
+  field_phone_help_text: true
+  langcode: true
+  links: true
+  phone_number_formatter_entity_view_1: true
+  search_api_excerpt: true

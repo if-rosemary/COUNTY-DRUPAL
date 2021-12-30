@@ -577,7 +577,7 @@ display:
     display_options:
       display_description: ''
       display_extenders: {  }
-      path: node/%/media
+      path: node/%/media/manage
       use_admin_theme: true
     cache_metadata:
       max-age: 0

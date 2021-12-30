@@ -157,7 +157,7 @@
   },
   "require-dev": {
     "acquia/blt-phpcs": "^1.0",
-    "phpunit/phpunit": "^4.8.35 || ^6.5 || ^7"
+    "phpunit/phpunit": "^9.5"
   },
   "scripts": {
       "post-update-cmd": [

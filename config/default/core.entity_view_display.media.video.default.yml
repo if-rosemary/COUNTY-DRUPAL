@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.media.video.field_caption
     - field.field.media.video.field_creator
+    - field.field.media.video.field_fy
     - field.field.media.video.field_group
     - field.field.media.video.field_media_in_library
     - field.field.media.video.field_media_oembed_video
     - field.field.media.video.field_source
+    - field.field.media.video.field_tags
     - field.field.media.video.field_transcript
     - media.type.video
   module:
@@ -26,6 +28,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_fy:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_media_oembed_video:
     type: oembed
     label: visually_hidden
@@ -34,6 +44,14 @@ content:
       max_height: 0
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_transcript:
     type: text_default

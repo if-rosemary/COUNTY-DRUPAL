@@ -1,0 +1,23 @@
+uuid: ac179dab-8493-4916-9bc8-b3a4941510fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.media_fy
+  module:
+    - facets
+  theme:
+    - westy
+id: media_fy
+theme: westy
+region: side
+weight: -4
+provider: null
+plugin: 'facet_block:media_fy'
+settings:
+  id: 'facet_block:media_fy'
+  label: 'Filter by fiscal year'
+  label_display: visible
+  provider: facets
+  block_id: media_fy
+visibility: {  }
