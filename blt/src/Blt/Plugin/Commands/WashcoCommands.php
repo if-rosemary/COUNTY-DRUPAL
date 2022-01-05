@@ -71,10 +71,15 @@ class WashcoCommands extends BltTasks
   {
     $envdir = $this->envsetup();
 
-    $this->say("Installing package dependencies...");
-    shell_exec("npm install --prefix " . $envdir . "/docroot/themes/custom/westy/");
-    $this->say("Building assets...");
-    shell_exec("npm run production --prefix " . $envdir . "/docroot/themes/custom/westy/");
+    if ($_ENV['AH_SITE_ENVIRONMENT'] == "LANDO"){
+      $this->say("Skipping for Lando. Run 'lando build-theme' manually...");
+    }
+    else {
+      $this->say("Installing package dependencies...");
+      shell_exec("npm install --prefix " . $envdir . "/docroot/themes/custom/westy/");
+      $this->say("Building assets...");
+      shell_exec("npm run production --prefix " . $envdir . "/docroot/themes/custom/westy/");
+    }
   }
 
   /**
