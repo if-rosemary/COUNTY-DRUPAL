@@ -19,7 +19,7 @@
    */
   Drupal.behaviors.westyHeaderPosition = {
     attach: function (context) {
-      const container = document.querySelector(".page__main_header nav.navbar");
+      const container = document.querySelector(".page__header");
       const navLinks = container.querySelectorAll(".nav-item");
 
       [].forEach.call(navLinks, function (link, index) {
@@ -34,7 +34,8 @@
         link.addEventListener("show.bs.dropdown", function () {
           let menu = this.querySelector(".dropdown-menu");
           if (menu) {
-            menu.style.top = container.offsetHeight - this.offsetHeight + "px";
+            menu.style.top = container.offsetHeight - this.offsetHeight
+              - this.paddingTop - this.paddingBottom+ "px";
           }
         });
         // Give the search form focus.
@@ -57,7 +58,7 @@
    */
   Drupal.behaviors.westyHeaderSearch = {
     attach: function (context) {
-      const container = document.querySelector(".page__main_header nav.navbar");
+      const container = document.querySelector(".page__header");
       const searchLink = container.querySelector("[href='/search']");
       if (searchLink) {
         const searchBox = container.querySelector("#search-block-form");

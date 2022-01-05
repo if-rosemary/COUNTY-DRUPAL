@@ -5,7 +5,8 @@
 // -----------------------------------------------------------------------------
 header.page__header {
   @extend .border-bottom, .border-dark, .border-4;
-  border-bottom-color: map_get($theme-colors, "dark-gray");
+  border-bottom-color: map_get($theme-colors, "dark-gray") !important;
+  min-height: 7.15rem;
 
   // The logo & branding section.
   .block--westy-site-branding {
@@ -23,13 +24,21 @@ header.page__header {
       span {
         @extend .link-dark-gray;
         display: block;
+        font-weight: normal;
       }
     }
   }
 
   // Main site navigation.
+
+  .navbar {
+    align-items: flex-end;
+    padding-bottom: 0;
+  }
+
   .navbar-collapse {
     @extend .justify-content-end;
+
     .me-auto {
       margin-right: initial !important;
     }
@@ -38,18 +47,26 @@ header.page__header {
     a.nav-link {
       font-size: $h4-font-size;
       font-weight: 600;
-      color: map_get($theme-colors, "dark-gray");
+      padding: 1.5rem 0.5rem;
       margin-left: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        color: map_get($theme-colors, "dark-gray");
+      }
+
       &:hover,
       &:active {
         text-decoration: none;
       }
+
       &:first-of-type {
         margin-left: 0;
       }
+
       &.show {
         background-color: map_get($theme-colors, "faded-gray");
       }
+
       &[href="/search"]:after {
         content: "\f002";
         font-family: "Font Awesome 5 Free";
@@ -61,7 +78,17 @@ header.page__header {
     .dropdown-menu {
       @extend .border-0, .rounded-0, .p-3, .mb-2, .bg-dark-gray, .text-white;
       min-width: 400px;
-      background-color: map_get($theme-colors, "dark-gray") !important;
+      padding: 2rem !important;
+
+      @include media-breakpoint-up(lg) {
+        background-color: map_get($theme-colors, "dark-gray") !important;
+      }
+
+      &.show {
+        display: grid;
+        grid-template-rows: repeat(10, min-content);
+        grid-auto-flow: column;
+      }
 
       a {
         color: white;
@@ -78,12 +105,15 @@ header.page__header {
     .form-wrapper {
       margin: 0;
     }
+
     .form-search {
       font-style: italic;
     }
+
     .form-actions {
       display: inline-block;
       margin-left: 0.5rem;
+
       .form-submit {
         color: map_get($theme-colors, "dark-gray");
         background-color: map_get($theme-colors, "faded-light-blue");
@@ -94,5 +124,5 @@ header.page__header {
 
 // Main: Header; with site Drupal alerts and messages.
 // -----------------------------------------------------------------------------
-main .page__header {
+main .page__sub_header {
 }
