@@ -9,7 +9,6 @@ dependencies:
     - field.storage.node.field_primary_service_location
     - field.storage.node.field_short_title
     - node.type.group
-    - system.menu.main
     - taxonomy.vocabulary.group_type
   content:
     - 'taxonomy_term:group_type:2685f283-7885-4a7e-ad0d-5b2a2426ff15'
@@ -2230,7 +2229,7 @@ display:
       display_extenders: {  }
       path: departments
       menu:
-        type: normal
+        type: none
         title: Departments
         description: ''
         weight: 0
