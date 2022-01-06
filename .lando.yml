@@ -15,6 +15,37 @@ tooling:
   blt:
     service: appserver
     cmd: /app/vendor/bin/blt
+  npm:
+    description: Run npm commands
+    service: node
+  node:
+    description: Run node commands
+    service: node
+  drush:
+    description: Run drush commands
+    service: appserver
+    cmd: drush --root=/app/docroot
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    user: root
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Enabling xdebug"
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    user: root
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Disabling xdebug"
+  build-theme:
+    description: Build the production theme; this should match the Acquia BLT build command.
+    service: node
+    cmd: npm -C /app/docroot/themes/custom/westy run production
+  watch-theme:
+    description: Build the production theme; this should match the Acquia BLT build command.
+    service: node
+    cmd: echo "Visit county-drupal-bs.lndo.site once building is complete." && npm -C /app/docroot/themes/custom/westy run watch
+proxy:
+  node:
+    - county-drupal-bs.lndo.site:3000
 services:
   appserver:
     overrides:
@@ -22,9 +53,17 @@ services:
         DRUSH_OPTIONS_URI: "https://county-drupal.lndo.site"
     type: php:8.0
     build_as_root:
-      - mkdir -p /mnt/gfs/wcor.LANDO/nobackup
-      - mkdir -p /mnt/files/wcor.LANDO/sites/default/files-private
-      - chown -R www-data:www-data /mnt/gfs
-      - chown -R www-data:www-data /mnt/files/wcor.LANDO/sites/default
-      - chmod -R g+rw /mnt/gfs
-      - chmod -R g+rw /mnt/files/wcor.LANDO/sites/default
+      - "mkdir -p /mnt/gfs/wcor.LANDO/nobackup"
+      - "mkdir -p /mnt/files/wcor.LANDO/sites/default/files-private"
+      - "chown -R www-data:www-data /mnt/gfs"
+      - "chown -R www-data:www-data /mnt/files/wcor.LANDO/sites/default"
+      - "chmod -R g+rw /mnt/gfs"
+      - "chmod -R g+rw /mnt/files/wcor.LANDO/sites/default"
+      - "cp /app/docroot/themes/custom/westy/config/proxy.lando.js /app/docroot/themes/custom/westy/config/proxy.js"
+  node:
+    type: node:14
+    ssl: true
+    build:
+      - "cd /app/docroot/themes/custom/westy && npm install"
+      - "cd /app/docroot/themes/custom/westy && npm run production"
+    port: 3000
