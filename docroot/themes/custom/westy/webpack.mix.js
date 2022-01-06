@@ -44,6 +44,11 @@ mix.browserSync({
 	proxy: proxy.proxy,
 	files: ['assets/js/**/*.js', 'assets/css/**/*.css'],
 	stream: true,
+   socket: {
+      domain: proxy.domain,
+      port: proxy.port
+   },
+   open: false
 });
 
 /*

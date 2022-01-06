@@ -45,8 +45,10 @@ tooling:
   watch-theme:
     description: Build the production theme; this should match the Acquia BLT build command.
     service: node
-    cmd: npm -C /app/docroot/themes/custom/westy run watch
-
+    cmd: echo "Visit http://county-drupal-bs.lndo.site once building is complete." && npm -C /app/docroot/themes/custom/westy run watch
+proxy:
+  node:
+    - county-drupal-bs.lndo.site:3000
 services:
   appserver:
     overrides:
@@ -54,12 +56,17 @@ services:
         DRUSH_OPTIONS_URI: "https://county-drupal.lndo.site"
     type: php:8.0
     build_as_root:
-      - mkdir -p /mnt/gfs/wcor.LANDO/nobackup
-      - mkdir -p /mnt/files/wcor.LANDO/sites/default/files-private
-      - chown -R www-data:www-data /mnt/gfs
-      - chown -R www-data:www-data /mnt/files/wcor.LANDO/sites/default
-      - chmod -R g+rw /mnt/gfs
-      - chmod -R g+rw /mnt/files/wcor.LANDO/sites/default
-
+      - "mkdir -p /mnt/gfs/wcor.LANDO/nobackup"
+      - "mkdir -p /mnt/files/wcor.LANDO/sites/default/files-private"
+      - "chown -R www-data:www-data /mnt/gfs"
+      - "chown -R www-data:www-data /mnt/files/wcor.LANDO/sites/default"
+      - "chmod -R g+rw /mnt/gfs"
+      - "chmod -R g+rw /mnt/files/wcor.LANDO/sites/default"
+      - "cp /app/docroot/themes/custom/westy/config/proxy.lando.js /app/docroot/themes/custom/westy/config/proxy.js"
   node:
     type: node:14
+    ssl: true
+    build:
+      - "cd /app/docroot/themes/custom/westy && npm install"
+      - "cd /app/docroot/themes/custom/westy && npm run production"
+    port: 3000
