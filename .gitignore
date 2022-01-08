@@ -22,6 +22,7 @@ local.blt.yml
 
 # Ignore development configuration files.
 blt.development.services.yml
+xdebug.ini
 
 # Ignore drupal core.
 docroot/core
