@@ -34,7 +34,7 @@
 
 {% if content %}
 
-  {% set media_url = content.field_media_file.0|raw %}
+  {% set media_url = content.field_media_file.0|render|striptags|trim%}
   {% set media_title = name %}
 
   {# If data-title exists, over name value #}
