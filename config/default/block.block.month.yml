@@ -1,6 +1,6 @@
 uuid: 9586ab62-0e5a-4cf8-ad19-4d7e8c94b7d5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - facets.facet.news_month

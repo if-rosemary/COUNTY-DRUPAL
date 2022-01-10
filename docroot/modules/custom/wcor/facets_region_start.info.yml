@@ -1,0 +1,8 @@
+name: Facets Region Start Block
+type: module
+description: Provides a block with an anchor tag to allow jump link to send mobile users to facets region at bottom of page.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - drupal:block
