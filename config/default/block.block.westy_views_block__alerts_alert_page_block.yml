@@ -5,14 +5,14 @@ dependencies:
   config:
     - views.view.alerts
   module:
-    - ctools
+    - node
     - views
   theme:
     - westy
 id: westy_views_block__alerts_alert_page_block
 theme: westy
 region: alerts
-weight: -12
+weight: -14
 provider: null
 plugin: 'views_block:alerts-alert_page_block'
 settings:

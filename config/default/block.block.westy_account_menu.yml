@@ -13,8 +13,8 @@ _core:
   default_config_hash: 19CmBQT7OL-3VRx-isvQ5jfGekABppTKv1h5rHK376s
 id: westy_account_menu
 theme: westy
-region: footer
-weight: -12
+region: navbar_right
+weight: -14
 provider: null
 plugin: 'system_menu_block:account'
 settings:

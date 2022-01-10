@@ -17,7 +17,7 @@ provider: null
 plugin: 'facet_block:group'
 settings:
   id: 'facet_block:group'
-  label: Group
+  label: 'Filter by group'
   label_display: visible
   provider: facets
   block_id: group_2
