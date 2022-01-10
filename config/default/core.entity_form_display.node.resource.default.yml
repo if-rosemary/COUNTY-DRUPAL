@@ -71,15 +71,7 @@ content:
                 edit: Edit
                 delete: Delete
           add: Add
-        field_states:
-          9f662457-ba0a-43db-9f63-bd100b91499f:
-            uuid: 9f662457-ba0a-43db-9f63-bd100b91499f
-            id: visible
-            data:
-              target: field_show_in_menu
-              comparison: checked
-              value: ''
-              submit: 'Add Cancel'
+        field_states: {  }
   field_summary:
     type: string_textarea
     weight: 5
