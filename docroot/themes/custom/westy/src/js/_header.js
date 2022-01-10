@@ -34,13 +34,19 @@
         link.addEventListener("show.bs.dropdown", function () {
           let menu = this.querySelector(".dropdown-menu");
           if (menu) {
-            menu.style.top = container.offsetHeight - this.offsetHeight
-              - this.paddingTop - this.paddingBottom+ "px";
+            menu.style.top =
+              container.offsetHeight -
+              this.offsetHeight -
+              this.paddingTop -
+              this.paddingBottom +
+              "px";
           }
         });
         // Give the search form focus.
         link.addEventListener("shown.bs.dropdown", function () {
-          let searchInput = this.querySelector(".dropdown-menu input[name='search']");
+          let searchInput = this.querySelector(
+            ".dropdown-menu input[name='search']"
+          );
           if (searchInput) {
             searchInput.focus();
           }
