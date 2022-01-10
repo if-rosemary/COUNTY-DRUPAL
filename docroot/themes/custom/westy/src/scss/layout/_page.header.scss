@@ -66,12 +66,6 @@ header.page__header {
       &.show {
         background-color: map_get($theme-colors, "faded-gray");
       }
-
-      &[href="/search"]:after {
-        content: "\f002";
-        font-family: "Font Awesome 5 Free";
-        margin-left: 1rem;
-      }
     }
 
     // Menu flyouts.
@@ -124,5 +118,5 @@ header.page__header {
 
 // Main: Header; with site Drupal alerts and messages.
 // -----------------------------------------------------------------------------
-main .page__sub_header {
+main header.page__sub_header {
 }

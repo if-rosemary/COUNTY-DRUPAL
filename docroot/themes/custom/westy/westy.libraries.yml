@@ -5,7 +5,6 @@ style:
       assets/css/westy.style.css: {}
   js:
     assets/js/westy.script.js: {}
-    https://kit.fontawesome.com/fba24a4d16.js: { type: external, minified: true }
   dependencies:
     - core/drupal
     - core/jquery
