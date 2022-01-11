@@ -10,46 +10,15 @@
       {{ page.alerts }}
     {% endif %}
   {% endblock %}
-  {% embed '@radix/navbar/navbar.twig' with {
-    placement: 'sticky-top',
-    container: 'fluid',
-    color: 'light',
-    utility_classes: ['bg-light'],
-  } %}
 
-    {% block branding %}
-      {% if page.navbar_branding %}
-        {{ page.navbar_branding }}
-      {% endif %}
-    {% endblock %}
-
-    {% block left %}
-      {% if page.navbar_left %}
-        <div class="me-auto">
-          {{ page.navbar_left }}
-        </div>
-      {% endif %}
-    {% endblock %}
-
-    {% block right %}
-      {% if page.navbar_right %}
-        {{ page.navbar_right }}
-        <form accept-charset="UTF-8" action="/search" class="form-inline" id="search-block-form" method="get">
-          <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label form-group">
-            <input class="form-search form-control" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="search" placeholder="Search" size="20" title="Enter the terms you wish to search for." type="search" value="" />
-          </div>
-          <div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions">
-            <input class="button js-form-submit form-submit btn btn-primary" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value="Search" />
-          </div>
-        </form>
-      {% endif %}
-    {% endblock %}
-  {% endembed %}
+  <header class="page__header">
+    {% include '@westy/page/page.header.html.twig' %}
+  </header>
 
   <main class="container">
 
     {% if page.header %}
-      <header class="page__header mb-3">
+      <header class="page__sub_header mb-3">
           {{ page.header }}
       </header>
     {% endif %}

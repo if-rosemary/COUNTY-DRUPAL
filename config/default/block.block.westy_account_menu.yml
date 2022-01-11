@@ -6,13 +6,14 @@ dependencies:
     - system.menu.account
   module:
     - system
+    - user
   theme:
     - westy
 _core:
   default_config_hash: 19CmBQT7OL-3VRx-isvQ5jfGekABppTKv1h5rHK376s
 id: westy_account_menu
 theme: westy
-region: navbar_right
+region: footer
 weight: -14
 provider: null
 plugin: 'system_menu_block:account'
@@ -24,4 +25,11 @@ settings:
   level: 1
   depth: 1
   expand_all_items: false
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
