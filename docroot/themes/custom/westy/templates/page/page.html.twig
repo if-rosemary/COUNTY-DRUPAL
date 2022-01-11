@@ -29,12 +29,12 @@
           {{ page.content }}
       </div>
     {% endif %}
-    {% if page.side %}
+    {% if page.side|render|striptags|trim is not empty %}
       <div class="page__side col-lg-3 col-md-7 col-sm-12 order-md-3 order-sm-2 border-left">
           {{ page.side }}
       </div>
     {% endif %}
-    {% if page.menu %}
+    {% if page.menu|render|striptags|trim is not empty %}
       <div class="page__menu col-lg-2 col-md-3 col-sm-12 order-lg-1 order-md-2 order-sm-3 border-right">
         {{ page.menu }}
       </div>
