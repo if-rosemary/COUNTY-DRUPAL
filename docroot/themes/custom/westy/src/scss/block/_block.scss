@@ -1,6 +1,8 @@
 main {
-  .block {
-    margin-bottom: $spacer * 2;
+  .page__content {
+    .block {
+      margin-bottom: $spacer * 2;
+    }
   }
   .block.block--westy-page-title {
     margin-bottom: $spacer !important;
