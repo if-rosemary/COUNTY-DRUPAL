@@ -12,7 +12,7 @@ dependencies:
 id: westy_views_block__news_block_recent_group_news
 theme: westy
 region: content
-weight: -8
+weight: -9
 provider: null
 plugin: 'views_block:news-block_recent_group_news'
 settings:
