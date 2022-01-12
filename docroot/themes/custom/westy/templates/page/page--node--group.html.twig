@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div class="page">
+	{% block alerts %}
+		{% if page.alerts %}
+			{{ page.alerts }}
+		{% endif %}
+	{% endblock %}
+
+	<header class="page__header">
+		{% include '@westy/page/page.header.html.twig' %}
+	</header>
+
+	<main>
+
+    {% if page.header|render|striptags|trim is not empty %}
+      <div class="container-fluid mb-3 pb-3 pt-3 bg-info">
+        <div class="container">
+          <header class="page__sub_header mb-3">
+            {{ page.header }}
+          </header>
+        </div>
+      </div>
+		{% endif %}
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          {% if page.content %}
+            <div class="page__content col order-md-2 order-sm-1">
+              {{ page.content }}
+            </div>
+          {% endif %}
+          {% if page.side|render|striptags|trim is not empty %}
+            <div class="page__side col-lg-3 col-md-7 col-sm-12 order-md-3 order-sm-2 border-left">
+              {{ page.side }}
+            </div>
+          {% endif %}
+          {% if page.menu|render|striptags|trim is not empty %}
+            <div class="page__menu col-lg-2 col-md-3 col-sm-12 order-lg-1 order-md-2 order-sm-3 border-right">
+              {{ page.menu }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+	</main>
+
+	{% if page.footer %}
+		<footer class="page__footer mt-5">
+			<div class="container-fluid">
+				<div class="d-flex justify-content-md-between align-items-md-center">
+					{{ page.footer }}
+				</div>
+			</div>
+		</footer>
+	{% endif %}
+</div>
+
