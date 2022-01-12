@@ -1,0 +1,14 @@
+/* Boostrap overrides */
+.list-group-item.active {
+  background-color: map_get($theme-colors, "primary");
+  font-weight: bold;
+}
+
+.list-group-child {
+  border: 2px solid map_get($theme-colors, "primary");
+}
+.list-group-child-item {
+  color: map_get($theme-colors, "primary");
+  border-left-width: 0;
+  border-right-width: 0;
+}
