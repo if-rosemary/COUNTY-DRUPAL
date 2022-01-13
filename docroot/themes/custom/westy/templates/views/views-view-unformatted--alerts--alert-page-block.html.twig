@@ -1,0 +1,28 @@
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="alert-group hidden">
+      {% for row in rows %}
+        {% set alert_uid = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ nid }}']|render|striptags|trim %}
+        <div id="alert-{{ alert_uid }}" class="container-fluid alert-item">
+          <div class="container">
+            <div class="row mb-1">
+              <div class="alert alert-warning alert-dismissible d-md-flex align-items-center fade show" role="alert">
+                <div class="alert-icon pb-2 pb-md-0">
+                  <img src="/themes/custom/westy/assets/images/danger-alert.svg">
+                </div>
+                <div>
+                  <div><strong>{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ title }}'] }}</strong></div>
+                  <div>{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_alert_body }}'] }}</div>
+                </div>
+                <button data-alert="alert-{{ alert_uid }}" type="button" class="btn-close" data-bs-dismiss="alert"
+                  aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endblock %}
+</div>
