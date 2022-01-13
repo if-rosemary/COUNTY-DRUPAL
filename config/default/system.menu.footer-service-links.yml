@@ -1,0 +1,8 @@
+uuid: 0b272eda-ba07-4a23-a21b-07bcdddd847c
+langcode: en
+status: true
+dependencies: {  }
+id: footer-service-links
+label: 'Footer Service Links'
+description: ''
+locked: false
