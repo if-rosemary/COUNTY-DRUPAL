@@ -1,0 +1,42 @@
+{% set branding = 'Washington County, Oregon'| t %}
+
+<div class="container-fluid">
+
+      {% if page.footer| render| striptags| trim is not empty  %}
+        <div class="row p-2 p-md-5 bg-blue page__footer__blocks">
+          {{ page.footer }}
+        </div>
+      {% endif %}
+
+      <div class="row p-2 p-md-5 text-white bg-dark-gray">
+        <div class="col-lg-4 offset-lg-1 col-md-6 col-12 page__footer__navigation">
+          <a class="shown-md logo" href="/" aria-label="{{ branding }}">
+            <img src="{{ base_path ~ directory }}/assets/images/wcor-white.svg" alt="{{ branding }}" width="125"/>
+          </a>
+          {{ drupal_menu('footer') }}
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 col-md-5 offset-md-1 col-12 page__footer__social">
+          {% include '@westy/page/page.footer.social.html.twig' %}
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-12 hidden-md page__footer__logo">
+          <a href="/" aria-label="{{ branding }}">
+            <img src="{{ base_path ~ directory }}/assets/images/wcor-white.svg" alt="{{ branding }}" width="125"/>
+          </a>
+        </div>
+      </div>
+
+      <div class="row p-2 px-md-5 text-white bg-dark-gray">
+
+        <div class="col-lg-6 col-12 page__footer__service">
+          {{ drupal_menu('footer-service-links') }}
+        </div>
+
+        <div class="col-lg-6 col-12 page__footer__powered_by">
+          {% set branding = 'Powered by Interpersonal Frequency'| t %}
+          <a href="http://interpersonalfrequency.com/" alt="{{ branding }}" class="text-white">{{ branding }}
+            <img src="{{ base_path ~ directory }}/assets/images/if-logo.svg" alt="{{ branding }}" width="30"/></a>
+        </div>
+      </div>
+    </div>

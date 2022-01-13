@@ -10,7 +10,7 @@ header.page__header {
 
   // The logo & branding section.
   .block--westy-site-branding {
-    h1.badge a {
+    h1 a {
       font-size: $h2-font-size;
       text-align: left;
       text-decoration: none;
@@ -27,13 +27,16 @@ header.page__header {
         font-weight: normal;
       }
     }
+    img {
+      margin-right: 0.813rem;
+    }
   }
 
   // Main site navigation.
 
   .navbar {
     align-items: flex-end;
-    padding-bottom: 0;
+    padding: 0;
   }
 
   .navbar-collapse {
@@ -118,6 +121,7 @@ header.page__header {
         &:focus {
           color: white;
           background-color: transparent;
+          text-decoration: underline;
         }
       }
     }
