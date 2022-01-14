@@ -6,10 +6,12 @@
 import './_bootstrap.js';
 import './_header.js';
 
+// Import components
+import '../components/alerts/_alerts';
+
 (function ($, Drupal) {
 
   'use strict';
-
   // // Enable Bootstrap Popover sitewide.
   // // Popovers are opt-in for performance reasons.
   // Drupal.behaviors.bsPopover = {
@@ -17,37 +19,6 @@ import './_header.js';
   //     $('[data-bs-toggle="popover"]').popover();
   //   }
   // };
-
-  // // Controls sitewide alert banner function.
-  Drupal.behaviors.alertSystem = {
-    attach: function (context) {
-      var alertData = {};
-
-      try {
-        alertData = JSON.parse(localStorage.getItem('alertUID')) || {};
-      }
-      catch (e) {
-        console.log(e);
-      }
-
-      $.each(alertData, function (index, value) {
-        $('#' + index).remove();
-      });
-
-      $(".alert-item .btn-close").click(function (e) {
-        var alertUID = $(this).attr('data-alert');
-        alertData[alertUID] = 1;
-        try {
-          localStorage.setItem('alertUID', JSON.stringify(alertData));
-        }
-        catch (e) {
-          return false;
-        }
-      });
-
-      $('.alert-group').removeClass('hidden');
-    }
-  };
 
   // // Enable Bootstrap Toast sitewide.
   // // Toasts are opt-in for performance reasons.
