@@ -1,50 +1,52 @@
 {#
 /**
- * @file
- * Template for the main page.
- */
+  * @file
+  * Template for the main page.
+  */
 #}
 <div class="page">
 
   <header class="page__header">
-    {% include '@westy/page/page.header.html.twig' %}
+    <div class="container">
+      {% include '@westy/page/page.header.html.twig' %}
+    </div>
   </header>
 
   <main class="container">
 
-    {% if page.header %}
-      <header class="page__sub_header mb-3">
+    {% if page.header|render|striptags|trim is not empty %}
+      <header class="page__sub_header b-border pb-5 mt-5">
           {{ page.header }}
       </header>
     {% endif %}
 
-    <div class="row">
-    {% if page.menu|render|striptags|trim is not empty %}
-      <div class="page__menu col-lg-3 col-md-3 col-sm-12">
-        {{ page.menu }}
-      </div>
-    {% endif %}
+    <div class="row mt-5">
+    
+      {% if page.menu|render|striptags|trim is not empty %}
+        <div class="page__menu col-lg-2 col-md-3 col-sm-12">
+          {{ page.menu }}
+        </div>
+      {% endif %}
 
-    {% if page.content %}
-      <div class="page__content col">
-          {{ page.content }}
-      </div>
-    {% endif %}
-    {% if page.side|render|striptags|trim is not empty %}
-      <div class="page__side col-lg-2 col-md-12 col-sm-12">
-          {{ page.side }}
-      </div>
-    {% endif %}
+      {% if page.content %}
+        <div class="page__content col">
+            {{ page.content }}
+        </div>
+      {% endif %}
+
+      {% if page.side|render|striptags|trim is not empty %}
+        <div class="page__side col-lg-2 col-md-12 col-sm-12">
+            {{ page.side }}
+        </div>
+      {% endif %}
+      
     </div>
+    
   </main>
 
   {% if page.footer %}
     <footer class="page__footer mt-5">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-md-between align-items-md-center">
-          {{ page.footer }}
-        </div>
-      </div>
+      {% include '@westy/page/page.footer.html.twig' %}
     </footer>
   {% endif %}
 </div>

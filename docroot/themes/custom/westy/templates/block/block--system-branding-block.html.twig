@@ -12,16 +12,17 @@
 
   {% block content %}
 
-    <div class="d-inline-flex justify-content-center align-items-baseline">
+    <div class="d-inline-flex">
 
-      <div class="badge align-self-baseline me-auto">
-        <a href="/" aria-label="{{ 'Washington County, Oregon'| t }}">
-          <img src="/{{ base_path ~ directory }}/assets/images/wcor-logo-temp.png" alt="{{ 'Washington County, Oregon'| t }}"/>
+      <div class="align-self-baseline me-auto py-4">
+      {% set branding = 'Washington County, Oregon'| t %}
+        <a href="/" aria-label="{{ branding }}">
+          <img src="/{{ base_path ~ directory }}/assets/images/wcor-color.svg" alt="{{ branding }}" width="100" />
         </a>
       </div>
 
-      <h1 class="badge">
-        <a href="/" aria-label="{{ 'Washington County, Oregon'| t }}" tabindex="-1">
+      <h1 class="align-self-baseline">
+        <a href="/" aria-label="{{ branding }}" tabindex="-1">
           {{ 'Washington County'| t }}
           <span>{{ 'Oregon'| t }}</span>
         </a>
