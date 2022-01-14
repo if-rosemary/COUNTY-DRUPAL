@@ -10,7 +10,7 @@ _core:
   default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
 id: westy_breadcrumbs
 theme: westy
-region: content
+region: header
 weight: -14
 provider: null
 plugin: system_breadcrumb_block

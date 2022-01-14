@@ -1,10 +1,26 @@
 main {
-  .block {
-    margin-bottom: $spacer * 2;
+  .page__content {
+    .block {
+      margin-bottom: $spacer * 2;
+    }
+  }
+  .block.block--westy-page-title {
+    margin-bottom: $spacer !important;
   }
 }
 
 // Facets mobile jump link target
 .block--facetsregionstart {
   margin: 0;
+}
+
+// Notifications
+.views-field.views-field-field-notification-body {
+  border: 2px solid map_get($theme-colors, "faded-gray");
+  border-left: 3px solid map_get($theme-colors, "dark-red");
+  padding: $spacer;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }

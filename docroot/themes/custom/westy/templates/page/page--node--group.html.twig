@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div class="page">
+	{% block alerts %}
+		{% if page.alerts %}
+			{{ page.alerts }}
+		{% endif %}
+	{% endblock %}
+
+	<header class="page__header">
+		{% include '@westy/page/page.header.html.twig' %}
+	</header>
+
+	<main>
+
+    {% set featured_image = drupal_field('field_image', 'node', nid).0 %}
+    {% if page.header|render|striptags|trim is not empty %}
+      <div class="container-fluid bg-info">
+        <div class="container">
+          {% if featured_image is not empty %}
+          <div class="row align-items-center">
+            <div class="col col-sm-12 col-md-5 py-5">
+              <header class="page__sub_header">
+                {{ page.header }}
+              </header>
+            </div>
+            <div class="mb-sm-5 mb-md-0 col-sm-12 col-md-7 img-bg" style="background-image: url({{ featured_image }});">
+              <div class="my-5"></div>
+            </div>
+          </div>
+          {% else %}
+            <div class="row py-5">
+            <header class="page__sub_header">
+              {{ page.header }}
+            </header>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row mt-5">
+          {% if page.menu|render|striptags|trim is not empty %}
+            <div class="page__menu col-lg-2 col-md-3 col-sm-12">
+              {{ page.menu }}
+            </div>
+          {% endif %}
+
+          {% if page.content %}
+            <div class="page__content col">
+              {{ page.content }}
+            </div>
+          {% endif %}
+          {% if page.side|render|striptags|trim is not empty %}
+            <div class="page__side col-lg-2 col-md-12 col-sm-12">
+              {{ page.side }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+	</main>
+
+	{% if page.footer %}
+		<footer class="page__footer mt-5">
+			<div class="container-fluid">
+				<div class="d-flex justify-content-md-between align-items-md-center">
+					{{ page.footer }}
+				</div>
+			</div>
+		</footer>
+	{% endif %}
+</div>
+

@@ -1,4 +1,8 @@
 /* Boostrap overrides */
+.breadcrumb-item+.breadcrumb-item:before {
+  content: var(--bs-breadcrumb-divider,">");
+}
+
 .list-group-item.active {
   background-color: map_get($theme-colors, "primary");
   font-weight: bold;

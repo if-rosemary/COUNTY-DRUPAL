@@ -19,15 +19,16 @@
 
   <main class="container">
 
-    {% if page.header %}
-      <header class="page__sub_header mb-3">
-        {{ page.header }}
+    {% if page.header|render|striptags|trim is not empty %}
+      <header class="page__sub_header b-border pb-5 mt-5">
+          {{ page.header }}
       </header>
     {% endif %}
 
-    <div class="row">
+    <div class="row mt-5">
+    
       {% if page.menu|render|striptags|trim is not empty %}
-        <div class="page__menu col-lg-3 col-md-3 col-sm-12">
+        <div class="page__menu col-lg-2 col-md-3 col-sm-12">
           {{ page.menu }}
         </div>
       {% endif %}
@@ -43,6 +44,7 @@
             {{ page.side }}
         </div>
       {% endif %}
+      
     </div>
     
   </main>

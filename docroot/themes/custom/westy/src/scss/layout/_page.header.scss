@@ -150,4 +150,15 @@ header.page__header {
 // Main: Header; with site Drupal alerts and messages.
 // -----------------------------------------------------------------------------
 main header.page__sub_header {
+  &.b-border {
+    border-bottom: 2px solid map_get($theme-colors, "faded-gray");
+  }
+}
+
+main .img-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center center;
+  min-height: 400px;
 }
