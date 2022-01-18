@@ -1,5 +1,6 @@
 name: county-drupal
 recipe: acquia
+
 config:
   acli_version: latest
   ah_application_uuid: 9cab3740-4631-4529-a4de-d6ef75472d78
@@ -11,6 +12,7 @@ config:
   inbox: false
   php: '8.0'
   xdebug: false
+
 tooling:
   blt:
     service: appserver
@@ -18,6 +20,7 @@ tooling:
   npm:
     description: Run npm commands
     service: node
+    cmd: npm -C /app/docroot/themes/custom/westy
   node:
     description: Run node commands
     service: node
@@ -42,7 +45,7 @@ tooling:
   watch-theme:
     description: Build the production theme; this should match the Acquia BLT build command.
     service: node
-    cmd: echo "Visit county-drupal-bs.lndo.site once building is complete." && npm -C /app/docroot/themes/custom/westy run watch
+    cmd: echo "Visit http://county-drupal-bs.lndo.site once building is complete." && npm -C /app/docroot/themes/custom/westy run watch
 proxy:
   node:
     - county-drupal-bs.lndo.site:3000

@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: x6bhN6WZwfVUI_LLMvRJIUW_2c26VTaBozbfXmJWmro
 seckit_xss:
   csp:
     checkbox: true
@@ -8,6 +10,7 @@ seckit_xss:
     default-src: '''self'' *.washcoor.us *.ahdev.cloud *.acquia-sites.com'
     script-src: '''self'' *.pagespeed-mod.com *.google-analytics.com'
     object-src: ''
+    style-src: '''unsafe-inline'' *.googleapis.com *.washcoor.us *.ahdev.cloud *.acquia-sites.com'
     img-src: '''self'' *.google-analytics.com data:'
     media-src: ''
     frame-src: ''
@@ -18,7 +21,6 @@ seckit_xss:
     report-uri: /report-csp-violation
     upgrade-req: true
     policy-uri: ''
-    style-src: '''unsafe-inline'' *.googleapis.com *.washcoor.us *.ahdev.cloud *.acquia-sites.com'
   x_xss:
     seckit_x_xss_option_disable: Disabled
     seckit_x_xss_option_0: '0'
@@ -26,7 +28,7 @@ seckit_xss:
     seckit_x_xss_option_1_block: '1; mode=block'
     select: 2
 seckit_csrf:
-  origin: true
+  origin: false
   origin_whitelist: ''
 seckit_clickjacking:
   js_css_noscript: false
@@ -52,5 +54,3 @@ seckit_various:
   referrer_policy: false
   referrer_policy_policy: no-referrer-when-downgrade
   disable_autocomplete: true
-_core:
-  default_config_hash: x6bhN6WZwfVUI_LLMvRJIUW_2c26VTaBozbfXmJWmro

@@ -10,7 +10,7 @@ dependencies:
     - westy
 id: westy_views_block__notifications_block_notifications
 theme: westy
-region: header
+region: content
 weight: -11
 provider: null
 plugin: 'views_block:notifications-block_notifications'

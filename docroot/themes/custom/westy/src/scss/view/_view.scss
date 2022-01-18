@@ -4,6 +4,49 @@
 
 // Specific view styling
 
+// Acquia Search Solr
+.view-acquia-search {
+  .view-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    .button {
+      background-color: #ced4da;
+      border: 1px solid #999999;
+    }
+  }
+  .views-row {
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    padding: 1rem;
+    margin-bottom: .5rem;
+  }
+  .views-field-nothing {
+    // Right-hand float for content type label
+    .field-content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: .5rem;
+      .views-field-title {
+        font-weight: bold;
+      }
+      // Stylize content type
+      .views-field-type {
+        color: #757575;
+        font-style: italic;
+      }
+    }
+  }
+  .views-field-changed {
+    color: #757575;
+    margin-top: .5rem;
+  }
+}
+
 // Media catalog
 .view-media-catalog {
   table {

@@ -1,0 +1,9 @@
+uuid: 3f9a13d5-cf0a-465c-a62b-89589c1151d8
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__acquia_search__page_search_news
+name: 'search_api:views_page__acquia_search__page_search_news'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }

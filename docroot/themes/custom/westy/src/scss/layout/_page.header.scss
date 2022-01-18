@@ -1,5 +1,187 @@
-// Page: Header
+/**
+ * @file Styles for site navigation and headers.
+ */
+// Page: Header; with site branding, navigation and a search modal.
 // -----------------------------------------------------------------------------
-.page__header {
+header.page__header {
+  @extend .border-bottom, .border-dark, .border-4;
+  border-bottom-color: map_get($theme-colors, "dark-gray") !important;
+  min-height: 7.15rem;
 
+  // Alerts
+  .alert-item {
+    background-color: #E9EEEB;
+    .btn-close {
+      background: transparent url('/themes/custom/westy/assets/images/close-o.svg') 50%/1.5em auto no-repeat;
+    }
+    .alert-icon{
+      z-index: 2;
+      margin-right: 2rem;
+
+      img {
+        height: auto;
+        width: 2em;
+      }
+    }
+    .alert {
+      margin-bottom: 0;
+      p:last-child{
+        margin: 0;
+      }
+    }
+  }
+
+  // The logo & branding section.
+  .block--westy-site-branding {
+    h1 a {
+      font-size: $h2-font-size;
+      text-align: left;
+      text-decoration: none;
+      // @include media-breakpoint-up(md) {
+      //   font-size: $h1-font-size;
+      // }
+      &:hover,
+      &:active {
+        color: $link-color;
+      }
+      span {
+        @extend .link-dark-gray;
+        display: block;
+        font-weight: normal;
+      }
+    }
+    img {
+      margin-right: 0.813rem;
+    }
+  }
+
+  // Main site navigation.
+
+  .navbar {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .navbar-collapse {
+    @extend .justify-content-end;
+
+    .me-auto {
+      margin-right: initial !important;
+    }
+
+    // Top-level menu links.
+    a.nav-link {
+      font-size: $h4-font-size;
+      font-weight: 600;
+      padding: 1.5rem 0.5rem;
+      margin-left: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        color: map_get($theme-colors, "dark-gray");
+      }
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &.show {
+        background-color: map_get($theme-colors, "faded-gray");
+      }
+
+      .gg-search {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+        transform: scale(var(--ggs, 1));
+        width: 16px;
+        height: 16px;
+        border: 2px solid;
+        border-radius: 100%;
+        margin-left: 4px;
+        margin-top: -4px;
+      }
+
+      .gg-search::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        border-radius: 3px;
+        width: 2px;
+        height: 8px;
+        background: currentColor;
+        transform: rotate(-45deg);
+        top: 10px;
+        left: 12px;
+      }
+    }
+
+    // Menu flyouts.
+    .dropdown-menu {
+      @extend .border-0, .rounded-0, .p-3, .mb-2, .bg-dark-gray, .text-white;
+      min-width: 400px;
+      padding: 2rem !important;
+
+      @include media-breakpoint-up(lg) {
+        background-color: map_get($theme-colors, "dark-gray") !important;
+      }
+
+      &.show {
+        display: grid;
+        grid-template-rows: repeat(10, min-content);
+        grid-auto-flow: column;
+      }
+
+      a {
+        color: white;
+        background-color: transparent;
+        &:hover,
+        &:focus {
+          color: white;
+          background-color: transparent;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Search menu flyout.
+    .form-wrapper {
+      margin: 0;
+    }
+
+    .form-search {
+      font-style: italic;
+    }
+
+    .form-actions {
+      display: inline-block;
+      margin-left: 0.5rem;
+
+      .form-submit {
+        color: map_get($theme-colors, "dark-gray");
+        background-color: map_get($theme-colors, "faded-light-blue");
+      }
+    }
+  }
+}
+
+// Main: Header; with site Drupal and messages.
+// -----------------------------------------------------------------------------
+main header.page__sub_header {
+  &.b-border {
+    border-bottom: 2px solid map_get($theme-colors, "faded-gray");
+  }
+}
+
+main .img-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center center;
+  min-height: 400px;
 }

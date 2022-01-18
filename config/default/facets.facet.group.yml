@@ -24,7 +24,7 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: checkbox
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 10
     show_reset_link: false
     reset_text: 'Show all'
@@ -43,7 +43,7 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: DESC
+      sort: ASC
   count_widget_order:
     processor_id: count_widget_order
     weights:

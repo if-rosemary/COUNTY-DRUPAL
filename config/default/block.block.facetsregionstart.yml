@@ -1,0 +1,21 @@
+uuid: f78dd9e8-c3bd-49e8-8ce6-1ab646889fd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - facets_region_start
+  theme:
+    - westy
+id: facetsregionstart
+theme: westy
+region: side
+weight: -11
+provider: null
+plugin: facets_region_start_block
+settings:
+  id: facets_region_start_block
+  label: 'Facets region start'
+  label_display: '0'
+  provider: facets_region_start
+  facets_region_start_settings: null
+visibility: {  }
