@@ -12,7 +12,7 @@ dependencies:
 id: group
 theme: westy
 region: side
-weight: -6
+weight: -7
 provider: null
 plugin: 'facet_block:news_group'
 settings:
