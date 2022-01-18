@@ -36,6 +36,10 @@ h6 {
   }
 }
 
+h1.page-title {
+  font-weight: bold;
+}
+
 // Lists
 // -----------------------------------------------------------------------------
 ol,
@@ -123,4 +127,8 @@ table.table-card tr td{
     vertical-align: top;
     display: block;
   }
+}
+
+.pagination {
+  flex-wrap: wrap;
 }

@@ -43,3 +43,8 @@ article {
 .homepage-grid .views-row .views-col:first-child {
   padding-left: 0;
 }
+
+// Background Colors
+.bg-info{
+  background-color: map_get($theme-colors, "faded-blue");
+}

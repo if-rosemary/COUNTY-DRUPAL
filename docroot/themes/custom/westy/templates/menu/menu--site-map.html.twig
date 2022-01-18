@@ -1,6 +1,73 @@
 {#
 /**
- * Template for the main side menu.
+ * @file
+ * Template for a side-nav component.
+ *
+ * Available config:
+ * - alignment: left | right | center | vertical.
+ * - style: tabs | pills
+ * - fill: fill | justify
+ * - utility_classes: An array of utility classes.
  */
 #}
-{% include '@westy/nav/nav-vertical.twig' %}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+{% import _self as menus %}
+{% if items %}
+{{ nav_classes }}
+<ul class="list-group">
+
+  {% for item in items %}
+    {%
+      set classes = [
+        'menu-item nav-item',
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail'
+      ]
+    %}
+
+    {%
+      set nav_link_classes = [
+        'list-group-item list-group-item-action',
+        item.in_active_trail ? 'active'
+      ]
+    %}
+
+    {% if item.url.options.attributes.class is iterable %}
+    {% set nav_link_classes = nav_link_classes|merge(item.url.options.attributes.class) %}
+    {% elseif item.url.options.attributes.class %}
+    {% set nav_link_classes = nav_link_classes|merge([item.url.options.attributes.class]) %}
+    {% endif %}
+
+    <a {{ item.attributes.addClass(nav_link_classes) }} href="{{ item.url }}">
+      {{ item.title }}
+    </a>
+
+    {% if item.below %}
+      <div class="list-group-child">
+      {% for itemb in item.below %}
+        {%
+          set navb_link_classes = [
+            'list-group-item list-group-item-action list-group-child-item',
+            itemb.in_active_trail ? 'active'
+          ]
+        %}
+        <a {{ itemb.attributes.addClass(navb_link_classes) }} href="{{ itemb.url }}">
+          {{ itemb.title }}
+        </a>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</ul>
+{% endif %}
+{% endmacro %}

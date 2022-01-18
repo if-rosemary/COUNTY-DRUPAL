@@ -26,3 +26,16 @@
     }
   }
 }
+
+.shown-md {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.hidden-md {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: initial;
+  }
+}

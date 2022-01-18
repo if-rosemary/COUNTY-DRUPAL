@@ -1,9 +1,17 @@
+/**
+ * @file Global helper JS for the theme.
+ */
+
+// Import site-wide libraries.
 import './_bootstrap.js';
+import './_header.js';
+
+// Import components
+import '../components/alerts/_alerts';
 
 (function ($, Drupal) {
 
   'use strict';
-
   // // Enable Bootstrap Popover sitewide.
   // // Popovers are opt-in for performance reasons.
   // Drupal.behaviors.bsPopover = {
@@ -19,5 +27,7 @@ import './_bootstrap.js';
   //     $('.toast').toast('show');
   //   }
   // };
+
+
 
 })(jQuery, Drupal);

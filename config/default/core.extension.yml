@@ -10,6 +10,7 @@ module:
   admin_toolbar_tools: 0
   bigmenu: 0
   block: 0
+  block_content: 0
   breakpoint: 0
   captcha: 0
   ckeditor: 0
@@ -35,6 +36,7 @@ module:
   eva: 0
   externalauth: 0
   facets: 0
+  facets_region_start: 0
   feeds: 0
   field: 0
   field_group: 0

@@ -5,14 +5,13 @@ dependencies:
   config:
     - views.view.alerts
   module:
-    - ctools
     - views
   theme:
     - westy
 id: westy_views_block__alerts_alert_page_block
 theme: westy
 region: alerts
-weight: -12
+weight: -14
 provider: null
 plugin: 'views_block:alerts-alert_page_block'
 settings:
@@ -22,13 +21,4 @@ settings:
   provider: views
   views_label: ''
   items_per_page: none
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      news: news
-      page: page
-      resource: resource
+visibility: {  }
