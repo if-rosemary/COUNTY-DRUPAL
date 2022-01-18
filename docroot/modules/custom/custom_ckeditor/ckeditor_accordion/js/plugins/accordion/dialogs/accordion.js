@@ -76,11 +76,9 @@
 
         var collapseID = 'CP' + Date.now();
 
-        content += '<div class="cke-accordion mb-3">';
-        content += '<div class="accordion-item"><h2 class="accordion-header" id="heading' + collapseID + '"><button aria-controls="' + collapseID + '" ' + buttonStatus + ' data-bs-target="#' + collapseID + '" data-bs-toggle="collapse" type="button">' + title + '</button></h2>';
+        content += '<div class="mb-3 accordion-item cke-accordion"><h2 class="accordion-header" id="heading' + collapseID + '"><button aria-controls="' + collapseID + '" ' + buttonStatus + ' data-bs-target="#' + collapseID + '" data-bs-toggle="collapse" type="button">' + title + '</button></h2>';
         content += '<div class="accordion-collapse collapse ' + bodyStatus + '" id="' + collapseID + '">';
         content += '<div class="accordion-body">' + body + '</div>';
-        content += '</div>';
         content += '</div>';
         content += '</div>';
 
