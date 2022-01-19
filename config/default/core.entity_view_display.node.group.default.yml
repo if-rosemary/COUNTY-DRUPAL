@@ -9,11 +9,11 @@ dependencies:
     - field.field.node.group.field_facebook
     - field.field.node.group.field_group_path
     - field.field.node.group.field_image
+    - field.field.node.group.field_location
     - field.field.node.group.field_migration_status
     - field.field.node.group.field_parent
     - field.field.node.group.field_phone
     - field.field.node.group.field_phone_extension
-    - field.field.node.group.field_primary_service_location
     - field.field.node.group.field_short_title
     - field.field.node.group.field_status
     - field.field.node.group.field_summary
@@ -61,6 +61,14 @@ content:
     third_party_settings: {  }
     weight: 12
     region: content
+  field_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
   field_migration_status:
     type: entity_reference_rss_category
     label: above
@@ -91,15 +99,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 10
-    region: content
-  field_primary_service_location:
-    type: entity_reference_entity_view
-    label: inline
-    settings:
-      view_mode: embedded
-      link: false
-    third_party_settings: {  }
-    weight: 4
     region: content
   field_status:
     type: entity_reference_label

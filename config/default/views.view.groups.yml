@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.storage.node.field_email
     - field.storage.node.field_phone
-    - field.storage.node.field_primary_service_location
     - field.storage.node.field_short_title
     - node.type.group
     - taxonomy.vocabulary.group_type
@@ -257,31 +256,39 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.group.default'
-        - 'config:core.entity_view_display.node.group.teaser'
-        - 'config:core.entity_view_display.node.news.default'
-        - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.alert.default'
         - 'config:core.entity_view_display.node.building.default'
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.contact.embedded'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.faq.default'
         - 'config:core.entity_view_display.node.faq.embedded'
         - 'config:core.entity_view_display.node.faq.search_index'
         - 'config:core.entity_view_display.node.faq.teaser'
+        - 'config:core.entity_view_display.node.group.default'
+        - 'config:core.entity_view_display.node.group.teaser'
+        - 'config:core.entity_view_display.node.news.default'
+        - 'config:core.entity_view_display.node.news.featured'
+        - 'config:core.entity_view_display.node.news.related'
+        - 'config:core.entity_view_display.node.news.search_index'
+        - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.notification.default'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.featured'
+        - 'config:core.entity_view_display.node.page.related'
+        - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.resource.default'
+        - 'config:core.entity_view_display.node.resource.featured'
+        - 'config:core.entity_view_display.node.resource.related'
         - 'config:core.entity_view_display.node.resource.teaser'
         - 'config:core.entity_view_display.node.service_location.default'
         - 'config:core.entity_view_display.node.service_location.embedded'
+        - 'config:core.entity_view_display.node.service_location.search_index'
         - 'config:core.entity_view_display.node.service_location.teaser'
-        - 'config:core.entity_view_display.node.webform.default'
-        - 'config:core.entity_view_display.node.webform.teaser'
   block_divisions:
     id: block_divisions
     display_title: 'Divisions Block'
@@ -1895,69 +1902,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_primary_service_location_1:
-          id: field_primary_service_location_1
-          table: node__field_primary_service_location
-          field: field_primary_service_location
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: embedded
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
       arguments:
         nid:
           id: nid
@@ -2062,7 +2006,6 @@ display:
       tags:
         - 'config:field.storage.node.field_email'
         - 'config:field.storage.node.field_phone'
-        - 'config:field.storage.node.field_primary_service_location'
   page_departments:
     id: page_departments
     display_title: Departments
@@ -2251,6 +2194,7 @@ display:
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.contact.embedded'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.faq.default'
@@ -2260,17 +2204,24 @@ display:
         - 'config:core.entity_view_display.node.group.default'
         - 'config:core.entity_view_display.node.group.teaser'
         - 'config:core.entity_view_display.node.news.default'
+        - 'config:core.entity_view_display.node.news.featured'
+        - 'config:core.entity_view_display.node.news.related'
+        - 'config:core.entity_view_display.node.news.search_index'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.notification.default'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.featured'
+        - 'config:core.entity_view_display.node.page.related'
+        - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.resource.default'
+        - 'config:core.entity_view_display.node.resource.featured'
+        - 'config:core.entity_view_display.node.resource.related'
         - 'config:core.entity_view_display.node.resource.teaser'
         - 'config:core.entity_view_display.node.service_location.default'
         - 'config:core.entity_view_display.node.service_location.embedded'
+        - 'config:core.entity_view_display.node.service_location.search_index'
         - 'config:core.entity_view_display.node.service_location.teaser'
-        - 'config:core.entity_view_display.node.webform.default'
-        - 'config:core.entity_view_display.node.webform.teaser'
   page_divisions:
     id: page_divisions
     display_title: Divisions
@@ -2598,6 +2549,7 @@ display:
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.contact.embedded'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.faq.default'
@@ -2607,17 +2559,24 @@ display:
         - 'config:core.entity_view_display.node.group.default'
         - 'config:core.entity_view_display.node.group.teaser'
         - 'config:core.entity_view_display.node.news.default'
+        - 'config:core.entity_view_display.node.news.featured'
+        - 'config:core.entity_view_display.node.news.related'
+        - 'config:core.entity_view_display.node.news.search_index'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.notification.default'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.featured'
+        - 'config:core.entity_view_display.node.page.related'
+        - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.resource.default'
+        - 'config:core.entity_view_display.node.resource.featured'
+        - 'config:core.entity_view_display.node.resource.related'
         - 'config:core.entity_view_display.node.resource.teaser'
         - 'config:core.entity_view_display.node.service_location.default'
         - 'config:core.entity_view_display.node.service_location.embedded'
+        - 'config:core.entity_view_display.node.service_location.search_index'
         - 'config:core.entity_view_display.node.service_location.teaser'
-        - 'config:core.entity_view_display.node.webform.default'
-        - 'config:core.entity_view_display.node.webform.teaser'
   page_programs:
     id: page_programs
     display_title: Programs
@@ -2954,6 +2913,7 @@ display:
         - 'config:core.entity_view_display.node.building.embedded'
         - 'config:core.entity_view_display.node.building.teaser'
         - 'config:core.entity_view_display.node.contact.default'
+        - 'config:core.entity_view_display.node.contact.embedded'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.faq.default'
@@ -2963,14 +2923,21 @@ display:
         - 'config:core.entity_view_display.node.group.default'
         - 'config:core.entity_view_display.node.group.teaser'
         - 'config:core.entity_view_display.node.news.default'
+        - 'config:core.entity_view_display.node.news.featured'
+        - 'config:core.entity_view_display.node.news.related'
+        - 'config:core.entity_view_display.node.news.search_index'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.notification.default'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.featured'
+        - 'config:core.entity_view_display.node.page.related'
+        - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.resource.default'
+        - 'config:core.entity_view_display.node.resource.featured'
+        - 'config:core.entity_view_display.node.resource.related'
         - 'config:core.entity_view_display.node.resource.teaser'
         - 'config:core.entity_view_display.node.service_location.default'
         - 'config:core.entity_view_display.node.service_location.embedded'
+        - 'config:core.entity_view_display.node.service_location.search_index'
         - 'config:core.entity_view_display.node.service_location.teaser'
-        - 'config:core.entity_view_display.node.webform.default'
-        - 'config:core.entity_view_display.node.webform.teaser'
