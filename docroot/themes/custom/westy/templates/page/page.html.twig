@@ -7,9 +7,17 @@
 <div class="page">
 
   <header class="page__header">
+  
+    {% block alerts %}
+      {% if page.alerts %}
+        {{ page.alerts }}
+      {% endif %}
+    {% endblock %}
+
     <div class="container">
       {% include '@westy/page/page.header.html.twig' %}
     </div>
+    
   </header>
 
   <main class="container">
@@ -21,9 +29,9 @@
     {% endif %}
 
     <div class="row mt-5">
-    
+
       {% if page.menu|render|striptags|trim is not empty %}
-        <div class="page__menu col-lg-2 col-md-3 col-sm-12">
+        <div class="page__menu col-lg-3 col-md-3 col-sm-12">
           {{ page.menu }}
         </div>
       {% endif %}
@@ -35,13 +43,13 @@
       {% endif %}
 
       {% if page.side|render|striptags|trim is not empty %}
-        <div class="page__side col-lg-2 col-md-12 col-sm-12">
+        <div class="page__side col-lg-3 col-md-12 col-sm-12">
             {{ page.side }}
         </div>
       {% endif %}
-      
+
     </div>
-    
+
   </main>
 
   {% if page.footer %}

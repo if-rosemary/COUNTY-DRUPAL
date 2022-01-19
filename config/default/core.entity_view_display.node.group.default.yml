@@ -38,20 +38,13 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_email:
-    type: email_mailto
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_facebook:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_image:
     type: image_url
@@ -59,14 +52,14 @@ content:
     settings:
       image_style: ''
     third_party_settings: {  }
-    weight: 12
+    weight: 9
     region: content
   field_migration_status:
     type: entity_reference_rss_category
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 8
     region: content
   field_parent:
     type: entity_reference_label
@@ -75,22 +68,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_phone:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_phone_extension:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 10
     region: content
   field_primary_service_location:
     type: entity_reference_entity_view
@@ -115,7 +92,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 9
+    weight: 7
     region: content
   field_type:
     type: entity_reference_label
@@ -131,12 +108,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
 hidden:
   content_moderation_control: true
   feeds_item: true
+  field_email: true
   field_group_path: true
+  field_phone: true
+  field_phone_extension: true
   field_short_title: true
   field_summary: true
   group_telephone_number_formatter_eva_phone_link: true

@@ -64,6 +64,7 @@ settings:
         -
           name: Widgets
           items:
+            - Groupaccordion
             - Accordion
             - Card
   plugins:

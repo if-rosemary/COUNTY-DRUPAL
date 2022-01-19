@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Template for the front page.
+ */
+#}
+<div class="page">
+	{% block alerts %}
+		{% if page.alerts %}
+			{{ page.alerts }}
+		{% endif %}
+	{% endblock %}
+
+	<header class="page__header">
+		{% include '@westy/page/page.header.html.twig' %}
+	</header>
+
+	<main>
+
+    {% if page.header|render|striptags|trim is not empty %}
+      <div class="container-fluid bg-info">
+        <div class="container">
+          <div class="row py-5">
+          <header class="page__sub_header">
+            {{ page.header }}
+          </header>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.content %}
+      <div class="page__content col">
+        {{ page.content }}
+      </div>
+    {% endif %}
+
+	</main>
+
+	{% if page.footer %}
+    <footer class="page__footer mt-5">
+      {% include '@westy/page/page.footer.html.twig' %}
+    </footer>
+  {% endif %}
+</div>
+
+
