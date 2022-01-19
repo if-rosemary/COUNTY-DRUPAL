@@ -73,13 +73,9 @@
 	</main>
 
 	{% if page.footer %}
-		<footer class="page__footer mt-5">
-			<div class="container-fluid">
-				<div class="d-flex justify-content-md-between align-items-md-center">
-					{{ page.footer }}
-				</div>
-			</div>
-		</footer>
-	{% endif %}
+    <footer class="page__footer mt-5">
+      {% include '@westy/page/page.footer.html.twig' %}
+    </footer>
+  {% endif %}
 </div>
 
