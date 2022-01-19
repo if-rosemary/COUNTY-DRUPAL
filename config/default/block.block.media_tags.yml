@@ -11,7 +11,7 @@ dependencies:
 id: media_tags
 theme: westy
 region: side
-weight: -5
+weight: -6
 provider: null
 plugin: 'facet_block:media_tags'
 settings:

@@ -1,0 +1,8 @@
+name: CKEditor Group Accordion
+type: module
+description: Adds group accordion component to CKEditor
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom CKEditor
+dependencies:
+  - drupal:ckeditor

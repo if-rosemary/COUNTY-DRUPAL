@@ -3,6 +3,32 @@
 
 .card {
   margin-bottom: 1rem;
+
+  &.contact-item{
+    border: 0;
+
+    .card-header {
+      background-color: map_get($theme-colors, "dark-gray");
+      color: #fff;
+      font-weight: bold;
+
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+
+    .card-body {
+      background-color: map_get($theme-colors, "faded-gray");
+
+      .card-text{
+        margin-bottom: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
 .card-body {

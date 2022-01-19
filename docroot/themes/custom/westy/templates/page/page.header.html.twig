@@ -1,8 +1,4 @@
-{% block alerts %}
-  {% if page.alerts %}
-    {{ page.alerts }}
-  {% endif %}
-{% endblock %}
+<div class="container">
 
 {% embed '@radix/navbar/navbar.twig' with {
   placement: 'sticky-top',
@@ -42,3 +38,4 @@
   {% endblock %}
 
 {% endembed %}
+</div>
