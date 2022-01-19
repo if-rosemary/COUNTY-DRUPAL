@@ -1,15 +1,15 @@
-uuid: 628a725c-018e-4d3d-b898-0ea6f0cd0415
+uuid: dc3c4d6c-7931-477e-8f81-1bab7eef0916
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_primary_service_location
+    - field.storage.node.field_location
     - node.type.group
-id: node.group.field_primary_service_location
-field_name: field_primary_service_location
+id: node.group.field_location
+field_name: field_location
 entity_type: node
 bundle: group
-label: 'Primary service location'
+label: Location
 description: ''
 required: false
 translatable: false
