@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_email
+    - field.storage.node.field_location
     - field.storage.node.field_phone
     - field.storage.node.field_phone_extension
-    - field.storage.node.field_primary_service_location
     - node.type.group
   module:
     - node
@@ -259,10 +259,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_primary_service_location:
-          id: field_primary_service_location
-          table: node__field_primary_service_location
-          field: field_primary_service_location
+        field_location:
+          id: field_location
+          table: node__field_location
+          field: field_location
           relationship: none
           group_type: group
           admin_label: ''
@@ -271,7 +271,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ drupal_view(''service_location_display'', ''address_contact_card'', field_primary_service_location__target_id) }}'
+            text: '{{ drupal_view(''service_location_display'', ''address_contact_card'', field_location__target_id) }}'
             make_link: false
             path: ''
             absolute: false
@@ -523,6 +523,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_email'
+        - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_phone'
         - 'config:field.storage.node.field_phone_extension'
-        - 'config:field.storage.node.field_primary_service_location'
