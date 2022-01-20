@@ -1,22 +1,22 @@
-uuid: 45510950-3bca-4a15-9724-d11399a897d0
+uuid: a445be60-68ec-4a20-9ee8-a066cc0ced30
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.contact_info
+    - views.view.service_location_display
   module:
     - node
     - views
   theme:
     - westy
-id: views_block__contact_info_group_contact
+id: views_block__service_location_display_service_location_card
 theme: westy
 region: side
-weight: -14
+weight: -13
 provider: null
-plugin: 'views_block:contact_info-group_contact'
+plugin: 'views_block:service_location_display-service_location_card'
 settings:
-  id: 'views_block:contact_info-group_contact'
+  id: 'views_block:service_location_display-service_location_card'
   label: ''
   label_display: '0'
   provider: views
@@ -30,4 +30,4 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      group: group
+      page: page

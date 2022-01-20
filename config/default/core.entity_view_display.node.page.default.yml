@@ -37,7 +37,7 @@ content:
       view_mode: embedded
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_faqs:
     type: entity_reference_entity_view
@@ -47,15 +47,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_location:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: embedded
-      link: false
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_related:
     type: entity_reference_label
@@ -68,6 +59,7 @@ content:
 hidden:
   content_moderation_control: true
   field_group: true
+  field_location: true
   field_migration_status: true
   field_service_type: true
   field_short_title: true

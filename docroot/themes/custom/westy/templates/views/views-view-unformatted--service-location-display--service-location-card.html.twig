@@ -1,0 +1,9 @@
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    {% for row in rows %}
+      {{ row.content }}
+    {% endfor %}
+  {% endblock %}
+</div>

@@ -62,6 +62,11 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  service_location_display_address_contact_card:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   service_location_display_eva_servloc_display:
     settings: {  }
     third_party_settings: {  }

@@ -115,3 +115,5 @@ hidden:
   langcode: true
   links: true
   search_api_excerpt: true
+  service_location_display_address_contact_card: true
+  service_location_display_service_location_info: true

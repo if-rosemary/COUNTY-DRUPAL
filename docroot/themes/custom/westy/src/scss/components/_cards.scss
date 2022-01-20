@@ -1,8 +1,16 @@
 // Article: Cards
 // -----------------------------------------------------------------------------
 
-.card {
+.page__side .card {
   margin-bottom: 1rem;
+
+  .card-text{
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   &.contact-item{
     border: 0;
@@ -19,14 +27,6 @@
 
     .card-body {
       background-color: map_get($theme-colors, "faded-gray");
-
-      .card-text{
-        margin-bottom: 1rem;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
     }
   }
 }
