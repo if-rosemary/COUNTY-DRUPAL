@@ -103,10 +103,20 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  service_location_display_address_contact_card:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   service_location_display_eva_servloc_display:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  service_location_display_service_location_info:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
 hidden:
   content_moderation_control: true

@@ -157,7 +157,11 @@
         },
         "drupal/media_entity_download": {
             "3059830 - Make link title editable / add token support / more options - feature/WCOR-1199": "https://www.drupal.org/files/issues/2021-07-16/3059830-make-link-title-11.patch"
+        },
+        "drupal/cshs": {
+            "3258226 - CSHS select option labels are empty - bugfix/WCOR-01202022": "https://www.drupal.org/files/issues/2022-01-13/cshs-select_option_labels_are_empty-3258226-5-D8.patch"
         }
+
     }
   },
   "autoload": {

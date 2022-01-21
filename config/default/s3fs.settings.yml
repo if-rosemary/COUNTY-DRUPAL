@@ -17,7 +17,7 @@ ignore_cache: false
 read_only: false
 disable_cert_verify: false
 redirect_styles_ttl: 0
-root_folder: wcor
+root_folder: ''
 public_folder: public
 private_folder: private
 presigned_urls: ''

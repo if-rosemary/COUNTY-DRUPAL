@@ -82,6 +82,11 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  service_location_display_service_location_info:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   content_moderation_control: true
   field_accessibility_notes: true
