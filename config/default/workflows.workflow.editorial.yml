@@ -3,17 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.alert
-    - node.type.building
     - node.type.contact
-    - node.type.event
     - node.type.faq
     - node.type.group
     - node.type.news
     - node.type.notification
     - node.type.page
-    - node.type.resource
-    - node.type.service_location
   module:
     - content_moderation
 id: editorial
@@ -23,7 +18,7 @@ type_settings:
   states:
     draft:
       label: Draft
-      weight: -2
+      weight: -3
       published: false
       default_revision: false
     marked_for_deletion:
@@ -38,6 +33,11 @@ type_settings:
       default_revision: true
     review:
       label: 'In review'
+      weight: -2
+      published: false
+      default_revision: false
+    scheduled:
+      label: Scheduled
       weight: -1
       published: false
       default_revision: false
@@ -48,31 +48,33 @@ type_settings:
       default_revision: true
   transitions:
     draft:
-      label: 'Create new draft'
+      label: 'Return for changes'
       from:
         - draft
         - marked_for_deletion
         - published
         - review
+        - scheduled
         - unpublished
       to: draft
-      weight: -2
+      weight: -3
     mark_for_deletion:
       label: 'Mark for deletion'
       from:
         - draft
         - published
         - review
+        - scheduled
         - unpublished
       to: marked_for_deletion
-      weight: 2
+      weight: 3
     publish:
       label: Publish
       from:
         - draft
         - marked_for_deletion
-        - published
         - review
+        - scheduled
         - unpublished
       to: published
       weight: 0
@@ -83,29 +85,38 @@ type_settings:
         - marked_for_deletion
         - published
         - review
+        - scheduled
         - unpublished
       to: review
+      weight: -2
+    schedule:
+      label: 'Schedule publication'
+      from:
+        - published
+        - review
+        - scheduled
+        - unpublished
+      to: scheduled
       weight: -1
     unpublish:
       label: Unpublish
       from:
         - marked_for_deletion
         - published
-        - review
-        - unpublished
       to: unpublished
+      weight: 2
+    update_live_content:
+      label: 'Update live content'
+      from:
+        - published
+      to: published
       weight: 1
   entity_types:
     node:
-      - alert
-      - building
       - contact
       - faq
-      - event
       - group
       - news
       - notification
       - page
-      - resource
-      - service_location
   default_moderation_state: draft

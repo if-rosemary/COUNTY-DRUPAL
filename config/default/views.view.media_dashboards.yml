@@ -1,4 +1,4 @@
-uuid: 18b12fc2-bacf-4c08-b118-a1fcae90a825
+uuid: bfbd7316-e25f-4a6b-a612-faff936b1e80
 langcode: en
 status: true
 dependencies:
@@ -14,8 +14,8 @@ dependencies:
     - media
     - node
     - user
-id: editor_media_dashboards
-label: 'Editor media dashboards'
+id: media_dashboards
+label: 'Media dashboards'
 module: views
 description: "List of media that is within a user's groups.\t"
 tag: ''
@@ -262,7 +262,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -287,7 +287,7 @@ display:
           exclude: false
           alter:
             alter_text: false
-            text: ''
+            text: '{{ revision_user }}<br>{{ changed }}'
             make_link: false
             path: ''
             absolute: false
@@ -316,7 +316,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -462,7 +462,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 25
+          items_per_page: 20
           total_pages: null
           id: 0
           tags:
@@ -809,18 +809,21 @@ display:
       tags: {  }
   page_my_media:
     id: page_my_media
-    display_title: 'My media'
+    display_title: 'My group media'
     display_plugin: page
     position: 1
     display_options:
+      title: 'My group media'
+      defaults:
+        title: false
       display_description: ''
       display_extenders: {  }
-      path: my-media
+      path: my-group-media
       menu:
         type: normal
-        title: 'My media'
+        title: 'My group media'
         description: ''
-        weight: 2
+        weight: -47
         expanded: false
         menu_name: editor
         parent: ''

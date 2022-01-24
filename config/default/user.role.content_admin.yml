@@ -9,6 +9,7 @@ dependencies:
     - node.type.alert
     - node.type.contact
     - node.type.event
+    - node.type.faq
     - node.type.group
     - node.type.news
     - node.type.notification
@@ -26,6 +27,7 @@ dependencies:
     - node
     - path
     - redirect
+    - scheduler
     - taxonomy
     - toolbar
 id: content_admin
@@ -40,6 +42,7 @@ permissions:
   - 'create content translations'
   - 'create document media'
   - 'create event content'
+  - 'create faq content'
   - 'create image media'
   - 'create media'
   - 'create news content'
@@ -54,6 +57,7 @@ permissions:
   - 'edit any contact content'
   - 'edit any document media'
   - 'edit any event content'
+  - 'edit any faq content'
   - 'edit any image media'
   - 'edit any news content'
   - 'edit any notification content'
@@ -64,6 +68,7 @@ permissions:
   - 'edit own contact content'
   - 'edit own document media'
   - 'edit own event content'
+  - 'edit own faq content'
   - 'edit own group content'
   - 'edit own image media'
   - 'edit own news content'
@@ -76,15 +81,19 @@ permissions:
   - 'revert all revisions'
   - 'revert contact revisions'
   - 'revert event revisions'
+  - 'revert faq revisions'
   - 'revert group revisions'
   - 'revert news revisions'
   - 'revert notification revisions'
   - 'revert page revisions'
   - 'revert resource revisions'
+  - 'schedule publishing of nodes'
   - 'translate alert node'
   - 'translate contact node'
   - 'translate document media'
   - 'translate editable entities'
+  - 'translate event node'
+  - 'translate faq node'
   - 'translate group node'
   - 'translate image media'
   - 'translate news node'
@@ -101,15 +110,20 @@ permissions:
   - 'use editorial transition mark_for_deletion'
   - 'use editorial transition publish'
   - 'use editorial transition review'
+  - 'use editorial transition save_draft'
+  - 'use editorial transition schedule'
   - 'use editorial transition unpublish'
+  - 'use editorial transition update_live_content'
   - 'use media transition mark_for_deletion'
   - 'use media transition publish'
   - 'use media transition unpublish'
   - 'view alert revisions'
   - 'view all media revisions'
+  - 'view all revisions'
   - 'view any unpublished content'
   - 'view contact revisions'
   - 'view event revisions'
+  - 'view faq revisions'
   - 'view field_migration_status'
   - 'view group revisions'
   - 'view latest version'
@@ -118,4 +132,5 @@ permissions:
   - 'view own unpublished content'
   - 'view page revisions'
   - 'view resource revisions'
+  - 'view scheduled content'
   - 'view user email addresses'

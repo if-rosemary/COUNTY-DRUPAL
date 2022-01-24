@@ -25,6 +25,7 @@ dependencies:
     - node
     - path
     - redirect
+    - scheduler
     - system
     - toolbar
     - toolbar_menu
@@ -53,6 +54,7 @@ permissions:
   - 'edit any faq content'
   - 'edit any image media'
   - 'edit any news content'
+  - 'edit any notification content'
   - 'edit any page content'
   - 'edit any resource content'
   - 'edit any video media'
@@ -67,8 +69,6 @@ permissions:
   - 'edit own page content'
   - 'edit own resource content'
   - 'edit own video media'
-  - 'revert alert revisions'
-  - 'revert all revisions'
   - 'revert contact revisions'
   - 'revert faq revisions'
   - 'revert group revisions'
@@ -76,6 +76,7 @@ permissions:
   - 'revert notification revisions'
   - 'revert page revisions'
   - 'revert resource revisions'
+  - 'schedule publishing of nodes'
   - 'translate alert node'
   - 'translate contact node'
   - 'translate document media'
@@ -96,12 +97,16 @@ permissions:
   - 'use editorial transition mark_for_deletion'
   - 'use editorial transition publish'
   - 'use editorial transition review'
+  - 'use editorial transition save_draft'
+  - 'use editorial transition schedule'
   - 'use editorial transition unpublish'
+  - 'use editorial transition update_live_content'
   - 'use media transition mark_for_deletion'
   - 'use media transition publish'
   - 'use media transition unpublish'
   - 'view alert revisions'
   - 'view all media revisions'
+  - 'view all revisions'
   - 'view any unpublished content'
   - 'view contact revisions'
   - 'view e in toolbar'
@@ -114,5 +119,6 @@ permissions:
   - 'view own unpublished content'
   - 'view page revisions'
   - 'view resource revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view user email addresses'

@@ -31,13 +31,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_body:
     type: text_textarea
-    weight: 8
+    weight: 5
     region: content
     settings:
       rows: 5
@@ -45,7 +45,7 @@ content:
     third_party_settings: {  }
   field_contact:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -55,7 +55,7 @@ content:
     third_party_settings: {  }
   field_faqs:
     type: inline_entity_form_complex
-    weight: 11
+    weight: 8
     region: content
     settings:
       form_mode: default
@@ -77,7 +77,7 @@ content:
           add: Add
   field_group:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -87,7 +87,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -97,13 +97,13 @@ content:
     third_party_settings: {  }
   field_migration_status:
     type: options_select
-    weight: 24
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_redirects:
     type: string_textfield
-    weight: 23
+    weight: 18
     region: content
     settings:
       size: 60
@@ -111,7 +111,7 @@ content:
     third_party_settings: {  }
   field_related:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -121,7 +121,7 @@ content:
     third_party_settings: {  }
   field_service_type:
     type: options_select
-    weight: 6
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -143,7 +143,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   field_summary:
     type: string_textarea
-    weight: 7
+    weight: 4
     region: content
     settings:
       rows: 2
@@ -161,36 +161,36 @@ content:
         maxlength_js_truncate_html: false
   field_type:
     type: options_select
-    weight: 5
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 22
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 15
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 20
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 21
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 17
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -204,7 +204,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -212,20 +212,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 18
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  unpublish_state:
-    type: scheduler_moderation
-    weight: 19
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -235,3 +223,5 @@ hidden:
   status: true
   sticky: true
   translation: true
+  unpublish_on: true
+  unpublish_state: true

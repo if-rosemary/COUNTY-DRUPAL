@@ -60,7 +60,7 @@ content:
     third_party_settings: {  }
   field_pdf_news:
     type: file_generic
-    weight: 51
+    weight: 20
     region: content
     settings:
       progress_indicator: throbber
@@ -127,13 +127,13 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 20
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -179,20 +179,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 19
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  unpublish_state:
-    type: scheduler_moderation
-    weight: 17
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -200,3 +188,5 @@ hidden:
   feeds_item: true
   field_contact: true
   field_redirects: true
+  unpublish_on: true
+  unpublish_state: true
