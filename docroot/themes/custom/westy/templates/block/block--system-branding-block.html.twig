@@ -13,20 +13,36 @@
   {% block content %}
 
     <div class="d-inline-flex">
-
+        {% if wcso %}
+          {% set branding = "Washington County Sheriff's Office"| t %}
+          {% set logo = 'wcso.png' %}
+          {% set url = '/sheriff' %}
+        {% else %}
+          {% set branding = 'Washington County, Oregon'| t %}
+          {% set logo = 'wcor-color.svg' %}
+          {% set url = '/' %}
+        {% endif %}
       <div class="align-self-baseline me-auto py-4">
       {% set branding = 'Washington County, Oregon'| t %}
-        <a href="/" aria-label="{{ branding }}">
-          <img src="/{{ base_path ~ directory }}/assets/images/wcor-color.svg" alt="{{ branding }}" width="100" />
+        <a href="{{ url }}" aria-label="{{ branding }}">
+          <img src="/{{ base_path ~ directory }}/assets/images/{{ logo }}" alt="{{ branding }}" height="100" />
         </a>
       </div>
-
-      <h1 class="align-self-baseline">
-        <a href="/" aria-label="{{ branding }}" tabindex="-1">
-          {{ 'Washington County'| t }}
-          <span>{{ 'Oregon'| t }}</span>
-        </a>
-      </h1>
+      {% if wcso %}
+        <div class="align-self-baseline">
+          <a href="{{ url }}" aria-label="{{ branding }}" tabindex="-1">
+            <img src="/{{ base_path ~ directory }}/assets/images/wcso-logo-topleft.png"
+              alt="{{ branding }}" width="100%" />
+          </a>
+        </div>
+      {% else %}
+        <h1 class="align-self-baseline">
+          <a href="{{ url }}" aria-label="{{ branding }}" tabindex="-1">
+            {{ 'Washington County'| t }}
+            <span>{{ 'Oregon'| t }}</span>
+          </a>
+        </h1>
+      {% endif %}
 
     </div>
 

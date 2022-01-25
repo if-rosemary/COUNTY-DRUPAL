@@ -1,0 +1,129 @@
+<div{{attributes}}>
+	{{ title_prefix }}
+	{{ title_suffix }}
+	{% block content %}
+		<div class="container-fluid py-5 bg-faded-blue homepage-news-updates-block">
+			<div class="container">
+				<div class="row">
+					<div class="col homepage-promo">
+            <nav aria-label="breadcrumb" class="">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item ">
+                  <a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active">
+                  <strong>Washington County Sheriff's Office</strong>
+                </li>
+              </ol>
+            </nav>
+						<div class="card" style="width: 100%;">
+							<img class="card-img-top" src="https://via.placeholder.com/1200x600" alt="Card image cap">
+							<div class="card-body">
+								<h3 class="card-title">Card title</h3>
+								<p>
+									<strong>October 5, 2011</strong>
+								</p>
+								<p class="card-text">Some quick example text to build on the card
+									                title and
+									                make up the bulk of the card's content.</p>
+								<p>
+									<strong>
+										<a href="/news">Learn more <i class="gg-arrow-right"></i></a>
+									</strong>
+
+								</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-6 pt-5 pt-lg-0 homepage-news">
+            <div>
+              <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Patrol
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Investigations
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Jail
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+						{% if view.getTitle() %}
+							<h2 class="mb-3">{{ view.getTitle()|raw }}</h2>
+						{% endif %}
+						{% for row in rows %}
+							<div class="callout callout-primary mb-3">
+								{{ row.content }}
+							</div>
+						{% endfor %}
+						<p class="text-end">
+							<strong>
+								<a href="/sheriff/news">More news & updates <i class="gg-arrow-right"></i></a>
+							</strong>
+
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+</div>
+

@@ -9,7 +9,7 @@ _core:
 id: westy_secondary_local_tasks
 theme: westy
 region: content
-weight: -13
+weight: -15
 provider: null
 plugin: local_tasks_block
 settings:

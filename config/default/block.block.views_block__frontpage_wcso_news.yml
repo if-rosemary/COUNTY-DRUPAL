@@ -1,4 +1,4 @@
-uuid: 8d950a98-e07c-413b-8b1d-b983d9d9d03c
+uuid: 8472ee9f-e0c1-4f9d-b15b-2d93134703cd
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - westy
-id: views_block__frontpage_homepage_news
+id: views_block__frontpage_wcso_news
 theme: westy
 region: content
-weight: -12
+weight: -11
 provider: null
-plugin: 'views_block:frontpage-homepage_news'
+plugin: 'views_block:frontpage-wcso_news'
 settings:
-  id: 'views_block:frontpage-homepage_news'
+  id: 'views_block:frontpage-wcso_news'
   label: ''
   label_display: '0'
   provider: views
@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '<front>'
+    pages: /sheriff

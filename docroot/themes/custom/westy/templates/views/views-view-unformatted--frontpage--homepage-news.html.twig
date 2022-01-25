@@ -2,10 +2,10 @@
   {{ title_prefix }}
   {{ title_suffix }}
   {% block content %}
-  <div class="container-fluid py-5 bg-info">
+  <div class="container-fluid py-5 bg-faded-blue homepage-news-updates-block">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col homepage-promo">
 
           <div class="card" style="width: 100%;">
             <img class="card-img-top" src="https://via.placeholder.com/1200x600"
@@ -16,12 +16,12 @@
               <p class="card-text">Some quick example text to build on the card
                 title and
                 make up the bulk of the card's content.</p>
-              <p><strong><a href="/news">Learn more</a></strong><i class="gg-arrow-right"></i></p>
+              <p><strong><a href="/news">Learn more <i class="gg-arrow-right"></i></a></strong></p>
             </div>
           </div>
 
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-6 pt-5 pt-md-0">
+        <div class="col-sm-12 col-md-12 col-lg-6 pt-5 pt-lg-0 homepage-news">
           {% if view.getTitle() %}
             <h2 class="mb-3">{{ view.getTitle()|raw }}</h2>
           {% endif %}
@@ -30,7 +30,7 @@
               {{ row.content }}
             </div>
           {% endfor %}
-          <p class="text-end"><strong><a href="/news">More news & updates</a></strong><i class="gg-arrow-right"></i></p>
+          <p class="text-end"><strong><a href="/news">More news & updates <i class="gg-arrow-right"></i></a></strong></p>
 
         </div>
       </div>

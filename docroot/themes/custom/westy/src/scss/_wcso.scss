@@ -1,0 +1,54 @@
+body.wcso {
+  header.page__header {
+    border-bottom-color: map_get($theme-colors, "sheriff-yellow") !important;
+  }
+
+  .bg-dark-gray, header.page__header .navbar-collapse .dropdown-menu {
+    --bs-bg-opacity: 1;
+    background-color: map_get($theme-colors, "sheriff-black") !important;
+  }
+
+  // Background Colors
+  .bg-faded-blue {
+    background-color: map_get($theme-colors, "sheriff-black") !important;
+  }
+
+  .bg-blue {
+    background-color: map_get($theme-colors, "sheriff-yellow") !important;
+  }
+
+  .callout-primary {
+    border-left-color: map_get($theme-colors, "sheriff-yellow");
+  }
+
+  // Homepage News & Updates
+  .homepage-news-updates-block {
+
+    .homepage-promo .card {
+      background-color: map_get($theme-colors, "dark-gray");
+      color: #fff;
+    }
+
+    .homepage-news {
+
+      .dropdown {
+        display: inline-block;
+        margin: 0 1rem 1rem 0;
+
+        .btn-primary{
+          background-color: map_get($theme-colors, "sheriff-yellow");
+          border-color: map_get($theme-colors, "sheriff-yellow");
+          color: #000;
+        }
+      }
+
+      h2 {
+        color: #fff;
+      }
+
+      .callout a {
+        color: map_get($theme-colors, "sheriff-black") !important;
+      }
+    }
+  }
+}
