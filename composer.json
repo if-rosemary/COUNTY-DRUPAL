@@ -67,6 +67,7 @@
     "drupal/simplesamlphp_auth": "^3.2",
     "drupal/smart_date": "^3.4",
     "drupal/smtp": "^1.0",
+    "drupal/structure_sync": "^2.0",
     "drupal/subpathauto": "^1.2",
     "drupal/token": "^1.10",
     "drupal/toolbar_menu": "^2.2",
@@ -165,6 +166,9 @@
         },
         "drupal/cshs": {
             "3258226 - CSHS select option labels are empty - bugfix/WCOR-01202022": "https://www.drupal.org/files/issues/2022-01-13/cshs-select_option_labels_are_empty-3258226-5-D8.patch"
+        },
+        "drupal/structure_sync": {
+            "3180878 - Undefined method getVocabularyId - feature/WCOR-1265": "https://www.drupal.org/files/issues/2020-11-05/3180878-undefined-method-getVocabularyId-1.patch"
         }
 
     }

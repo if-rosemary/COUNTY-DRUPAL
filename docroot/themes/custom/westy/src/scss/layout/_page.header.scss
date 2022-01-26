@@ -178,10 +178,6 @@ main header.page__sub_header {
   }
 }
 
-main .img-bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-origin: content-box;
-  background-position: center center;
+.bg-info .img-bg {
   min-height: 400px;
 }

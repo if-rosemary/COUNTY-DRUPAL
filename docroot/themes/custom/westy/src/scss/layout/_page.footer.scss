@@ -1,22 +1,28 @@
 // Page: Footer
 // -----------------------------------------------------------------------------
 .page__footer {
-  a,
-  a:hover {
-    @extend .text-white;
-    text-decoration: none;
+
+  .field__item {
+    margin-bottom: 0;
   }
 
   .nav-link {
     padding: 0 1rem 0 0;
   }
 
+  .page__footer__blocks h3:last-child {
+    margin-bottom: 0;
+  }
   .page__footer__navigation,
   .page__footer__social,
   .page__footer__service {
     @extend .mb-5;
     @include media-breakpoint-up(lg) {
       margin-bottom: 0.5rem !important; // .mb-2;
+    }
+    a, a:hover {
+      @extend .text-white;
+      text-decoration: none;
     }
   }
 

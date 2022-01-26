@@ -32,13 +32,109 @@
     {% if page.content %}
     <div class="page__content col">
       {{ page.content }}
+      <!-- Actions -->
+      <div class="container">
+        <div class="row py-5">
+          <div class="col">
+            <h3>How are we doing?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-12 col-md-4 pt-5 pt-md-0">
+            <h3>Accountability</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-12 col-md-4 pt-5 pt-md-0">
+            <h3>We're hiring</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- How Do I -->
+      <div id="how-do-i" class="container-fluid img-bg"
+        style="background-image: url(/themes/custom/westy/assets/images/wcso_homepage_bg.jpg);">
+        <div class="container">
+          <div class="row py-5">
+            <div class="title">
+              <h3>How Do I...</h3>
+            </div>
+            <div class="mt-4 content">
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="report" role="tabpanel"
+                  aria-labelledby="report-tab">
+
+                  <div class="row">
+                    <div class="col col-sm-12 col-lg-4">
+                      <ul>
+                        <li><a href="#">Sample A</a></li>
+                        <li><a href="#">Sample B</a></li>
+                        <li><a href="#">Sample C</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-12 col-lg-4">
+                      <ul>
+                        <li><a href="#">Sample A</a></li>
+                        <li><a href="#">Sample B</a></li>
+                        <li><a href="#">Sample C</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-12 col-lg-4">
+                      <ul>
+                        <li><a href="#">Sample A</a></li>
+                        <li><a href="#">Sample B</a></li>
+                        <li><a href="#">Sample C</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="apply" role="tabpanel"
+                  aria-labelledby="apply-tab"></div>
+                <div class="tab-pane fade" id="pay" role="tabpanel"
+                  aria-labelledby="pay-tab"></div>
+                <div class="tab-pane fade" id="request" role="tabpanel"
+                  aria-labelledby="request-tab"></div>
+                <div class="tab-pane fade" id="register" role="tabpanel"
+                  aria-labelledby="register-tab"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connect -->
+      <div class="container">
+        <div class="row py-5">
+          <div class="col">
+            <h3>Connect with WCSO</h3>
+          </div>
+          <div class="col-12 col-md-6 pt-5 pt-md-0">
+            <div class="card contact-item">
+              <div class="card-header">
+                <h4>Contact Us</h4>
+              </div>
+              <div class="card-body">
+                <div class="views-field views-field-field-phone card-text"><strong
+                    class="views-label views-label-field-phone">Emergency dispatch:</strong>
+                  <div class="field-content"><a href="tel:911">9-1-1</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     {% endif %}
 
   </main>
 
   {% if page.footer %}
-  <footer class="page__footer mt-5">
+  <footer class="page__footer">
     {% include '@westy/page/page.footer.html.twig' %}
   </footer>
   {% endif %}

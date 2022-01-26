@@ -57,7 +57,7 @@
   }
   table caption {
     caption-side: initial;
-    color: #000;
+    color: map_get($theme-colors, "dark-gray");
     font-weight: bold;
   }
   .views-field-field-fy {

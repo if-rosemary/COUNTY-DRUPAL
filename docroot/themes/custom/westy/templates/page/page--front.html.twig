@@ -31,6 +31,74 @@
 
     {% if page.content %}
       <div class="page__content col">
+        <div id="how-do-i" class="container-fluid img-bg" style="background-image: url(/themes/custom/westy/assets/images/homepage_bg.jpg);">
+          <div class="container">
+            <div class="row py-5">
+              <div class="title"><h3>How Do I...</h3></div>
+              <div class="mt-4 content">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="report-tab" data-bs-toggle="tab"
+                      data-bs-target="#report" type="button" role="tab" aria-controls="report"
+                      aria-selected="true"><h3>Report</h3></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="apply-tab" data-bs-toggle="tab"
+                      data-bs-target="#apply" type="button" role="tab" aria-controls="apply"
+                      aria-selected="false"><h3>Apply</h3></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pay-tab" data-bs-toggle="tab"
+                      data-bs-target="#pay" type="button" role="tab" aria-controls="pay"
+                      aria-selected="false"><h3>Pay</h3></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="request-tab" data-bs-toggle="tab"
+                      data-bs-target="#request" type="button" role="tab" aria-controls="request"
+                      aria-selected="false"><h3>Request</h3></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="register-tab" data-bs-toggle="tab"
+                      data-bs-target="#register" type="button" role="tab" aria-controls="register"
+                      aria-selected="false"><h3>Register</h3></button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="report" role="tabpanel" aria-labelledby="report-tab">
+
+                      <div class="row">
+                        <div class="col col-sm-12 col-lg-4">
+                          <ul>
+                            <li><a href="#">Sample A</a></li>
+                            <li><a href="#">Sample B</a></li>
+                            <li><a href="#">Sample C</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                          <ul>
+                            <li><a href="#">Sample A</a></li>
+                            <li><a href="#">Sample B</a></li>
+                            <li><a href="#">Sample C</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                          <ul>
+                            <li><a href="#">Sample A</a></li>
+                            <li><a href="#">Sample B</a></li>
+                            <li><a href="#">Sample C</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="apply" role="tabpanel" aria-labelledby="apply-tab"></div>
+                  <div class="tab-pane fade" id="pay" role="tabpanel" aria-labelledby="pay-tab"></div>
+                  <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab"></div>
+                  <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {{ page.content }}
       </div>
     {% endif %}
@@ -43,5 +111,3 @@
     </footer>
   {% endif %}
 </div>
-
-

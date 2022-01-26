@@ -57,6 +57,8 @@ class WashcoCommands extends BltTasks
     $this->say("Deploying site...");
     shell_exec("blt drupal:config:import");
     shell_exec("drush deploy");
+    $this->say("Importing structures...");
+    shell_exec("drush ia --choice='safe'");
     $this->say("Building theme assets...");
     $this->theme_build();
   }

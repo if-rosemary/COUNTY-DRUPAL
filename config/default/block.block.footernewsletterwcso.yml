@@ -1,0 +1,30 @@
+uuid: 659df937-a45d-4f89-b518-fa4cda8d5ed7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic_block:66ba4bf9-c55a-461a-9966-f1c63a0cc5ba'
+  module:
+    - block_content
+    - system
+  theme:
+    - westy
+id: footernewsletterwcso
+theme: westy
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:66ba4bf9-c55a-461a-9966-f1c63a0cc5ba'
+settings:
+  id: 'block_content:66ba4bf9-c55a-461a-9966-f1c63a0cc5ba'
+  label: 'Footer Newsletter (WCSO)'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/sheriff\r\n/sheriff/*"

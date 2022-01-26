@@ -1,4 +1,4 @@
-uuid: 8821acaa-5d9d-40d7-9450-f0aff8fb027c
+uuid: c77d41ba-0fb1-455c-8f62-659274849633
 langcode: en
 status: true
 dependencies:
@@ -6,17 +6,15 @@ dependencies:
     - system
   theme:
     - westy
-_core:
-  default_config_hash: sYjScJ6uW1UvGZ-G3AtTcZmPoOiQJtndHqamm8FAFgU
-id: westy_site_branding
+id: sitebranding
 theme: westy
 region: navbar_branding
-weight: -12
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'Site branding (WCOR)'
+  label: 'Site branding (WCSO)'
   label_display: '0'
   provider: system
   use_site_logo: false
@@ -25,5 +23,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
+    negate: false
     pages: "/sheriff\r\n/sheriff/*"

@@ -1,0 +1,8 @@
+.btn
+{
+  &.btn-primary {
+    background-color: map_get($theme-colors, "light-blue");
+    border-color: map_get($theme-colors, "light-blue");
+    color: map_get($theme-colors, "dark-gray");
+  }
+}
