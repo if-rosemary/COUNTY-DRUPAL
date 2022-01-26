@@ -1,0 +1,31 @@
+uuid: e6634238-3767-4178-8fda-22e2c48bde84
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_placement
+field_name: field_placement
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: wcor
+      label: 'County Homepage'
+    -
+      value: wcso
+      label: 'Sheriff Homepage'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

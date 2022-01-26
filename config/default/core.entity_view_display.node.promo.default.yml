@@ -1,0 +1,62 @@
+uuid: a3a21606-4ad1-4f20-abb0-35ed568ce81a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.promo.field_placement
+    - field.field.node.promo.field_promo_image
+    - field.field.node.promo.field_resource_url
+    - field.field.node.promo.field_summary
+    - node.type.promo
+  module:
+    - link
+    - options
+    - user
+id: node.promo.default
+targetEntityType: node
+bundle: promo
+mode: default
+content:
+  field_placement:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_promo_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_resource_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -5,23 +5,15 @@
   <div class="container-fluid py-5 bg-faded-blue homepage-news-updates-block">
     <div class="container">
       <div class="row">
+        {% set promo = drupal_view_result('promos', 'homepage_promo', 'wcor')|length %}
+        {% if promo > 0 %}
         <div class="col homepage-promo">
-
-          <div class="card" style="width: 100%;">
-            <img class="card-img-top" src="https://via.placeholder.com/1200x600"
-              alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Card title</h3>
-              <p><strong>October 5, 2011</strong></p>
-              <p class="card-text">Some quick example text to build on the card
-                title and
-                make up the bulk of the card's content.</p>
-              <p><strong><a href="/news">Learn more <i class="gg-arrow-right"></i></a></strong></p>
-            </div>
-          </div>
-
+          {{ drupal_view('promos', 'homepage_promo', 'wcor') }}
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6 pt-5 pt-lg-0 homepage-news">
+        {% else %}
+        <div class="col-12 homepage-news">
+        {% endif %}
           {% if view.getTitle() %}
             <h2 class="mb-3">{{ view.getTitle()|raw }}</h2>
           {% endif %}

@@ -1,0 +1,30 @@
+uuid: c2f7a14f-5d25-4874-b498-18af796c059d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.promo.field_placement
+    - field.field.node.promo.field_promo_image
+    - field.field.node.promo.field_resource_url
+    - field.field.node.promo.field_summary
+    - node.type.promo
+  module:
+    - user
+id: node.promo.teaser
+targetEntityType: node
+bundle: promo
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_placement: true
+  field_promo_image: true
+  field_resource_url: true
+  field_summary: true
+  langcode: true
+  search_api_excerpt: true

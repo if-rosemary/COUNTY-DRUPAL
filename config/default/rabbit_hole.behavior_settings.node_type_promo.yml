@@ -1,0 +1,14 @@
+uuid: bf90d8bd-b1c8-4764-9ee6-7301ce4edd4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.promo
+id: node_type_promo
+entity_type_id: node_type
+entity_id: promo
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

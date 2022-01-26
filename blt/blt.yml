@@ -38,6 +38,7 @@ validate:
       - drupal_block
       - drupal_field
       - drupal_view
+      - drupal_view_result
       - drupal_region
       - drupal_entity
       - drupal_menu
